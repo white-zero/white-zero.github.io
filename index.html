@@ -209,12 +209,19 @@
 <ul>
 <li>用户头像上传<ul>
 <li>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</li>
-<li>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] )</li>
-<li><pre><code class="var">formData.append(&apos;avatar&apos;,this.files[0])</code></pre>
+<li>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] ) <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
 （将用户的文件上传给服务器端）</li>
 <li>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</li>
 <li>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</li>
 <li>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>用户列表展示  (10132967)<ul>
+<li>1.在页面加载时向服务器发送ajax请求，索要用户列表数据</li>
+<li>2.使用模版引擎将数据和html模版拼接</li>
+<li>3.将拼接好的内容展现在页面中    </li>
 </ul>
 </li>
 </ul>

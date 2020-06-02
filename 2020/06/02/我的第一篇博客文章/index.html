@@ -16,7 +16,7 @@
 <meta property="og:description" content="功能模块 登陆功能 为登陆按钮添加点击事件 获取用户在文本框中输入的用户名和密码 验证用户是否输入了用户名和密码，没有则阻止程序向下执行 调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页     登陆拦截 使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方 判断isLogin变量， 如果为false，跳转登陆页面">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-02T02:40:43.000Z">
-<meta property="article:modified_time" content="2020-06-02T09:41:24.855Z">
+<meta property="article:modified_time" content="2020-06-02T10:30:00.056Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -211,12 +211,19 @@
 <ul>
 <li>用户头像上传<ul>
 <li>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</li>
-<li>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] )</li>
-<li><pre><code class="var">formData.append(&apos;avatar&apos;,this.files[0])</code></pre>
+<li>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] ) <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
 （将用户的文件上传给服务器端）</li>
 <li>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</li>
 <li>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</li>
 <li>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>用户列表展示  (10132967)<ul>
+<li>1.在页面加载时向服务器发送ajax请求，索要用户列表数据</li>
+<li>2.使用模版引擎将数据和html模版拼接</li>
+<li>3.将拼接好的内容展现在页面中    </li>
 </ul>
 </li>
 </ul>
