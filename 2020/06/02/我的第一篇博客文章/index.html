@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>网站demo | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="功能模块*登陆功能    - 为登陆按钮添加点击事件    - 获取用户在文本框中输入的用户名和密码    - 验证用户是否输入了用户名和密码，没有则阻止程序向下执行    - 调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页  第二章">
+  <meta name="description" content="功能模块 登陆功能 为登陆按钮添加点击事件 获取用户在文本框中输入的用户名和密码 验证用户是否输入了用户名和密码，没有则阻止程序向下执行 调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页     登陆拦截  — 使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方 判断isLogin变量， 如果为false，跳转登陆页面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网站demo">
 <meta property="og:url" content="http://yoursite.com/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="功能模块*登陆功能    - 为登陆按钮添加点击事件    - 获取用户在文本框中输入的用户名和密码    - 验证用户是否输入了用户名和密码，没有则阻止程序向下执行    - 调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页  第二章">
+<meta property="og:description" content="功能模块 登陆功能 为登陆按钮添加点击事件 获取用户在文本框中输入的用户名和密码 验证用户是否输入了用户名和密码，没有则阻止程序向下执行 调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页     登陆拦截  — 使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方 判断isLogin变量， 如果为false，跳转登陆页面">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-02T02:40:43.000Z">
-<meta property="article:modified_time" content="2020-06-02T07:11:06.921Z">
+<meta property="article:modified_time" content="2020-06-02T08:53:20.255Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -174,7 +174,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><p>*登陆功能<br>    - 为登陆按钮添加点击事件<br>    - 获取用户在文本框中输入的用户名和密码<br>    - 验证用户是否输入了用户名和密码，没有则阻止程序向下执行<br>    - 调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页</p>
+        <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
+<li>登陆功能<ul>
+<li>为登陆按钮添加点击事件</li>
+<li>获取用户在文本框中输入的用户名和密码</li>
+<li>验证用户是否输入了用户名和密码，没有则阻止程序向下执行</li>
+<li>调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>登陆拦截<br>  — 使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方<ul>
+<li>判断isLogin变量， 如果为false，跳转登陆页面</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>退出功能<ul>
+<li>为退出按钮添加点击事件</li>
+<li>利用confirm方法返回值（当用户点击确定–&gt;true,点击取消—-&gt;false）</li>
+<li>当true时调用$.ajax方法(不用传递参数)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>添加用户<ul>
+<li>1.在表单中，为添加的用户的每一项添加name属性，（name属性要和接口文档中要求的参数名称保持一致）</li>
+<li>2.为表单绑定提交事件，（在事件处理函数中要阻止表单默认提交的行为）</li>
+<li>3.在事件处理函数中获取用户在表单中输入的内容（ serialize()方法 ）</li>
+<li><code>javascript var formData = $(this).serialize()</code>   (formData传到ajax里的data中)</li>
+<li>4.调用添加用户的接口，将获取到的内容通过接口发送给服务端，操作成功—&gt;刷新页面，失败–&gt;用户提示</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2>
       
