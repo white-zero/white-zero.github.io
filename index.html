@@ -207,13 +207,21 @@
 </li>
 </ul>
 <ul>
-<li>用户头像上传<ul>
-<li>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</li>
-<li>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] ) <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
-（将用户的文件上传给服务器端）</li>
-<li>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</li>
-<li>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</li>
-<li>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</li>
+<li><p>用户头像上传</p>
+<ul>
+<li><p>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</p>
+</li>
+<li><p>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] )</p>
+ <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
+
+<p>（将用户的文件上传给服务器端）</p>
+</li>
+<li><p>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</p>
+</li>
+<li><p>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</p>
+</li>
+<li><p>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -226,17 +234,15 @@
 </li>
 </ul>
 <ul>
-<li><p>用户信息修改</p>
-<ul>
-<li>一、通过事件委托的形式为编辑按钮添加点击事件（用户信息修改功能，要把用户信息展示在页面上，因为用ajax向服务器请求的数据不知什么时候返回，所以用事件委托的方式，为他的父级添加点击事件）<br>(下面的意思是当点击’edit’类的时候，触发冒泡机制，触发userBox的点击事件的处理函数)<br><code>$(&#39;#userBox&#39;).on(&#39;click&#39;, &#39;.edit&#39;, function () {}</code><ul>
-<li>在事件处理函数中获取当前点击的用户的ID值</li>
-<li>根据用户ID获取用户的详细信息（$.ajax),并通过模版引擎将用户信息渲染在表单中    - 二、为提交按钮添加点击事件。（也要用事件委托的形式）1.获取用户在表单中输入的内容，2.调用修改用户信息接口实现用户信息修改功能（$.ajax）,success函数里location.reload(),刷新页面</li>
+<li>用户信息修改<ul>
+<li>一、通过事件委托的形式为编辑按钮添加点击事件（用户信息修改功能，要把用户信息展示在页面上，因为用ajax向服务器请求的数据不知什么时候返回，所以用事件委托的方式，为他的父级添加点击事件）</li>
+<li>在事件处理函数中获取当前点击的用户的ID值 </li>
+<li>根据用户ID获取用户的详细信息（$.ajax),并通过模版引擎将用户信息渲染在表&gt;<br>单中     二、为提交按钮添加点击事件。（也要用事件委托的形式）1.获取用户在表单中&gt;<br>输入的内容，2.调用修改用户信息接口实现用户信息修改功能（$.ajax）,success函数里location.reload(),刷新页面<br>(下面的意思是当点击’edit’类的时候，触发冒泡机制，触发userBox的点击事件的处理函数)<br><code>$(&#39;#userBox&#39;).on(&#39;click&#39;, &#39;.edit&#39;, function () {}</code></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>删除用户</p>
 <ul>
+<li>删除用户<ul>
 <li>为删除按钮添加点击事件（事件委托的方法）</li>
 <li>确认用户是否要进行删除（confirm方法）</li>
 <li>获取当前被点击的用户的ID</li>
