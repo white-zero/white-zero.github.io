@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>React学习01 | Hexo</title>
+  <title>React学习 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSX语法  写在{}里的html语法   组件  组件的类型1.函数类型的组件name()&amp;#123;return hello world&amp;#125;&#96;&#96;&#96;12  2.基于类的组件&#96;&#96;&#96; class xxx extends React.Component&amp;#123;render()&amp;#123;return &lt;div&gt;hello world&lt;&#x2F;">
+  <meta name="description" content="JSX语法  写在{}里的html语法   组件  组件的类型1.函数类型的组件(hooks之后都可以用这种方式吧)name()&amp;#123;return hello world&amp;#125;&#96;&#96;&#96;12  2.基于类的组件&#96;&#96;&#96; class xxx extends React.Component&amp;#123;render()&amp;#123;return &lt;div&gt;hel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React学习01">
+<meta property="og:title" content="React学习">
 <meta property="og:url" content="http://yoursite.com/2020/06/03/React%E5%AD%A6%E4%B9%A001/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSX语法  写在{}里的html语法   组件  组件的类型1.函数类型的组件name()&amp;#123;return hello world&amp;#125;&#96;&#96;&#96;12  2.基于类的组件&#96;&#96;&#96; class xxx extends React.Component&amp;#123;render()&amp;#123;return &lt;div&gt;hello world&lt;&#x2F;">
+<meta property="og:description" content="JSX语法  写在{}里的html语法   组件  组件的类型1.函数类型的组件(hooks之后都可以用这种方式吧)name()&amp;#123;return hello world&amp;#125;&#96;&#96;&#96;12  2.基于类的组件&#96;&#96;&#96; class xxx extends React.Component&amp;#123;render()&amp;#123;return &lt;div&gt;hel">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-03T05:51:40.000Z">
-<meta property="article:modified_time" content="2020-06-03T10:43:20.290Z">
+<meta property="article:modified_time" content="2020-06-05T06:13:40.420Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React学习01
+      React学习
     </h1>
   
 
@@ -182,13 +182,59 @@
 </li>
 <li><p>组件</p>
 <ul>
-<li>组件的类型<br>1.函数类型的组件<figure class="highlight plain"><figcaption><span>name()&#123;return <div>hello world</div>&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  2.基于类的组件</span><br><span class="line">&#96;&#96;&#96; class xxx extends React.Component&#123;render()&#123;return &lt;div&gt;hello world&lt;&#x2F;div&gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<li>组件的类型<br>1.函数类型的组件(hooks之后都可以用这种方式吧)<figure class="highlight plain"><figcaption><span>name()&#123;return <div>hello world</div>&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  2.基于类的组件</span><br><span class="line">&#96;&#96;&#96; class xxx extends React.Component&#123;render()&#123;return &lt;div&gt;hello world&lt;&#x2F;div&gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+</li>
+<li><p>state 和 setState</p>
+</li>
+</ul>
+<ul>
+<li><p>条件渲染和循环</p>
+</li>
+<li><p>事件监听</p>
+</li>
+</ul>
+<ul>
+<li><p>组件通信</p>
+</li>
+<li><p>生命周期</p>
+</li>
+</ul>
+<ul>
+<li><p>redux</p>
+<ul>
+<li>一个专门用于做状态管理的JS库（不是react插件库）。与react最适配。管理react应用中多个组件共享的状态</li>
+<li>action creator&lt;—— component &lt;—–&gt; store &lt;——&gt; reducer</li>
+<li>action{type: ,data:  ,}    reducer(state=0,action)</li>
+</ul>
+</li>
+<li><p>react-redux</p>
+<ul>
+<li>一个react插件库，专门用来简化react应用中使用redux</li>
+<li>思想：(component) UI组件 里不使用redux的api + 容器组件（container)里使用redux的api</li>
+<li>Provider:让所有组件都可以得到state数据 接收一个store</li>
+<li>connect连接store:用于包装UI组件生成容器组件 把state to props，dispatch to props ,传给容器组件</li>
+</ul>
+</li>
+<li><p>redux异步编程（异步中间件）</p>
+<ul>
+<li>redux默认是不能进行异步处理的，应用中又需要在redux中执行异步任务，则需要redux异步中间件</li>
+<li>actions.js里，返回一个函数（同步的时候返回的是对象）</li>
+</ul>
+</li>
+<li><p>axios</p>
+<ul>
+<li>封装 XmlHttpRequest 对象的ajax。promise风格。可以用在浏览器端和node服务器端</li>
+</ul>
+</li>
+<li><p>react-router</p>
+<ul>
+<li>react的一个插件库,专门用来实现一个SPA应用（single page web application，单页web应用）</li>
+<li>SPA应用:整个应用只有一个完整的页面,点击页面中的链接不会刷新页面，本身也不会向服务器发送请求，当点击路由链接时，只会做页面局部的更新,数据都需要通过ajax请求获取</li>
+<li>route 路由，一个路由就是一个映射关系，key为路由路径，value可能是function/component（后台路由：value是function，前台路由：value是component）  （注册路由：router.get(path,function(req,res))）</li>
+<li>前端路由的实现<br>1）histtory库:包装的是原生BOM中window.history和window.location.hash</li>
+<li>1.BrowserRouter    2.<NavLink to='/path'> </NavLink>(a标签的改写)    3.<Route path='/path' component={home}/> (有两个的话外围再用switch包一下) 4.<Redirect to='/home'> (默认显示)</li>
 </ul>
 </li>
 </ul>
