@@ -229,33 +229,34 @@
 - 其次就是绝对居中，让浏览器自动平分边距以达到水平垂直居中的目的
 - 如果是行内/行内块级/图片这些，可以优先考虑line-height和vertical-align结合使用，不要忘了还有text-align
 - 移动端兼容性允许的话能用flex就用flex</code></pre><ul>
-<li><p>两列布局</p>
-<ul>
-<li><p>(1) 左列定宽，右列自适应<br>1.1 利用float+margin实现<br>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
-<p>css:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#left&#123;</span><br><span class="line">   background-color: #f00;</span><br><span class="line">   float: left;</span><br><span class="line">   width: 100px;</span><br><span class="line">   height: 500px;</span><br><span class="line">&#125;</span><br><span class="line">#right&#123;</span><br><span class="line">   background-color: #0f0;</span><br><span class="line">   height: 500px;</span><br><span class="line">   margin-left:100px</span><br><span class="line">&#125;  </span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">注意:margin-left要大于等于#left的宽度</span><br><span class="line">1.2 利用float+margin(fix)实现</span><br><span class="line">html: &#96;&lt;body&gt;&lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;&lt;div id &#x3D; &quot;right-fix&quot;&gt;&lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;&lt;&#x2F;div&gt;&lt;&#x2F;body&gt;&#96;</span><br><span class="line">css: &#96;#left&#123;bacground-color: #f00; float: left; width: 100px; height: 500px;&#125;  #right-fix&#123;float: right; width: 100%; margin-left: -100px; &#x2F;&#x2F;正值大于或等于#left的宽度，才能显示在同一行&#125;  #right&#123;margin-left: 100px; &#x2F;&#x2F;大于或等于#left的宽度 background-color: #0f0; height: 500px;&#125; &#96;</span><br><span class="line">1.3 使用float+overflow实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-  <div id = "left">左列定宽</div>
-  <div id = "right">右列自适应</div>
-</body>
-```
-css:
-</li>
-<li><p>(2)左列自适应，右列定宽</p>
-</li>
-<li><p>(3)一列不定，一列自适应</p>
+<li>两列布局<ul>
+<li>(1) 左列定宽，右列自适应<br>1.1 利用float+margin实现<br>html:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+css:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#left&#123;</span><br><span class="line">   background-color: #f00;</span><br><span class="line">   float: left;</span><br><span class="line">   width: 100px;</span><br><span class="line">   height: 500px;</span><br><span class="line">&#125;</span><br><span class="line">#right&#123;</span><br><span class="line">   background-color: #0f0;</span><br><span class="line">   height: 500px;</span><br><span class="line">   margin-left:100px  &#x2F;&#x2F;注意:margin-left要大于等于#left的宽度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 </li>
-<li><p>三列布局</p>
-</li>
-<li><p>多列布局</p>
-</li>
-<li><p>全屏布局</p>
-</li>
-<li><p>补充</p>
-</li>
+</ul>
+<pre><code>  1.2 利用float+margin(fix)实现
+  html: `&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right-fix&quot;&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;`
+  css: `#left{bacground-color: #f00; float: left; width: 100px; height: 500px;}  #right-fix{float: right; width: 100%; margin-left: -100px; //正值大于或等于#left的宽度，才能显示在同一行}  #right{margin-left: 100px; //大于或等于#left的宽度 background-color: #0f0; height: 500px;} `
+  1.3 使用float+overflow实现
+  html:
+
+  &lt;body&gt;
+    &lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;
+    &lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;
+  &lt;/body&gt;
+
+  css:
+
+- (2)左列自适应，右列定宽
+- (3)一列不定，一列自适应</code></pre><ul>
+<li>三列布局</li>
+<li>多列布局</li>
+<li>全屏布局</li>
+<li>补充</li>
 </ul>
 <hr>
 <p>JS</p>
