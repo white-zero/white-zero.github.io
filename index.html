@@ -191,17 +191,28 @@
 </ul>
 <hr>
 <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><ul>
-<li>水平居中<ul>
-<li>对于（文本/行内元素/行内块级元素）相对他的块父级元素对齐。text-align:center<br>优点：简单快捷易理解，兼容性好。<br>缺点：只对行内内容有效，属性会继承影响到后代行内的内容，如果子元素宽度大于父元素宽度，则无效。只有于才行</li>
+<li><p>水平居中</p>
+<ul>
+<li><code>text-align:center</code>对于（文本/行内元素/行内块级元素）相对他的块父级元素对齐。<br>优：简单快捷易理解，兼容性好。<br>缺：只对行内内容有效，属性会继承影响到后代行内的内容，如果子元素宽度大于父元素宽度，则无效。只有于才行</li>
+<li><code>width: 100px; margin: 0 auto;</code> 对于单个块级元素<br>优：简单；兼容性好<br>缺：必须定宽度，且值不能为auto，宽度必须小于父元素</li>
+<li><code>#parent{text-align:center;}</code>  <code>.son{display: inline-block; }</code>  多个块级元素，相对他的块父元素对齐</li>
+<li>使用绝对定位实现（子绝父相）<br><code>#parent{height:200px; width:200px; position: relative; }</code><br><code>#son{position:absolute; left: 50%; }</code>  //top 、right 、bottom、 left的值是相对于父元素尺寸的，margin或transform是相对自身       尺寸的，组合使用达到水平居中的目的</li>
 </ul>
 </li>
-<li>垂直居中</li>
-<li>水平垂直居中</li>
-<li>两列布局</li>
-<li>三列布局</li>
-<li>多列布局</li>
-<li>全屏布局</li>
-<li>补充</li>
+<li><p>垂直居中</p>
+</li>
+<li><p>水平垂直居中</p>
+</li>
+<li><p>两列布局</p>
+</li>
+<li><p>三列布局</p>
+</li>
+<li><p>多列布局</p>
+</li>
+<li><p>全屏布局</p>
+</li>
+<li><p>补充</p>
+</li>
 </ul>
 <hr>
 <p>JS</p>
