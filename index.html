@@ -191,28 +191,38 @@
 </ul>
 <hr>
 <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><ul>
-<li><p>水平居中</p>
-<ul>
+<li>水平居中<ul>
 <li><code>text-align:center</code>对于（文本/行内元素/行内块级元素）相对他的块父级元素对齐。<br>优：简单快捷易理解，兼容性好。<br>缺：只对行内内容有效，属性会继承影响到后代行内的内容，如果子元素宽度大于父元素宽度，则无效。只有于才行</li>
 <li><code>width: 100px; margin: 0 auto;</code> 对于单个块级元素<br>优：简单；兼容性好<br>缺：必须定宽度，且值不能为auto，宽度必须小于父元素</li>
 <li><code>#parent{text-align:center;}</code>  <code>.son{display: inline-block; }</code>  多个块级元素，相对他的块父元素对齐</li>
 <li>使用绝对定位实现（子绝父相）<br><code>#parent{height:200px; width:200px; position: relative; }</code><br><code>#son{position:absolute; left: 50%; }</code>  //top 、right 、bottom、 left的值是相对于父元素尺寸的，margin或transform是相对自身       尺寸的，组合使用达到水平居中的目的</li>
+<li>flex(任意个元素)<br><code>#parent{display: flex; justify-content: center; }</code>  设置当前主轴对齐方式为居中。<br>缺：PC端兼容性问题，移动端（Android4.0+）</li>
 </ul>
 </li>
-<li><p>垂直居中</p>
+</ul>
+<h2 id="水平居中小结"><a href="#水平居中小结" class="headerlink" title="水平居中小结"></a>水平居中小结</h2><pre><code>- 首先想到`text-align:center`,但其只对行内有效。所以使用时将子元素设为`display: inline` 或 `display: inline-block`
+- 其次考虑用`margin: 0 auto` 但要记得带上宽度。因为这两种代码量少，再次使用绝对定位去实现。
+- 移动端能用flex</code></pre><ul>
+<li>垂直居中<ul>
+<li><code>#parent{height:100px; line-height:100px;}</code> line-height和height等值。对于单行文本/行内元素/行内块级元素<br>优：简单兼容性好<br>缺：只能用于单行行内内容，且要知道高度的值</li>
+<li>多行文本/行内元素/行内块级元素<br><code>#parent{height: 150px; line-height: 30px; }</code>   //元素在页面呈现5行，则line-height的值为height/5<br>优点：简单，兼容性好<br>缺点：只能用于行内内容，需要知道高度和最终呈现多少行来计算出line-height的值，建议用span包裹多行文本</li>
+<li>图片 （vertical-align和line-height）<br><code>#parent{height:150px; line-height: 150px; font-size:0 }</code>  <code>img#son{vertical-align: middle }</code>  //默认是基线对齐，改为middle<br>优点：简单，兼容<br>缺：需要添加font-size:0,才可以完全垂直居中。需要注意，html#parent包裹img之间需要有换行或者空格</li>
+<li>单个块级元素<br>html <code>&lt;div id = &quot;parent&quot;&gt;&lt;div id = &quot;son&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code><br>(1)使用table-cell实现 <code>#parent{display: table-cell; vertical-align: middle; }</code><br>   优点： 简单，宽高不定，兼容性<br>   缺点： 设置table-cell的元素。宽度和高度的值设置百分比无效，需要给他的父元素设置<code>display: table</code>才生效<pre><code>不感知margin，在父元素上设置table-row等属性，也会使其不感知height
+设置float或position会对默认布局造成破坏（考虑为之增加一个父div定义float等属性）
+内容溢出会自动撑开父元素</code></pre>(2)使用绝对定位实现（同水平居中的方式：子绝父相）<br>(3)使用flex实现<br>   <code>#parent{display: flex; align-items: center}</code> 或 <code>#parent{display: flex} #son{align-self: center}</code> 或 <code>#parent{display: flex} #son{margin: auto 0 }</code><br>   优：简单灵活<br>   缺：PC兼容问题</li>
+</ul>
 </li>
-<li><p>水平垂直居中</p>
-</li>
-<li><p>两列布局</p>
-</li>
-<li><p>三列布局</p>
-</li>
-<li><p>多列布局</p>
-</li>
-<li><p>全屏布局</p>
-</li>
-<li><p>补充</p>
-</li>
+</ul>
+<h2 id="垂直居中小结"><a href="#垂直居中小结" class="headerlink" title="垂直居中小结"></a>垂直居中小结</h2><pre><code>- 首先想到line-height，但是只能用于行内内容
+- 其次考虑用vertical-align： middle
+- 绝对定位，代码多了点，但是胜在适用不同情况
+- 移动端兼容性允许的情况下能用flex就用flex</code></pre><ul>
+<li>水平垂直居中</li>
+<li>两列布局</li>
+<li>三列布局</li>
+<li>多列布局</li>
+<li>全屏布局</li>
+<li>补充</li>
 </ul>
 <hr>
 <p>JS</p>
