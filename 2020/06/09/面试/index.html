@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-06-09T07:34:32.905Z">
+<meta property="article:modified_time" content="2020-06-09T09:20:00.555Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -192,7 +192,7 @@
 </li>
 </ul>
 <hr>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><ul>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h2><ul>
 <li>水平居中<ul>
 <li><code>text-align:center</code>对于（文本/行内元素/行内块级元素）相对他的块父级元素对齐。<br>优：简单快捷易理解，兼容性好。<br>缺：只对行内内容有效，属性会继承影响到后代行内的内容，如果子元素宽度大于父元素宽度，则无效。只有于才行</li>
 <li><code>width: 100px; margin: 0 auto;</code> 对于单个块级元素<br>优：简单；兼容性好<br>缺：必须定宽度，且值不能为auto，宽度必须小于父元素</li>
@@ -217,8 +217,26 @@
 - 其次考虑用vertical-align： middle
 - 绝对定位，代码多了点，但是胜在适用不同情况
 - 移动端兼容性允许的情况下能用flex就用flex</code></pre><ul>
-<li>水平垂直居中</li>
-<li>两列布局</li>
+<li>水平垂直居中<ul>
+<li>(1) 行内/行内块级/图片<br><code>#parent{height: 150px; line-height: 150px; text-align: center; font-size: 0; }  #son{vertical: middle}</code> 如果是块级元素，需要在son中加display：inline-block<br>优点：代码简单，兼容（ie8+）<br>缺点：只对行内内容有效； 需要添加font-size: 0; 才可以完全的垂直居中，不过需要注意的是，html中#parent包裹#son之间需要有换行或空格</li>
+<li>(2) table-cell 使表格内容垂直对齐方式为middle，然后根据是行内内容还是块级内容采取不同的方式达到水平居中<br><code>#parent{height:150px; width:200px; display: table-cell; vertical-align: middle; }</code> 如果是行内元素加一行<code>text-align: center</code><br><code>#son{width: 100px; height:50px; }</code>  如果是块级元素加一行 <code>margin: 0 auto</code></li>
+<li>(3) button作为父元素<br>改掉button的默认样式，再把需要居中的元素表现形式改为行内或行内块级<br><code>button#parent{height: 150px; width: 200px; outline: none; border: none;}</code>  <code>#son{display: inline-block }</code>   //button自带text-align：center    - (4) 绝对定位 （子绝父相）</li>
+<li>(5) flex<br><code>#parent{display: flex}   #son{margin: auto }</code>   或 <code>#parent{display: flex; justify-content: center; align-items: center }</code>   或  <code>#parent{display: flex; justify-content: center}  #son{align-self: center}</code></li>
+<li>(6) 视窗居中（vh为视口单位，视口即文档的可视部分，50vh就是视口高度的50/100，）<br><code>#son{margin: 50vh auto 0; transform: translateY(-50%)}</code></li>
+<li>(7) 绝对居中（子绝父相+ 子元素中top&amp;bottom&amp;left&amp;right都设为0 margin：auto）</li>
+</ul>
+</li>
+</ul>
+<h2 id="水平垂直居中小结"><a href="#水平垂直居中小结" class="headerlink" title="水平垂直居中小结"></a>水平垂直居中小结</h2><pre><code>- 一般情况下，用绝对定位加负边距，缺点是需要知道宽高，使用transform倒是可以不需要，但是兼容性不好（ie9+）
+- 其次就是绝对居中，让浏览器自动平分边距以达到水平垂直居中的目的
+- 如果是行内/行内块级/图片这些，可以优先考虑line-height和vertical-align结合使用，不要忘了还有text-align
+- 移动端兼容性允许的话能用flex就用flex</code></pre><ul>
+<li>两列布局<ul>
+<li>(1) 左列定宽，右列自适应<br>1.1 利用float+margin实现<br>html: <code>&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/body&gt;</code><br>css: <code>#left{background-color: #f00; float: left; width: 100px; height: 500px;} #right{background-color: #0f0; height: 500px; margin-left:100px}</code>  注意:margin-left要大于等于#left的宽度<br>1.2 利用float+margin(fix)实现<br>html: <code>&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right-fix&quot;&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;</code><br>css: <code>#left{bacground-color: #f00; float: left; width: 100px; height: 500px;}  #right-fix{float: right; width: 100%; margin-left: -100px; //正值大于或等于#left的宽度，才能显示在同一行}  #right{margin-left: 100px; //大于或等于#left的宽度 background-color: #0f0; height: 500px;}</code></li>
+<li>(2)左列自适应，右列定宽</li>
+<li>(3)一列不定，一列自适应</li>
+</ul>
+</li>
 <li>三列布局</li>
 <li>多列布局</li>
 <li>全屏布局</li>
