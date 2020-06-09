@@ -272,6 +272,26 @@ background-color: #f00;
 flex: 1; //均分父元素剩余空间
 background-color: #0f0;
 }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.7 使用Grid实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
+<body>
+<div id = "parent">
+<div id = "left">左列定宽</div>
+<div id = "right">右列自适应</div>
+</div>
+</body>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
+#parent {
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 100px auto;  /*设定2列就ok了,auto换成1fr也行*/
+  }
+#left {
+background-color: #f00;
+}
+#right {
+background-color: #0f0;
+}
 ```</li>
 <li><p>(2)左列自适应，右列定宽</p>
 </li>
