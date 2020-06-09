@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-06-09T09:55:52.021Z">
+<meta property="article:modified_time" content="2020-06-09T10:30:38.369Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -245,7 +245,36 @@
 <p>1.3 使用float+overflow实现<br>html:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
 <p>css:</p>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    #left&#123;</span><br><span class="line">       background-color: $f00;</span><br><span class="line">       float: left;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 500px;</span><br><span class="line">    &#125;</span><br><span class="line">    #right&#123;</span><br><span class="line">background-color: #0f0;</span><br><span class="line">height: 500px;</span><br><span class="line">overflow: hidden; &#x2F;&#x2F;触发bfc达到自适应</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>缺点：浮动脱离文档流，需要手动清除浮动，否则会产生高度塌陷<br>1.4 使用table实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;&quot;right&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;    </span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">     #parent&#123;</span><br><span class="line">width: 100%;</span><br><span class="line">display: table;</span><br><span class="line">height: 500px;</span><br><span class="line">     &#125;</span><br><span class="line">     #left&#123;</span><br><span class="line">width: 100px;</span><br><span class="line">background-color: #f00;</span><br><span class="line">     &#125;</span><br><span class="line">     #right&#123;</span><br><span class="line">background-color: #0f0;</span><br><span class="line">     &#125;</span><br><span class="line">     #left,#right&#123;</span><br><span class="line">display: table-cell;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p>1.5 使用绝对定位实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;&quot;right&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;    </span><br><span class="line">&#96;&#96;&#96;	</span><br><span class="line">css:</span><br></pre></td></tr></table></figure>
+<p>#parent{<br>position: relative; //子绝父相<br>}<br>#left{<br>position: absolute;<br>top: 0;<br>left: 0;<br>background-color: #f00;<br>width: 100px;<br>height: 500px;<br>}<br>#right{<br>position: absolute;<br>top: 0;<br>left: 100px; //值大于等于#left的宽度<br>right: 0;<br>background-color: #0f0;<br>height: 500px;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.6 使用flex实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
+<body>
+<div id = "parent">
+<div id = "left">左列定宽</div>
+<div id = "right">右列自适应</div>
+</div>
+</body>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
+#parent{
+width: 100%;
+height: 500px;
+display: flex;
+}
+#left{
+width: 100px;
+background-color: #f00;
+}
+#right{
+flex: 1; //均分父元素剩余空间
+background-color: #0f0;
+}
+```</li>
 <li><p>(2)左列自适应，右列定宽</p>
 </li>
 <li><p>(3)一列不定，一列自适应</p>
