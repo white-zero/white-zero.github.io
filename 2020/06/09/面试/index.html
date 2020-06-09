@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-06-09T07:30:36.862Z">
+<meta property="article:modified_time" content="2020-06-09T07:34:32.905Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -209,9 +209,7 @@
 <li><code>#parent{height:100px; line-height:100px;}</code> line-height和height等值。对于单行文本/行内元素/行内块级元素<br>优：简单兼容性好<br>缺：只能用于单行行内内容，且要知道高度的值</li>
 <li>多行文本/行内元素/行内块级元素<br><code>#parent{height: 150px; line-height: 30px; }</code>   //元素在页面呈现5行，则line-height的值为height/5<br>优点：简单，兼容性好<br>缺点：只能用于行内内容，需要知道高度和最终呈现多少行来计算出line-height的值，建议用span包裹多行文本</li>
 <li>图片 （vertical-align和line-height）<br><code>#parent{height:150px; line-height: 150px; font-size:0 }</code>  <code>img#son{vertical-align: middle }</code>  //默认是基线对齐，改为middle<br>优点：简单，兼容<br>缺：需要添加font-size:0,才可以完全垂直居中。需要注意，html#parent包裹img之间需要有换行或者空格</li>
-<li>单个块级元素<br>html <code>&lt;div id = &quot;parent&quot;&gt;&lt;div id = &quot;son&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code><br>(1)使用table-cell实现 <code>#parent{display: table-cell; vertical-align: middle; }</code><br>   优点： 简单，宽高不定，兼容性<br>   缺点： 设置table-cell的元素。宽度和高度的值设置百分比无效，需要给他的父元素设置<code>display: table</code>才生效<pre><code>不感知margin，在父元素上设置table-row等属性，也会使其不感知height
-设置float或position会对默认布局造成破坏（考虑为之增加一个父div定义float等属性）
-内容溢出会自动撑开父元素</code></pre>(2)使用绝对定位实现（同水平居中的方式：子绝父相）<br>(3)使用flex实现<br>   <code>#parent{display: flex; align-items: center}</code> 或 <code>#parent{display: flex} #son{align-self: center}</code> 或 <code>#parent{display: flex} #son{margin: auto 0 }</code><br>   优：简单灵活<br>   缺：PC兼容问题</li>
+<li>单个块级元素<br>html <code>&lt;div id = &quot;parent&quot;&gt;&lt;div id = &quot;son&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code><br>(1)使用table-cell实现 <code>#parent{display: table-cell; vertical-align: middle; }</code><br>   优点： 简单，宽高不定，兼容性<br>   缺点： 设置table-cell的元素。宽度和高度的值设置百分比无效，需要给他的父元素设置<code>display: table</code>才生效, 不感知margin，在父元素上设置table-row等属性，也会使其不感知height,设置float或position会对默认布局造成破坏（考虑为之增加一个父div定义float等属性内容溢出会自动撑开父元素<br>(2)使用绝对定位实现（同水平居中的方式：子绝父相）<br>(3)使用flex实现<br>   <code>#parent{display: flex; align-items: center}</code> 或 <code>#parent{display: flex} #son{align-self: center}</code> 或 <code>#parent{display: flex} #son{margin: auto 0 }</code><br>   优：简单灵活<br>   缺：PC兼容问题</li>
 </ul>
 </li>
 </ul>
