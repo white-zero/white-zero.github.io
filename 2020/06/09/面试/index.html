@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-06-09T09:38:21.480Z">
+<meta property="article:modified_time" content="2020-06-09T09:42:32.021Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -243,25 +243,15 @@ css:<pre><code>#left{
    background-color: #0f0;
    height: 500px;
    margin-left:100px  //注意:margin-left要大于等于#left的宽度
-}  </code></pre></li>
+}  </code></pre>1.2 利用float+margin(fix)实现<br>html: <code>&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right-fix&quot;&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;</code><br>css: <code>#left{bacground-color: #f00; float: left; width: 100px; height: 500px;}  #right-fix{float: right; width: 100%; margin-left: -100px; //正值大于或等于#left的宽度，才能显示在同一行}  #right{margin-left: 100px; //大于或等于#left的宽度 background-color: #0f0; height: 500px;}</code><br>1.3 使用float+overflow实现<br>html:<body>
+  <div id = "left">左列定宽</div>
+  <div id = "right">右列自适应</div>
+</body>
+css:</li>
+<li>(2)左列自适应，右列定宽</li>
+<li>(3)一列不定，一列自适应</li>
 </ul>
 </li>
-</ul>
-<pre><code>  1.2 利用float+margin(fix)实现
-  html: `&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right-fix&quot;&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;`
-  css: `#left{bacground-color: #f00; float: left; width: 100px; height: 500px;}  #right-fix{float: right; width: 100%; margin-left: -100px; //正值大于或等于#left的宽度，才能显示在同一行}  #right{margin-left: 100px; //大于或等于#left的宽度 background-color: #0f0; height: 500px;} `
-  1.3 使用float+overflow实现
-  html:
-
-  &lt;body&gt;
-    &lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;
-    &lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;
-  &lt;/body&gt;
-
-  css:
-
-- (2)左列自适应，右列定宽
-- (3)一列不定，一列自适应</code></pre><ul>
 <li>三列布局</li>
 <li>多列布局</li>
 <li>全屏布局</li>

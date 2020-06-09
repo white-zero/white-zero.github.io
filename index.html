@@ -241,25 +241,15 @@ css:<pre><code>#left{
    background-color: #0f0;
    height: 500px;
    margin-left:100px  //注意:margin-left要大于等于#left的宽度
-}  </code></pre></li>
+}  </code></pre>1.2 利用float+margin(fix)实现<br>html: <code>&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right-fix&quot;&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;</code><br>css: <code>#left{bacground-color: #f00; float: left; width: 100px; height: 500px;}  #right-fix{float: right; width: 100%; margin-left: -100px; //正值大于或等于#left的宽度，才能显示在同一行}  #right{margin-left: 100px; //大于或等于#left的宽度 background-color: #0f0; height: 500px;}</code><br>1.3 使用float+overflow实现<br>html:<body>
+  <div id = "left">左列定宽</div>
+  <div id = "right">右列自适应</div>
+</body>
+css:</li>
+<li>(2)左列自适应，右列定宽</li>
+<li>(3)一列不定，一列自适应</li>
 </ul>
 </li>
-</ul>
-<pre><code>  1.2 利用float+margin(fix)实现
-  html: `&lt;body&gt;&lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;&lt;div id = &quot;right-fix&quot;&gt;&lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;`
-  css: `#left{bacground-color: #f00; float: left; width: 100px; height: 500px;}  #right-fix{float: right; width: 100%; margin-left: -100px; //正值大于或等于#left的宽度，才能显示在同一行}  #right{margin-left: 100px; //大于或等于#left的宽度 background-color: #0f0; height: 500px;} `
-  1.3 使用float+overflow实现
-  html:
-
-  &lt;body&gt;
-    &lt;div id = &quot;left&quot;&gt;左列定宽&lt;/div&gt;
-    &lt;div id = &quot;right&quot;&gt;右列自适应&lt;/div&gt;
-  &lt;/body&gt;
-
-  css:
-
-- (2)左列自适应，右列定宽
-- (3)一列不定，一列自适应</code></pre><ul>
 <li>三列布局</li>
 <li>多列布局</li>
 <li>全屏布局</li>
