@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-06-10T04:13:56.589Z">
+<meta property="article:modified_time" content="2020-06-10T04:21:03.138Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -251,248 +251,59 @@
 <p>css:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">     #parent&#123;</span><br><span class="line">width: 100%;</span><br><span class="line">display: table;</span><br><span class="line">height: 500px;</span><br><span class="line">     &#125;</span><br><span class="line">     #left&#123;</span><br><span class="line">width: 100px;</span><br><span class="line">background-color: #f00;</span><br><span class="line">     &#125;</span><br><span class="line">     #right&#123;</span><br><span class="line">background-color: #0f0;</span><br><span class="line">     &#125;</span><br><span class="line">     #left,#right&#123;</span><br><span class="line">display: table-cell;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
 <p>1.5 使用绝对定位实现<br>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;&quot;right&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;    </span><br><span class="line">&#96;&#96;&#96;	</span><br><span class="line">css:</span><br></pre></td></tr></table></figure>
-<p>#parent{<br>position: relative; //子绝父相<br>}<br>#left{<br>position: absolute;<br>top: 0;<br>left: 0;<br>background-color: #f00;<br>width: 100px;<br>height: 500px;<br>}<br>#right{<br>position: absolute;<br>top: 0;<br>left: 100px; //值大于等于#left的宽度<br>right: 0;<br>background-color: #0f0;<br>height: 500px;<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.6 使用flex实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-<div id = "left">左列定宽</div>
-<div id = "right">右列自适应</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent{
-width: 100%;
-height: 500px;
-display: flex;
-}
-#left{
-width: 100px;
-background-color: #f00;
-}
-#right{
-flex: 1; //均分父元素剩余空间
-background-color: #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.7 使用Grid实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-<div id = "left">左列定宽</div>
-<div id = "right">右列自适应</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
-    width: 100%;
-    height: 500px;
-    display: grid;
-    grid-template-columns: 100px auto;  /*设定2列就ok了,auto换成1fr也行*/
-  }
-#left {
-background-color: #f00;
-}
-#right {
-background-color: #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  - (2)左列自适应，右列定宽</span><br><span class="line">       2.1 使用float+margin实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-   <body>
-   <div id = "parent">
-     <div id = "left">左列自适应</div>
-     <div id = "right">右列定宽</div>
-   </div>
-</body>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
-  height: 500px;
-  padding-left: 100px;  //抵消#left的margin-left以达到parent水平居中
-}
-#left {
-  width: 100%;
-  height: 500px;
-  float: left;
-  margin-left: -100px; //正值等于#right的宽度
-  background-color: #f00;
-}
-#right {
-  height: 500px;
-  width: 100px;
-  float; right;
-  background-color: #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">       2.2 使用float+overflow</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
- <div id = "right">右列定宽</div>
- <div id = "left">左列自适应</div>
-</div>
-</body>>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#left {
- overflow: hidden   //触发bfc
- height: 500px;
- background-color: #f00;
-}
-#right {
- margin-left: 10px;  //margin需要定义在#right中
- float: right;
- width: 100px;
- height: 500px;
- background-color: #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">缺点：浮动脱离文档流，需要手动清除浮动，否则会发生高度塌陷，不支持ie6</span><br><span class="line">2.3 使用table实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
- <div id = "left">左列自适应</div>
- <div id = "right">右侧定宽</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
- width: 100%;
- height: 500px;
- display: table;
-}
-#left {
- background-color: #f00;
- display: table-cell;
-}
-#right {
- width: 100px;
- background-color: #f0f0;
- display: table-cell;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">缺点：margin失效，设置间隔比较麻烦</span><br><span class="line">2.4 使用绝对定位实现(子绝父相)</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-  <div id = "left">左列自适应</div>    
-  <div id = "right">右列定宽</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
- position: relative;
-}
-#left {
- position: absolute;
- top: 0;
- left: 0;
- right: 100px;    //大于等于right的宽度
- background-color: #f00;
- height: 500px;
-}
-#right {
- position: absolute;
- top: 0;
- right: 0;
- background-color: #0f0;
- width: 100px;
- height: 500px;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2.5 使用flex实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-   <div id = "left">左列自适应</div>
-   <div id = "right">右列定宽</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
-   height: 500px;
-   display: flex;
-}
-#left {
-   flex: 1;
-   background-color: #f00;
-}
-#right {
-   width: 100px;
-   background-color; #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2.6 使用Grid实现</span><br><span class="line">html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-   <div id = "left">左列自适应</div>
-   <div id = "right">右列定宽</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
-   height: 500px;
-   display: grid;
-   grid-template-colums: auto 100px;    //设定2列，auto换成1fr也行
-}
-#left {
-   background-color: #f00;
-}
-#right {
-   background-color: #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   - (3)一列不定，一列自适应(盒子宽度随着内容增加或减少发生变化，另一个盒子自适应)</span><br><span class="line">3.1 使用float+overflow实现</span><br><span class="line">  html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-    <div id = "left">左列不定宽</div>
-    <div id = "right">右列自适应</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#left {
-    margin-right: 10px;
-    float: left;      //只设置浮动，不设宽度
-    height: 500px;
-    background-color: #f00;
-}
-#right {
-    overflow: hidden;    //触发bfc
-    height: 500px;
-    background-color: #0f0;
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.2 使用flex实现</span><br><span class="line">  html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-    <div id = "left">左列不定宽</div>
-    <div id = "right">右列自适应</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent{
-       display: flex;
-    }
-    #left { 
-       /*不设宽度*/
-       margin-right: 10px;
-       height: 500px;
-       background-color: #f00;
-    }
-    #right {
-       height: 500px;
-       background-color: #0f0;
-       flex: 1;  /*均分#parent剩余的部分*/
-    }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.3 使用Grid实现</span><br><span class="line">  html:</span><br></pre></td></tr></table></figure>
-<body>
-<div id = "parent">
-    <div id = "left">左列不定宽</div>
-    <div id = "right">右列自适应</div>
-</div>
-</body>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css:</span><br></pre></td></tr></table></figure>
-#parent {
-    display: grid;
-    grid-template-colums; auto 1fr;    //auto和1fr换一下顺序就是左列自适应，右列不定宽了
-}
-#left {
-    margin-right: 10px;
-    height: 500px;
-    background-color: #f00;
-}
-#right {
-    height: 500px;
-    background-color: #0f0;
-}
-```
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;&quot;right&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">     #parent&#123;</span><br><span class="line">position: relative; &#x2F;&#x2F;子绝父相</span><br><span class="line">     &#125;</span><br><span class="line">     #left&#123;</span><br><span class="line">position: absolute;</span><br><span class="line">top: 0;</span><br><span class="line">left: 0;</span><br><span class="line">background-color: #f00;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 500px;</span><br><span class="line">     &#125;</span><br><span class="line">     #right&#123;</span><br><span class="line">position: absolute;</span><br><span class="line">top: 0;</span><br><span class="line">left: 100px; &#x2F;&#x2F;值大于等于#left的宽度</span><br><span class="line">right: 0;</span><br><span class="line">background-color: #0f0;</span><br><span class="line">height: 500px;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>1.6 使用flex实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">     &lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">     &lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   #parent&#123;</span><br><span class="line">width: 100%;</span><br><span class="line">height: 500px;</span><br><span class="line">display: flex;</span><br><span class="line">   &#125;</span><br><span class="line">   #left&#123;</span><br><span class="line">width: 100px;</span><br><span class="line">background-color: #f00;</span><br><span class="line">   &#125;</span><br><span class="line">   #right&#123;</span><br><span class="line">flex: 1; &#x2F;&#x2F;均分父元素剩余空间</span><br><span class="line">background-color: #0f0;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>1.7 使用Grid实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">     &lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">     &lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   #parent &#123;</span><br><span class="line">       width: 100%;</span><br><span class="line">       height: 500px;</span><br><span class="line">       display: grid;</span><br><span class="line">       grid-template-columns: 100px auto;  &#x2F;*设定2列就ok了,auto换成1fr也行*&#x2F;</span><br><span class="line">   &#125;</span><br><span class="line">   #left &#123;</span><br><span class="line">background-color: #f00;</span><br><span class="line">   &#125;</span><br><span class="line">   #right &#123;</span><br><span class="line">background-color: #0f0;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>(2)左列自适应，右列定宽<br>   2.1 使用float+margin实现<br>html:</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">      &lt;body&gt;</span><br><span class="line">      &lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">        &lt;div id &#x3D; &quot;left&quot;&gt;左列自适应&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div id &#x3D; &quot;right&quot;&gt;右列定宽&lt;&#x2F;div&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#parent &#123;</span><br><span class="line">   height: 500px;</span><br><span class="line">   padding-left: 100px;  &#x2F;&#x2F;抵消#left的margin-left以达到parent水平居中</span><br><span class="line">&#125;</span><br><span class="line">#left &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   height: 500px;</span><br><span class="line">   float: left;</span><br><span class="line">   margin-left: -100px; &#x2F;&#x2F;正值等于#right的宽度</span><br><span class="line">   background-color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">   height: 500px;</span><br><span class="line">   width: 100px;</span><br><span class="line">   float; right;</span><br><span class="line">   background-color: #0f0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   2.2 使用float+overflow<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右列定宽&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#left &#123;</span><br><span class="line">  overflow: hidden   &#x2F;&#x2F;触发bfc</span><br><span class="line">  height: 500px;</span><br><span class="line">  background-color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">  margin-left: 10px;  &#x2F;&#x2F;margin需要定义在#right中</span><br><span class="line">  float: right;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 500px;</span><br><span class="line">  background-color: #0f0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>缺点：浮动脱离文档流，需要手动清除浮动，否则会发生高度塌陷，不支持ie6<br>2.3 使用table实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;left&quot;&gt;左列自适应&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id &#x3D; &quot;right&quot;&gt;右侧定宽&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#parent &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 500px;</span><br><span class="line">  display: table;</span><br><span class="line">&#125;</span><br><span class="line">#left &#123;</span><br><span class="line">  background-color: #f00;</span><br><span class="line">  display: table-cell;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  background-color: #f0f0;</span><br><span class="line">  display: table-cell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>缺点：margin失效，设置间隔比较麻烦<br>2.4 使用绝对定位实现(子绝父相)<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">   &lt;div id &#x3D; &quot;left&quot;&gt;左列自适应&lt;&#x2F;div&gt;	</span><br><span class="line">   &lt;div id &#x3D; &quot;right&quot;&gt;右列定宽&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#parent &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">#left &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 100px;    &#x2F;&#x2F;大于等于right的宽度</span><br><span class="line">  background-color: #f00;</span><br><span class="line">  height: 500px;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  background-color: #0f0;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.5 使用flex实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;left&quot;&gt;左列自适应&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;right&quot;&gt;右列定宽&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#parent &#123;</span><br><span class="line">    height: 500px;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br><span class="line">#left &#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">    background-color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color; #0f0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.6 使用Grid实现<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;left&quot;&gt;左列自适应&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;right&quot;&gt;右列定宽&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<p>css:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#parent &#123;</span><br><span class="line">    height: 500px;</span><br><span class="line">    display: grid;</span><br><span class="line">    grid-template-colums: auto 100px;    &#x2F;&#x2F;设定2列，auto换成1fr也行</span><br><span class="line">&#125;</span><br><span class="line">#left &#123;</span><br><span class="line">    background-color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">    background-color: #0f0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>(3)一列不定，一列自适应(盒子宽度随着内容增加或减少发生变化，另一个盒子自适应)</p>
 </li>
 </ul>
-</li>
+<p>  3.1 使用float+overflow实现</p>
+<pre><code>html:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;left&quot;&gt;左列不定宽&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+css:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#left &#123;</span><br><span class="line">    margin-right: 10px;</span><br><span class="line">    float: left;      &#x2F;&#x2F;只设置浮动，不设宽度</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">    overflow: hidden;    &#x2F;&#x2F;触发bfc</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: #0f0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><p>  3.2 使用flex实现</p>
+<pre><code>html:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;left&quot;&gt;左列不定宽&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+css:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#parent&#123;</span><br><span class="line">          display: flex;</span><br><span class="line">       &#125;</span><br><span class="line">       #left &#123; </span><br><span class="line">          &#x2F;*不设宽度*&#x2F;</span><br><span class="line">          margin-right: 10px;</span><br><span class="line">          height: 500px;</span><br><span class="line">          background-color: #f00;</span><br><span class="line">       &#125;</span><br><span class="line">       #right &#123;</span><br><span class="line">          height: 500px;</span><br><span class="line">          background-color: #0f0;</span><br><span class="line">          flex: 1;  &#x2F;*均分#parent剩余的部分*&#x2F;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></code></pre><p>  3.3 使用Grid实现</p>
+<pre><code>html:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id &#x3D; &quot;parent&quot;&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;left&quot;&gt;左列不定宽&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div id &#x3D; &quot;right&quot;&gt;右列自适应&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+css:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#parent &#123;</span><br><span class="line">    display: grid;</span><br><span class="line">    grid-template-colums; auto 1fr;    &#x2F;&#x2F;auto和1fr换一下顺序就是左列自适应，右列不定宽了</span><br><span class="line">&#125;</span><br><span class="line">#left &#123;</span><br><span class="line">    margin-right: 10px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">#right &#123;</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: #0f0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre></li>
 <li><p>三列布局</p>
 </li>
 <li><p>多列布局</p>
