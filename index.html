@@ -586,7 +586,14 @@ flex：display: flex; justify-content: center;(在主轴上的对齐方式)</cod
 </li>
 <li><p>解决异步回调地狱</p>
 <ul>
-<li>promise、generator、async/await</li>
+<li>promise(key word: resolve,reject,then)、generator、async/await（将异步代码写成同步的形式）</li>
+<li>await 暂停当前整个异步函数向下执行，直到promise返回结果（这里的promise指的是await后面的promise对象，await后面只能写promise对象）</li>
+</ul>
+</li>
+<li><p>对this的理解</p>
+<ul>
+<li>this总是指向函数的直接调用者</li>
+<li>如果有new关键字，this指向new出来的那个对象</li>
 </ul>
 </li>
 </ul>
