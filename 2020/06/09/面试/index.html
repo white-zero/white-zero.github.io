@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-06-11T09:59:14.137Z">
+<meta property="article:modified_time" content="2020-06-12T05:18:52.910Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -596,6 +596,10 @@ flex：display: flex; justify-content: center;(在主轴上的对齐方式)</cod
 <ul>
 <li>this总是指向函数的直接调用者</li>
 <li>如果有new关键字，this指向new出来的那个对象</li>
+<li>改变this指向</li>
+<li>--->箭头函数: 箭头函数的this始终指向函数定义时的this，而非执行时</li>
+<li>--->在函数内部使用_this = this</li>
+<li>--->apply,call,bind<br>   apply和call: 调用函数，改变this指向，传入参数不同，call接受的是若干个参数列表，apply接收的是一个包含多个参数的数组。<br>   bind: 不会调用函数，改变this指向</li>
 </ul>
 </li>
 </ul>

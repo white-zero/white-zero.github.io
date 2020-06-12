@@ -594,6 +594,10 @@ flex：display: flex; justify-content: center;(在主轴上的对齐方式)</cod
 <ul>
 <li>this总是指向函数的直接调用者</li>
 <li>如果有new关键字，this指向new出来的那个对象</li>
+<li>改变this指向</li>
+<li>--->箭头函数: 箭头函数的this始终指向函数定义时的this，而非执行时</li>
+<li>--->在函数内部使用_this = this</li>
+<li>--->apply,call,bind<br>   apply和call: 调用函数，改变this指向，传入参数不同，call接受的是若干个参数列表，apply接收的是一个包含多个参数的数组。<br>   bind: 不会调用函数，改变this指向</li>
 </ul>
 </li>
 </ul>
