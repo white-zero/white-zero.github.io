@@ -152,6 +152,216 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-06-16T09:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>下载安装git </p>
+</li>
+<li><p>vim ~/.gitconfig</p>
+</li>
+<li><p>name email </p>
+</li>
+<li><p>alias(命令的缩写)</p>
+<ul>
+<li>co=checkout(切换分支)</li>
+<li>ci=commit</li>
+<li>st=status</li>
+<li>pl=pull</li>
+<li>ps=push</li>
+<li>dt=difftool(提交代码前对比代码)</li>
+<li>ca=commit -am(备注信息)</li>
+<li>b=branch</li>
+</ul>
+</li>
+<li><p>项目的建立(ssh公钥)</p>
+<ul>
+<li>ssh-keygen -t rsa -C ‘邮箱地址‘  一路回车</li>
+<li>ls -al (显示所有文件，包括git的隐藏文件)</li>
+<li>cd .ssh/       ls -al</li>
+<li>id_rsa:私钥  id_rsa.pub:公钥</li>
+<li>cat id_rsa.pub</li>
+</ul>
+</li>
+<li><p>码云 组织—&gt;新建仓库—&gt;管理—&gt;公钥管理—&gt;添加个人公钥</p>
+</li>
+<li><p>仓库里复制SSH（不用每次输入账号密码）</p>
+</li>
+<li><p>回到命令行 cd   </p>
+</li>
+<li><p>ls(查看当前文件夹)</p>
+</li>
+<li><p>mkdir doc(新建文件夹)。cd进去 </p>
+</li>
+<li><p>git clone (仓库里的ssh复制接到clone后面)    yes</p>
+</li>
+<li><p>cd 到对应的仓库里，可以查看文件</p>
+</li>
+<li><p>在仓库下， vim .gitignore  (忽略一些文件)</p>
+<ul>
+<li>insert</li>
+<li>.DS_Store(mac下存储文件夹信息的)</li>
+<li>node_modules</li>
+<li>dist</li>
+<li>*.log(日志，不需要)</li>
+</ul>
+</li>
+<li><p>git st 查看状态</p>
+<ul>
+<li>git add .  (提交到本地)</li>
+<li>git ca “备注信息“  (用于代码提交到本地)</li>
+<li>git push (推送到远程)</li>
+</ul>
+</li>
+<li><p>git在远程和在本地的仓库都新建完成</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-后台管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">后台管理系统</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  	<time datetime="2020-06-16T03:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#" target="_blank" rel="noopener">https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#</a>    (bootstrap免费皮肤)</li>
+</ul>
+<ul>
+<li>navtop和sidetop<ul>
+<li>在上面网站中，”Dashboard”—&gt;查看源码—&gt;对应的区域edit as html—&gt;ctrl+c ctrl+v到指定组件中—&gt;修改nav标签为div—&gt;把style去掉—&gt;在网页中，把wrapper中element.style{height: 1000px}</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>首页</li>
+<li>商品<ul>
+<li>商品管理</li>
+<li>品类管理</li>
+</ul>
+</li>
+<li>订单<ul>
+<li>订单管理</li>
+</ul>
+</li>
+<li>用户<ul>
+<li>用户管理</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-webpack3-10-0打包配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
