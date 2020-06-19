@@ -375,7 +375,28 @@
 </li>
 </ul>
 <ul>
-<li>首页</li>
+<li>后台接口</li>
+</ul>
+<ul>
+<li>登陆页<ul>
+<li>用户登陆<pre><code>---&gt; 页面：表单格式（bootstrap）</code></pre></li>
+<li>–&gt; 输入框逻辑的封装</li>
+<li>–&gt; tip:(外围不用form包，用div)</li>
+<li>–&gt; ajax请求封装在util(存放工具)文件夹下（用promise包）</li>
+<li>–&gt; 请求的data，type，url 封装在service/user-service里</li>
+<li>用户信息本地存储</li>
+<li>登陆完成跳转回上一页</li>
+</ul>
+</li>
+<li>登陆状态管理<ul>
+<li>显示登陆状态</li>
+<li>退出登陆</li>
+</ul>
+</li>
+<li>首页<ul>
+<li>数据统计展示</li>
+</ul>
+</li>
 <li>商品<ul>
 <li>商品管理</li>
 <li>品类管理</li>
@@ -387,6 +408,13 @@
 </li>
 <li>用户<ul>
 <li>用户管理</li>
+<li>–&gt; 用户列表(分页功能用：rc-pagination (当效果没显示时，去node_modules里找对应的css引入))</li>
+<li>–&gt; 分页功能的封装</li>
+</ul>
+</li>
+<li>错误提示页<ul>
+<li>错误提示</li>
+<li>引导回到首页</li>
 </ul>
 </li>
 </ul>
