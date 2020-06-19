@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>git的使用 | Hexo</title>
+  <title>git push错误non-fastforward | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下载安装git   vim ~&#x2F;.gitconfig  name email   alias(命令的缩写)  co&#x3D;checkout(切换分支) ci&#x3D;commit st&#x3D;status pl&#x3D;pull ps&#x3D;push dt&#x3D;difftool(提交代码前对比代码) ca&#x3D;commit -am(备注信息) b&#x3D;branch   项目的建立(ssh公钥)  ssh-keygen -t rsa -C ‘">
+  <meta name="description" content="问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式： 1，强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容 git push -f 2，先把git的东西fetch到你本地然后merge后再push $ git fetch $ git merge 这2句命令等价于 $ git pull">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git的使用">
-<meta property="og:url" content="http://yoursite.com/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="git push错误non-fastforward">
+<meta property="og:url" content="http://yoursite.com/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="下载安装git   vim ~&#x2F;.gitconfig  name email   alias(命令的缩写)  co&#x3D;checkout(切换分支) ci&#x3D;commit st&#x3D;status pl&#x3D;pull ps&#x3D;push dt&#x3D;difftool(提交代码前对比代码) ca&#x3D;commit -am(备注信息) b&#x3D;branch   项目的建立(ssh公钥)  ssh-keygen -t rsa -C ‘">
+<meta property="og:description" content="问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式： 1，强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容 git push -f 2，先把git的东西fetch到你本地然后merge后再push $ git fetch $ git merge 这2句命令等价于 $ git pull">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-16T09:15:46.000Z">
-<meta property="article:modified_time" content="2020-06-16T10:06:56.738Z">
+<meta property="article:published_time" content="2020-06-19T03:06:33.104Z">
+<meta property="article:modified_time" content="2020-06-19T03:06:33.104Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -154,87 +154,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git的使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git push错误non-fastforward" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      git的使用
+      git push错误non-fastforward
     </h1>
   
 
         
-        <a href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-06-16T09:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+        <a href="/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/" class="archive-article-date">
+  	<time datetime="2020-06-19T03:06:33.104Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>下载安装git </p>
-</li>
-<li><p>vim ~/.gitconfig</p>
-</li>
-<li><p>name email </p>
-</li>
-<li><p>alias(命令的缩写)</p>
-<ul>
-<li>co=checkout(切换分支)</li>
-<li>ci=commit</li>
-<li>st=status</li>
-<li>pl=pull</li>
-<li>ps=push</li>
-<li>dt=difftool(提交代码前对比代码)</li>
-<li>ca=commit -am(备注信息)</li>
-<li>b=branch</li>
-</ul>
-</li>
-<li><p>项目的建立(ssh公钥)</p>
-<ul>
-<li>ssh-keygen -t rsa -C ‘邮箱地址‘  一路回车</li>
-<li>ls -al (显示所有文件，包括git的隐藏文件)</li>
-<li>cd .ssh/       ls -al</li>
-<li>id_rsa:私钥  id_rsa.pub:公钥</li>
-<li>cat id_rsa.pub</li>
-</ul>
-</li>
-<li><p>码云 组织—&gt;新建仓库—&gt;管理—&gt;公钥管理—&gt;添加个人公钥</p>
-</li>
-<li><p>仓库里复制SSH（不用每次输入账号密码）</p>
-</li>
-<li><p>回到命令行 cd   </p>
-</li>
-<li><p>ls(查看当前文件夹)</p>
-</li>
-<li><p>mkdir doc(新建文件夹)。cd进去 </p>
-</li>
-<li><p>git clone (仓库里的ssh复制接到clone后面)    yes</p>
-</li>
-<li><p>cd 到对应的仓库里，可以查看文件</p>
-</li>
-<li><p>在仓库下， vim .gitignore  (忽略一些文件)</p>
-<ul>
-<li>insert</li>
-<li>.DS_Store(mac下存储文件夹信息的)</li>
-<li>node_modules</li>
-<li>dist</li>
-<li>*.log(日志，不需要)</li>
-</ul>
-</li>
-<li><p>git st 查看状态</p>
-<ul>
-<li>git add .  (提交到本地)</li>
-<li>git ca “备注信息“  (用于代码提交到本地)</li>
-<li>git push (推送到远程)</li>
-</ul>
-</li>
-<li><p>git在远程和在本地的仓库都新建完成</p>
-</li>
-</ul>
+        <p>问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：</p>
+<p>1，强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容</p>
+<p>git push -f</p>
+<p>2，先把git的东西fetch到你本地然后merge后再push</p>
+<p>$ git fetch</p>
+<p>$ git merge</p>
+<p>这2句命令等价于</p>
+<p>$ git pull</p>
 
       
 
@@ -314,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +275,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git push错误non-fastforward
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">后台管理系统</div>
+    <a href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -152,6 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git push错误non-fastforward" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/">git push错误non-fastforward</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/" class="archive-article-date">
+  	<time datetime="2020-06-19T03:06:33.104Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题（Non-fast-forward）的出现原因在于：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。于是你有2个选择方式：</p>
+<p>1，强推，即利用强覆盖方式用你本地的代码替代git仓库内的内容</p>
+<p>git push -f</p>
+<p>2，先把git的东西fetch到你本地然后merge后再push</p>
+<p>$ git fetch</p>
+<p>$ git merge</p>
+<p>这2句命令等价于</p>
+<p>$ git pull</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/19/git%20push%E9%94%99%E8%AF%AFnon-fastforward/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
