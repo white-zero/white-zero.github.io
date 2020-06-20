@@ -369,27 +369,28 @@
 <li><a href="https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#" target="_blank" rel="noopener">https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#</a>    (bootstrap免费皮肤)</li>
 </ul>
 <ul>
-<li>navtop和sidetop<ul>
+<li><p>navtop和sidetop</p>
+<ul>
 <li>在上面网站中，”Dashboard”—&gt;查看源码—&gt;对应的区域edit as html—&gt;ctrl+c ctrl+v到指定组件中—&gt;修改nav标签为div—&gt;把style去掉—&gt;在网页中，把wrapper中element.style{height: 1000px}</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>后台接口</li>
+<li><p>页面不报错，路由跳转出错（考虑route的exact问题）</p>
+</li>
+<li><p>后台接口</p>
+</li>
 </ul>
 <ul>
 <li>登陆页<ul>
-<li>用户登陆<pre><code>---&gt; 页面：表单格式（bootstrap）</code></pre></li>
-<li>–&gt; 输入框逻辑的封装</li>
+<li>用户登陆<pre><code>---&gt; 页面：表单格式（bootstrap）</code></pre>  —&gt;表单数据的输入，验证，提交    <pre><code>---&gt;输入框逻辑的封装</code></pre></li>
 <li>–&gt; tip:(外围不用form包，用div)</li>
 <li>–&gt; ajax请求封装在util(存放工具)文件夹下（用promise包）</li>
 <li>–&gt; 请求的data，type，url 封装在service/user-service里</li>
-<li>用户信息本地存储</li>
 <li>登陆完成跳转回上一页</li>
 </ul>
 </li>
 <li>登陆状态管理<ul>
 <li>显示登陆状态</li>
+<li>–&gt;用户信息本地存储—头部导航栏的登录信息的显示(localStorage)</li>
 <li>退出登陆</li>
 </ul>
 </li>
@@ -399,6 +400,9 @@
 </li>
 <li>商品<ul>
 <li>商品管理</li>
+<li>–&gt;商品列表的开发<br>   —&gt;商品列表 按条件查询 分页</li>
+<li>–&gt;添加/编辑商品<br>   —&gt;表单提交 图片上传 富文本编辑器</li>
+<li>–&gt;商品详情页<br>   —&gt;商品详情展示</li>
 <li>品类管理</li>
 </ul>
 </li>
@@ -408,8 +412,8 @@
 </li>
 <li>用户<ul>
 <li>用户管理</li>
-<li>–&gt; 用户列表(分页功能用：rc-pagination (当效果没显示时，去node_modules里找对应的css引入))</li>
-<li>–&gt; 分页功能的封装</li>
+<li>–&gt; 用户列表(展示用户数据的table的制作 时间戳的处理—&gt;可读的时间格式)</li>
+<li>–&gt; 分页功能的封装(分页功能用：rc-pagination (当效果没显示时，去node_modules里找对应的css引入)做项目中的封装，使其变为项目中的组件，减少引用它的成本)</li>
 </ul>
 </li>
 <li>错误提示页<ul>
