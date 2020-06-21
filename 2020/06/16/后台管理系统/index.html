@@ -16,7 +16,7 @@
 <meta property="og:description" content="https:&#x2F;&#x2F;webthemez.com&#x2F;demo&#x2F;insight-free-bootstrap-html5-admin-template&#x2F;ui-elements.html#    (bootstrap免费皮肤)   navtop和sidetop  在上面网站中，”Dashboard”—&gt;查看源码—&gt;对应的区域edit as html—&gt;ctrl+c ctrl+v到指定组件中">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-16T03:43:01.000Z">
-<meta property="article:modified_time" content="2020-06-21T05:04:07.256Z">
+<meta property="article:modified_time" content="2020-06-21T10:49:01.769Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -187,18 +187,22 @@
 </li>
 <li><p>后台接口</p>
 </li>
-<li><p>react不向前兼容版本，当找到的插件是依赖于react之前的版本时（在node_modules里面看对应插件的源码，package.json看依赖），会出错</p>
+<li><p>react不向前兼容版本，当找到的插件是依赖于react之前的版本时（在node_modules里面看对应插件的源码，package.json看依赖），<br>会出错</p>
 <ul>
-<li>关于react-fileupload的解决方案：1、复制fileupload.js的源码到项目里新建的react-fileupload.jsx中，重新引用 </li>
+<li>关于react-fileupload的解决方案：1、复制fileupload.js的源码到项目里新建的react-fileupload.jsx中，重新引用</li>
 <li>2、npm下载 prop-types(从react文档里得知react在15.5之后就需要下载prop-types使用）</li>
-<li>3、在react-fileupload.jsx中，修改为class extend…..的格式，（这一步要去掉括号），加一个constructor this.state里的初始属性从getInnitial里拿，拿完把getInnitial删掉， 把类型验证剪切到新的格式中，import PT from ‘prop-types’ </li>
-<li>4、去掉错误的逗号 </li>
+<li>3、在react-fileupload.jsx中，修改为class extend…..的格式，（这一步要去掉括号），加一个constructor this.state里的<br>初始属性从getInnitial里拿，拿完把getInnitial删掉， 把类型验证剪切到新的格式中，import PT from ‘prop-types’</li>
+<li>4、去掉错误的逗号</li>
 <li>5、把onClick onChange onSubmit的方法都修改成箭头函数的形式(报beforeChoose的错误，这是因为作用域的问题)</li>
 </ul>
 </li>
+</ul>
+<a id="more"></a>
+<hr>
+<ul>
 <li><p>把jquery组件封装成react组件</p>
 <ul>
-<li>解决富文本的问题。（simditor）</li>
+<li>解决富文本的问题。（<a href="mailto:simditor@2.3.6">simditor@2.3.6</a>）</li>
 </ul>
 </li>
 <li><p>登陆页</p>
@@ -225,9 +229,15 @@
 <li><p>商品</p>
 <ul>
 <li>商品管理</li>
-<li>–&gt;商品列表的开发<br>   —&gt;商品列表 按条件查询 分页</li>
-<li>–&gt;添加/编辑商品<br>   —&gt;表单提交 图片上传 富文本编辑器<br>   —&gt;<a href="mailto:react-fileupload@2.4.0">react-fileupload@2.4.0</a></li>
-<li>–&gt;商品详情页<br>   —&gt;商品详情展示</li>
+<li>–&gt;商品列表的开发(用户列表的复用)<br>   —&gt;商品列表 按条件查询 分页<pre><code>---&gt;1.抽取通用的TableList组件，使用Tablist组件重构用户列表
+---&gt;2.搜索功能的开发</code></pre></li>
+<li>–&gt;添加商品<br>   —&gt;表单提交 图片上传 富文本编辑器<pre><code>---&gt;添加商品表单的开发
+---&gt;品类选择器组件，二级联动
+---&gt;文件上传组件，处理React版本兼容问题（react-fileupload@2.4.0）
+---&gt;富文本编辑器，结合jquery插件的用法</code></pre></li>
+<li>–&gt;编辑商品<br>   —&gt;表单的回填<br>   —&gt;品类选择器的回填（使用生命周期函数）<br>   —&gt;富文本编辑器的回填</li>
+<li>–&gt;商品详情页<br>   —&gt;商品详情展示<pre><code>---&gt;品类选择器支持readOnly
+---&gt;富文本字段的渲染方式（当作html渲染，dangerouslySetInnerHTML）</code></pre></li>
 <li>品类管理</li>
 </ul>
 </li>
