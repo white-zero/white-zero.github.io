@@ -853,12 +853,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>JSX语法</p>
+        <p>*React<br>    - 1、视图层框架<br>    —&gt; 一个构建用户界面的框架<br>    —&gt; 声明式的框架（比如jquery，就是命令式的，指挥哪一个选择器，选择哪一个元素，然后怎么操作他）<br>        —&gt;只要定义好数据和DOM之间的对应关系就可以了<br>    —&gt; 数据驱动DOM，再用事件反馈给数据<br>    - 2、组件化开发<br>    —&gt; 组件组合而不是继承来对代码进行封装（组件组合更加灵活，也不会收到继承里的约束）<br>    —&gt; 主要属性： state&amp;&amp;props（state:状态、数据， props:用于父子组件的通信，子组件通过props拿到父组件传来的数据或方法（react组件间的数据传递方式是由上向下的，需要父组件在props里把操作的方法也传个子组件，通过一种类似回调的方式，让父组件的数据状态发生改变））<br>    - 3、生命周期<br>    —&gt; 一个组件从建立，到存在，最后到销毁的整个过程<br>    - 4、JSX表达式<br>    —&gt; 一种JS扩展的表达式<br>    —&gt; 带有逻辑的标记语法，有别于HTML模版（更像是一个脚本，可以随时改变，更加灵活）<br>    —&gt; 对样式，逻辑表达式和事件的支持<br>    - 5、虚拟DOM （是一种埋在框架底层的机制）（优点：1、操作DOM前对数据进行对比，只有数据变化的时候，才去操作DOM 2、会整合DOM操作）<br>    —&gt;只有在必要的时候才会去操作DOm，通过减少这种低效的操作来增加性能<br>        —&gt; 在react中，会把定义好的JSX标记最终转换成一个虚拟的DOM，存在内存里，（因为内存的读取的速度要比操作DOM快得多）<br>        —&gt; 如果用户做了对DOM产生变化的操作（虚拟DOM比较操作前后的数据差异）<br>        —&gt; 如果有数据差异，统一操作DOM一次，如果比较之后没有差异，就不会操作DOM了</p>
 <ul>
-<li>写在{}里的html语法</li>
+<li>React总结<ul>
+<li>简洁：不是指语法，而是当业务内容复杂时，单向数据流和组件化的组合方式会从很大程度上降低问题的复杂度</li>
+<li>灵活：在React中可以把一切理解为js，这样在操作的时候会减少很多的束缚，另外，组件提供了多种嵌套方式，数据驱动，生命周期等特点，让开发变得更顺畅</li>
+<li>高效：虚拟DOM的存在，通过减少和优化对DOM的操作，让react在浏览器中有更好的性能表现</li>
+<li>but</li>
+<li>–&gt; 思维转换：比如jsx，单向数据流在之前的原生开发中都没有接触过</li>
+<li>–&gt; 要依赖生态：比如react-router、react-redux等，要学习更多的内容，也更加复杂</li>
+<li>–&gt; 变动频繁：不向前兼容</li>
 </ul>
 </li>
+</ul>
+<p>&lt;–more!–&gt;</p>
+<ul>
+<li><p>JSX语法</p>
+<ul>
+<li>JSX基本语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let jsx &#x3D; &lt;div&gt; jsx...&lt;&#x2F;div&gt;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    jsx,</span><br><span class="line">    document.getElementById(&#39;app&#39;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+ReactDOM上有一个render的方法，传第一个是react的内容，第二个是选择器（document。getElementById((‘app’))</li>
+<li>ReactDOM</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 样式处理</code></pre><p>1、行内选择器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let style &#x3D; &#123;</span><br><span class="line">    color: &#39;red&#39;,</span><br><span class="line">    fontSize: &#39;20px&#39;</span><br><span class="line">&#125;</span><br><span class="line">let jsx &#x3D; &lt;div style &#x3D; &#123;style&#125;&gt; jsx...&lt;&#x2F;div&gt;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    jsx,</span><br><span class="line">    document.getElementById(&#39;app&#39;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>2、className=“xxx” （因为class和类的class重了）</p>
+<pre><code>- 数据逻辑处理</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let name &#x3D; &#39;white-zero&#39;</span><br><span class="line">let names &#x3D; [A,B,C]</span><br><span class="line">let flag &#x3D; &#39;true&#39;</span><br><span class="line">let jsx &#x3D; (</span><br><span class="line">    &lt;div&gt; </span><br><span class="line">	&#123;&#x2F;*条件判断*&#x2F;&#125;</span><br><span class="line">	&#123;</span><br><span class="line">            flag ? &lt;p&gt;I am &#123;name&#125;&lt;&#x2F;p&gt; : &lt;p&gt;I am not &#123;name&#125; &lt;&#x2F;p&gt; </span><br><span class="line">	&#125;</span><br><span class="line">        &#123;&#x2F;*数组循环*&#x2F;&#125;</span><br><span class="line">	&#123;</span><br><span class="line">	    names.map((name,index) &#x3D;&gt; &lt;p key&#x3D;&#123;index&#125;&gt;I am &#123;name&#125;&lt;&#x2F;p&gt;)</span><br><span class="line">	&#125;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">)</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    jsx,</span><br><span class="line">    document.getElementById(&#39;app&#39;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<ul>
 <li><p>组件</p>
 <ul>
 <li>组件的类型<br>1.函数类型的组件(hooks之后都可以用这种方式吧)<figure class="highlight plain"><figcaption><span>name()&#123;return <div>hello world</div>&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  2.基于类的组件</span><br><span class="line">&#96;&#96;&#96; class xxx extends React.Component&#123;render()&#123;return &lt;div&gt;hello world&lt;&#x2F;div&gt;&#125;&#125;</span><br></pre></td></tr></table></figure>
