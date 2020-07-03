@@ -16,7 +16,7 @@
 <meta property="og:description" content="UniApp  同一套代码编译多端 接近原生，效果更好 开发效率高，成本降低，学习成本低 支持npm与自定义组件 社区活跃，版本迭代快   框架基础  MVC与MVVM思想  MVC：后端思想view&lt;—&gt;Controller&lt;—&gt;Model  –&gt;M：model-模型层，数据的增删改查  –&gt;V：view-视图层，前端页面（html&#x2F;js&#x2F;css）  –&amp;g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-28T11:21:24.000Z">
-<meta property="article:modified_time" content="2020-07-03T03:03:48.333Z">
+<meta property="article:modified_time" content="2020-07-03T09:56:23.236Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -252,7 +252,21 @@
 <li>justify-content 设置元素在主轴上的对齐方式</li>
 <li>–&gt;flex-start flex-end</li>
 <li>–&gt;center</li>
-<li>–&gt;space-between space-around （元素的中间/两边 留有空格）</li>
+<li>–&gt;space-between space-around （元素的中间/两边 留有空格, space-around时旁边和中间的间隙是1:2）</li>
+<li>align-items (设置元素在交叉轴上的对齐方式)</li>
+<li>–&gt;flex-start flex-end</li>
+<li>–&gt;center</li>
+<li>–&gt;streth(默认：拉伸) 当元素的高度没有设置，则元素的高度会拉伸至容器高度一致</li>
+<li>–&gt;baseline（保证元素中的文字在同一条基准线（保证每个文字都在同一条线上））</li>
+<li>align-content 设置轴线的对齐方式（轴线当作元素）</li>
+<li>–&gt;flex-start flex-end</li>
+<li>–&gt;center    stretch</li>
+<li>–&gt;space-between    space-around</li>
+<li>order flex容器内部的每个元素的排列顺序（默认都为0） 从小到大排</li>
+<li>flex-grow 设置元素的放大比例（默认为 0，不放大</li>
+<li>flex-shrink 控制元素缩小比例）</li>
+<li>flex-basis 设置元素固定或自动空间的占比</li>
+<li>align-self: 重写容器中元素在交叉轴上的对齐方式(覆盖父级中的align-items)</li>
 </ul>
 </li>
 </ul>
