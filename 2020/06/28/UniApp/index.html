@@ -16,7 +16,7 @@
 <meta property="og:description" content="UniApp  同一套代码编译多端 接近原生，效果更好 开发效率高，成本降低，学习成本低 支持npm与自定义组件 社区活跃，版本迭代快   框架基础  MVC与MVVM思想  MVC：后端思想view&lt;—&gt;Controller&lt;—&gt;Model  –&gt;M：model-模型层，数据的增删改查  –&gt;V：view-视图层，前端页面（html&#x2F;js&#x2F;css）  –&amp;g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-28T11:21:24.000Z">
-<meta property="article:modified_time" content="2020-07-03T09:56:23.236Z">
+<meta property="article:modified_time" content="2020-07-04T11:11:44.645Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -216,6 +216,7 @@
 <li><p>数据绑定</p>
 <ul>
 <li>在标签外部时，使用： ，当在标签内部时，用v-bind：/：</li>
+<li>动态数据绑定时，比如src 要在前面加：</li>
 </ul>
 </li>
 <li><p>事件处理</p>
@@ -267,6 +268,24 @@
 <li>flex-shrink 控制元素缩小比例）</li>
 <li>flex-basis 设置元素固定或自动空间的占比</li>
 <li>align-self: 重写容器中元素在交叉轴上的对齐方式(覆盖父级中的align-items)</li>
+</ul>
+</li>
+</ul>
+<p>===========================================Flex布局完====================================</p>
+<ul>
+<li>首页<ul>
+<li>轮播图部分（uni-app里swiper组件的使用）</li>
+<li>–&gt; 后台地址的整合<br>   —&gt;方法1:new一个common.js，在里面const一个serverUrl ，再在页面import common from …  ，再var serverUrl = common.serverUrl<br>   —&gt;方法2:直接在main.js里，把serverUrl挂载到Vue的prototype上，在页面使用时，直接serverUrl = this.serverUrl</li>
+<li>评分部分</li>
+<li>–&gt; 共用组件的抽取 组件<br>   —&gt;new一个后缀为vue的文件，在template中的name写上组件名字，<view></view> , script中export default里写上name（和组件名一致),return的data里写上msg：’xxxx’<br>   —&gt;页面的script中import组件<br>   —&gt;onload中，加一个components的属性，写上组件的名字（注册组件<br>   —&gt;template里用标签使用</li>
+<li>–&gt; 父子组件传值（往自定义的组件里传参数）<br>   —&gt;在index页面（父页面）的自定义组件的标签中，写上myvalue=“xxx”  (myvalue是自定义的属性名)<br>   —&gt;在自定义组件页面，（子页面）的script中加上props属性，写上myvalue的属性名，并写明type，定义这个参数的类型<br>   —&gt;在自定义组件页面的template里加上例如input的标签，写上:value=“myvalue”<br>   —&gt;实现</li>
+<li>页面无法下滑问题</li>
+<li>–&gt; 取消公共属性里page里写的position的absolute</li>
+<li>点赞动画</li>
+<li>–&gt;标签里 :animation=”animationData”  data里加一个animationData:{}</li>
+<li>–&gt;onload时 this.animation = uni.createAnimation()</li>
+<li>–&gt;method 新建一个方法（在template里记得加），动作做完，记得this.animationData = this.animation.export()暴露出去</li>
+<li>–&gt;用setTimeout还原动画，onUnload时this.animationData = {} 清除动画数据</li>
 </ul>
 </li>
 </ul>
