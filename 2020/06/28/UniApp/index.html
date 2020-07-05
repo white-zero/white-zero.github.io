@@ -16,7 +16,7 @@
 <meta property="og:description" content="UniApp  同一套代码编译多端 接近原生，效果更好 开发效率高，成本降低，学习成本低 支持npm与自定义组件 社区活跃，版本迭代快   框架基础  MVC与MVVM思想  MVC：后端思想view&lt;—&gt;Controller&lt;—&gt;Model  –&gt;M：model-模型层，数据的增删改查  –&gt;V：view-视图层，前端页面（html&#x2F;js&#x2F;css）  –&amp;g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-28T11:21:24.000Z">
-<meta property="article:modified_time" content="2020-07-04T11:11:44.645Z">
+<meta property="article:modified_time" content="2020-07-05T06:11:12.026Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -236,13 +236,11 @@
 <li>写在注释里</li>
 <li>–&gt;html里   <!--#ifdef MP --> <!--#endif--></li>
 <li>–&gt;js里    //#ifdef MP-WEIXIN  //#endif</li>
-<li>–&gt;style里  /* #ifdef H5 <em>/    /</em> #endif */    只在H5…</li>
+<li>–&gt;style里  /* #ifdef H5 <em>/    /</em> #endif */    只在H5…<br>&lt; !–more–&gt;<br>=========================================框架基础内容完================================</li>
 </ul>
 </li>
-</ul>
-<p>=========================================框架基础内容完================================</p>
+<li><p>Flex布局（自适应布局）</p>
 <ul>
-<li>Flex布局（自适应布局）<ul>
 <li>主轴 和 交叉轴（主轴：元素排列的顺序，水平时主轴也是水平的）</li>
 <li>class=”container”  .container{display: flex}   则 使用了flex布局</li>
 <li>flex-direction(元素的排列方向)</li>
@@ -273,7 +271,8 @@
 </ul>
 <p>===========================================Flex布局完====================================</p>
 <ul>
-<li>首页<ul>
+<li><p>首页</p>
+<ul>
 <li>轮播图部分（uni-app里swiper组件的使用）</li>
 <li>–&gt; 后台地址的整合<br>   —&gt;方法1:new一个common.js，在里面const一个serverUrl ，再在页面import common from …  ，再var serverUrl = common.serverUrl<br>   —&gt;方法2:直接在main.js里，把serverUrl挂载到Vue的prototype上，在页面使用时，直接serverUrl = this.serverUrl</li>
 <li>评分部分</li>
@@ -285,7 +284,28 @@
 <li>–&gt;标签里 :animation=”animationData”  data里加一个animationData:{}</li>
 <li>–&gt;onload时 this.animation = uni.createAnimation()</li>
 <li>–&gt;method 新建一个方法（在template里记得加），动作做完，记得this.animationData = this.animation.export()暴露出去</li>
-<li>–&gt;用setTimeout还原动画，onUnload时this.animationData = {} 清除动画数据</li>
+<li>–&gt;用setTimeout还原动画，onUnload时this.animationData = {} 清除动画数据<br>   —&gt;点赞动画中，指定动作与该行相关联<pre><code>---&gt;data中加一个animationDataArr的空数组（里面写上对应几个空的对象）
+---&gt;标签中animation动态绑定animationDataArr[gIndex] ，列表中遍历 v-for = （guess,gIndex）in guessULikeList
+---&gt;在点赞动作加一个 :data-gIndex=&quot;gIndex&quot;
+---&gt;在点击动作的method中，var gIndex = e.currentIndex.dataset.gindex  (dataset里所有的值都是小写)
+---&gt;this.animationData = this.animation
+---&gt;this.animationDataArr[gIndex] = this.animationData.export()
+---&gt;页面卸载onUnload时，要把this.animationDataArr:[{},{},{},......] 再设回空</code></pre></li>
+<li>下拉加载刷新</li>
+<li>–&gt;pages.json里加enablePullDownRefresh true</li>
+<li>–&gt;request的方法中有complete方法，在里面使用uni.stopPullDownRefresh()</li>
+<li>–&gt;“交互效果” 页面中央的loading：在refresh里uni.showLoading（{mask: true}）   (mask蒙版，刷新时用户无法点击后面的内容)</li>
+<li>–&gt;在complete中，uni.hideLoading()<br>   —&gt;方法2:导航条加载动画<pre><code>---&gt;uni.showNavigationBarLoading    并且，去掉pages.json里的titleNView：false改为true （取消禁用原生导航栏）                ---&gt;在complete中，uni.hideNavigationBarLoading()</code></pre></li>
+</ul>
+</li>
+<li><p>搜索页</p>
+<ul>
+<li><p>下拉时固定搜索栏</p>
+</li>
+<li><p>–&gt;position:  fixed; top: 100;  z-index: 2000;</p>
+</li>
+<li><p>confirm-type=”search” 小程序输入法右下角变成搜索</p>
+</li>
 </ul>
 </li>
 </ul>
