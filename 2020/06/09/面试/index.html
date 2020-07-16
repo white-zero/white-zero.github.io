@@ -16,7 +16,7 @@
 <meta property="og:description" content="HTML HTML语义化 如&lt;Header&gt;代表头部，&lt;nav&gt;代表超链接区域，&lt;main&gt;定义文档主要内容，&lt;article&gt;表示文章博客等，&lt;aside&gt;侧边栏，&lt;footer&gt;底部 就是让页面内容结构化。优点如下 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构 有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-09T05:33:48.000Z">
-<meta property="article:modified_time" content="2020-07-11T07:25:34.609Z">
+<meta property="article:modified_time" content="2020-07-16T14:46:31.365Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -428,7 +428,7 @@ css:
 <ul>
 <li>盒子模型:标准（box-sizing:content-box）/怪异(box-sizing:border-box)<br>标准盒: 元素的宽等于 style里的width+margin+border+padding。 width=content（不包括padding和border）<br>怪异盒: 元素的宽 等于style里的width宽度。   width= content+padding+border</li>
 <li>em作为font-size的单位时，其代表父元素的字体大小，em作为其他属性单位时，代表自身字体大小——MDN<br>em根据父级的font-size变化</li>
-<li>rem作用于非根元素时，相对于根元素字体大小；rem作用于根元素字体大小时，相对于其出初始字体大小——MDN<br>rem根据根的font-size变化</li>
+<li>rem作用于非根元素时，相对于根元素字体大小；rem作用于根元素字体大小时，相对于其出初始字体大小——MDN<br>rem根据根的font-size变化 （一旦根节点html定义的font-size变化，网页中运用到rem的也会变化）</li>
 <li>行内元素和块级元素<br>行内元素（display：inline）：宽度和高度由内容决定<br>块级元素（display：block）：默认宽度由父元素决定（平时经常使用display：inline-block 使它拥有更多的状态）</li>
 <li>绝对定位和相对定位<br>position:absolute  相对于元素最近的已定位的祖先元素<br>position:relative  相对定位是相对于元素在文档中的初始位置</li>
 <li>flex布局<br>Flex布局元素，称为Flex容器，简称”容器”。它的所有子元素自动成为容器元素，简称”项目”<br>(1)flex-direction:决定主轴的方向（即项目的排列方式）<br>  display: flex; flex-direction: row; (主轴水平方向，起点在左侧) flex-direction: row-reverse(起点在右侧)<pre><code>flex-direction: column(主轴垂直方向，起点在上沿) flex-direction: column-reverse(主轴在垂直方向，起点在下沿)</code></pre>(2)flex-wrap: 默认情况下，项目都排在一条线上（轴线上）<br>  flex-wrap: wrap(换行，第一行在上面) flex-wrap: wrap-reverse;(换行，第一行在下面)<br>(3)flex-flow: flex-direction和flex-wrap的简写，默认为row,nowrap<br>(4)justify-content: 定义了项目在主轴上的对齐方式<br>  justify-content： flex-start （默认:左对齐）flex-end (右对齐) center(居中)  space-between(两端对齐，项目之间的间隔相等) space-around(每个项目两侧的间距相等)<br>(5)align-items: 定义项目交叉轴上如何对齐(垂直方向)<br>  flex-start (交叉轴起点对齐)  flex-end (交叉轴终点对齐)  center(垂直方向，中间开始)  baseline(项目第一行文字的基线对齐) stretch （默认值，如果项目未设置高度或设为auto,将占满整个容器的高度)<br>(6)align-content: 多行轴线对齐 (用法同align-items)<br>(7)flex项目属性<br>  1.order 定义项目排列顺序  order：number(数值越小越靠前，默认为0)<br>  2.flex-grow 定义项目放大比例  flex-grow ：number（默认0，如果有剩余空间也不放大，值为1放大，2是1的双倍大小，此类推）<br>  3.flex-shrink 定义项目缩小比例  flex-shrink ：number （默认为1，如果空间不足则会缩小，值为0不能缩小）<br>  4.flex-basis 定义项目自身大小  flex-basis ：number/auto （默认auto)<br>  5.flex：属性是flex-grow，flex-shrink ,flex-basis的简写，默认值为0、1、auto<br>  6.align-self 项目自身对齐</li>
@@ -457,7 +457,7 @@ flex：display: flex; justify-content: center;(在主轴上的对齐方式)</cod
 </li>
 <li><p>基本数据类型</p>
 <ul>
-<li>Undefined,Null,Boolean,Number,String,新增:Symbol</li>
+<li>7种原始类型：Undefined,Null,Boolean,Number,String,Symbol, BigInt, 和 Object</li>
 </ul>
 </li>
 <li><p>数组操作</p>
@@ -470,6 +470,11 @@ flex：display: flex; justify-content: center;(在主轴上的对齐方式)</cod
 <li>sort: 排序</li>
 <li>slice(start, end): 返回截断后的新数组，不改变原数组</li>
 <li>splice(start, number, value…): 返回删除元素组成的数组，value 为插入项，改变原数组</li>
+<li>concat: 用于连接两个或多个数组</li>
+<li>push: 向数组的末尾添加一个或多个元素</li>
+<li>pop: 删除并返回数组的最后一个元素</li>
+<li>shift: 删除并返回第一个元素</li>
+<li>unshift: 向数组的开头添加一个或多个元素，改变原数组，返回新的长度</li>
 </ul>
 </li>
 <li><p>内置对象</p>
@@ -601,6 +606,11 @@ flex：display: flex; justify-content: center;(在主轴上的对齐方式)</cod
 <li>--->箭头函数: 箭头函数的this始终指向函数定义时的this，而非执行时</li>
 <li>--->在函数内部使用_this = this</li>
 <li>--->apply,call,bind<br>   apply和call: 调用函数，改变this指向，传入参数不同，call接受的是若干个参数列表，apply接收的是一个包含多个参数的数组。<br>   bind: 不会调用函数，改变this指向</li>
+</ul>
+</li>
+<li><p>前端性能优化（加载篇）</p>
+<ul>
+<li>首屏加载<br>--->网络方面<br>   --->减少http请求（比如合并js文件、css文件）<br>   --->减小资源体积 （压缩）<br>   --->缓存<br>--->渲染和DOM操作方面<br>   --->优化网页渲染<br>   --->DOM操作优化<br>--->数据方面<br>   --->图片加载处理（图片预加载/懒加载（给最初的图片的src设置一个简单的图片，将真实的地址设置给自定义的属性，做一个占位，监听事件，一旦图片到达视口范围，从图片的自定义属性中获取真实地址，然后赋值给src，让其加载））<br>   --->异步请求的优化</li>
 </ul>
 </li>
 </ul>
