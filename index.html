@@ -173,7 +173,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>对象的类型–接口    </p>
+<li><p>静态类型和对象类型</p>
+<ul>
+<li>基础静态类型非常简单，只要在声明变量的后边加一个:号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做count<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const count : number &#x3D; 999;</span><br><span class="line">const Name : string &#x3D; &#39;jack&#39;;</span><br></pre></td></tr></table></figure></li>
+<li>对象类型    <ul>
+<li>对象类型</li>
+<li>数组类型</li>
+<li>类类型</li>
+<li>函数类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对象的类型    </p>
 <ul>
 <li><p>使用接口（Interfaces）来定义对象的类型</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	interface Person &#123;</span><br><span class="line"> 		  name: string;</span><br><span class="line">  		  age: number;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">	let tom: Person &#x3D; &#123;</span><br><span class="line">   		  name: &#39;Tom&#39;,</span><br><span class="line">   		  age: 25</span><br><span class="line">	&#125;;</span><br><span class="line">	&#96;&#96;&#96;  </span><br><span class="line">---&gt;定义的变量比接口多&#x2F;少一些属性是不允许的：</span><br><span class="line">---&gt;赋值的时候，变量的形状必须和接口的形状保持一致  </span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">- 可选属性</span><br></pre></td></tr></table></figure>
@@ -735,8 +747,14 @@ gender: &apos;male&apos;</code></pre><p>  };<br>  ```  </p>
 <ul>
 <li>vscode下切换分支<ul>
 <li>git pull 拉取</li>
+<li>git fetch (yse)</li>
 <li>左下角切换分支</li>
 <li>git status 查看</li>
+</ul>
+</li>
+<li>合并代码<ul>
+<li>git pull </li>
+<li>git merge + (-&gt;右边的内容) 比如：git merge origin/master</li>
 </ul>
 </li>
 </ul>

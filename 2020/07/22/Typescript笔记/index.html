@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Typescript笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对象的类型–接口      使用接口（Interfaces）来定义对象的类型   123456789101112131415	interface Person &amp;#123; 		  name: string;  		  age: number;               &amp;#125;	let tom: Person &#x3D; &amp;#123;   		  name: &#39;Tom&#39;">
+  <meta name="description" content="静态类型和对象类型  基础静态类型非常简单，只要在声明变量的后边加一个:号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做count12const count : number &#x3D; 999;const Name : string &#x3D; &#39;jack&#39;; 对象类型     对象类型 数组类型 类类型 函数类型     对象的类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Typescript笔记">
 <meta property="og:url" content="http://yoursite.com/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对象的类型–接口      使用接口（Interfaces）来定义对象的类型   123456789101112131415	interface Person &amp;#123; 		  name: string;  		  age: number;               &amp;#125;	let tom: Person &#x3D; &amp;#123;   		  name: &#39;Tom&#39;">
+<meta property="og:description" content="静态类型和对象类型  基础静态类型非常简单，只要在声明变量的后边加一个:号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做count12const count : number &#x3D; 999;const Name : string &#x3D; &#39;jack&#39;; 对象类型     对象类型 数组类型 类类型 函数类型     对象的类型">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-22T06:10:05.000Z">
-<meta property="article:modified_time" content="2020-07-22T14:19:34.115Z">
+<meta property="article:modified_time" content="2020-07-24T08:39:20.315Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -175,7 +175,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><p>对象的类型–接口    </p>
+<li><p>静态类型和对象类型</p>
+<ul>
+<li>基础静态类型非常简单，只要在声明变量的后边加一个:号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做count<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const count : number &#x3D; 999;</span><br><span class="line">const Name : string &#x3D; &#39;jack&#39;;</span><br></pre></td></tr></table></figure></li>
+<li>对象类型    <ul>
+<li>对象类型</li>
+<li>数组类型</li>
+<li>类类型</li>
+<li>函数类型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对象的类型    </p>
 <ul>
 <li><p>使用接口（Interfaces）来定义对象的类型</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	interface Person &#123;</span><br><span class="line"> 		  name: string;</span><br><span class="line">  		  age: number;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">	let tom: Person &#x3D; &#123;</span><br><span class="line">   		  name: &#39;Tom&#39;,</span><br><span class="line">   		  age: 25</span><br><span class="line">	&#125;;</span><br><span class="line">	&#96;&#96;&#96;  </span><br><span class="line">---&gt;定义的变量比接口多&#x2F;少一些属性是不允许的：</span><br><span class="line">---&gt;赋值的时候，变量的形状必须和接口的形状保持一致  </span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">- 可选属性</span><br></pre></td></tr></table></figure>
