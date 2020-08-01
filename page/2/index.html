@@ -152,6 +152,164 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack3-10-0打包配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">webpack3.10.0打包配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-06-15T06:49:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>&quot;babel-core&quot;: &quot;^6.26.0&quot;,
+&quot;babel-loader&quot;: &quot;^7.1.2&quot;,
+&quot;babel-preset-env&quot;: &quot;^1.6.1&quot;,
+&quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,
+&quot;css-loader&quot;: &quot;^0.28.8&quot;,
+&quot;extract-text-webpack-plugin&quot;: &quot;^3.0.2&quot;,
+&quot;html-webpack-plugin&quot;: &quot;^2.30.1&quot;,
+&quot;react&quot;: &quot;^16.2.0&quot;,
+&quot;react-dom&quot;: &quot;^16.2.0&quot;,
+&quot;react-scripts&quot;: &quot;3.4.1&quot;,
+&quot;style-loader&quot;: &quot;^0.19.1&quot;,
+&quot;webpack&quot;: &quot;^3.10.0&quot;
+&quot;sass-loader&quot;: &quot;^6.0.6&quot;,
+&quot;node-sass&quot;: &quot;^4.14.1&quot;
+“font-awesome&quot;: &quot;^4.7.0&quot;,
+&quot;webpack-dev-server&quot;: &quot;^2.9.7&quot;,</code></pre><hr>
+<ul>
+<li>根目录new一个webpack.config.js</li>
+<li>js 文件打包(react语法的处理)  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entry: &#39;.&#x2F;src&#x2F;app.jsx&#39;,</span><br><span class="line">output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &#39;dist&#39;),</span><br><span class="line">    filename: &quot;app.js&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>html 文件打包</p>
+<ul>
+<li><p>const HtmlWebpackPlugin = require(‘html-webpack-plugin’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &#39;.&#x2F;src&#x2F;index.html&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>//temlate是模版。即待打包的html文件</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>css 文件打包<ul>
+<li>tips: 要在js文件里import </li>
+</ul>
+</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     test: &#x2F;\.css$&#x2F;,</span><br><span class="line">     use: [</span><br><span class="line">                &#39;style-loader&#39;,</span><br><span class="line">                &#39;css-loader&#39;</span><br><span class="line">            ]</span><br></pre></td></tr></table></figure>
+
+- const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;)
+    （这个插件可以在打包的文件中，把css独立出来，可以提前加载）代码改为
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">test: &#x2F;\.css$&#x2F;,</span><br><span class="line">use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">     fallback: &quot;style-loader&quot;,</span><br><span class="line">     use: &quot;css-loader&quot;</span><br><span class="line">           &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &#39;.&#x2F;src&#x2F;index.html&#39;</span><br><span class="line">    &#125;),</span><br><span class="line">    new ExtractTextPlugin(&quot;index.css&quot;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li>sass文件的处理  (一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。)<ul>
+<li>要同时下载<br>   “sass-loader”: “^6.0.6”,<pre><code>&quot;node-sass&quot;: &quot;^4.14.1&quot;</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   test: &#x2F;\.scss$&#x2F;,</span><br><span class="line">   use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">   fallback: &#39;style-loader&#39;,</span><br><span class="line">   use: [&#39;css-loader&#39;, &#39;sass-loader&#39;]</span><br><span class="line">      &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li><p>图片的打包</p>
+<ul>
+<li><p>下载 <a href="mailto:url-loader@0.6.2">url-loader@0.6.2</a>  <a href="mailto:file-loader@1.1.6">file-loader@1.1.6</a>    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">test: &#x2F;\.(png|jpg|gif)$&#x2F;,</span><br><span class="line">use: [</span><br><span class="line">   &#123;</span><br><span class="line">      loader: &quot;url-loader&quot;,</span><br><span class="line">      options: &#123;</span><br><span class="line">            limit: 8192</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>字体图标的配置（npm install font-awesome）</p>
+<ul>
+<li><p>现在js文件中引入 font-awesome/css/font-awesome.min.css</p>
+</li>
+<li><p>再在webpack.config.js里配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> test: &#x2F;\.(eot|svg|ttf|woff|woff2|otf)$&#x2F;,</span><br><span class="line">  use: [</span><br><span class="line">          &#123;</span><br><span class="line">        loader: &#39;url-loader&#39;,</span><br><span class="line">        options: &#123;</span><br><span class="line">            limit: 8192</span><br><span class="line">                &#125;</span><br><span class="line">          &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>提出公共模块</p>
+<ul>
+<li>先 const webpack = require(‘webpack’)    </li>
+</ul>
+</li>
+</ul>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &#39;.&#x2F;src&#x2F;index.html&#39;</span><br><span class="line">    &#125;),</span><br><span class="line">    new ExtractTextPlugin(&quot;css&#x2F;[name].css&quot;),</span><br><span class="line">    new webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">        name : &#39;common&#39;,</span><br><span class="line">        filename: &#39;js&#x2F;base.js&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li><p>webpack-dev-server(页面自动更新，挂载在自定义的端口上)</p>
+<ul>
+<li><p>修改端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">    port: 8086,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在output里加publicPath：“/dist/”  (当报错一些字体文件找不到的时候加。)</p>
+</li>
+<li><p>终端 node_modules/.bin/webpack-dev-server 启动</p>
+</li>
+<li><p>在package.json里加几个scripts 里的字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;node_modules&#x2F;.bin&#x2F;webpack-dev-server&quot;,</span><br><span class="line">&quot;dist&quot;: &quot;node_modules&#x2F;.bin&#x2F;webpack -p&quot;    &#x2F;&#x2F;线上环境时，最好后面加上-p</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
