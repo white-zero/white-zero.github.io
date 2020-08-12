@@ -57,6 +57,12 @@
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
+				<li><a href="/git/">Git</a></li>
+	        
+				<li><a href="/studynotes/">学习笔记</a></li>
+	        
+				<li><a href="/error/">坑</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -113,6 +119,12 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -130,12 +142,18 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 20%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 20%"><a href="/git/">Git</a></li>
+		        
+					<li style="width: 20%"><a href="/studynotes/">学习笔记</a></li>
+		        
+					<li style="width: 20%"><a href="/error/">坑</a></li>
 		        
 				</ul>
 			</nav>
@@ -151,6 +169,223 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-06-16T09:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2020.8.5 更新</p>
+<ul>
+<li><p>查看本地分支</p>
+<ul>
+<li>git branch</li>
+</ul>
+</li>
+<li><p>查看远程分支</p>
+<ul>
+<li>git branch -r</li>
+</ul>
+</li>
+<li><p>查看所有分支</p>
+<ul>
+<li>git branch -a</li>
+</ul>
+</li>
+<li><p>本地创建新的分支</p>
+<ul>
+<li>git branch 「branch name」</li>
+</ul>
+</li>
+<li><p>切换到新的分支</p>
+<ul>
+<li>git checkout 「branch name」</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>(0)先切换到master分支<ul>
+<li>git checkout master</li>
+</ul>
+</li>
+<li>(1)创建+切换<ul>
+<li>git checkout -b 「branch name」</li>
+</ul>
+</li>
+<li>(2)推送到远端<ul>
+<li>git push </li>
+</ul>
+</li>
+<li>(3)git push –set-upstream origin feature/…   (git push 时提醒的一句)</li>
+<li>(4)git pull </li>
+</ul>
+<hr>
+<ul>
+<li>删除本地分支<ul>
+<li>git branch -d [branch name]</li>
+</ul>
+</li>
+<li>删除远端分支<ul>
+<li>git push origin :[branch name]</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>切换分支<ul>
+<li>git checkout -b xxx  (xxx是分支名)<br>= git checkout -b [branch name] </li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>2020.7.23更新</p>
+<ul>
+<li><p>vscode下切换分支</p>
+<ul>
+<li>git pull 拉取</li>
+<li>git fetch (yse)</li>
+<li>左下角切换分支</li>
+<li>git status 查看</li>
+</ul>
+</li>
+<li><p>合并代码</p>
+<ul>
+<li>git pull </li>
+<li>git merge + (-&gt;右边的内容) 比如：git merge origin/master</li>
+</ul>
+</li>
+<li><p>git add 的时候先git st 看看状态是否需要 git add .</p>
+</li>
+<li><p>下载安装git </p>
+</li>
+<li><p>vim ~/.gitconfig</p>
+</li>
+<li><p>name email </p>
+</li>
+<li><p>alias(命令的缩写)</p>
+<ul>
+<li>co=checkout(切换分支)</li>
+<li>ci=commit</li>
+<li>st=status</li>
+<li>pl=pull</li>
+<li>ps=push</li>
+<li>dt=difftool(提交代码前对比代码)</li>
+<li>ca=commit -am(备注信息)</li>
+<li>b=branch</li>
+</ul>
+</li>
+<li><p>项目的建立(ssh公钥)</p>
+<ul>
+<li>ssh-keygen -t rsa -C ‘邮箱地址‘  一路回车</li>
+<li>ls -al (显示所有文件，包括git的隐藏文件)</li>
+<li>cd .ssh/       ls -al</li>
+<li>id_rsa:私钥  id_rsa.pub:公钥</li>
+<li>cat id_rsa.pub</li>
+</ul>
+</li>
+<li><p>码云 组织—&gt;新建仓库—&gt;管理—&gt;公钥管理—&gt;添加个人公钥</p>
+</li>
+<li><p>仓库里复制SSH（不用每次输入账号密码）</p>
+</li>
+<li><p>回到命令行 cd   </p>
+</li>
+<li><p>ls(查看当前文件夹)</p>
+</li>
+<li><p>mkdir doc(新建文件夹)。cd进去 </p>
+</li>
+<li><p>git clone (仓库里的ssh复制接到clone后面)    yes</p>
+</li>
+<li><p>cd 到对应的仓库里，可以查看文件</p>
+</li>
+<li><p>在仓库下， vim .gitignore  (忽略一些文件)</p>
+<ul>
+<li>insert</li>
+<li>.DS_Store(mac下存储文件夹信息的)</li>
+<li>node_modules</li>
+<li>dist</li>
+<li>*.log(日志，不需要)</li>
+</ul>
+</li>
+<li><p>git st 查看状态</p>
+<ul>
+<li>git add .  (提交到本地)</li>
+<li>git ca “备注信息“  (用于代码提交到本地)</li>
+<li>git push (推送到远程)</li>
+</ul>
+</li>
+<li><p>git在远程和在本地的仓库都新建完成</p>
+</li>
+</ul>
+<ul>
+<li>git 更新<ul>
+<li>git st 查看状态</li>
+<li>git pull</li>
+<li>git merge “ “(没有引号，里面填分支名称，比如 origin)  master</li>
+<li>—&gt; 例如：git merge origin master</li>
+<li>git add .</li>
+<li>git ca “备注”</li>
+<li>git push</li>
+<li>git tag tag-order   (打标签： 标签名为tag-order)</li>
+<li>git push origin tag-order (给远程的origin的分支打上tag-order的标签)</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-后台管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -943,6 +1178,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hexo博客搭建</a>
               </li>
             
             <div class="clearfix"></div>
