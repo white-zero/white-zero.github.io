@@ -63,7 +63,7 @@
 	        
 				<li><a href="/categories/error/">坑</a></li>
 	        
-				<li><a href="/categoties/hexo-blog-config/">博客配置</a></li>
+				<li><a href="/categories/hexo-blog-config/">博客配置</a></li>
 	        
 			</ul>
 		</nav>
@@ -159,7 +159,7 @@
 		        
 					<li style="width: 16.666666666666668%"><a href="/categories/error/">坑</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/categoties/hexo-blog-config/">博客配置</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/hexo-blog-config/">博客配置</a></li>
 		        
 				</ul>
 			</nav>
@@ -175,6 +175,81 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-hexo-yilia博客搭建-新建菜单项及文章归类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/">hexo-yilia博客搭建-新建菜单项及文章归类</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/" class="archive-article-date">
+  	<time datetime="2020-08-13T23:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>- 1.hexo new page newMenuName (可以看到source下多了一个“newMenuName”的文件夹，里面有一个index.md的文件，修改title，此title为新菜单的名字，比如叫 新菜单)
+- 2.在blog/themes/yilia/_config.yml 里找到menu.   写下比如 新页面: /categories/newMenuName/的路径
+- 3.在对应的文章编辑页面，写下categories: - newMenuName</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hexo-blog-config//" class="article-tag-list-link color2">hexo-blog-config</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-git push错误non-fastforward" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -363,7 +438,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li>问题描述： 上一页/下一页显示“Pre&amp;raquo/Next&amp;raquo”</li>
+<li>解决：<ul>
+<li>1.找到 blog/themes/yilia/layout/partial/archive.ejs</li>
+<li>2.修改第8，9行 与37，38行的 ‘&laquo;Prev’,’Next &amp;raquo’改为’上一页’和’下一页’</li>
+<li>3.找到blog\themes\yilia\layout_partial\script.ejs。 ctrl + f 搜索 next &amp;raquo和&laquo;Prev分别改           下一页和上一页（不带引号）</li>
+<li>4.hexo clean hexo g hexo d修改完成  </li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -930,125 +1015,6 @@ gender: &apos;male&apos;</code></pre><p>  };<br>  ```  </p>
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Flutter搭建for-mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/">Flutter搭建for mac</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/" class="archive-article-date">
-  	<time datetime="2020-07-06T09:52:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><strong>step1:brew</strong><br><a href="https://segmentfault.com/a/1190000013317511" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013317511</a><br>(brew 是 Mac 下的一个包管理工具，类似于 centos 下的 yum，可以很方便地进行安装/卸载/更新各种软件包，例如：nodejs, elasticsearch, kibana, mysql, mongodb 等等，可以用来快速搭建各种本地环境，程序员必备工具)</li>
-<li><strong>step2:Flutter SDK包</strong><br><a href="https://flutter.io/setup-macos/" target="_blank" rel="noopener">https://flutter.io/setup-macos/</a><br>（记住解压的地址）</li>
-<li><strong>step3:环境变量配置</strong><br>终端键入<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
-键入（意思是配置flutter命令在任何地方都可以使用，）<br>pwd是Flutter下载解压的地址<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/<span class="built_in">pwd</span>/flutter/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<p><code>source</code>命令重新加载一下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>step4:开发环境配置</strong><br>检查<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
-如果有[!]x标志，表示本行检测没有通过，就需要我们设置或者安装相应的软件<ul>
-<li>Android studio安装<br><a href="http://www.android-studio.org/" target="_blank" rel="noopener">http://www.android-studio.org/</a></li>
-<li>终端允许协议：<code>flutter doctor --android-licenses</code> 一通Y下去</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>其他按照对应的安装插件</li>
-</ul>
-<ul>
-<li><strong>step5:Android studio</strong></li>
-</ul>
-<ul>
-<li>Configure—–&gt;plugin—–&gt; download Flutter</li>
-<li>Tools——-&gt;AVD manager(虚拟机)——&gt;Create Virtual Device—–&gt;Nexus 5x(自选)</li>
-<li>虚拟机运行以后，点击debug按钮，让Flutter程序跑起来</li>
-<li>Debug<br>错误1:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> FAILURE: Build failed with an exception.</span><br><span class="line">What went wrong:</span><br><span class="line">A problem occurred configuring root project <span class="string">'android'</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">':classpath'</span>.</span><br><span class="line">   &gt; Could not download kotlin-compiler-embeddable.jar (org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.50)</span><br><span class="line">      &gt; Could not get resource <span class="string">'https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.3.50/kotlin-compiler-embeddable-1.3.50.jar'</span>.</span><br><span class="line">         &gt; Read timed out</span><br></pre></td></tr></table></figure>
-
-<p>解决：<br>一、修改掉项目下的android目录下的build.gradle文件，把google() 和 jcenter()这两行去掉。改为阿里的链接  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/google'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>二、修改Flutter SDK包下的flutter.gradle文件,这个目录要根据你的SDK存放的位置有所变化。   </p>
-<p>   这一步有两种情况</p>
-<p>1、flutter.gradle文件中repositories中是google() 和 jcenter()，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">repositories&#123;</span><br><span class="line">google()</span><br><span class="line">gcenter()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>把google() 和 jcenter()这两行去掉。改为阿里的链接。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/google'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>2，flutter.gradle文件中repositories中是下图这样的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line"> jcenter()</span><br><span class="line"> maven &#123;</span><br><span class="line"> url <span class="string">'https://dl.google.com/dl/android/maven2'</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>把repositories 中改成 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">        maven&#123;</span><br><span class="line">            url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span></span><br><span class="line">        &#125;</span><br><span class="line">        maven&#123;</span><br><span class="line">            url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>以上两步骤之后再debug，若又出现相同报错，则在终端</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>加上两句</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
-<p>不再报错</p>
-<p>错误2:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">Execution failed <span class="keyword">for</span> task <span class="string">':app:compileDebugKotlin'</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">':app:debugCompileClasspath'</span>.</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'arm64_v8a_debug.jar (io.flutter:arm64_v8a_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid block <span class="built_in">type</span>. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'x86_64_debug.jar (io.flutter:x86_64_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid literal/length code. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br></pre></td></tr></table></figure>
-<p>解决：<br>AndroidStudio Preference —–&gt;Compiler—–&gt;kotlin Compiler—–&gt; Target JVM version 把1.6改为1.8</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/">展开全文 >></a>
         </p>
       
 
