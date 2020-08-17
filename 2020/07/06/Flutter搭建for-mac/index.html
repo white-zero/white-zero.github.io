@@ -181,24 +181,29 @@
             <article id="post-Flutter搭建for-mac" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       Flutter搭建for mac
     </h1>
   
 
-        
-        <a href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/" class="archive-article-date">
+  
+  <a href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/" class="archive-article-date">
   	<time datetime="2020-07-06T09:52:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
 </a>
-        
-      </header>
+  
+  
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+	
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+    <ul>
 <li><strong>step1:brew</strong><br><a href="https://segmentfault.com/a/1190000013317511" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013317511</a><br>(brew 是 Mac 下的一个包管理工具，类似于 centos 下的 yum，可以很方便地进行安装/卸载/更新各种软件包，例如：nodejs, elasticsearch, kibana, mysql, mongodb 等等，可以用来快速搭建各种本地环境，程序员必备工具)</li>
 <li><strong>step2:Flutter SDK包</strong><br><a href="https://flutter.io/setup-macos/" target="_blank" rel="noopener">https://flutter.io/setup-macos/</a><br>（记住解压的地址）</li>
 <li><strong>step3:环境变量配置</strong><br>终端键入<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
@@ -256,40 +261,44 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">Execution failed <span class="keyword">for</span> task <span class="string">':app:compileDebugKotlin'</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">':app:debugCompileClasspath'</span>.</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'arm64_v8a_debug.jar (io.flutter:arm64_v8a_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid block <span class="built_in">type</span>. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'x86_64_debug.jar (io.flutter:x86_64_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid literal/length code. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br></pre></td></tr></table></figure>
 <p>解决：<br>AndroidStudio Preference —–&gt;Compiler—–&gt;kotlin Compiler—–&gt; Target JVM version 把1.6改为1.8</p>
 
-      
+    
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
               </span>
             </span>
-          </div>
-          </a>
+            <!-- 添加代码  -->
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+            </span>
         </div>
-      
+      </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
+    
 
-      
-        
+    
+    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -339,13 +348,13 @@
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
-  
+
 <nav id="article-nav">
   
     <a href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -384,15 +393,14 @@
 
 
 
-  
-  
-  
 
-  
 
-  
 
-  
+
+
+
+
+
 
 
           </div>
@@ -406,10 +414,14 @@
     	</div>
       	<div class="footer-right">
 
-      	</div>
+		  </div>
+		  <span id="busuanzi_container_site_uv"> 
+			本站访客数<span id="busuanzi_value_site_uv"></span>人次
+		  </span>
     </div>
   </div>
 </footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>

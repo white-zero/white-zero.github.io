@@ -181,24 +181,29 @@
             <article id="post-React学习01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       React学习
     </h1>
   
 
-        
-        <a href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/" class="archive-article-date">
+  
+  <a href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/" class="archive-article-date">
   	<time datetime="2020-06-03T05:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
 </a>
-        
-      </header>
+  
+  
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+	
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>*React<br>    - 1、视图层框架<br>    —&gt; 一个构建用户界面的框架<br>    —&gt; 声明式的框架（比如jquery，就是命令式的，指挥哪一个选择器，选择哪一个元素，然后怎么操作他）<br>        —&gt;只要定义好数据和DOM之间的对应关系就可以了<br>    —&gt; 数据驱动DOM，再用事件反馈给数据<br>    - 2、组件化开发<br>    —&gt; 组件组合而不是继承来对代码进行封装（组件组合更加灵活，也不会收到继承里的约束）<br>    —&gt; 主要属性： state&amp;&amp;props（state:状态、数据， props:用于父子组件的通信，子组件通过props拿到父组件传来的数据或方法（react组件间的数据传递方式是由上向下的，需要父组件在props里把操作的方法也传个子组件，通过一种类似回调的方式，让父组件的数据状态发生改变））<br>    - 3、生命周期<br>    —&gt; 一个组件从建立，到存在，最后到销毁的整个过程<br>    - 4、JSX表达式<br>    —&gt; 一种JS扩展的表达式<br>    —&gt; 带有逻辑的标记语法，有别于HTML模版（更像是一个脚本，可以随时改变，更加灵活）<br>    —&gt; 对样式，逻辑表达式和事件的支持<br>    - 5、虚拟DOM （是一种埋在框架底层的机制）（优点：1、操作DOM前对数据进行对比，只有数据变化的时候，才去操作DOM 2、会整合DOM操作）<br>    —&gt;只有在必要的时候才会去操作DOm，通过减少这种低效的操作来增加性能<br>        —&gt; 在react中，会把定义好的JSX标记最终转换成一个虚拟的DOM，存在内存里，（因为内存的读取的速度要比操作DOM快得多）<br>        —&gt; 如果用户做了对DOM产生变化的操作（虚拟DOM比较操作前后的数据差异）<br>        —&gt; 如果有数据差异，统一操作DOM一次，如果比较之后没有差异，就不会操作DOM了</p>
+    <p>*React<br>    - 1、视图层框架<br>    —&gt; 一个构建用户界面的框架<br>    —&gt; 声明式的框架（比如jquery，就是命令式的，指挥哪一个选择器，选择哪一个元素，然后怎么操作他）<br>        —&gt;只要定义好数据和DOM之间的对应关系就可以了<br>    —&gt; 数据驱动DOM，再用事件反馈给数据<br>    - 2、组件化开发<br>    —&gt; 组件组合而不是继承来对代码进行封装（组件组合更加灵活，也不会收到继承里的约束）<br>    —&gt; 主要属性： state&amp;&amp;props（state:状态、数据， props:用于父子组件的通信，子组件通过props拿到父组件传来的数据或方法（react组件间的数据传递方式是由上向下的，需要父组件在props里把操作的方法也传个子组件，通过一种类似回调的方式，让父组件的数据状态发生改变））<br>    - 3、生命周期<br>    —&gt; 一个组件从建立，到存在，最后到销毁的整个过程<br>    - 4、JSX表达式<br>    —&gt; 一种JS扩展的表达式<br>    —&gt; 带有逻辑的标记语法，有别于HTML模版（更像是一个脚本，可以随时改变，更加灵活）<br>    —&gt; 对样式，逻辑表达式和事件的支持<br>    - 5、虚拟DOM （是一种埋在框架底层的机制）（优点：1、操作DOM前对数据进行对比，只有数据变化的时候，才去操作DOM 2、会整合DOM操作）<br>    —&gt;只有在必要的时候才会去操作DOm，通过减少这种低效的操作来增加性能<br>        —&gt; 在react中，会把定义好的JSX标记最终转换成一个虚拟的DOM，存在内存里，（因为内存的读取的速度要比操作DOM快得多）<br>        —&gt; 如果用户做了对DOM产生变化的操作（虚拟DOM比较操作前后的数据差异）<br>        —&gt; 如果有数据差异，统一操作DOM一次，如果比较之后没有差异，就不会操作DOM了</p>
 <ul>
 <li>React总结<ul>
 <li>简洁：不是指语法，而是当业务内容复杂时，单向数据流和组件化的组合方式会从很大程度上降低问题的复杂度</li>
@@ -360,40 +365,44 @@ ReactDOM上有一个render的方法，传第一个是react的内容，第二个�
 </ul>
 <hr>
 
-      
+    
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
               </span>
             </span>
-          </div>
-          </a>
+            <!-- 添加代码  -->
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+            </span>
         </div>
-      
+      </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
+    
 
-      
-        
+    
+    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -443,13 +452,13 @@ ReactDOM上有一个render的方法，传第一个是react的内容，第二个�
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
-  
+
 <nav id="article-nav">
   
     <a href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -488,15 +497,14 @@ ReactDOM上有一个render的方法，传第一个是react的内容，第二个�
 
 
 
-  
-  
-  
 
-  
 
-  
 
-  
+
+
+
+
+
 
 
           </div>
@@ -510,10 +518,14 @@ ReactDOM上有一个render的方法，传第一个是react的内容，第二个�
     	</div>
       	<div class="footer-right">
 
-      	</div>
+		  </div>
+		  <span id="busuanzi_container_site_uv"> 
+			本站访客数<span id="busuanzi_value_site_uv"></span>人次
+		  </span>
     </div>
   </div>
 </footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>

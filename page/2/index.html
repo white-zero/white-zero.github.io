@@ -179,24 +179,25 @@
     <article id="post-Flutter搭建for-mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/">Flutter搭建for mac</a>
     </h1>
   
 
-        
-        <a href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/" class="archive-article-date">
+  
+  <a href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/" class="archive-article-date">
   	<time datetime="2020-07-06T09:52:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+    <ul>
 <li><strong>step1:brew</strong><br><a href="https://segmentfault.com/a/1190000013317511" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013317511</a><br>(brew 是 Mac 下的一个包管理工具，类似于 centos 下的 yum，可以很方便地进行安装/卸载/更新各种软件包，例如：nodejs, elasticsearch, kibana, mysql, mongodb 等等，可以用来快速搭建各种本地环境，程序员必备工具)</li>
 <li><strong>step2:Flutter SDK包</strong><br><a href="https://flutter.io/setup-macos/" target="_blank" rel="noopener">https://flutter.io/setup-macos/</a><br>（记住解压的地址）</li>
 <li><strong>step3:环境变量配置</strong><br>终端键入<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
@@ -254,24 +255,24 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">Execution failed <span class="keyword">for</span> task <span class="string">':app:compileDebugKotlin'</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">':app:debugCompileClasspath'</span>.</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'arm64_v8a_debug.jar (io.flutter:arm64_v8a_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid block <span class="built_in">type</span>. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'x86_64_debug.jar (io.flutter:x86_64_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid literal/length code. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br></pre></td></tr></table></figure>
 <p>解决：<br>AndroidStudio Preference —–&gt;Compiler—–&gt;kotlin Compiler—–&gt; Target JVM version 把1.6改为1.8</p>
 
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -293,29 +294,29 @@
 
 
 
-
   
     <article id="post-UniApp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/28/UniApp/">UniApp</a>
     </h1>
   
 
-        
-        <a href="/2020/06/28/UniApp/" class="archive-article-date">
+  
+  <a href="/2020/06/28/UniApp/" class="archive-article-date">
   	<time datetime="2020-06-28T11:21:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+    <ul>
 <li><p>UniApp</p>
 <ul>
 <li>同一套代码编译多端</li>
@@ -451,24 +452,24 @@
 </li>
 </ul>
 
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/28/UniApp/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/28/UniApp/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -490,29 +491,29 @@
 
 
 
-
   
     <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
     </h1>
   
 
-        
-        <a href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  
+  <a href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
   	<time datetime="2020-06-16T09:15:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2020.8.5 更新</p>
+    <p>2020.8.5 更新</p>
 <ul>
 <li><p>查看本地分支</p>
 <ul>
@@ -668,14 +669,14 @@
 </li>
 </ul>
 
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -688,15 +689,15 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -718,29 +719,29 @@
 
 
 
-
   
     <article id="post-后台管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">后台管理系统</a>
     </h1>
   
 
-        
-        <a href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  
+  <a href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
   	<time datetime="2020-06-16T03:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+    <ul>
 <li><a href="https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#" target="_blank" rel="noopener">https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#</a>    (bootstrap免费皮肤)</li>
 </ul>
 <ul>
@@ -763,27 +764,27 @@
 </ul>
 </li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#more">more >></a>
-        
-      
+    
+    <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#more">more >></a>
+    
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -805,29 +806,29 @@
 
 
 
-
   
     <article id="post-webpack3-10-0打包配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">webpack3.10.0打包配置</a>
     </h1>
   
 
-        
-        <a href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  
+  <a href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
   	<time datetime="2020-06-15T06:49:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-15</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>&quot;babel-core&quot;: &quot;^6.26.0&quot;,
+    <pre><code>&quot;babel-core&quot;: &quot;^6.26.0&quot;,
 &quot;babel-loader&quot;: &quot;^7.1.2&quot;,
 &quot;babel-preset-env&quot;: &quot;^1.6.1&quot;,
 &quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,
@@ -924,24 +925,24 @@
 </li>
 </ul>
 
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -963,29 +964,29 @@
 
 
 
-
   
     <article id="post-面试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/09/%E9%9D%A2%E8%AF%95/">面试</a>
     </h1>
   
 
-        
-        <a href="/2020/06/09/%E9%9D%A2%E8%AF%95/" class="archive-article-date">
+  
+  <a href="/2020/06/09/%E9%9D%A2%E8%AF%95/" class="archive-article-date">
   	<time datetime="2020-06-09T05:33:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><ul>
+    <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><ul>
 <li>HTML语义化<ul>
 <li>如<code>&lt;Header&gt;</code>代表头部，<code>&lt;nav&gt;</code>代表超链接区域，<code>&lt;main&gt;</code>定义文档主要内容，<code>&lt;article&gt;</code>表示文章博客等，<code>&lt;aside&gt;</code>侧边栏，<code>&lt;footer&gt;</code>底部</li>
 <li>就是让页面内容结构化。优点如下</li>
@@ -1002,27 +1003,27 @@
 </ul>
 </li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/#more">more >></a>
-        
-      
+    
+    <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/#more">more >></a>
+    
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -1041,7 +1042,6 @@
         
     </div>
 </aside>
-
 
 
 
@@ -1049,42 +1049,43 @@
     <article id="post-NEXTJS-PROJECT项目学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">NEXTJS PROJECT项目学习</a>
     </h1>
   
 
-        
-        <a href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  
+  <a href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
   	<time datetime="2020-06-05T09:04:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
+    
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -1106,29 +1107,29 @@
 
 
 
-
   
     <article id="post-React学习01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/">React学习</a>
     </h1>
   
 
-        
-        <a href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/" class="archive-article-date">
+  
+  <a href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/" class="archive-article-date">
   	<time datetime="2020-06-03T05:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>*React<br>    - 1、视图层框架<br>    —&gt; 一个构建用户界面的框架<br>    —&gt; 声明式的框架（比如jquery，就是命令式的，指挥哪一个选择器，选择哪一个元素，然后怎么操作他）<br>        —&gt;只要定义好数据和DOM之间的对应关系就可以了<br>    —&gt; 数据驱动DOM，再用事件反馈给数据<br>    - 2、组件化开发<br>    —&gt; 组件组合而不是继承来对代码进行封装（组件组合更加灵活，也不会收到继承里的约束）<br>    —&gt; 主要属性： state&amp;&amp;props（state:状态、数据， props:用于父子组件的通信，子组件通过props拿到父组件传来的数据或方法（react组件间的数据传递方式是由上向下的，需要父组件在props里把操作的方法也传个子组件，通过一种类似回调的方式，让父组件的数据状态发生改变））<br>    - 3、生命周期<br>    —&gt; 一个组件从建立，到存在，最后到销毁的整个过程<br>    - 4、JSX表达式<br>    —&gt; 一种JS扩展的表达式<br>    —&gt; 带有逻辑的标记语法，有别于HTML模版（更像是一个脚本，可以随时改变，更加灵活）<br>    —&gt; 对样式，逻辑表达式和事件的支持<br>    - 5、虚拟DOM （是一种埋在框架底层的机制）（优点：1、操作DOM前对数据进行对比，只有数据变化的时候，才去操作DOM 2、会整合DOM操作）<br>    —&gt;只有在必要的时候才会去操作DOm，通过减少这种低效的操作来增加性能<br>        —&gt; 在react中，会把定义好的JSX标记最终转换成一个虚拟的DOM，存在内存里，（因为内存的读取的速度要比操作DOM快得多）<br>        —&gt; 如果用户做了对DOM产生变化的操作（虚拟DOM比较操作前后的数据差异）<br>        —&gt; 如果有数据差异，统一操作DOM一次，如果比较之后没有差异，就不会操作DOM了</p>
+    <p>*React<br>    - 1、视图层框架<br>    —&gt; 一个构建用户界面的框架<br>    —&gt; 声明式的框架（比如jquery，就是命令式的，指挥哪一个选择器，选择哪一个元素，然后怎么操作他）<br>        —&gt;只要定义好数据和DOM之间的对应关系就可以了<br>    —&gt; 数据驱动DOM，再用事件反馈给数据<br>    - 2、组件化开发<br>    —&gt; 组件组合而不是继承来对代码进行封装（组件组合更加灵活，也不会收到继承里的约束）<br>    —&gt; 主要属性： state&amp;&amp;props（state:状态、数据， props:用于父子组件的通信，子组件通过props拿到父组件传来的数据或方法（react组件间的数据传递方式是由上向下的，需要父组件在props里把操作的方法也传个子组件，通过一种类似回调的方式，让父组件的数据状态发生改变））<br>    - 3、生命周期<br>    —&gt; 一个组件从建立，到存在，最后到销毁的整个过程<br>    - 4、JSX表达式<br>    —&gt; 一种JS扩展的表达式<br>    —&gt; 带有逻辑的标记语法，有别于HTML模版（更像是一个脚本，可以随时改变，更加灵活）<br>    —&gt; 对样式，逻辑表达式和事件的支持<br>    - 5、虚拟DOM （是一种埋在框架底层的机制）（优点：1、操作DOM前对数据进行对比，只有数据变化的时候，才去操作DOM 2、会整合DOM操作）<br>    —&gt;只有在必要的时候才会去操作DOm，通过减少这种低效的操作来增加性能<br>        —&gt; 在react中，会把定义好的JSX标记最终转换成一个虚拟的DOM，存在内存里，（因为内存的读取的速度要比操作DOM快得多）<br>        —&gt; 如果用户做了对DOM产生变化的操作（虚拟DOM比较操作前后的数据差异）<br>        —&gt; 如果有数据差异，统一操作DOM一次，如果比较之后没有差异，就不会操作DOM了</p>
 <ul>
 <li>React总结<ul>
 <li>简洁：不是指语法，而是当业务内容复杂时，单向数据流和组件化的组合方式会从很大程度上降低问题的复杂度</li>
@@ -1141,27 +1142,27 @@
 </ul>
 </li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/#more">more >></a>
-        
-      
+    
+    <a class="article-more-a" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/#more">more >></a>
+    
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -1183,29 +1184,29 @@
 
 
 
-
   
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 itemprop="name">
       <a class="article-title" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">网站demo (jQuery)</a>
     </h1>
   
 
-        
-        <a href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
+  
+  <a href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
   	<time datetime="2020-06-02T02:40:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
 </a>
-        
-      </header>
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
+    <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
 <li>登陆功能<ul>
 <li>为登陆按钮添加点击事件</li>
 <li>获取用户在文本框中输入的用户名和密码</li>
@@ -1285,24 +1286,24 @@
 </ul>
 <hr>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2>
-      
+    
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+    </p>
+    
 
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
@@ -1321,7 +1322,6 @@
         
     </div>
 </aside>
-
 
 
 
@@ -1344,10 +1344,14 @@
     	</div>
       	<div class="footer-right">
 
-      	</div>
+		  </div>
+		  <span id="busuanzi_container_site_uv"> 
+			本站访客数<span id="busuanzi_value_site_uv"></span>人次
+		  </span>
     </div>
   </div>
 </footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>

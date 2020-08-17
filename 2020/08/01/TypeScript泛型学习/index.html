@@ -181,24 +181,29 @@
             <article id="post-TypeScript泛型学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+      <header class=" article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       TypeScript泛型学习
     </h1>
   
 
-        
-        <a href="/2020/08/01/TypeScript%E6%B3%9B%E5%9E%8B%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  
+  <a href="/2020/08/01/TypeScript%E6%B3%9B%E5%9E%8B%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
   	<time datetime="2020-08-01T14:51:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
 </a>
-        
-      </header>
+  
+  
+		<span class="archive-article-date">
+			阅读量 <span id="busuanzi_value_page_pv"></span>
+		</span>
+	
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+    <ul>
 <li>不用泛型的话，函数可能是这样  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function identity(arg: number): number &#123;</span><br><span class="line">	return arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>或者，我们使用any类型来定义函数：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	function identity(arg: any): any &#123;</span><br><span class="line">		return arg;</span><br><span class="line">	&#125;</span><br><span class="line">	&#96;&#96;&#96;  </span><br><span class="line">	- 使用any类型会导致这个函数可以接收任何类型的arg参数，（但是这样就丢失了一些信息：即传入的类型与返回的类型应该是相同的） 而我们传入一个数字时，我们只知道任何类型的值都有可能被返回</span><br><span class="line">* 所以，需要一种方法使返回值的类型与传入参数的类型是相同的。即使用类型变量</span><br><span class="line">	- 给identity添加类型变量T.T帮助我们捕获用户传入的类型（比如：number），之后我们就可以使用这个类型。之后我们再次使用了T当作返回值类型。现在，我们知道了参数类型与返回类型是相同的。</span><br></pre></td></tr></table></figure>
   function identity<T>(arg: T):T {<pre><code>return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	- 这个identity函数叫做泛型，因为其可以适用于多个类型。</span><br><span class="line"></span><br><span class="line">&lt; !--more--&gt;</span><br><span class="line">* 使用方法一：</span><br></pre></td></tr></table></figure>
@@ -215,35 +220,39 @@ return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class
   interface GenericIdentityFn {<pre><code>&lt;T&gt;(arg: T): T;</code></pre>  }<br>  function identity<T>(arg: T): T {<pre><code>return arg;</code></pre>  }<br>  let  myIdentity: GenericIdentityFn = identity;  <pre><code></code></pre></li>
 </ul>
 
-      
+    
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
               </span>
             </span>
-          </div>
-          </a>
+            <!-- 添加代码  -->
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+            </span>
         </div>
-      
+      </a>
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -256,10 +265,10 @@ return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class
 	</div>
 
 
-      
+    
 
-      
-        
+    
+    
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
@@ -309,13 +318,13 @@ return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class
 </div>
 
 <div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
 
-  
+
 <nav id="article-nav">
   
     <a href="/2020/08/03/%E5%88%87%E6%8D%A2%E6%BA%90/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -354,15 +363,14 @@ return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class
 
 
 
-  
-  
-  
 
-  
 
-  
 
-  
+
+
+
+
+
 
 
           </div>
@@ -376,10 +384,14 @@ return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class
     	</div>
       	<div class="footer-right">
 
-      	</div>
+		  </div>
+		  <span id="busuanzi_container_site_uv"> 
+			本站访客数<span id="busuanzi_value_site_uv"></span>人次
+		  </span>
     </div>
   </div>
 </footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     </div>
     <script>
