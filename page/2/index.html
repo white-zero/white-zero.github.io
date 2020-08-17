@@ -176,85 +176,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-数据结构和算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-07-10T03:19:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p> <strong>什么是数据结构？</strong><br>    - 计算机中，存储和组织数据的方式(合理的方式组织，存储，取的时候也更高效)<br> *<em>常见的数据结构 *</em><br>    - 栈、链表、图、散列表、数组、队列、堆、树<br> *<em>数组 *</em><br>    - 数组、栈、队列，都是线性结构<br>    - JS的数组就是API的调用<br>    - 常见的其他语言中，<br>    - 数组缺点：1、不能存放不同的数据类型2、创建的时候，要申请一段连续的内存空间，容量不会自动改变，需要进行扩容操作3、插入和删除的操作性能比较低<br>    - 数组优点：查找的性能比较高（通过下标）<br> *<em>栈结构（stack） *</em><br>    - 数组是一种线性结构，可以在任意位置插入和删除数据<br>    - 而栈、队列 就是常见的受限的线性结构（“任意性”加以限制）<br>    - LIFO，压栈，出栈<br>    - 封装（基于数组/链表）<br>    - 栈的常见操作<br>        –&gt; push(element): 添加一个新元素到栈顶位置<br>        –&gt; pop(): 移除栈顶的元素，同时返回被移除的元素<br>        –&gt; peek: 返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶元素，仅仅返回它）<br>        –&gt; isEmpty(): 如果栈里没有任何元素就返回ture<br>        –&gt; size(): 返回栈里的元素个数<br>        –&gt; toString(): 将栈结构的内容以字符形式返回<br> *<em>队列结构 (Queue) *</em><br>    - FIFO先进先出，只在后端插入， 前端删除<br>    - 线程队列: 线程队列按照次序来启动线程<br>    - 封装（基于数组/链表）<br>        –&gt; enqueue(element): 向队列尾部添加一个/多个新的项<br>        –&gt; dequeue(): 移除队列的第一项，并返回被移除的元素<br>        –&gt; front(): 返回队列的第一个元素（类似栈里的peek方法）<br>        –&gt; isEmpty(()<br>        –&gt; size()<br>        –&gt; toString()<br>    - 击鼓传花（题）<br>        —&gt; 先创建一个队列结构，将所有人依次加入到队列中，经历两层循环，第一层：while循环，size&gt;1，（size&lt;1时跳出）,第二层循环：如数到5的人退出，1-4的人依次加入队列后面（先删除，再添加）<br>     - 优先级队列（比如，线程处理的任务的重要性不同时）<br>        —&gt; 优先级队列，在插入一个元素的时候会考虑该数据的优先级，与其他数据优先级进行比较，比较完成后，放到正确的位置<br> *<em>链表结构（火车结构） *</em><br>    - 链表和数组一样，可以用于存储一系列的元素，但是链表和数组的实现机制不同<br>    - 链表每个元素由一个存储元素本身的节点和指向下一个元素的指针组成<br>    - 不同于数组的是，在内存中不必是连续的空间<br>    - 在插入和删除数据时，时间复杂度可以达到O(1),相对数组效率高很多<br>    - 但是，链表中， 要访问任意一个位置的元素时，都要从头开始访问<br>        —&gt; append(element): 向列表尾部添加一个新的项<br>        —&gt; insert(position,element): 向列表特定位置插入一个新的项<br>        —&gt; get(position): 获取对应位置的元素<br>        —&gt; indexOf: 返回元素在列表中的索引。如果没有，返回-1<br>        —&gt; update(position): 修改某个位置的元素<br>        —&gt; removeAt(position): 从列表的特定位置移除一项<br>        —&gt; remove(element): 从列表中移除一项<br>        —&gt; isEmpty()<br>        —&gt; size()  toString()<br> *<em>双向链表结构 *</em><br>    - 既可以从头遍历到尾，又可以从尾遍历到头。一个节点既有向前连接的引用，也有一个向后连接的引用<br>    - 缺点：每次插入或删除某个节点时，需要处理四个引用，实现起来要困难一些，且内存空间占用更大一些，但是这些同使用起来的便利程度相比，是微不足道的<br>    - head、tail<br>        —&gt; forwardString(): 返回正向遍历的节点字符串形式<br>        —&gt; backwordString(): 返回反向遍历的节点字符串形式<br> *<em>集合结构 *</em><br>        - ES6中有了Set类，可以直接使用<br>        - 由一组无序的，不能重复的元素构成<br>        - 比较常见的实现方式是哈希表，也可以基于Object封装<br>                —&gt; add(value): 向集合添加一个新的项<br>                —&gt; remove(value): 从集合移除一个值<br>                —&gt; has(value): 如果值在集合中，返回true<br>                —&gt; clear(): 移除集合中的所有项<br>                —&gt; size():<br>                —&gt; values(): 返回一个包含集合中所有值的数组<br>    - 并集，交集，子集，差集<br> *<em>字典 *</em><br>    - 数组-集合-字典是几乎编程语言都会默认提供的数据类型<br>    - 特点：一一对应，key:value 的形式<br> *<em>哈希表 *</em><br>    - 一种非常重要的数据结构，基于数组实现，但是相对于数组，它有很多的优势<br>    - 可以提供快速的插入-删除-查找，速度比树还快<br>    - 缺：数据是没有顺序的，所以不能以一种固定的方式(比如从小到大)来遍历其中的元素，通常情况下，key不允许重复<br>    - 它的结构就是数组，神奇之处在于对下标值的一种变换(比如字母/文字—&gt;数字)。这种变换我们可以称之为哈希函数，通过哈希函数可以获取到HashCode<br>        —&gt; 哈希化：将大数字转化成数组范围内下标的过程<br>        —&gt; 哈希函数： 单词转成大数字，这个函数为哈希函数<br>        —&gt; 哈希表：最终将数据插入到的这个数组，对整个结构的封装，我们就称之为是一个哈希表<br>            —&gt;冲突时（两个单词，得到的数字下标值相同），解决方案：<br>            —&gt; 链地址法(拉链法)：每个数组单元存储的不再是单个数据，而是一个链条（这个链条可以是数组结构或者链表结构）<br>            —&gt; 开放地址法：寻找空白的位置来放置冲突的数据项（探索这个位置的方式：线性探测(x+1,x+2,x+3)，二次探测（x+1^2,x+2^2,x+3^2），再哈希法(在做一次哈希化，这次哈希化的结果做为步长stepSize = constant - (key % constant)。constant是质数。且该质数应该小于数组的容量   /线性探测会造成聚集/）<br>    - 装填因子 = 总数据项/哈希表长度 开放地址法中，最大为1（因为都得找到空白格插入） 。 而链地址法可以无限延伸下去<br>    - 优化哈希函数<br>        —&gt; 快速计算（快速获取到hashCode）：霍纳法则/秦九韶算法。 时间负责度直接从O(N^2) 降到了O(N)<br>        —&gt; 均匀分布 (优秀的哈希函数应该让元素在哈希表中均匀分布)：质数的运用<br> *<em>树结构 *</em><br>    - 叶节点：没有子节点（度为0）的节点<br>    - 层次：根节点在1层<br>    - 树的深度：最大层次<br>    - 如果树中每个节点最多只能有两个子节点，这样的树就成为“二叉树”<br>    - 二叉树最常见的方式还是链表存储，数组只用于存储完全二叉树，如果不完全，会造成空间浪费<br> *<em>二叉搜索树 *</em><br>    - 非空左子树的所有键值小于其根节点的键值，非空右子树的所有键值大于其根节点的键值。左右子树本身也都是二叉搜索树<br>        —&gt; insert(key): 向树中插入一个新的键<br>        —&gt; search(key): 在树中查找一个键，如果节点存在，返回true<br>        —&gt; inOrderTraverse: 通过中序遍历方式遍历所有节点 (先访问左子树–&gt;根节点–&gt;遍历右子树)<br>        —&gt; preOrderTraverse: 通过先序遍历 （先访问根节点–&gt;遍历左子树–&gt;遍历右子树）<br>        —&gt; postOrderTraverse: 通过后序遍历 （先遍历左子树–&gt;遍历右子树–&gt;访问根节点）<br>        —&gt; min: 返回最小值<br>        —&gt; max: 最大值<br>        —&gt; remove(key): 从树中移除某个键<br>    - 缺点：如果插入的是有序的数据——-&gt;造成非平衡树。如果对于一个平衡二叉树，其插入/查找等操作的效率是O(logN)。而对于非平衡二叉树，相当于编写了一个链表，查找效率成了O(N)<br> *<em>红黑树 *</em><br>    - 红黑树通过一些特性来保持树的平衡。因为是平衡树，所以时间复杂度也是O(logN)<br>    - 红黑树除了符合二叉搜索树的基本规则外，还添加了一些特性<br>        —&gt; 节点是红色或黑色<br>        —&gt; 根节点是黑色<br>        —&gt; 每个叶子节点都是黑色的空节点<br>        —&gt; 每个红色节点的两个子节点都是黑色（从每个叶子到根的所有路径上不能有两个连续的红色节点）<br>        —&gt; 从任一节点（其本身）到其每个叶子的所有路径都包含相同数目的黑色节点<br>    - 这些特性，确保了红黑树的关键特性：从根到叶子的最长可能路径，不会超过最短可能路径的两倍长—–&gt;所以可以达到相对的平衡，保证在最坏的情况下，依然是高效的<br>    - 换色 - 左旋转 - 右旋转<br>    - 插入的新节点通常是红色<br> *<em>图结构 *</em><br>    - 图论其实是一个非常大的话题，这里只讨论图的抽象数据类型<br>    - 图论是数学的一个分支，在数学概念上，树是图的一种<br>    - 研究的目的是事物之间的关系，顶点代表事物(Vertex)，边(Edge)代表两个事物间的关系(是顶点和顶点之间的连线，可以是有向的，也可以是无向的)（应用:比如，六度空间理论(世界上任何两个互相不认识的两人，只需要很少的中间人就可以建立起联系)）<br>    - 著名的欧拉七桥问题：连到一点的边的数目如果是奇数条，就称为奇点，如果是偶数条，就称为偶点。 而奇点的数目不是0个就是2个，中间点必须均是偶点<br>    - 顶点、边、相邻顶点、度（一个顶点的相邻顶点的数量）、路径（简单路径、回路）、无向图、有向图、带权图、无权图（边有无携带权重，比如携带距离/时间/价格）<br>    - 邻接矩阵：0表示不存在边，1表示存在边。 用一个二维数组来表示顶点之间的连接。 问题：如果图是一个稀疏图，存在大量0，意味着浪费了计算机的存储空间来表示根本不存在的边<br>    - 领接表<br>    - 广度优先搜索：从指定的第一个顶点开始遍历图，先访问其所有的相邻点，就像一次访问图的一层<br>    - 深度优先搜索：从第一个指定的顶点开始遍历，沿着路径直到这条路径的最后，接着原路返回并探索另一条路径</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p> <strong>什么是算法（Algorithm）？</strong><br>    - Algorithm：解决问题的办法/步骤/逻辑<br>    - 一个有限指令集，每条指令的描述不依赖于语言<br>    - 产生输出，一定在有限步骤之后终止<br> *<em>排序算法 *</em><br>    - 简单排序：冒泡排序、选择排序、插入排序<br>    - 复杂排序：希尔排序、快速排序<br>    - 冒泡排序<br>        —&gt;思路：第一个人和第二个人比较，高的站右边，两两比较，当走到最右端时，最高的人一定到了最右边，按照这个思路，从最左端重新开始，这次走到倒数第二个位置，依此类推<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function ArrayList() &#123;</span><br><span class="line">	this.array &#x3D; []</span><br><span class="line">	ArrayList.prototype.insert &#x3D; function(item)&#123;</span><br><span class="line">	    this.array.push(item)</span><br><span class="line">&#125;</span><br><span class="line">	ArrayList.protoType.toString &#x3D; function()&#123;</span><br><span class="line">	    return this.array.join(&#39;-&#39;)</span><br><span class="line">&#125;</span><br><span class="line">	&#x2F;&#x2F;交换两个位置的数据</span><br><span class="line">	ArrayList.prototype.swap &#x3D; function (m,n)&#123;</span><br><span class="line">	    var temp &#x3D; this.array[m]</span><br><span class="line">	    this.array[m] &#x3D; this.array[n]</span><br><span class="line">	    this.array[n] &#x3D; temp</span><br><span class="line">&#125;</span><br><span class="line">	ArrayList.prototype.bubblesort &#x3D; function()&#123;</span><br><span class="line">	    var length &#x3D; this.array.length</span><br><span class="line">	    </span><br><span class="line">	    for(var j &#x3D; length-1; j&gt;&#x3D;0; j--)&#123;</span><br><span class="line">		for(var i &#x3D; 0; i&lt;j; i++)&#123;</span><br><span class="line">		    if(this.array[i] &gt; this.array[i+1])&#123;</span><br><span class="line">			this.swap(i,i+1)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<pre><code>- 快速排序（二十世纪十大算法之一）
-    ---&gt;思路：（看作冒泡排序的升级版）分而治之的思想，很重要的一步是选择枢纽，一般是选择头、中、尾三个数的中位数
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;快速排序</span><br><span class="line">  1、选择枢纽</span><br><span class="line">ArrayList.prototype.median &#x3D; function (left,right) &#123;</span><br><span class="line">	&#x2F;&#x2F;取出中间的位置</span><br><span class="line">	var center &#x3D; Math.floor((left+right)&#x2F;2)</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;判断大小，并且进行交换</span><br><span class="line">	if(this.array[left] &gt; this.array [center])&#123;</span><br><span class="line">	    this.swap(left, center)</span><br><span class="line">   &#125;</span><br><span class="line">	if(this.array[center] &gt; this.array[right])&#123;</span><br><span class="line">	    this.swap(center, right)</span><br><span class="line">   &#125;</span><br><span class="line">	if(this.array[left] &gt; this.array[right])&#123;</span><br><span class="line">	    this.swap(left, right)</span><br><span class="line">   &#125;</span><br><span class="line">	&#x2F;&#x2F;将cenrer换到right-1的位置</span><br><span class="line">        this.swap(center, right-1)</span><br><span class="line">        </span><br><span class="line">	return this.array[right-1]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;快速排序的实现</span><br><span class="line">ArrayList.prototype.quickSort &#x3D; function () &#123;</span><br><span class="line">	this.quick(0, this.array.length-1)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ArrayList.prototype.quick &#x3D; function(left, tight) &#123;</span><br><span class="line">	&#x2F;&#x2F;结束条件</span><br><span class="line">	if(left &gt;&#x3D; right ) return</span><br><span class="line">	&#x2F;&#x2F;获取枢纽</span><br><span class="line">	var pivot &#x3D; this.median(left, right)</span><br><span class="line">	&#x2F;&#x2F;定义变量，用于记录当前找到的位置</span><br><span class="line">	var i &#x3D; left</span><br><span class="line">	var j &#x3D; right - 1</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;开始进行交换</span><br><span class="line">	while (true) &#123;</span><br><span class="line">	    while(this.array[++i] &lt; pivot)&#123;&#125;</span><br><span class="line">	    while(this,array[--j] &gt; pivot)&#123;&#125;</span><br><span class="line">	if (i &lt; j) &#123;</span><br><span class="line">	    this.swap(i , j)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">	    break</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">	&#x2F;&#x2F;将枢纽放置在正确的位置， i的位置</span><br><span class="line">     this.swap(i, right -1)</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;分而治之</span><br><span class="line">    this.quick(left, i -1)</span><br><span class="line">    this.quick(i+1, right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
     <article id="post-Flutter搭建for-mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -287,53 +208,9 @@
 </ul>
 <p><code>source</code>命令重新加载一下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>step4:开发环境配置</strong><br>检查<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
-如果有[!]x标志，表示本行检测没有通过，就需要我们设置或者安装相应的软件<ul>
-<li>Android studio安装<br><a href="http://www.android-studio.org/" target="_blank" rel="noopener">http://www.android-studio.org/</a></li>
-<li>终端允许协议：<code>flutter doctor --android-licenses</code> 一通Y下去</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>其他按照对应的安装插件</li>
-</ul>
-<ul>
-<li><strong>step5:Android studio</strong></li>
-</ul>
-<ul>
-<li>Configure—–&gt;plugin—–&gt; download Flutter</li>
-<li>Tools——-&gt;AVD manager(虚拟机)——&gt;Create Virtual Device—–&gt;Nexus 5x(自选)</li>
-<li>虚拟机运行以后，点击debug按钮，让Flutter程序跑起来</li>
-<li>Debug<br>错误1:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> FAILURE: Build failed with an exception.</span><br><span class="line">What went wrong:</span><br><span class="line">A problem occurred configuring root project <span class="string">'android'</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">':classpath'</span>.</span><br><span class="line">   &gt; Could not download kotlin-compiler-embeddable.jar (org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.50)</span><br><span class="line">      &gt; Could not get resource <span class="string">'https://jcenter.bintray.com/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.3.50/kotlin-compiler-embeddable-1.3.50.jar'</span>.</span><br><span class="line">         &gt; Read timed out</span><br></pre></td></tr></table></figure>
-
-<p>解决：<br>一、修改掉项目下的android目录下的build.gradle文件，把google() 和 jcenter()这两行去掉。改为阿里的链接  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/google'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>二、修改Flutter SDK包下的flutter.gradle文件,这个目录要根据你的SDK存放的位置有所变化。   </p>
-<p>   这一步有两种情况</p>
-<p>1、flutter.gradle文件中repositories中是google() 和 jcenter()，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">repositories&#123;</span><br><span class="line">google()</span><br><span class="line">gcenter()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>把google() 和 jcenter()这两行去掉。改为阿里的链接。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/google'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>2，flutter.gradle文件中repositories中是下图这样的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line"> jcenter()</span><br><span class="line"> maven &#123;</span><br><span class="line"> url <span class="string">'https://dl.google.com/dl/android/maven2'</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>把repositories 中改成 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">        maven&#123;</span><br><span class="line">            url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span></span><br><span class="line">        &#125;</span><br><span class="line">        maven&#123;</span><br><span class="line">            url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>以上两步骤之后再debug，若又出现相同报错，则在终端</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
-<p>加上两句</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line">FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
-<p>不再报错</p>
-<p>错误2:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">Execution failed <span class="keyword">for</span> task <span class="string">':app:compileDebugKotlin'</span>.</span><br><span class="line">&gt; Could not resolve all artifacts <span class="keyword">for</span> configuration <span class="string">':app:debugCompileClasspath'</span>.</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'arm64_v8a_debug.jar (io.flutter:arm64_v8a_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\2ef393f0cfe7b16f75cbb560a12364cc448a62af\arm64_v8a_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid block <span class="built_in">type</span>. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br><span class="line">   &gt; Failed to transform artifact <span class="string">'x86_64_debug.jar (io.flutter:x86_64_debug:1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695)'</span> to match attributes &#123;artifactType=android-classes, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime&#125;.</span><br><span class="line">      &gt; Execution failed <span class="keyword">for</span> JetifyTransform: C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar.</span><br><span class="line">         &gt; Failed to transform <span class="string">'C:\Users\juwuguo\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_debug\1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695\ce0e3fab2c8696e176c54639579d3d438a8a0925\x86_64_debug-1.0.0-2994f7e1e682039464cb25e31a78b86a3c59b695.jar'</span> using Jetifier. Reason: invalid literal/length code. (Run with --stacktrace <span class="keyword">for</span> more details.)</span><br></pre></td></tr></table></figure>
-<p>解决：<br>AndroidStudio Preference —–&gt;Compiler—–&gt;kotlin Compiler—–&gt; Target JVM version 把1.6改为1.8</p>
-
+    
+    <a class="article-more-a" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/#more">more >></a>
+    
     
 
     
@@ -431,106 +308,10 @@
 <li>onUnload 监听页面卸载</li>
 <li>onShow 监听页面显示</li>
 <li>onHide 监听页面隐藏</li>
-<li>onReady 监听页面初次渲染完成</li>
-</ul>
-</li>
-<li><p>数据绑定</p>
-<ul>
-<li>在标签外部时，使用： ，当在标签内部时，用v-bind：/：</li>
-<li>动态数据绑定时，比如src 要在前面加：</li>
-</ul>
-</li>
-<li><p>事件处理</p>
-</li>
-<li><p>条件渲染（全支持vue） 和列表循环（v-for）</p>
-<ul>
-<li>v-if和v-show的区别：前者 ：是否会在dom中被移除，后者display：none</li>
-<li>v-for里要 :key=“index” 保证组件和数据捆绑唯一。</li>
-<li>–&gt;嵌套循环的时候，:key的内容要不同</li>
-</ul>
-</li>
-<li><p>ifdef和ifndef （条件编译）</p>
-<ul>
-<li>ifdef 只在什么地方编译</li>
-<li>ifndef 除了不在什么地方编译，在其他地方都编译</li>
-<li>可以在html、js、css里写</li>
-<li>写在注释里</li>
-<li>–&gt;html里   <!--#ifdef MP --> <!--#endif--></li>
-<li>–&gt;js里    //#ifdef MP-WEIXIN  //#endif</li>
-<li>–&gt;style里  /* #ifdef H5 <em>/    /</em> #endif */    只在H5…<br>&lt; !–more–&gt;<br>=========================================框架基础内容完================================</li>
-</ul>
-</li>
-<li><p>Flex布局（自适应布局）</p>
-<ul>
-<li>主轴 和 交叉轴（主轴：元素排列的顺序，水平时主轴也是水平的）</li>
-<li>class=”container”  .container{display: flex}   则 使用了flex布局</li>
-<li>flex-direction(元素的排列方向)</li>
-<li>–&gt;row row-reverse 横向</li>
-<li>–&gt;column colunmn-reverse 纵向</li>
-<li>flex-wrap 换行</li>
-<li>–&gt;nowrap wrap wrap-reverse</li>
-<li>justify-content 设置元素在主轴上的对齐方式</li>
-<li>–&gt;flex-start flex-end</li>
-<li>–&gt;center</li>
-<li>–&gt;space-between space-around （元素的中间/两边 留有空格, space-around时旁边和中间的间隙是1:2）</li>
-<li>align-items (设置元素在交叉轴上的对齐方式)</li>
-<li>–&gt;flex-start flex-end</li>
-<li>–&gt;center</li>
-<li>–&gt;streth(默认：拉伸) 当元素的高度没有设置，则元素的高度会拉伸至容器高度一致</li>
-<li>–&gt;baseline（保证元素中的文字在同一条基准线（保证每个文字都在同一条线上））</li>
-<li>align-content 设置轴线的对齐方式（轴线当作元素）</li>
-<li>–&gt;flex-start flex-end</li>
-<li>–&gt;center    stretch</li>
-<li>–&gt;space-between    space-around</li>
-<li>order flex容器内部的每个元素的排列顺序（默认都为0） 从小到大排</li>
-<li>flex-grow 设置元素的放大比例（默认为 0，不放大</li>
-<li>flex-shrink 控制元素缩小比例）</li>
-<li>flex-basis 设置元素固定或自动空间的占比</li>
-<li>align-self: 重写容器中元素在交叉轴上的对齐方式(覆盖父级中的align-items)</li>
-</ul>
-</li>
-</ul>
-<p>===========================================Flex布局完====================================</p>
-<ul>
-<li><p>首页</p>
-<ul>
-<li>轮播图部分（uni-app里swiper组件的使用）</li>
-<li>–&gt; 后台地址的整合<br>   —&gt;方法1:new一个common.js，在里面const一个serverUrl ，再在页面import common from …  ，再var serverUrl = common.serverUrl<br>   —&gt;方法2:直接在main.js里，把serverUrl挂载到Vue的prototype上，在页面使用时，直接serverUrl = this.serverUrl</li>
-<li>评分部分</li>
-<li>–&gt; 共用组件的抽取 组件<br>   —&gt;new一个后缀为vue的文件，在template中的name写上组件名字，<view></view> , script中export default里写上name（和组件名一致),return的data里写上msg：’xxxx’<br>   —&gt;页面的script中import组件<br>   —&gt;onload中，加一个components的属性，写上组件的名字（注册组件<br>   —&gt;template里用标签使用</li>
-<li>–&gt; 父子组件传值（往自定义的组件里传参数）<br>   —&gt;在index页面（父页面）的自定义组件的标签中，写上myvalue=“xxx”  (myvalue是自定义的属性名)<br>   —&gt;在自定义组件页面，（子页面）的script中加上props属性，写上myvalue的属性名，并写明type，定义这个参数的类型<br>   —&gt;在自定义组件页面的template里加上例如input的标签，写上:value=“myvalue”<br>   —&gt;实现</li>
-<li>页面无法下滑问题</li>
-<li>–&gt; 取消公共属性里page里写的position的absolute</li>
-<li>点赞动画</li>
-<li>–&gt;标签里 :animation=”animationData”  data里加一个animationData:{}</li>
-<li>–&gt;onload时 this.animation = uni.createAnimation()</li>
-<li>–&gt;method 新建一个方法（在template里记得加），动作做完，记得this.animationData = this.animation.export()暴露出去</li>
-<li>–&gt;用setTimeout还原动画，onUnload时this.animationData = {} 清除动画数据<br>   —&gt;点赞动画中，指定动作与该行相关联<pre><code>---&gt;data中加一个animationDataArr的空数组（里面写上对应几个空的对象）
----&gt;标签中animation动态绑定animationDataArr[gIndex] ，列表中遍历 v-for = （guess,gIndex）in guessULikeList
----&gt;在点赞动作加一个 :data-gIndex=&quot;gIndex&quot;
----&gt;在点击动作的method中，var gIndex = e.currentIndex.dataset.gindex  (dataset里所有的值都是小写)
----&gt;this.animationData = this.animation
----&gt;this.animationDataArr[gIndex] = this.animationData.export()
----&gt;页面卸载onUnload时，要把this.animationDataArr:[{},{},{},......] 再设回空</code></pre></li>
-<li>下拉加载刷新</li>
-<li>–&gt;pages.json里加enablePullDownRefresh true</li>
-<li>–&gt;request的方法中有complete方法，在里面使用uni.stopPullDownRefresh()</li>
-<li>–&gt;“交互效果” 页面中央的loading：在refresh里uni.showLoading（{mask: true}）   (mask蒙版，刷新时用户无法点击后面的内容)</li>
-<li>–&gt;在complete中，uni.hideLoading()<br>   —&gt;方法2:导航条加载动画<pre><code>---&gt;uni.showNavigationBarLoading    并且，去掉pages.json里的titleNView：false改为true （取消禁用原生导航栏）                ---&gt;在complete中，uni.hideNavigationBarLoading()</code></pre></li>
-</ul>
-</li>
-<li><p>搜索页</p>
-<ul>
-<li><p>下拉时固定搜索栏</p>
-</li>
-<li><p>–&gt;position:  fixed; top: 100;  z-index: 2000;</p>
-</li>
-<li><p>confirm-type=”search” 小程序输入法右下角变成搜索</p>
-</li>
-</ul>
-</li>
-</ul>
-
+<li>onReady 监听页面初次渲染完成
+    
+    <a class="article-more-a" href="/2020/06/28/UniApp/#more">more >></a>
+    
     
 
     
@@ -650,104 +431,10 @@
 </ul>
 <ul>
 <li>切换分支<ul>
-<li>git checkout -b xxx  (xxx是分支名)<br>= git checkout -b [branch name] </li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>2020.7.23更新</p>
-<ul>
-<li><p>vscode下切换分支</p>
-<ul>
-<li>git pull 拉取</li>
-<li>git fetch (yse)</li>
-<li>左下角切换分支</li>
-<li>git status 查看</li>
-</ul>
-</li>
-<li><p>合并代码</p>
-<ul>
-<li>git pull </li>
-<li>git merge + (-&gt;右边的内容) 比如：git merge origin/master</li>
-</ul>
-</li>
-<li><p>git add 的时候先git st 看看状态是否需要 git add .</p>
-</li>
-<li><p>下载安装git </p>
-</li>
-<li><p>vim ~/.gitconfig</p>
-</li>
-<li><p>name email </p>
-</li>
-<li><p>alias(命令的缩写)</p>
-<ul>
-<li>co=checkout(切换分支)</li>
-<li>ci=commit</li>
-<li>st=status</li>
-<li>pl=pull</li>
-<li>ps=push</li>
-<li>dt=difftool(提交代码前对比代码)</li>
-<li>ca=commit -am(备注信息)</li>
-<li>b=branch</li>
-</ul>
-</li>
-<li><p>项目的建立(ssh公钥)</p>
-<ul>
-<li>ssh-keygen -t rsa -C ‘邮箱地址‘  一路回车</li>
-<li>ls -al (显示所有文件，包括git的隐藏文件)</li>
-<li>cd .ssh/       ls -al</li>
-<li>id_rsa:私钥  id_rsa.pub:公钥</li>
-<li>cat id_rsa.pub</li>
-</ul>
-</li>
-<li><p>码云 组织—&gt;新建仓库—&gt;管理—&gt;公钥管理—&gt;添加个人公钥</p>
-</li>
-<li><p>仓库里复制SSH（不用每次输入账号密码）</p>
-</li>
-<li><p>回到命令行 cd   </p>
-</li>
-<li><p>ls(查看当前文件夹)</p>
-</li>
-<li><p>mkdir doc(新建文件夹)。cd进去 </p>
-</li>
-<li><p>git clone (仓库里的ssh复制接到clone后面)    yes</p>
-</li>
-<li><p>cd 到对应的仓库里，可以查看文件</p>
-</li>
-<li><p>在仓库下， vim .gitignore  (忽略一些文件)</p>
-<ul>
-<li>insert</li>
-<li>.DS_Store(mac下存储文件夹信息的)</li>
-<li>node_modules</li>
-<li>dist</li>
-<li>*.log(日志，不需要)</li>
-</ul>
-</li>
-<li><p>git st 查看状态</p>
-<ul>
-<li>git add .  (提交到本地)</li>
-<li>git ca “备注信息“  (用于代码提交到本地)</li>
-<li>git push (推送到远程)</li>
-</ul>
-</li>
-<li><p>git在远程和在本地的仓库都新建完成</p>
-</li>
-</ul>
-<ul>
-<li>git 更新<ul>
-<li>git st 查看状态</li>
-<li>git pull</li>
-<li>git merge “ “(没有引号，里面填分支名称，比如 origin)  master</li>
-<li>—&gt; 例如：git merge origin master</li>
-<li>git add .</li>
-<li>git ca “备注”</li>
-<li>git push</li>
-<li>git tag tag-order   (打标签： 标签名为tag-order)</li>
-<li>git push origin tag-order (给远程的origin的分支打上tag-order的标签)</li>
-</ul>
-</li>
-</ul>
-
+<li>git checkout -b xxx  (xxx是分支名)<br>= git checkout -b [branch name]
+    
+    <a class="article-more-a" href="/2020/06/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
+    
     
 
     
@@ -1511,10 +1198,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>

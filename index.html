@@ -198,9 +198,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h4 id="1、配置是否开启不蒜子访问量统计功能"><a href="#1、配置是否开启不蒜子访问量统计功能" class="headerlink" title="1、配置是否开启不蒜子访问量统计功能"></a>1、配置是否开启不蒜子访问量统计功能</h4><h5 id="在themes-yilia-config-yml添加属性"><a href="#在themes-yilia-config-yml添加属性" class="headerlink" title="在themes/yilia/_config.yml添加属性"></a>在themes/yilia/_config.yml添加属性</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">busuanzi:</span><br><span class="line"> enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="2、引入不蒜子并添加站点访问量"><a href="#2、引入不蒜子并添加站点访问量" class="headerlink" title="2、引入不蒜子并添加站点访问量"></a>2、引入不蒜子并添加站点访问量</h4><h5 id="在themes-yilia-layout-partial-footer-ejs末尾添加如下代码"><a href="#在themes-yilia-layout-partial-footer-ejs末尾添加如下代码" class="headerlink" title="在themes/yilia/layout/_partial/footer.ejs末尾添加如下代码"></a>在themes/yilia/layout/_partial/footer.ejs末尾添加如下代码</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.busuanzi &amp;&amp; theme.busuanzi.enable)&#123; %&gt;</span><br><span class="line">        &lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span><br><span class="line">                本站总访问量&lt;span id=<span class="string">"busuanzi_value_site_pv"</span>&gt;&lt;<span class="regexp">/span&gt;次</span></span><br><span class="line"><span class="regexp">        &lt;/</span>span&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-meta-divider"</span>&gt;|&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;span id="busuanzi_container_site_uv" style='display:none'&gt;</span></span><br><span class="line"><span class="regexp">                本站访客数&lt;span id="busuanzi_value_site_uv"&gt;&lt;/</span>span&gt;人</span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;script async src="/</span><span class="regexp">/busuanzi.ibruce.info/</span>busuanzi/<span class="number">2.3</span>/busuanzi.pure.mini.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">  &lt;% &#125; %&gt;</span></span><br><span class="line"><span class="string">  &lt;/footer&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="注释：-lt-footer-gt-用于找位置，勿复制"><a href="#注释：-lt-footer-gt-用于找位置，勿复制" class="headerlink" title="注释：&lt;/footer&gt;用于找位置，勿复制"></a>注释：<code>&lt;/footer&gt;</code>用于找位置，勿复制</h6><h4 id="3、添加文章访问量"><a href="#3、添加文章访问量" class="headerlink" title="3、添加文章访问量"></a>3、添加文章访问量</h4><h5 id="在themes-yilia-layout-partial-post-date-ejs开头添加如下代码"><a href="#在themes-yilia-layout-partial-post-date-ejs开头添加如下代码" class="headerlink" title="在themes/yilia/layout/_partial/post/date.ejs开头添加如下代码"></a>在themes/yilia/layout/_partial/post/date.ejs开头添加如下代码</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.busuanzi &amp;&amp; theme.busuanzi.enable &amp;&amp; !index)&#123; %&gt;</span><br><span class="line">        &lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_page_pv"</span> style=<span class="string">'display:none'</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"&lt;%= class_name %&gt;"</span>&gt;</span><br><span class="line">              &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"icon-smile icon"</span>&gt;&lt;<span class="regexp">/i&gt; 阅读数：&lt;span id="busuanzi_value_page_pv"&gt;&lt;/</span>span&gt;次</span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br><span class="line"><span class="regexp">&lt;a&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>a&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="注释：-lt-a-gt-lt-a-gt-用于找位置，勿复制"><a href="#注释：-lt-a-gt-lt-a-gt-用于找位置，勿复制" class="headerlink" title="注释：&lt;a&gt;&lt;/a&gt;用于找位置，勿复制"></a>注释：<code>&lt;a&gt;&lt;/a&gt;</code>用于找位置，勿复制</h6><h4 id="重启即可查看效果"><a href="#重启即可查看效果" class="headerlink" title="重启即可查看效果"></a>重启即可查看效果</h4>
+    
+    <a class="article-more-a" href="/2020/08/17/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1/#more">more >></a>
+    
     
 
     
@@ -408,92 +408,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/08/13/hello-world/" class="archive-article-date">
-  	<time datetime="2020-08-12T23:01:20.400Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/13/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
     <article id="post-hexo-yilia博客搭建-上一页下一页显示的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -668,21 +582,10 @@
     
     <ul>
 <li>不用泛型的话，函数可能是这样  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function identity(arg: number): number &#123;</span><br><span class="line">	return arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>或者，我们使用any类型来定义函数：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	function identity(arg: any): any &#123;</span><br><span class="line">		return arg;</span><br><span class="line">	&#125;</span><br><span class="line">	&#96;&#96;&#96;  </span><br><span class="line">	- 使用any类型会导致这个函数可以接收任何类型的arg参数，（但是这样就丢失了一些信息：即传入的类型与返回的类型应该是相同的） 而我们传入一个数字时，我们只知道任何类型的值都有可能被返回</span><br><span class="line">* 所以，需要一种方法使返回值的类型与传入参数的类型是相同的。即使用类型变量</span><br><span class="line">	- 给identity添加类型变量T.T帮助我们捕获用户传入的类型（比如：number），之后我们就可以使用这个类型。之后我们再次使用了T当作返回值类型。现在，我们知道了参数类型与返回类型是相同的。</span><br></pre></td></tr></table></figure>
-  function identity<T>(arg: T):T {<pre><code>return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	- 这个identity函数叫做泛型，因为其可以适用于多个类型。</span><br><span class="line"></span><br><span class="line">&lt; !--more--&gt;</span><br><span class="line">* 使用方法一：</span><br></pre></td></tr></table></figure>
-  let output = identity<string>(“myString”) //type of output will be ‘string’<br>  ···  <ul>
-<li>明确指定T是string类型，并作为一个参数传给函数</li>
-</ul>
-</li>
-<li>使用方法二：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	let output &#x3D; identity(&quot;myString&quot;) &#x2F;&#x2F;type of output will be &#39;string&#39;</span><br><span class="line">	- 这里，没有用&lt;&gt;来明确传入类型，编译器可以查看myString，然后把T设置为它的类型。类型推论帮助我们推断出类型。（当不能推断出来的时候，只能像方法一一样明确传入T的类型）</span><br><span class="line"></span><br><span class="line">* 泛型约束</span><br><span class="line">	- 你应该会记得之前的一个例子，我们有时候想操作某类型的一组值，并且我们知道这组值具有什么样的属性。 在 loggingIdentity例子中，我们想访问arg的length属性，但是编译器并不能证明每种类型都有length属性，所以就报错了</span><br></pre></td></tr></table></figure>
-  function loggingIdentity<T>(arg: T):T {<pre><code>console.log(arg.length)  //Error: T doesn&apos;t have .length
-return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 为此，我们需要列出对于T的约束要求</span><br><span class="line">- 为此，我们定义一个接口来描述约束条件.创建一个包含 .length属性的接口，使用这个接口和extends关键字来实现约束：</span><br></pre></td></tr></table></figure>
-  interface Lengthwise {<pre><code>length: number</code></pre>  }<br>  function loggingIdentity<T extends Lengthwise>(arg: T): T {<pre><code>console.log(arg,length)
-return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">* 可以使用带有调用签名的对象字面量来定义泛型函数：</span><br></pre></td></tr></table></figure>
-  function identity<T>(arg: T): T {<pre><code>return arg;</code></pre>  }<br>  let myIdentity: {<T>(arg: T): T} = identity;    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 这引导我们去写一个泛型接口。 我们把上面例子里的对象字面量拿出来做为一个接口：</span><br></pre></td></tr></table></figure>
-  interface GenericIdentityFn {<pre><code>&lt;T&gt;(arg: T): T;</code></pre>  }<br>  function identity<T>(arg: T): T {<pre><code>return arg;</code></pre>  }<br>  let  myIdentity: GenericIdentityFn = identity;  <pre><code></code></pre></li>
-</ul>
-
+<li>或者，我们使用any类型来定义函数：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function identity(arg: any): any &#123;</span><br><span class="line">	return arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/08/01/TypeScript%E6%B3%9B%E5%9E%8B%E5%AD%A6%E4%B9%A0/#more">more >></a>
+    
     
 
     
@@ -942,54 +845,10 @@ return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class
 <li>对象类型</li>
 <li>数组类型</li>
 <li>类类型</li>
-<li>函数类型</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>对象的类型    </p>
-<ul>
-<li><p>使用接口（Interfaces）来定义对象的类型</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	interface Person &#123;</span><br><span class="line"> 		  name: string;</span><br><span class="line">  		  age: number;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">	let tom: Person &#x3D; &#123;</span><br><span class="line">   		  name: &#39;Tom&#39;,</span><br><span class="line">   		  age: 25</span><br><span class="line">	&#125;;</span><br><span class="line">	&#96;&#96;&#96;  </span><br><span class="line">---&gt;定义的变量比接口多&#x2F;少一些属性是不允许的：</span><br><span class="line">---&gt;赋值的时候，变量的形状必须和接口的形状保持一致  </span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">- 可选属性</span><br></pre></td></tr></table></figure>
-<p>  interface Person {</p>
-<pre><code>name: string;
- age?: number;</code></pre><p>  }</p>
-<p>  let tom: Person = {</p>
-<pre><code>name: &apos;Tom&apos;</code></pre><p>  };</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">---&gt;可选属性的含义是该属性可以不存在  </span><br><span class="line"></span><br><span class="line">- 任意属性</span><br></pre></td></tr></table></figure>
-<p>  interface Person {</p>
-<pre><code>name: string;
- age?: number;
- [propName: string]: any;</code></pre><p>  }</p>
-<p>  let tom: Person = {</p>
-<pre><code>name: &apos;Tom&apos;,
-gender: &apos;male&apos;</code></pre><p>  };</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---&gt;使用 [propName: string] 定义了任意属性取 string 类型的值  </span><br><span class="line">    需要注意的是，一旦定义了任意属性，那么确定属性和可选属性的类型都必须是它的类型的子集  </span><br><span class="line"></span><br><span class="line">---&gt;一个接口中只能定义一个任意属性。如果接口中有多个类型的属性，则可以在任意属性中使用联合类型：</span><br></pre></td></tr></table></figure>
-<p>  interface Person {</p>
-<pre><code>name: string;
- age?: number;
- [propName: string]: string | number;</code></pre><p>  }</p>
-<p>  let tom: Person = {</p>
-<pre><code>name: &apos;Tom&apos;,
-age: 25,
-gender: &apos;male&apos;</code></pre><p>  };</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 只读属性</span><br><span class="line">---&gt;注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候</span><br></pre></td></tr></table></figure>
-<p>  interface Person {</p>
-<pre><code>readonly id: number;
- name: string;
- age?: number;
- [propName: string]: any;</code></pre><p>  }</p>
-<p>  let tom: Person = {</p>
-<pre><code>id: 89757,
-name: &apos;Tom&apos;,
-gender: &apos;male&apos;</code></pre><p>  };<br>  ```  </p>
-</li>
-<li><p>–&gt;如果再 tom.id = 9527; 会报错</p>
-</li>
-</ul>
-</li>
-</ul>
-
+<li>函数类型
+    
+    <a class="article-more-a" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/#more">more >></a>
+    
     
 
     
@@ -1013,6 +872,82 @@ gender: &apos;male&apos;</code></pre><p>  };<br>  ```  </p>
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-数据结构和算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-07-10T03:19:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p> <strong>什么是数据结构？</strong><br>    - 计算机中，存储和组织数据的方式(合理的方式组织，存储，取的时候也更高效)<br> *<em>常见的数据结构 *</em><br>    - 栈、链表、图、散列表、数组、队列、堆、树<br> *<em>数组 *</em><br>    - 数组、栈、队列，都是线性结构<br>    - JS的数组就是API的调用<br>    - 常见的其他语言中，<br>    - 数组缺点：1、不能存放不同的数据类型2、创建的时候，要申请一段连续的内存空间，容量不会自动改变，需要进行扩容操作3、插入和删除的操作性能比较低<br>    - 数组优点：查找的性能比较高（通过下标）<br> *<em>栈结构（stack） *</em><br>    - 数组是一种线性结构，可以在任意位置插入和删除数据<br>    - 而栈、队列 就是常见的受限的线性结构（“任意性”加以限制）<br>    - LIFO，压栈，出栈<br>    - 封装（基于数组/链表）<br>    - 栈的常见操作<br>        –&gt; push(element): 添加一个新元素到栈顶位置<br>        –&gt; pop(): 移除栈顶的元素，同时返回被移除的元素<br>        –&gt; peek: 返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶元素，仅仅返回它）<br>        –&gt; isEmpty(): 如果栈里没有任何元素就返回ture<br>        –&gt; size(): 返回栈里的元素个数<br>        –&gt; toString(): 将栈结构的内容以字符形式返回</p>
+    
+    <a class="article-more-a" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">展开全文 >></a>
     </p>
     
 
@@ -1147,10 +1082,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
