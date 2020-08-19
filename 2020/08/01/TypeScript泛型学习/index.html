@@ -214,17 +214,17 @@
 </li>
 <li>所以，需要一种方法使返回值的类型与传入参数的类型是相同的。即使用类型变量<ul>
 <li>给identity添加类型变量T.T帮助我们捕获用户传入的类型（比如：number），之后我们就可以使用这个类型。之后我们再次使用了T当作返回值类型。现在，我们知道了参数类型与返回类型是相同的。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	function identity&lt;T&gt;(arg: T):T &#123;</span><br><span class="line">		return arg</span><br><span class="line">	&#125;</span><br><span class="line">	&#96;&#96;&#96;  </span><br><span class="line">	- 这个identity函数叫做泛型，因为其可以适用于多个类型。</span><br><span class="line"></span><br><span class="line">&lt; !--more--&gt;</span><br><span class="line">* 使用方法一：</span><br></pre></td></tr></table></figure>
-let output = identity<string>(“myString”) //type of output will be ‘string’<br>···  </li>
+let output = identity<string>(“myString”) //type of output will be ‘string’<br>···  </string></li>
 <li>明确指定T是string类型，并作为一个参数传给函数</li>
 </ul>
 </li>
 <li>使用方法二：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	let output &#x3D; identity(&quot;myString&quot;) &#x2F;&#x2F;type of output will be &#39;string&#39;</span><br><span class="line">	- 这里，没有用&lt;&gt;来明确传入类型，编译器可以查看myString，然后把T设置为它的类型。类型推论帮助我们推断出类型。（当不能推断出来的时候，只能像方法一一样明确传入T的类型）</span><br><span class="line"></span><br><span class="line">* 泛型约束</span><br><span class="line">	- 你应该会记得之前的一个例子，我们有时候想操作某类型的一组值，并且我们知道这组值具有什么样的属性。 在 loggingIdentity例子中，我们想访问arg的length属性，但是编译器并不能证明每种类型都有length属性，所以就报错了</span><br></pre></td></tr></table></figure>
   function loggingIdentity<T>(arg: T):T {<pre><code>console.log(arg.length)  //Error: T doesn&apos;t have .length
 return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 为此，我们需要列出对于T的约束要求</span><br><span class="line">- 为此，我们定义一个接口来描述约束条件.创建一个包含 .length属性的接口，使用这个接口和extends关键字来实现约束：</span><br></pre></td></tr></table></figure>
-  interface Lengthwise {<pre><code>length: number</code></pre>  }<br>  function loggingIdentity<T extends Lengthwise>(arg: T): T {<pre><code>console.log(arg,length)
+  interface Lengthwise {<pre><code>length: number</code></pre>  }<br>  function loggingIdentity<T extends lengthwise>(arg: T): T {<pre><code>console.log(arg,length)
 return arg</code></pre>  }  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">* 可以使用带有调用签名的对象字面量来定义泛型函数：</span><br></pre></td></tr></table></figure>
   function identity<T>(arg: T): T {<pre><code>return arg;</code></pre>  }<br>  let myIdentity: {<T>(arg: T): T} = identity;    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 这引导我们去写一个泛型接口。 我们把上面例子里的对象字面量拿出来做为一个接口：</span><br></pre></td></tr></table></figure>
-  interface GenericIdentityFn {<pre><code>&lt;T&gt;(arg: T): T;</code></pre>  }<br>  function identity<T>(arg: T): T {<pre><code>return arg;</code></pre>  }<br>  let  myIdentity: GenericIdentityFn = identity;  <pre><code></code></pre></li>
+  interface GenericIdentityFn {<pre><code>&lt;T&gt;(arg: T): T;</code></pre>  }<br>  function identity<T>(arg: T): T {<pre><code>return arg;</code></pre>  }<br>  let  myIdentity: GenericIdentityFn = identity;  <pre><code></code></pre></T></T></T></T></T></li>
 </ul>
 
     
