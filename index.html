@@ -207,20 +207,9 @@
 } <span class="keyword">else</span> {
   <span class="comment">// canvas-unsupported code here</span>
 }</code></pre>
-<h4 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h4><p><code>&lt;canvas&gt;</code> 只支持两种形式的图形绘制：<strong>矩形</strong>和<strong>路径</strong>（由<strong>一系列点连成</strong>的线段）。所有其他类型的图形都是通过一条或者多条路径组合而成的。不过，我们拥有<strong>众多路径生成的方法</strong>让复杂图形的绘制成为了可能  </p>
-<ul>
-<li><strong>路径</strong><br>首先，你需要创建路径<strong>起始点</strong><br>然后你使用画图命令去<strong>画出路径</strong><br>之后你把<strong>路径封闭</strong><br>一旦路径生成，你就能通过<strong>描边</strong>或<strong>填充</strong>路径区域来渲染图形  <ul>
-<li><strong>路径-线</strong><br>绘制直线，需要用到的方法<strong>lineTo()</strong>  </li>
-<li><strong>路径-圆弧</strong><br>绘制圆弧或者圆，我们使用<strong>arc()</strong><br><code>arc(x, y, radius, startAngle, endAngle, anticlockwise)</code><br>画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针(false)）来生成  </li>
-<li><strong>路径-贝塞尔曲线</strong>  <ul>
-<li>二次贝塞尔曲线<br><code>quadraticCurveTo(cp1x, cp1y, x, y)</code><br>绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点  </li>
-<li>三次贝塞尔曲线<br><code>bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</code><br>绘制三次贝塞尔曲线，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二，x,y为结束点。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+    
+    <a class="article-more-a" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/#more">more >></a>
+    
     
 
     
