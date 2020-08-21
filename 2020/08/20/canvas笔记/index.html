@@ -16,7 +16,7 @@
 <meta property="og:description" content="基本用法1.&lt;&#x2F;canvas&gt; 标签不可省2.&lt;canvas&gt; 元素创造了一个固定大小的画布，它公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容2D渲染上下文.又比如， WebGL 使用了基于OpenGL ES的3D上下文 3.检查编程支持性 var canvas &#x3D; document.getElementById(&#39;tutorial&#39;);  if (canva">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-20T01:10:26.000Z">
-<meta property="article:modified_time" content="2020-08-21T00:36:54.935Z">
+<meta property="article:modified_time" content="2020-08-21T00:55:15.755Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -230,7 +230,10 @@
 </ul>
 <p>1.获得一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以通过提供一个URL的方式来使用图片<br>2.使用drawImage()函数将图片绘制到画布上  </p>
 <h4 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h4><h5 id="在离屏canvas上预渲染相似的图形或重复的对象"><a href="#在离屏canvas上预渲染相似的图形或重复的对象" class="headerlink" title="在离屏canvas上预渲染相似的图形或重复的对象"></a>在离屏canvas上预渲染相似的图形或重复的对象</h5><p>如果发现自己在每个动画帧上<strong>重复了一些相同的绘制操作</strong>，请考虑将其<strong>分流到屏幕外的画布上</strong>。 然后，您可以根据需要频繁地将屏幕外图像渲染到主画布上，而不必首先重复生成该图像的步骤。  </p>
-<h5 id="避免浮点数的坐标点，用整数取而代之"><a href="#避免浮点数的坐标点，用整数取而代之" class="headerlink" title="避免浮点数的坐标点，用整数取而代之"></a>避免浮点数的坐标点，用整数取而代之</h5><h5 id="不要在用drawImage时缩放图像"><a href="#不要在用drawImage时缩放图像" class="headerlink" title="不要在用drawImage时缩放图像"></a>不要在用drawImage时缩放图像</h5><h5 id="使用多层画布去画一个复杂的场景"><a href="#使用多层画布去画一个复杂的场景" class="headerlink" title="使用多层画布去画一个复杂的场景"></a>使用多层画布去画一个复杂的场景</h5><p>例如，假设您有一个游戏，其UI位于顶部，中间是游戏性动作，底部是静态背景。 在这种情况下，您可以将游戏分成三个<code>&lt;canvas&gt;</code>层。 UI将仅在用户输入时发生变化，游戏层随每个新框架发生变化，并且背景通常保持不变。</p>
+<h5 id="避免浮点数的坐标点，用整数取而代之"><a href="#避免浮点数的坐标点，用整数取而代之" class="headerlink" title="避免浮点数的坐标点，用整数取而代之"></a>避免浮点数的坐标点，用整数取而代之</h5><h5 id="不要在用drawImage时缩放图像"><a href="#不要在用drawImage时缩放图像" class="headerlink" title="不要在用drawImage时缩放图像"></a>不要在用drawImage时缩放图像</h5><h5 id="使用多层画布去画一个复杂的场景"><a href="#使用多层画布去画一个复杂的场景" class="headerlink" title="使用多层画布去画一个复杂的场景"></a>使用多层画布去画一个复杂的场景</h5><p>例如，假设您有一个游戏，其UI位于顶部，中间是游戏性动作，底部是静态背景。 在这种情况下，您可以将游戏分成三个<code>&lt;canvas&gt;</code>层。 UI将仅在用户输入时发生变化，游戏层随每个新框架发生变化，并且背景通常保持不变。  </p>
+<h5 id="使用多层画布去画一个复杂的场景-1"><a href="#使用多层画布去画一个复杂的场景-1" class="headerlink" title="使用多层画布去画一个复杂的场景"></a>使用多层画布去画一个复杂的场景</h5><h5 id="用CSS设置大的背景图"><a href="#用CSS设置大的背景图" class="headerlink" title="用CSS设置大的背景图"></a>用CSS设置大的背景图</h5><h5 id="用CSS-transforms特性缩放画布"><a href="#用CSS-transforms特性缩放画布" class="headerlink" title="用CSS transforms特性缩放画布"></a>用CSS transforms特性缩放画布</h5><p>CSS transforms 使用GPU，因此速度更快。 最好的情况是不直接缩放画布，或者具有较小的画布并按比例放大，而不是较大的画布并按比例缩小  </p>
+<h5 id="关闭透明度"><a href="#关闭透明度" class="headerlink" title="关闭透明度"></a>关闭透明度</h5><p>如果你的游戏使用画布而且不需要透明，当使用 HTMLCanvasElement.getContext() 创建一个绘图上下文时把 alpha 选项设置为 false 。这个选项可以帮助浏览器进行内部优化。<br><code>var ctx = canvas.getContext(&#39;2d&#39;, { alpha: false });</code>  </p>
+<h5 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h5><p>将画布的函数调用集合到一起（例如，画一条折线，而不要画多条分开的直线<br>避免不必要的画布状态改变<br>渲染画布中的不同点，而非整个新状态<br>尽可能避免 shadowBlur特性<br>尽可能避免text rendering<br>有动画，请使用window.requestAnimationFrame() 而非window.setInterval()<br>请谨慎使用大型物理库</p>
 
     
 
