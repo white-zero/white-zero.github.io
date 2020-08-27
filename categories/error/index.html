@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Category: error | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/error/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="White Zero">
@@ -176,530 +176,59 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-webpack3-10-0打包配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
   
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/08/27/mac-%E9%9F%B3%E9%A2%91%E5%8F%8A%E8%A7%86%E9%A2%91%E5%9D%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F/" class="archive-article-date">
+  	<time datetime="2020-08-27T01:01:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">webpack3.10.0打包配置</a>
+      <a class="archive-article-title" href="/2020/08/27/mac-%E9%9F%B3%E9%A2%91%E5%8F%8A%E8%A7%86%E9%A2%91%E5%9D%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F/">mac 音频及视频均无法正常播放，怎么解决？</a>
     </h1>
   
 
-  
-  
-<a href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-06-15T06:49:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-15</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <pre><code>&quot;babel-core&quot;: &quot;^6.26.0&quot;,
-&quot;babel-loader&quot;: &quot;^7.1.2&quot;,
-&quot;babel-preset-env&quot;: &quot;^1.6.1&quot;,
-&quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,
-&quot;css-loader&quot;: &quot;^0.28.8&quot;,
-&quot;extract-text-webpack-plugin&quot;: &quot;^3.0.2&quot;,
-&quot;html-webpack-plugin&quot;: &quot;^2.30.1&quot;,
-&quot;react&quot;: &quot;^16.2.0&quot;,
-&quot;react-dom&quot;: &quot;^16.2.0&quot;,
-&quot;react-scripts&quot;: &quot;3.4.1&quot;,
-&quot;style-loader&quot;: &quot;^0.19.1&quot;,
-&quot;webpack&quot;: &quot;^3.10.0&quot;
-&quot;sass-loader&quot;: &quot;^6.0.6&quot;,
-&quot;node-sass&quot;: &quot;^4.14.1&quot;
-“font-awesome&quot;: &quot;^4.7.0&quot;,
-&quot;webpack-dev-server&quot;: &quot;^2.9.7&quot;,</code></pre><hr>
-<ul>
-<li>根目录new一个webpack.config.js</li>
-<li>js 文件打包(react语法的处理)  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">entry: &#39;.&#x2F;src&#x2F;app.jsx&#39;,</span><br><span class="line">output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &#39;dist&#39;),</span><br><span class="line">    filename: &quot;app.js&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+        <div class="article-info info-on-right">
+          
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
 
-</li>
-</ul>
-<ul>
-<li><p>html 文件打包</p>
-<ul>
-<li><p>const HtmlWebpackPlugin = require(‘html-webpack-plugin’)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &#39;.&#x2F;src&#x2F;index.html&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p>//temlate是模版。即待打包的html文件</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>css 文件打包<ul>
-<li>tips: 要在js文件里import </li>
-</ul>
-</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     test: &#x2F;\.css$&#x2F;,</span><br><span class="line">     use: [</span><br><span class="line">                &#39;style-loader&#39;,</span><br><span class="line">                &#39;css-loader&#39;</span><br><span class="line">            ]</span><br></pre></td></tr></table></figure>
-
-- const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;)
-    （这个插件可以在打包的文件中，把css独立出来，可以提前加载）代码改为
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">test: &#x2F;\.css$&#x2F;,</span><br><span class="line">use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">     fallback: &quot;style-loader&quot;,</span><br><span class="line">     use: &quot;css-loader&quot;</span><br><span class="line">           &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &#39;.&#x2F;src&#x2F;index.html&#39;</span><br><span class="line">    &#125;),</span><br><span class="line">    new ExtractTextPlugin(&quot;index.css&quot;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></code></pre><ul>
-<li>sass文件的处理  (一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。)<ul>
-<li>要同时下载<br>   “sass-loader”: “^6.0.6”,<pre><code>&quot;node-sass&quot;: &quot;^4.14.1&quot;</code></pre></li>
-</ul>
-</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   test: &#x2F;\.scss$&#x2F;,</span><br><span class="line">   use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">   fallback: &#39;style-loader&#39;,</span><br><span class="line">   use: [&#39;css-loader&#39;, &#39;sass-loader&#39;]</span><br><span class="line">      &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></code></pre><ul>
-<li><p>图片的打包</p>
-<ul>
-<li><p>下载 <a href="mailto:url-loader@0.6.2">url-loader@0.6.2</a>  <a href="mailto:file-loader@1.1.6">file-loader@1.1.6</a>    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">test: &#x2F;\.(png|jpg|gif)$&#x2F;,</span><br><span class="line">use: [</span><br><span class="line">   &#123;</span><br><span class="line">      loader: &quot;url-loader&quot;,</span><br><span class="line">      options: &#123;</span><br><span class="line">            limit: 8192</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>字体图标的配置（npm install font-awesome）</p>
-<ul>
-<li><p>现在js文件中引入 font-awesome/css/font-awesome.min.css</p>
-</li>
-<li><p>再在webpack.config.js里配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> test: &#x2F;\.(eot|svg|ttf|woff|woff2|otf)$&#x2F;,</span><br><span class="line">  use: [</span><br><span class="line">          &#123;</span><br><span class="line">        loader: &#39;url-loader&#39;,</span><br><span class="line">        options: &#123;</span><br><span class="line">            limit: 8192</span><br><span class="line">                &#125;</span><br><span class="line">          &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>提出公共模块</p>
-<ul>
-<li>先 const webpack = require(‘webpack’)    </li>
-</ul>
-</li>
-</ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">        template: &#39;.&#x2F;src&#x2F;index.html&#39;</span><br><span class="line">    &#125;),</span><br><span class="line">    new ExtractTextPlugin(&quot;css&#x2F;[name].css&quot;),</span><br><span class="line">    new webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">        name : &#39;common&#39;,</span><br><span class="line">        filename: &#39;js&#x2F;base.js&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></code></pre><ul>
-<li><p>webpack-dev-server(页面自动更新，挂载在自定义的端口上)</p>
-<ul>
-<li><p>修改端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">    port: 8086,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在output里加publicPath：“/dist/”  (当报错一些字体文件找不到的时候加。)</p>
-</li>
-<li><p>终端 node_modules/.bin/webpack-dev-server 启动</p>
-</li>
-<li><p>在package.json里加几个scripts 里的字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;node_modules&#x2F;.bin&#x2F;webpack-dev-server&quot;,</span><br><span class="line">&quot;dist&quot;: &quot;node_modules&#x2F;.bin&#x2F;webpack -p&quot;    &#x2F;&#x2F;线上环境时，最好后面加上-p</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-</li>
-</ul>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/15/webpack3-10-0%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-面试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
   
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/09/%E9%9D%A2%E8%AF%95/">面试</a>
-    </h1>
+    </div></section>
   
 
-  
-  
-<a href="/2020/06/09/%E9%9D%A2%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-06-09T05:33:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><ul>
-<li>HTML语义化<ul>
-<li>如<code>&lt;Header&gt;</code>代表头部，<code>&lt;nav&gt;</code>代表超链接区域，<code>&lt;main&gt;</code>定义文档主要内容，<code>&lt;article&gt;</code>表示文章博客等，<code>&lt;aside&gt;</code>侧边栏，<code>&lt;footer&gt;</code>底部</li>
-<li>就是让页面内容结构化。优点如下</li>
-<li>易于用户阅读，样式丢失的时候能让页面呈现清晰的结构</li>
-<li>有利于SEO（搜索引擎优化，让更多的用户通过搜索引擎搜到你的网站，让更多人喜欢你的网站），搜索引擎根据标签来确定上下文和各个关键字的权重</li>
-<li>方便其他设备解析，如盲人阅读器根据语义渲染网页</li>
-<li>有利于开发和维护，可读性强</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>HTML5新标签<ul>
-<li><code>&lt;header&gt; &lt;footer&gt; &lt;aside&gt; &lt;nav&gt; &lt;video&gt; &lt;audio&gt; &lt;canvas&gt;</code>等…</li>
-</ul>
-</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-NEXTJS-PROJECT项目学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">NEXTJS PROJECT项目学习</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-05T09:04:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-React学习01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/">React学习</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/" class="archive-article-date">
-  	<time datetime="2020-06-03T05:51:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>*React<br>    - 1、视图层框架<br>    —&gt; 一个构建用户界面的框架<br>    —&gt; 声明式的框架（比如jquery，就是命令式的，指挥哪一个选择器，选择哪一个元素，然后怎么操作他）<br>        —&gt;只要定义好数据和DOM之间的对应关系就可以了<br>    —&gt; 数据驱动DOM，再用事件反馈给数据<br>    - 2、组件化开发<br>    —&gt; 组件组合而不是继承来对代码进行封装（组件组合更加灵活，也不会收到继承里的约束）<br>    —&gt; 主要属性： state&amp;&amp;props（state:状态、数据， props:用于父子组件的通信，子组件通过props拿到父组件传来的数据或方法（react组件间的数据传递方式是由上向下的，需要父组件在props里把操作的方法也传个子组件，通过一种类似回调的方式，让父组件的数据状态发生改变））<br>    - 3、生命周期<br>    —&gt; 一个组件从建立，到存在，最后到销毁的整个过程<br>    - 4、JSX表达式<br>    —&gt; 一种JS扩展的表达式<br>    —&gt; 带有逻辑的标记语法，有别于HTML模版（更像是一个脚本，可以随时改变，更加灵活）<br>    —&gt; 对样式，逻辑表达式和事件的支持<br>    - 5、虚拟DOM （是一种埋在框架底层的机制）（优点：1、操作DOM前对数据进行对比，只有数据变化的时候，才去操作DOM 2、会整合DOM操作）<br>    —&gt;只有在必要的时候才会去操作DOm，通过减少这种低效的操作来增加性能<br>        —&gt; 在react中，会把定义好的JSX标记最终转换成一个虚拟的DOM，存在内存里，（因为内存的读取的速度要比操作DOM快得多）<br>        —&gt; 如果用户做了对DOM产生变化的操作（虚拟DOM比较操作前后的数据差异）<br>        —&gt; 如果有数据差异，统一操作DOM一次，如果比较之后没有差异，就不会操作DOM了</p>
-<ul>
-<li>React总结<ul>
-<li>简洁：不是指语法，而是当业务内容复杂时，单向数据流和组件化的组合方式会从很大程度上降低问题的复杂度</li>
-<li>灵活：在React中可以把一切理解为js，这样在操作的时候会减少很多的束缚，另外，组件提供了多种嵌套方式，数据驱动，生命周期等特点，让开发变得更顺畅</li>
-<li>高效：虚拟DOM的存在，通过减少和优化对DOM的操作，让react在浏览器中有更好的性能表现</li>
-<li>but</li>
-<li>–&gt; 思维转换：比如jsx，单向数据流在之前的原生开发中都没有接触过</li>
-<li>–&gt; 要依赖生态：比如react-router、react-redux等，要学习更多的内容，也更加复杂</li>
-<li>–&gt; 变动频繁：不向前兼容</li>
-</ul>
-</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/03/React%E5%AD%A6%E4%B9%A001/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">网站demo (jQuery)</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-06-02T02:40:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
-<li>登陆功能<ul>
-<li>为登陆按钮添加点击事件</li>
-<li>获取用户在文本框中输入的用户名和密码</li>
-<li>验证用户是否输入了用户名和密码，没有则阻止程序向下执行</li>
-<li>调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>登陆拦截<ul>
-<li>使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方</li>
-<li>判断isLogin变量， 如果为false，跳转登陆页面</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>退出功能<ul>
-<li>为退出按钮添加点击事件</li>
-<li>利用confirm方法返回值（当用户点击确定–&gt;true,点击取消—-&gt;false）</li>
-<li>当true时调用$.ajax方法(不用传递参数)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>添加用户<ul>
-<li>1.在表单中，为添加的用户的每一项添加name属性，（name属性要和接口文档中要求的参数名称保持一致）</li>
-<li>2.为表单绑定提交事件，（在事件处理函数中要阻止表单默认提交的行为）</li>
-<li>3.在事件处理函数中获取用户在表单中输入的内容（ serialize()方法: 将内容格式化成参数字符串 ）</li>
-<li><code>var formData = $(this).serialize()</code>   (formData传到ajax里的data中)</li>
-<li>4.调用添加用户的接口，将获取到的内容通过接口发送给服务端，操作成功—&gt;刷新页面，失败–&gt;用户提示</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>用户头像上传</p>
-<ul>
-<li><p>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</p>
-</li>
-<li><p>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] )</p>
- <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
-
-<p>（将用户的文件上传给服务器端）</p>
-</li>
-<li><p>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</p>
-</li>
-<li><p>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</p>
-</li>
-<li><p>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>用户列表展示  (10132967)<ul>
-<li>1.在页面加载时向服务器发送ajax请求，索要用户列表数据</li>
-<li>2.使用模版引擎将数据和html模版拼接</li>
-<li>3.将拼接好的内容展现在页面中</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>用户信息修改<ul>
-<li>一、通过事件委托的形式为编辑按钮添加点击事件（用户信息修改功能，要把用户信息展示在页面上，因为用ajax向服务器请求的数据不知什么时候返回，所以用事件委托的方式，为他的父级添加点击事件）</li>
-<li>在事件处理函数中获取当前点击的用户的ID值 </li>
-<li>根据用户ID获取用户的详细信息（$.ajax),并通过模版引擎将用户信息渲染在表&gt;<br>单中     二、为提交按钮添加点击事件。（也要用事件委托的形式）1.获取用户在表单中&gt;<br>输入的内容，2.调用修改用户信息接口实现用户信息修改功能（$.ajax）,success函数里location.reload(),刷新页面<br>(下面的意思是当点击’edit’类的时候，触发冒泡机制，触发userBox的点击事件的处理函数)<br><code>$(&#39;#userBox&#39;).on(&#39;click&#39;, &#39;.edit&#39;, function () {}</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>删除用户<ul>
-<li>为删除按钮添加点击事件（事件委托的方法）</li>
-<li>确认用户是否要进行删除（confirm方法）</li>
-<li>获取当前被点击的用户的ID</li>
-<li>调用删除用户接口根据ID删除用户，成功—&gt;刷新页面</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
 
 
           </div>
@@ -732,11 +261,11 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
