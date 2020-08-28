@@ -542,7 +542,28 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>测试测试测试<br>测试一下commit的人是谁</p>
+    <h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p>babel playground （在线预览查看jsx–&gt;js格式）  </p>
+<h5 id="React-createElement"><a href="#React-createElement" class="headerlink" title="React.createElement"></a>React.createElement</h5><ul>
+<li><p>组件（方法名大写）,因为（jsx—&gt;js时）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;如果是大写，则转为</span><br><span class="line">function Comp()&#123;</span><br><span class="line">    return &lt;a&gt;123&lt;&#x2F;a&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;Comp id&#x3D;&quot;div&quot; key&#x3D;&quot;key&quot;&gt;</span><br><span class="line">  &lt;span&gt;1&lt;&#x2F;spam&gt;</span><br><span class="line">  &lt;span&gt;1&lt;&#x2F;spam&gt;</span><br><span class="line">&lt;&#x2F;Comp&gt;</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<p>function Comp(){<br>  return React.creatElement(“a”, null, “123”)<br>}</p>
+<p>React.createElement(<br>  Comp,<br>  {id:”div”, key: “key”},<br>  React.createElement(“span”, null, “1”),<br>  React.createElement(“span”, null, “1”)<br>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>//如果是小写，则转为<br>function comp(){<br>  return <a>123</a><br>}</p>
+<comp id="div" key="key">
+<span>1
+<span>1
+</span></span></comp>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+function comp(){
+  return React.creatElement("a", null, "123")
+}
+
+<p>React.createElement(<br>  “comp”,    //注意，这里的comp是字符串<br>  {id:”div”, key: “key”},<br>  React.createElement(“span”, null, “1”),<br>  React.createElement(“span”, null, “1”)<br>)</p>
+<pre><code>所以，在目前的react中，是以名称的&lt;font color=red&gt;大小写&lt;/font&gt;的来区分他是否是一个组件/变量/字符串的。所以在写组件名的时候&lt;font color=red&gt;首字母要大写&lt;/font&gt;.
+</code></pre></li>
+</ul>
+<p>测试一下commit的人是谁</p>
 
     
 
@@ -552,6 +573,17 @@
     
     
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
     <p class="article-more-link">
