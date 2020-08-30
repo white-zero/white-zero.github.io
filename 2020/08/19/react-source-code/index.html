@@ -16,7 +16,7 @@
 <meta property="og:description" content="前置babel playground （在线预览查看jsx–&gt;js格式）   React.createElement 组件（方法名大写）,因为（jsx—&gt;js时）   12345678910&#x2F;&#x2F;如果是大写，则转为function Comp()&amp;#123;    return &lt;a&gt;123&lt;&#x2F;a&gt;&amp;#125;&lt;Comp id&amp;#">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-19T02:16:04.000Z">
-<meta property="article:modified_time" content="2020-08-28T23:38:51.483Z">
+<meta property="article:modified_time" content="2020-08-30T06:41:47.179Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -223,6 +223,8 @@ function comp(){
 
 <p>React.createElement(<br>  “comp”,    //注意，这里的comp是字符串<br>  {id:”div”, key: “key”},<br>  React.createElement(“span”, null, “1”),<br>  React.createElement(“span”, null, “1”)<br>)</p>
 <pre><code>所以，在目前的react中，是以名称的&lt;font color=red&gt;大小写&lt;/font&gt;的来区分他是否是一个组件/变量/字符串的。所以在写组件名的时候&lt;font color=red&gt;首字母要大写&lt;/font&gt;.
+##### ref 的三种使用方式 
+string ref 
 
 
 
