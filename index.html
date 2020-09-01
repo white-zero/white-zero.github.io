@@ -564,7 +564,18 @@ function comp(){
 ##### ref 的三种使用方式 
 string ref 
 ##### forwardRef  
-当子组件是函数组件（则无状态）的时候，传递ref实例（利用ref拿到子组件的实例），需要用forwardRef。如不使用则只能传递一个参数：props
+当子组件是函数组件（则无状态）的时候，传递ref实例（利用ref拿到子组件的实例），需要用forwardRef。如不使用则只能传递一个参数：props  
+##### react.createlement  
+通过react.createlement创建的所有节点的$$typeof都是: REACT_ELEMENT_TYPE  
+##### Context  
+跨越多层组件传递信息（祖孙间传递）  
+实现方式：  
+1.childContextType  
+2.createContext: 父组件前，`const {Provider, Consumer} = React.createContext(&apos;default&apos;)` ,提供Provider（提供者）和Consumer（订阅者）  
+###### 弃用childContextType的原因:对下层组件的影响太大，每一次更新，都会造成重新的渲染，对性能的损耗太大  
+##### ConcurrentMode (asyncMode)  
+目标：让react的整体渲染过程能进行优先级的排比,并且，让整体的渲染过程是可以中断的，从而实现任务的调度，释放性能  
+包在ConcurrentMode组件下的都是低优先级的，&quot;flushSync&quot;方法提升优先级
 
 
 
