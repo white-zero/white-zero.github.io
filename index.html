@@ -578,7 +578,22 @@ string ref
 包在ConcurrentMode组件下的都是低优先级的，&quot;flushSync&quot;方法提升优先级
 </code></pre></li>
 </ul>
-<h3 id="创建更新的方式"><a href="#创建更新的方式" class="headerlink" title="创建更新的方式"></a>创建更新的方式</h3><h4 id="ReactDOM-render-hydrate"><a href="#ReactDOM-render-hydrate" class="headerlink" title="ReactDOM.render||hydrate"></a>ReactDOM.render||hydrate</h4><p>创建ReactRoot<br>创建FiberRoot和RootFiber<br>创建更新</p>
+<h3 id="创建更新的方式"><a href="#创建更新的方式" class="headerlink" title="创建更新的方式"></a>创建更新的方式</h3><h4 id="ReactDOM-render-hydrate"><a href="#ReactDOM-render-hydrate" class="headerlink" title="ReactDOM.render||hydrate"></a>ReactDOM.render||hydrate</h4><p>创建ReactRoot<br>创建FiberRoot和RootFiber  </p>
+<ul>
+<li>什么是FiberRoot？ <ul>
+<li>整个应用的起点  </li>
+<li>包含应用挂载的目标节点  </li>
+<li>记录整个应用更新过程的各种信息  </li>
+</ul>
+</li>
+<li>什么是Fiber？<ul>
+<li>每一个ReactElement对应一个Fiber对象</li>
+<li>记录节点的各种状态（clas components中的state和props）</li>
+<li>串联整个应用形成树结构（通过render、child、sibling）</li>
+</ul>
+</li>
+</ul>
+<p>创建更新</p>
 <h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4>
     
 
