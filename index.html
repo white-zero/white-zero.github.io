@@ -592,6 +592,15 @@ string ref
 <li>串联整个应用形成树结构（通过render、child、sibling）</li>
 </ul>
 </li>
+<li>Update &amp; UpdateQueue  <ul>
+<li>Update  <ul>
+<li>用于记录组件状态变化的对象  </li>
+<li>存放于UpdateQueue中  （一个单向链表结构）</li>
+<li>多个Update可以同时存在</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p>创建更新</p>
 <h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4>
