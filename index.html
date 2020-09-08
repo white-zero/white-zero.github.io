@@ -603,7 +603,8 @@ string ref
 </li>
 </ul>
 <p>创建更新</p>
-<h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4>
+<h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4><h4 id="expirationtime"><a href="#expirationtime" class="headerlink" title="expirationtime"></a>expirationtime</h4><p>如果是在没有调整空间的前提下，那么，无论两个时间相近的操作（setState）多么接近，算出的expirationtime的结果也会不同，导致任务的优先级不同，使得react整体的更新执行多次，使整个应用的性能下降。<br>所以，需要通过计算，<code>((((currentTime - 2 + 5000 / 10) / 25) | 0)+ 1) * 25</code>  (|0 的作用是取整数)</p>
+
     
 
     
