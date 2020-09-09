@@ -602,9 +602,10 @@ string ref
 </ul>
 </li>
 </ul>
-<p>创建更新</p>
-<h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4><h4 id="expirationtime"><a href="#expirationtime" class="headerlink" title="expirationtime"></a>expirationtime</h4><p>如果是在没有调整空间的前提下，那么，无论两个时间相近的操作（setState）多么接近，算出的expirationtime的结果也会不同，导致任务的优先级不同，使得react整体的更新执行多次，使整个应用的性能下降。<br>所以，需要通过计算，<code>((((currentTime - 2 + 5000 / 10) / 25) | 0)+ 1) * 25</code>  (|0 的作用是取整数)</p>
-
+<h4 id="expirationtime"><a href="#expirationtime" class="headerlink" title="expirationtime"></a>expirationtime</h4><p>如果是在没有调整空间的前提下，那么，无论两个时间相近的操作（setState）多么接近，算出的expirationtime的结果也会不同，导致任务的优先级不同，使得react整体的更新执行多次，使整个应用的性能下降。<br>所以，需要通过计算，<code>((((currentTime - 2 + 5000 / 10) / 25) | 0)+ 1) * 25</code>  (|0 的作用是取整数)<br>expirationtime种类：<br>Sync模式<br>异步模式<br>指定context  </p>
+<p><strong>创建更新</strong></p>
+<h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4><p>核心：一、给节点的Fiber创建更新  二、更新类型不同  </p>
+<h3 id="总体流程概览（核心）"><a href="#总体流程概览（核心）" class="headerlink" title="总体流程概览（核心）"></a>总体流程概览（核心）</h3><h4 id="Scheduler的整体流程"><a href="#Scheduler的整体流程" class="headerlink" title="Scheduler的整体流程"></a>Scheduler的整体流程</h4><h4 id="调度过程中的各种全局变量"><a href="#调度过程中的各种全局变量" class="headerlink" title="调度过程中的各种全局变量"></a>调度过程中的各种全局变量</h4><h4 id="构建任务调度的概念"><a href="#构建任务调度的概念" class="headerlink" title="构建任务调度的概念"></a>构建任务调度的概念</h4>
     
 
     
