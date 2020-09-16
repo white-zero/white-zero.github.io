@@ -680,6 +680,7 @@ string ref
 </li>
 </ul>
 <h4 id="expirationtime"><a href="#expirationtime" class="headerlink" title="expirationtime"></a>expirationtime</h4><p>如果是在没有调整空间的前提下，那么，无论两个时间相近的操作（setState）多么接近，算出的expirationtime的结果也会不同，导致任务的优先级不同，使得react整体的更新执行多次，使整个应用的性能下降。<br>所以，需要通过计算，<code>((((currentTime - 2 + 5000 / 10) / 25) | 0)+ 1) * 25</code>  (|0 的作用是取整数)<br>expirationtime种类：<br>Sync模式<br>异步模式<br>指定context  </p>
+<h4 id="currentTime"><a href="#currentTime" class="headerlink" title="currentTime"></a>currentTime</h4><p>在一次渲染中产生的更新需要使用相同的时间<br>一次批处理的更新应该得到相同的时间<br>挂起任务用于记录的时候应该相同</p>
 <p><strong>创建更新</strong></p>
 <h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4><p>核心：一、给节点的Fiber创建更新  二、更新类型不同  </p>
 <h3 id="总体流程概览（核心）"><a href="#总体流程概览（核心）" class="headerlink" title="总体流程概览（核心）"></a>总体流程概览（核心）</h3><h4 id="Scheduler的整体流程"><a href="#Scheduler的整体流程" class="headerlink" title="Scheduler的整体流程"></a>Scheduler的整体流程</h4><p>Scheduler  </p>
@@ -702,7 +703,7 @@ string ref
 <li>超过时间片的处理  <h4 id="renderRoot"><a href="#renderRoot" class="headerlink" title="renderRoot"></a>renderRoot</h4></li>
 <li>调用workLoop进行循环单元更新  </li>
 <li>捕获错误并进行处理  </li>
-<li>走完流程之后进行善后</li>
+<li>走完流程之后进行善后  <h3 id="入口和优化"><a href="#入口和优化" class="headerlink" title="入口和优化"></a>入口和优化</h3>判断组件更新是否可以优化<br>根据节点类型分发处理<br>根据expirationTime等信息判断是否可以跳过  </li>
 </ul>
 
     
