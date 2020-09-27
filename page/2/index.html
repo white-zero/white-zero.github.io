@@ -176,6 +176,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hexo-yilia博客搭建-新建菜单项及文章归类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/">hexo-yilia博客搭建-新建菜单项及文章归类</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/" class="archive-article-date">
+  	<time datetime="2020-08-13T23:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <pre><code>- 1.hexo new page newMenuName (可以看到source下多了一个“newMenuName”的文件夹，里面有一个index.md的文件，修改title，此title为新菜单的名字，比如叫 新菜单)
+- 2.在blog/themes/yilia/_config.yml 里找到menu.   写下比如 新页面: /categories/newMenuName/的路径
+- 3.在对应的文章编辑页面，写下categories: - newMenuName</code></pre>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hexo-blog-config//" class="article-tag-list-link color2">hexo-blog-config</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-git push错误non-fastforward" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -872,107 +947,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/07/06/Flutter%E6%90%AD%E5%BB%BAfor-mac/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-UniApp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/UniApp/">UniApp</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/06/28/UniApp/" class="archive-article-date">
-  	<time datetime="2020-06-28T11:21:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <ul>
-<li><p>UniApp</p>
-<ul>
-<li>同一套代码编译多端</li>
-<li>接近原生，效果更好</li>
-<li>开发效率高，成本降低，学习成本低</li>
-<li>支持npm与自定义组件</li>
-<li>社区活跃，版本迭代快</li>
-</ul>
-</li>
-<li><p>框架基础</p>
-<ul>
-<li><p>MVC与MVVM思想<br>  MVC：后端思想<br>view&lt;—&gt;Controller&lt;—&gt;Model</p>
-</li>
-<li><p>–&gt;M：model-模型层，数据的增删改查</p>
-</li>
-<li><p>–&gt;V：view-视图层，前端页面（html/js/css）</p>
-</li>
-<li><p>–&gt;C：controller-控制层，处理业务<br>   MVVM：<br> View(    页面HTML)&lt;—&gt;ViewModel（核心调度者协调器在script里，数据双向绑定）&lt;—&gt;Model（单页面的静态数据，在script的data里）</p>
-</li>
-</ul>
-</li>
-<li><p>应用生命周期</p>
-<ul>
-<li>onLaunch（当uni-app初始化完成时触发，全局只触发一次）</li>
-<li>onShow（启动，或从后台进入前台显示时）</li>
-<li>onHide（从前台进入后台时）</li>
-<li>onUniNViewMessage</li>
-</ul>
-</li>
-<li><p>页面生命周期</p>
-<ul>
-<li>onLoad 监听页面加载</li>
-<li>onUnload 监听页面卸载</li>
-<li>onShow 监听页面显示</li>
-<li>onHide 监听页面隐藏</li>
-<li>onReady 监听页面初次渲染完成</li></ul></li></ul>
-    
-    <a class="article-more-a" href="/2020/06/28/UniApp/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/28/UniApp/">展开全文 >></a>
     </p>
     
 
