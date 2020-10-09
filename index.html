@@ -875,7 +875,24 @@ string ref
 <li>平台插件注入  <ul>
 <li>确定插件注入顺序  </li>
 <li>注入插件模块  </li>
-<li>计算registrationNameModules等属性  <h5 id="关于batchedUpdates"><a href="#关于batchedUpdates" class="headerlink" title="关于batchedUpdates"></a>关于batchedUpdates</h5><h5 id="controlled-inputs-如何回调"><a href="#controlled-inputs-如何回调" class="headerlink" title="controlled inputs 如何回调"></a>controlled inputs 如何回调</h5><h5 id="关于事件绑定的dispatchEvent"><a href="#关于事件绑定的dispatchEvent" class="headerlink" title="关于事件绑定的dispatchEvent"></a>关于事件绑定的dispatchEvent</h5></li>
+<li>计算registrationNameModules等属性  <h5 id="关于batchedUpdates"><a href="#关于batchedUpdates" class="headerlink" title="关于batchedUpdates"></a>关于batchedUpdates</h5><h5 id="controlled-inputs-如何回调"><a href="#controlled-inputs-如何回调" class="headerlink" title="controlled inputs 如何回调"></a>controlled inputs 如何回调</h5><h5 id="关于事件绑定的dispatchEvent"><a href="#关于事件绑定的dispatchEvent" class="headerlink" title="关于事件绑定的dispatchEvent"></a>关于事件绑定的dispatchEvent</h5><h4 id="Suspend"><a href="#Suspend" class="headerlink" title="Suspend"></a>Suspend</h4></li>
+</ul>
+</li>
+<li>挂起  </li>
+<li>某次更新的任务暂时不提交  </li>
+<li>这个更新可能在下一次更新中再次被执行  </li>
+<li>三种Suspend的方式  <ul>
+<li>把提交放到低优先级的任务上  </li>
+<li>直接发起一个新的同步更新  </li>
+<li>设置timeout然后提交  <h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4></li>
+</ul>
+</li>
+<li>pendingTime  </li>
+<li>suspendedTime  </li>
+<li>pingedTime  <h4 id="两个expirationTime的作用"><a href="#两个expirationTime的作用" class="headerlink" title="两个expirationTime的作用"></a>两个expirationTime的作用</h4></li>
+<li>区别  <ul>
+<li>expirationTime作用在渲染之前  </li>
+<li>nextExpirationTimeToWorkOn作用在渲染时</li>
 </ul>
 </li>
 </ul>
