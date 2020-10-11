@@ -16,7 +16,7 @@
 <meta property="og:description" content="前记相当一部分的浏览器的显示频率是16.7ms比如：国庆北京高速，最多每16.7s通过一辆车，结果，突然插入一批setTimeout的军车，强行要10s通过。显然，这是超负荷的，要想顺利进行，只能让第三辆车直接消失。然，这是不现实的，于是就有了会堵车同样的，显示器16.7ms刷新间隔之前发生了其他绘制请求(setTimeout)，导致所有第三帧丢失，继而导致动画断续显示（堵车的感觉），这就是过度绘">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-22T07:30:24.000Z">
-<meta property="article:modified_time" content="2020-08-22T08:16:46.109Z">
+<meta property="article:modified_time" content="2020-10-11T15:27:37.947Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -206,10 +206,12 @@
     
     <h4 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h4><p>相当一部分的浏览器的<strong>显示频率是16.7ms</strong><br>比如：国庆北京高速，最多每16.7s通过一辆车，结果，突然插入一批setTimeout的军车，强行要10s通过。显然，这是超负荷的，要想顺利进行，只能让第三辆车直接消失。然，这是不现实的，于是就有了会堵车<br>同样的，显示器16.7ms<strong>刷新间隔之前发生了其他绘制请求</strong>(setTimeout)，导致所有第三帧丢失，继而导致动画断续显示（堵车的感觉），这就是过度绘制带来的问题。不仅如此，这种计时器频率的降低也会对电池使用寿命造成负面影响，并会降低其他应用的性能。<br>这也是为何setTimeout的定时器值推荐最小使用16.7ms的原因（16.7 = 1000 / 60, 即每秒60帧<br>而<code>requestAnimationFrame</code>就是为了这个而出现的。所做的事情很简单，跟着浏览器的绘制走，如果浏览设备绘制间隔是16.7ms，那我就这个间隔绘制；如果浏览设备绘制间隔是10ms, 我就10ms绘制。这样就不会存在过度绘制的问题，动画不会掉帧，自然流畅<br>内部是这么运作的：  </p>
 <ul>
-<li><p>浏览器（如页面）每次要重绘，就会通知我<code>requestAnimationFrame</code>,这是资源非常高效的一种利用方式(而<code>setTimeout</code>貌似是多个独立绘制)</p>
+<li>浏览器（如页面）每次要重绘，就会通知我<code>requestAnimationFrame</code>,这是资源非常高效的一种利用方式(而<code>setTimeout</code>貌似是多个独立绘制)</li>
+<li>页面最小化了，或者被Tab切换了。页面绘制全部停止，资源高效利用。<a id="more"></a>
+
 </li>
-<li><p>页面最小化了，或者被Tab切换了。页面绘制全部停止，资源高效利用。  </p>
-<h4 id="requestAnimationFrame三大优势"><a href="#requestAnimationFrame三大优势" class="headerlink" title="requestAnimationFrame三大优势"></a>requestAnimationFrame三大优势</h4></li>
+</ul>
+<h4 id="requestAnimationFrame三大优势"><a href="#requestAnimationFrame三大优势" class="headerlink" title="requestAnimationFrame三大优势"></a>requestAnimationFrame三大优势</h4><ul>
 <li><p><strong>统一的向下兼容策略</strong>  </p>
 <ul>
 <li><p>虽说CSS3实现动画即高效又方便，但是对于PC浏览器，IE8, IE9之流，你想兼容实现某些动画效果，比方说淡入淡出，敢问，你怎么实现？<br>IE10+ CSS3实现，IE9-之流JS <code>setTimeout</code>实现，我说累不累啊，两套完全不同的style. 你改下动画时间是不是要改两处？但是我requestAnimationFrame跟setTimeout非常类似，都是单回调，用法也类似  </p>
