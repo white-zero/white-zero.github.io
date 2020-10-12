@@ -848,9 +848,19 @@ string ref
 <li>pingedTime  <h4 id="两个expirationTime的作用"><a href="#两个expirationTime的作用" class="headerlink" title="两个expirationTime的作用"></a>两个expirationTime的作用</h4></li>
 <li>区别  <ul>
 <li>expirationTime作用在渲染之前  </li>
-<li>nextExpirationTimeToWorkOn作用在渲染时</li>
+<li>nextExpirationTimeToWorkOn作用在渲染时  <h4 id="Suspense组件更新"><a href="#Suspense组件更新" class="headerlink" title="Suspense组件更新"></a>Suspense组件更新</h4></li>
+<li>同步渲染  </li>
 </ul>
 </li>
+<li>先直接渲染子节点为null</li>
+<li>commit的时候设置state</li>
+<li>再发起一次同步更新渲染fallback<ul>
+<li>异步渲染</li>
+</ul>
+</li>
+<li>设置shouldCapture  </li>
+<li>unWindWork设置state</li>
+<li>渲染fallback</li>
 </ul>
 
     

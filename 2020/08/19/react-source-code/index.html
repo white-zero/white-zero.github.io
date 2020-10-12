@@ -16,7 +16,7 @@
 <meta property="og:description" content="前置babel playground （在线预览查看jsx–&gt;js格式）   React.createElement 组件（方法名大写）,因为（jsx—&gt;js时）   12345678910&#x2F;&#x2F;如果是大写，则转为function Comp()&amp;#123;    return &lt;a&gt;123&lt;&#x2F;a&gt;&amp;#125;&lt;Comp id&amp;#">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-19T02:16:04.000Z">
-<meta property="article:modified_time" content="2020-10-09T01:15:29.859Z">
+<meta property="article:modified_time" content="2020-10-12T01:09:05.438Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -324,9 +324,19 @@ string ref
 <li>pingedTime  <h4 id="两个expirationTime的作用"><a href="#两个expirationTime的作用" class="headerlink" title="两个expirationTime的作用"></a>两个expirationTime的作用</h4></li>
 <li>区别  <ul>
 <li>expirationTime作用在渲染之前  </li>
-<li>nextExpirationTimeToWorkOn作用在渲染时</li>
+<li>nextExpirationTimeToWorkOn作用在渲染时  <h4 id="Suspense组件更新"><a href="#Suspense组件更新" class="headerlink" title="Suspense组件更新"></a>Suspense组件更新</h4></li>
+<li>同步渲染  </li>
 </ul>
 </li>
+<li>先直接渲染子节点为null</li>
+<li>commit的时候设置state</li>
+<li>再发起一次同步更新渲染fallback<ul>
+<li>异步渲染</li>
+</ul>
+</li>
+<li>设置shouldCapture  </li>
+<li>unWindWork设置state</li>
+<li>渲染fallback</li>
 </ul>
 
     
