@@ -16,7 +16,7 @@
 <meta property="og:description" content="title: 数组操作date: 2020-09-27 16:44:38categories:    - studynotestags:  push()加在数组的末尾   pop()推出数组末尾的元素  类似shift() shift()">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-27T08:44:38.292Z">
-<meta property="article:modified_time" content="2020-10-15T02:57:02.500Z">
+<meta property="article:modified_time" content="2020-10-20T00:53:33.144Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -242,20 +242,36 @@
 <li></li>
 </ul>
 <h5 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h5><ul>
-<li>语法 <code>Array.from(arrayLike[, mapFunction[, thisArg]])</code>  <ul>
+<li><p>语法 <code>Array.from(arrayLike[, mapFunction[, thisArg]])</code>  </p>
+<ul>
 <li>arrayLike：必传参数，想要转成数组的伪数组对象或可迭代对象  </li>
 <li>mapFunction：可选参数，mapFunction(item，index){…} 是在集合中的每个项目上调用的函数。返回的值将插入到新集合中。  </li>
 <li>thisArg：可选参数，执行回调函数 mapFunction 时 this 对象。这个参数很少使用。</li>
 </ul>
 </li>
-<li>例：将类数组的每一项乘以2：  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">const</span> someNumbers = &#123; <span class="string">'0'</span>: <span class="number">10</span>, <span class="string">'1'</span>: <span class="number">15</span>, <span class="attr">length</span>: <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">Array</span>.from(someNumbers, value =&gt; value * <span class="number">2</span>); <span class="comment">// =&gt; [20, 30]</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">- 将类数组转换成数组  </span></span><br><span class="line"><span class="string">通常，你会碰到的类数组对象有：函数中的 arguments 关键字，或者是一个 DOM 集合。</span></span><br><span class="line"><span class="string">在下面的示例中，让我们对函数的参数求和：</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumArguments</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>).reduce(<span class="function">(<span class="params">sum, num</span>) =&gt;</span> sum + num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Array.from(arguments) 将类数组对象 arguments 转换成一个数组，然后使用数组的 reduce 方法求和。</span></span><br><span class="line">sumArguments(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// =&gt; 6</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">- Array.from() 的第一个参数可以是"任意一个可迭代对象"，我们继续看一些例子:  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="built_in">Array</span>.from(<span class="string">'Hey'</span>);                   <span class="comment">// =&gt; ['H', 'e', 'y']</span></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'one'</span>, <span class="string">'two'</span>])); <span class="comment">// =&gt; ['one', 'two']</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">map.set(<span class="string">'one'</span>, <span class="number">1</span>)</span><br><span class="line">map.set(<span class="string">'two'</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">Array</span>.from(map); <span class="comment">// =&gt; [['one', 1], ['two', 2]</span></span><br></pre></td></tr></table></figure>
+<li><p>例：将类数组的每一项乘以2：  </p>
+<pre><code class="js"><span class="keyword">const</span> someNumbers = { <span class="string">'0'</span>: <span class="number">10</span>, <span class="string">'1'</span>: <span class="number">15</span>, <span class="attr">length</span>: <span class="number">2</span> };
 
-
-
-
+<span class="built_in">Array</span>.from(someNumbers, value =&gt; value * <span class="number">2</span>); <span class="comment">// =&gt; [20, 30]</span></code></pre>
+</li>
+<li><p>将类数组转换成数组<br>通常，你会碰到的类数组对象有：函数中的 arguments 关键字，或者是一个 DOM 集合。<br>在下面的示例中，让我们对函数的参数求和：</p>
+<pre><code class="js"><span class="function"><span class="keyword">function</span> <span class="title">sumArguments</span>(<span class="params"></span>) </span>{
+  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="built_in">arguments</span>).reduce(<span class="function">(<span class="params">sum, num</span>) =&gt;</span> sum + num);
+}
+<span class="comment">//Array.from(arguments) 将类数组对象 arguments 转换成一个数组，然后使用数组的 reduce 方法求和。</span>
+sumArguments(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// =&gt; 6</span></code></pre>
+</li>
+<li><p>Array.from() 的第一个参数可以是”任意一个可迭代对象”，我们继续看一些例子:  </p>
+<pre><code class="js"><span class="built_in">Array</span>.from(<span class="string">'Hey'</span>);                   <span class="comment">// =&gt; ['H', 'e', 'y']</span>
+<span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'one'</span>, <span class="string">'two'</span>])); <span class="comment">// =&gt; ['one', 'two']</span>
+</code></pre>
 </li>
 </ul>
+<p>const map = new Map();<br>map.set(‘one’, 1)<br>map.set(‘two’, 2);<br>Array.from(map); // =&gt; [[‘one’, 1], [‘two’, 2]</p>
+<pre><code>
 
+
+</code></pre>
     
 
     
