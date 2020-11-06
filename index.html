@@ -176,6 +176,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用lodash的Clone和Clonedeep" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/">使用lodash的Clone和Clonedeep</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/" class="archive-article-date">
+  	<time datetime="2020-11-06T00:55:34.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title: 使用lodash的Clone和Clonedeep<br>date: 2020-11-06 08:55:34<br>categories:<br>    - studynotes<br>tags:</p>
+<hr>
+<p>Lodash 提供两种不同的功能，允许你进行”浅拷贝”和”深拷贝”，它们是 clone 和 clonedeep。 Lodash 的优点在于你可以单独导入它的每个函数，而无需将整个库放入你的项目中。这可以大大的减少依赖项的大小  </p>
+<pre><code class="js"><span class="keyword">const</span> clone = <span class="built_in">require</span>(<span class="string">'lodash/clone'</span>); 
+<span class="keyword">const</span> cloneDeep = <span class="built_in">require</span>(<span class="string">'lodash/clonedeep'</span>);
+<span class="comment">// 你也可以这样做:</span>
+<span class="comment">// const clone = require('lodash.clone');</span>
+<span class="comment">// const cloneDeep = require('lodash.clonedeep');</span>
+<span class="comment">// 取决于你自己的风格 :)</span></code></pre>
+<pre><code class="js"><span class="keyword">const</span> clone = <span class="built_in">require</span>(<span class="string">'lodash/clone'</span>); 
+<span class="keyword">const</span> cloneDeep = <span class="built_in">require</span>(<span class="string">'lodash/clonedeep'</span>);
+
+<span class="keyword">const</span> externalObject = {
+  animal: <span class="string">'Gator'</span>
+};
+
+<span class="keyword">const</span> originalObject = {
+  a: <span class="number">1</span>,
+  b: <span class="string">'string'</span>,
+  c: <span class="literal">false</span>,
+  d: externalObject
+};
+
+<span class="keyword">const</span> shallowClonedObject = clone(originalObject);  <span class="comment">//clone方法</span>
+
+externalObject.animal = <span class="string">'Crocodile'</span>;
+
+<span class="built_in">console</span>.log(originalObject);
+<span class="built_in">console</span>.log(shallowClonedObject);
+<span class="comment">// originalObject 和 shallowClonedObject 中的`animal`属性是同时被改变的，因为它是一个浅的副本。</span>
+
+<span class="keyword">const</span> deepClonedObject = clonedeep(originalObject);  <span class="comment">//clonedeep方法</span>
+
+externalObject.animal = <span class="string">'Lizard'</span>;
+
+<span class="built_in">console</span>.log(originalObject);
+<span class="built_in">console</span>.log(deepClonedObject);
+<span class="comment">// 原始对象中的'animal'属性发生了变化，但对于deepClonedObject，它复制后'animal'并没有发生改变</span>
+<span class="comment">// 对象是独立的而不是复制引用。</span></code></pre>
+<p>在上面的代码中，我们创建了一个名为 originalObject 的对象,属性 d 引用我们的 externalObject，它具有animal 的属性。  </p>
+<p>当从 Lodash 执行 <strong>clone</strong> 函数时，它会创建一个对象的浅层副本，我们将其分配给 shallowClonedObject。在 externalObject 中为 animal 属性赋值一个新值将改变 originalObject 和 shallowClonedObject，因为浅拷贝只能将引用复制到 externalObject,<strong>它并没有为自己创造一个全新的对象</strong>。</p>
+<p>这就是 <strong>clonedeep</strong> 函数的用武之地。如果你对 deepClonedObject 执行相同的处理，那么 originalObject 的 d 属性是唯一要改变的属性</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-umi学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1010,84 +1115,6 @@ string ref
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/19/react-source-code/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-http和https协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/19/http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE/">http和https协议</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/08/19/http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-  	<time datetime="2020-08-18T22:07:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="1、什么是协议？"><a href="#1、什么是协议？" class="headerlink" title="1、什么是协议？"></a>1、什么是协议？</h4><p>网络协议是计算机之间为了实现<font color="red"><strong>网络通信</strong></font>而达成的一种“<font color="red"><strong>约定</strong></font>”或者”<font color="red"><strong>规则</strong></font>“，有了这种”约定“，不同厂商的生产设备，以及不同操作系统组成的计算机之间，就可以实现通信。</p>
-<h4 id="2、HTTP协议是什么？"><a href="#2、HTTP协议是什么？" class="headerlink" title="2、HTTP协议是什么？"></a>2、HTTP协议是什么？</h4><p>HTTP协议（Hyper Text Transfer Protocol）是<font color="red"><strong>超文本传输协议</strong></font>的缩写，它是从<strong>WEB服务器</strong>传输超文本标记语言(<strong>HTML</strong>)到<strong>本地浏览器</strong>的<strong>传送协议</strong>。<br>目前广泛使用的是HTTP/1.1版本</p>
-<h4 id="3、HTTP协议原理？"><a href="#3、HTTP协议原理？" class="headerlink" title="3、HTTP协议原理？"></a>3、HTTP协议原理？</h4><p>HTTP是一个<strong>基于TCP/IP通信协议</strong>来传递数据的协议，传输的数据类型为HTML 文件,、图片文件, 查询结果等。<br>HTTP协议一般用于<strong>B/S架构</strong>（）。<strong>浏览器</strong>作为HTTP<strong>客户端</strong>通过<strong>URL</strong>向HTTP<strong>服务端</strong>即WEB服务器<strong>发送所有请求</strong>  </p>
-    
-    <a class="article-more-a" href="/2020/08/19/http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/19/http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
     </p>
     
 
