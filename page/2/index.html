@@ -176,6 +176,248 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react-source-code" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/19/react-source-code/">react_source_code</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/08/19/react-source-code/" class="archive-article-date">
+  	<time datetime="2020-08-19T02:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p>babel playground （在线预览查看jsx–&gt;js格式）  </p>
+<h5 id="React-createElement"><a href="#React-createElement" class="headerlink" title="React.createElement"></a>React.createElement</h5><ul>
+<li><p>组件（方法名大写）,因为（jsx—&gt;js时）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;如果是大写，则转为</span><br><span class="line">function Comp()&#123;</span><br><span class="line">    return &lt;a&gt;123&lt;&#x2F;a&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;Comp id&#x3D;&quot;div&quot; key&#x3D;&quot;key&quot;&gt;</span><br><span class="line">  &lt;span&gt;1&lt;&#x2F;spam&gt;</span><br><span class="line">  &lt;span&gt;1&lt;&#x2F;spam&gt;</span><br><span class="line">&lt;&#x2F;Comp&gt;</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<p>function Comp(){<br>  return React.creatElement(“a”, null, “123”)<br>}</p>
+<p>React.createElement(<br>  Comp,<br>  {id:”div”, key: “key”},<br>  React.createElement(“span”, null, “1”),<br>  React.createElement(“span”, null, “1”)<br>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>//如果是小写，则转为<br>function comp(){<br>  return <a>123</a><br>}</p>
+<comp id="div" key="key">
+<span>1
+<span>1
+</span></span></comp>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+function comp(){
+  return React.creatElement("a", null, "123")
+}
+
+<p>React.createElement(<br>  “comp”,    //注意，这里的comp是字符串<br>  {id:”div”, key: “key”},<br>  React.createElement(“span”, null, “1”),<br>  React.createElement(“span”, null, “1”)<br>)</p>
+<pre><code>所以，在目前的react中，是以名称的&lt;font color=red&gt;大小写&lt;/font&gt;的来区分他是否是一个组件/变量/字符串的。所以在写组件名的时候&lt;font color=red&gt;首字母要大写&lt;/font&gt;.
+##### ref 的三种使用方式 
+string ref 
+##### forwardRef  
+当子组件是函数组件（则无状态）的时候，传递ref实例（利用ref拿到子组件的实例），需要用forwardRef。如不使用则只能传递一个参数：props  
+##### react.createlement  
+通过react.createlement创建的所有节点的$$typeof都是: REACT_ELEMENT_TYPE  
+##### Context  
+跨越多层组件传递信息（祖孙间传递）  
+实现方式：  
+1.childContextType  
+2.createContext: 父组件前，`const {Provider, Consumer} = React.createContext(&apos;default&apos;)` ,提供Provider（提供者）和Consumer（订阅者）  
+###### 弃用childContextType的原因:对下层组件的影响太大，每一次更新，都会造成重新的渲染，对性能的损耗太大  
+##### ConcurrentMode (asyncMode)  
+目标：让react的整体渲染过程能进行优先级的排比,并且，让整体的渲染过程是可以中断的，从而实现任务的调度，释放性能  
+包在ConcurrentMode组件下的都是低优先级的，&quot;flushSync&quot;方法提升优先级
+</code></pre></li>
+</ul>
+<h3 id="创建更新的方式"><a href="#创建更新的方式" class="headerlink" title="创建更新的方式"></a>创建更新的方式</h3><h4 id="ReactDOM-render-hydrate"><a href="#ReactDOM-render-hydrate" class="headerlink" title="ReactDOM.render||hydrate"></a>ReactDOM.render||hydrate</h4><p>创建ReactRoot<br>创建FiberRoot和RootFiber  </p>
+<ul>
+<li>什么是FiberRoot？ <ul>
+<li>整个应用的起点  </li>
+<li>包含应用挂载的目标节点  </li>
+<li>记录整个应用更新过程的各种信息  </li>
+</ul>
+</li>
+<li>什么是Fiber？<ul>
+<li>每一个ReactElement对应一个Fiber对象</li>
+<li>记录节点的各种状态（clas components中的state和props）</li>
+<li>串联整个应用形成树结构（通过render、child、sibling）</li>
+</ul>
+</li>
+<li>Update &amp; UpdateQueue  <ul>
+<li>Update  <ul>
+<li>用于记录组件状态变化的对象  </li>
+<li>存放于UpdateQueue中  （一个单向链表结构）</li>
+<li>多个Update可以同时存在</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="expirationtime"><a href="#expirationtime" class="headerlink" title="expirationtime"></a>expirationtime</h4><p>如果是在没有调整空间的前提下，那么，无论两个时间相近的操作（setState）多么接近，算出的expirationtime的结果也会不同，导致任务的优先级不同，使得react整体的更新执行多次，使整个应用的性能下降。<br>所以，需要通过计算，<code>((((currentTime - 2 + 5000 / 10) / 25) | 0)+ 1) * 25</code>  (|0 的作用是取整数)<br>expirationtime种类：<br>Sync模式<br>异步模式<br>指定context  </p>
+<h4 id="currentTime"><a href="#currentTime" class="headerlink" title="currentTime"></a>currentTime</h4><p>在一次渲染中产生的更新需要使用相同的时间<br>一次批处理的更新应该得到相同的时间<br>挂起任务用于记录的时候应该相同</p>
+<p><strong>创建更新</strong></p>
+<h4 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h4><h4 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate"></a>forceUpdate</h4><p>核心：一、给节点的Fiber创建更新  二、更新类型不同  </p>
+<h3 id="总体流程概览（核心）"><a href="#总体流程概览（核心）" class="headerlink" title="总体流程概览（核心）"></a>总体流程概览（核心）</h3><h4 id="Scheduler的整体流程"><a href="#Scheduler的整体流程" class="headerlink" title="Scheduler的整体流程"></a>Scheduler的整体流程</h4><p>Scheduler  </p>
+<ul>
+<li>找到更新对应的FiberRoot节点  </li>
+<li>如果符合条件重置stack  </li>
+<li>如果符合条件就请求工作调度<br>React.Scheduler  </li>
+<li>目的：为了保证react在执行更新的每一帧中时间中不超过特定的时间，留给浏览器刷新动画或留给用户操作反馈的时间</li>
+<li>维护时间片  </li>
+<li>模拟requestIdleCallback  </li>
+<li>调度列表和超时判断</li>
+</ul>
+<p>requestWork  </p>
+<ul>
+<li>加入到root调度队列  </li>
+<li>判断是否批量更新  </li>
+<li>根据expirationTime判断调度类型<h4 id="调度过程中的各种全局变量"><a href="#调度过程中的各种全局变量" class="headerlink" title="调度过程中的各种全局变量"></a>调度过程中的各种全局变量</h4><h4 id="构建任务调度的概念"><a href="#构建任务调度的概念" class="headerlink" title="构建任务调度的概念"></a>构建任务调度的概念</h4><h4 id="performwork"><a href="#performwork" class="headerlink" title="performwork"></a>performwork</h4></li>
+<li>是否有deadline的区分</li>
+<li>循环渲染Root的条件 </li>
+<li>超过时间片的处理  <h4 id="renderRoot"><a href="#renderRoot" class="headerlink" title="renderRoot"></a>renderRoot</h4></li>
+<li>调用workLoop进行循环单元更新  </li>
+<li>捕获错误并进行处理  </li>
+<li>走完流程之后进行善后  <h3 id="入口和优化"><a href="#入口和优化" class="headerlink" title="入口和优化"></a>入口和优化</h3>判断组件更新是否可以优化<br>根据节点类型分发处理<br>根据expirationTime等信息判断是否可以跳过  <h4 id="reconcileChildren"><a href="#reconcileChildren" class="headerlink" title="reconcileChildren"></a>reconcileChildren</h4>根据props.children生成Fiber子树<br>判断Fiber对象是否可以复用<br>列表根据key优化  <h4 id="key和数组调和"><a href="#key和数组调和" class="headerlink" title="key和数组调和"></a>key和数组调和</h4>key的作用<br>对比数组children是否可以复用<br>generator和Array的区别  <h4 id="ClassComponent"><a href="#ClassComponent" class="headerlink" title="ClassComponent"></a>ClassComponent</h4><h4 id="Mode组件"><a href="#Mode组件" class="headerlink" title="Mode组件"></a>Mode组件</h4>ConCurrentmode<br>StrictMode  <h4 id="completeUnitOfWork"><a href="#completeUnitOfWork" class="headerlink" title="completeUnitOfWork"></a>completeUnitOfWork</h4>根据是否中断调用不同的处理方法<br>判断是否有兄弟节点来执行不同的操作<br>完成节点之后赋值effect链  <h4 id="completeWork"><a href="#completeWork" class="headerlink" title="completeWork"></a>completeWork</h4>pop各种context相关的内容<br>对于HostComponent执行初始化<br>初始化监听事件<h4 id="updateHostComponent"><a href="#updateHostComponent" class="headerlink" title="updateHostComponent"></a>updateHostComponent</h4>diffProperties计算需要更新的内容<br>不同的dom property处理放肆不同  <h4 id="renderRoot错误处理"><a href="#renderRoot错误处理" class="headerlink" title="renderRoot错误处理"></a>renderRoot错误处理</h4>给报错节点增加Incomplete副作用<br>给父链上具有error boundary的节点增加副作用<br>创建错误相关的更新  <h4 id="unwindWork"><a href="#unwindWork" class="headerlink" title="unwindWork"></a>unwindWork</h4>类似completeWork对不同类型组件进行处理<br>对于ShouldCapture组件设置DidCapture副作用  <h4 id="commitRoot"><a href="#commitRoot" class="headerlink" title="commitRoot"></a>commitRoot</h4>预备工作<br>三个循环<br>善后工作  <h4 id="开发时捕获错误"><a href="#开发时捕获错误" class="headerlink" title="开发时捕获错误"></a>开发时捕获错误</h4><h4 id="commitDeletion"><a href="#commitDeletion" class="headerlink" title="commitDeletion"></a>commitDeletion</h4>遍历子树<br>卸载ref<br>如果有组件调用componentWillUnmount  <h4 id="context"><a href="#context" class="headerlink" title="context"></a>context</h4></li>
+<li>stack（栈）<ul>
+<li>更新节点时相关信息入栈  </li>
+<li>完成节点时相关信息出栈  </li>
+<li>用不同的cursor记录不同的信息  </li>
+</ul>
+</li>
+<li>LegacyContext  <ul>
+<li>会影响整个子树  </li>
+<li>嵌套的context提供者需要进行数据的合并  </li>
+<li>对性能影响较大<h3 id="React-原理最核心的部分："><a href="#React-原理最核心的部分：" class="headerlink" title="React 原理最核心的部分："></a>React 原理最核心的部分：</h3></li>
+</ul>
+</li>
+<li>更新机制</li>
+<li>什么是Fiber以及作用</li>
+<li>React 实现路更新任务的调度，如何实现的    <h4 id="forwardRef"><a href="#forwardRef" class="headerlink" title="forwardRef"></a>forwardRef</h4>forwardRef是用来解决HOC组件传递ref的问题的，所谓HOC就是Higher Order Component，比如使用redux的时候，我们用connect来给组件绑定需要的state，这其中其实就是给我们的组件在外部包了一层组件，然后通过…props的方式把外部的props传入到实际组件。forwardRef的使用方法如下   <h4 id="事件系统"><a href="#事件系统" class="headerlink" title="事件系统"></a>事件系统</h4></li>
+<li>平台插件注入  <ul>
+<li>确定插件注入顺序  </li>
+<li>注入插件模块  </li>
+<li>计算registrationNameModules等属性  <h5 id="关于batchedUpdates"><a href="#关于batchedUpdates" class="headerlink" title="关于batchedUpdates"></a>关于batchedUpdates</h5><h5 id="controlled-inputs-如何回调"><a href="#controlled-inputs-如何回调" class="headerlink" title="controlled inputs 如何回调"></a>controlled inputs 如何回调</h5><h5 id="关于事件绑定的dispatchEvent"><a href="#关于事件绑定的dispatchEvent" class="headerlink" title="关于事件绑定的dispatchEvent"></a>关于事件绑定的dispatchEvent</h5><h4 id="Suspend"><a href="#Suspend" class="headerlink" title="Suspend"></a>Suspend</h4></li>
+</ul>
+</li>
+<li>挂起  </li>
+<li>某次更新的任务暂时不提交  </li>
+<li>这个更新可能在下一次更新中再次被执行  </li>
+<li>三种Suspend的方式  <ul>
+<li>把提交放到低优先级的任务上  </li>
+<li>直接发起一个新的同步更新  </li>
+<li>设置timeout然后提交  <h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4></li>
+</ul>
+</li>
+<li>pendingTime  </li>
+<li>suspendedTime  </li>
+<li>pingedTime  <h4 id="两个expirationTime的作用"><a href="#两个expirationTime的作用" class="headerlink" title="两个expirationTime的作用"></a>两个expirationTime的作用</h4></li>
+<li>区别  <ul>
+<li>expirationTime作用在渲染之前  </li>
+<li>nextExpirationTimeToWorkOn作用在渲染时  <h4 id="Suspense组件更新"><a href="#Suspense组件更新" class="headerlink" title="Suspense组件更新"></a>Suspense组件更新</h4></li>
+<li>同步渲染  </li>
+</ul>
+</li>
+<li>先直接渲染子节点为null</li>
+<li>commit的时候设置state</li>
+<li>再发起一次同步更新渲染fallback<ul>
+<li>异步渲染</li>
+</ul>
+</li>
+<li>设置shouldCapture  </li>
+<li>unWindWork设置state</li>
+<li>渲染fallback <h4 id="retry"><a href="#retry" class="headerlink" title="retry"></a>retry</h4><h4 id="Hooks"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks</h4><ul>
+<li>赋予函数组件类组件的能力  </li>
+<li>主要Hooks</li>
+</ul>
+</li>
+<li>useState  </li>
+<li>useEffect  </li>
+<li>useContext<ul>
+<li>所有的Hooks  </li>
+</ul>
+</li>
+<li>useReducer (useEffect的本质，useEffect由useReducer封装)  </li>
+<li>useLayoutEffect</li>
+<li>useCallback  (第二个参数为[]时，只在初次渲染组件，和结束组件的时候，调用函数,去掉时，每次都渲染)</li>
+<li>useMemo  </li>
+<li>useRef  </li>
+<li>useImperativeHandle  <ul>
+<li>useEffect和useLayoutEffect的区别  </li>
+</ul>
+</li>
+<li>useLayoutEffect 会在当前commit执行的过程中，就被执行destory和create   （类似于componentDidmount和componentDidupdate的生命周期的功能）<br>useEffect 会异步得等到所有的dom节点更新完成，浏览器渲染完成之后，才会去执行destory和create，不会阻塞浏览器的渲染   </li>
+<li>useMemo 和 useCallback<br>useMemo返回一个调用过方法的值，useCallback返回一个方法  <h4 id="React的纯粹"><a href="#React的纯粹" class="headerlink" title="React的纯粹"></a>React的纯粹</h4><ul>
+<li>一切基于State  </li>
+<li>优化模式都很类似  </li>
+<li>Fiber和Hooks都是粒度的细分  <h4 id="Fiber的思想是关键"><a href="#Fiber的思想是关键" class="headerlink" title="Fiber的思想是关键"></a>Fiber的思想是关键</h4></li>
+<li>Fiber带来的提升  </li>
+</ul>
+</li>
+<li>更新粒度细分  </li>
+<li>异步更新模式  </li>
+<li>提供了Hooks实现的基础  <h4 id="如何看源码"><a href="#如何看源码" class="headerlink" title="如何看源码"></a>如何看源码</h4><ul>
+<li>跟踪调试看大致流程    </li>
+<li>理解功能概念  </li>
+<li>写demo验证自己想法  </li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/19/react-source-code/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-http和https协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -894,93 +1136,9 @@
 
 
   
-    <article id="post-Typescript笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/">Typescript笔记</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-07-22T06:10:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <ul>
-<li><p>静态类型和对象类型</p>
-<ul>
-<li>基础静态类型非常简单，只要在声明变量的后边加一个:号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做count<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const count : number &#x3D; 999;</span><br><span class="line">const Name : string &#x3D; &#39;jack&#39;;</span><br></pre></td></tr></table></figure></li>
-<li>对象类型    <ul>
-<li>对象类型</li>
-<li>数组类型</li>
-<li>类类型</li>
-<li>函数类型</li></ul></li></ul></li></ul>
-    
-    <a class="article-more-a" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </nav>
   
 
