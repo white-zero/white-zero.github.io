@@ -176,6 +176,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React中的Refs笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/React%E4%B8%AD%E7%9A%84Refs%E7%AC%94%E8%AE%B0/">React中的Refs笔记</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/07/28/React%E4%B8%AD%E7%9A%84Refs%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-07-28T15:13:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-28</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li><p>受控组件</p>
+<ul>
+<li>react中，可变状态通常保存在组件的state属性中，并且只能通过setState（）更新。通过渲染表单的React组件来控制用户输入过程中表单发送的操作。  这个 “被React通过此种方式控制取值的表单<strong>输入元素</strong>”,被称为受控组件</li>
+</ul>
+</li>
+<li><p>不受控组件</p>
+<ul>
+<li>不被react组件控制的组件。其中数据由DOM本身处理。它的值只能由用户设置，通过DOM自身提供的一些特性来获取</li>
+</ul>
+</li>
+<li><p>受控组件和不受控组件的区别</p>
+<ul>
+<li>受控组件自身维护的状态值变化，可以配合自身的change事件，进行修改或者校验用户的输入</li>
+</ul>
+</li>
+<li><p>而在React中，因为有了Refs的出现，使得不受控组件自身状态值的维护变得容易了许多</p>
+</li>
+<li><p>Refs：一个获取DOM节点或React元素实例的工具。</p>
+<ul>
+<li>在 React单项数据流中，props是父子组件交互的唯一方式。要修改一个子组件，需要通过的新的props来重新渲染。<br>但是在某些情况下，需要在数据流之外强制修改子组件。被修改的子组件可能是一个React组件实例，也可能是一个DOM元素。对于这两种情况，React 都通过 Refs的使用提供了具体的解决方案。</li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/28/React%E4%B8%AD%E7%9A%84Refs%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-git-log-中文乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1026,68 +1123,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/06/09/%E9%9D%A2%E8%AF%95/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-NEXTJS-PROJECT项目学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">NEXTJS PROJECT项目学习</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-05T09:04:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-05</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/05/NEXTJS-PROJECT%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
     </p>
     
 
