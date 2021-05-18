@@ -176,6 +176,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-pythonLearing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/17/pythonLearing/">pythonLearing</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/05/17/pythonLearing/" class="archive-article-date">
+  	<time datetime="2021-05-17T07:05:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-17</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h5 id="bugs"><a href="#bugs" class="headerlink" title="bugs"></a>bugs</h5><h6 id="pip-装包"><a href="#pip-装包" class="headerlink" title="pip 装包"></a>pip 装包</h6><p>Traceback (most recent call last):<br>  File “/Library/Frameworks/Python.framework/Versions/2.7/bin/pip”, line 9, in <module><br>    load_entry_point(‘pip==21.1.1’, ‘console_scripts’, ‘pip’)()</module></p>
+<h6 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h6><p>  python -m pip install &lt;包名&gt;</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/05/17/pythonLearing/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-angularJS简易横向时间轴" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -886,85 +961,6 @@ externalObject.animal = <span class="string">'Lizard'</span>;
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/27/mac-%E9%9F%B3%E9%A2%91%E5%8F%8A%E8%A7%86%E9%A2%91%E5%9D%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-canvas笔记-requestAnimationFrame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/">canvas笔记-requestAnimationFrame</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/" class="archive-article-date">
-  	<time datetime="2020-08-22T07:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h4><p>相当一部分的浏览器的<strong>显示频率是16.7ms</strong><br>比如：国庆北京高速，最多每16.7s通过一辆车，结果，突然插入一批setTimeout的军车，强行要10s通过。显然，这是超负荷的，要想顺利进行，只能让第三辆车直接消失。然，这是不现实的，于是就有了会堵车<br>同样的，显示器16.7ms<strong>刷新间隔之前发生了其他绘制请求</strong>(setTimeout)，导致所有第三帧丢失，继而导致动画断续显示（堵车的感觉），这就是过度绘制带来的问题。不仅如此，这种计时器频率的降低也会对电池使用寿命造成负面影响，并会降低其他应用的性能。<br>这也是为何setTimeout的定时器值推荐最小使用16.7ms的原因（16.7 = 1000 / 60, 即每秒60帧<br>而<code>requestAnimationFrame</code>就是为了这个而出现的。所做的事情很简单，跟着浏览器的绘制走，如果浏览设备绘制间隔是16.7ms，那我就这个间隔绘制；如果浏览设备绘制间隔是10ms, 我就10ms绘制。这样就不会存在过度绘制的问题，动画不会掉帧，自然流畅<br>内部是这么运作的：  </p>
-<ul>
-<li>浏览器（如页面）每次要重绘，就会通知我<code>requestAnimationFrame</code>,这是资源非常高效的一种利用方式(而<code>setTimeout</code>貌似是多个独立绘制)</li>
-<li>页面最小化了，或者被Tab切换了。页面绘制全部停止，资源高效利用。</li></ul>
-    
-    <a class="article-more-a" href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/">展开全文 >></a>
     </p>
     
 
