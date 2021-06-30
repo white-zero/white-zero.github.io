@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>pythonLearing | Hexo</title>
+  <title>vue打包error | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bugspip 装包Traceback (most recent call last):  File “&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;2.7&#x2F;bin&#x2F;pip”, line 9, in     load_entry_point(‘pip&#x3D;&#x3D;21.1.1’, ‘console_scripts’, ‘pip’)() 解决  python -m">
+  <meta name="description" content="ERROR in static&#x2F;js&#x2F;13.e09a8412a3f2a808b172.js from UglifyJsUnexpected token name «i», expected punc «;» [.&#x2F;~&#x2F;element-ui&#x2F;src&#x2F;utils&#x2F;merge.js:2,0][static&#x2F;js&#x2F;13.e09a8412a3f2a808b172.js:1542,11] 解决：—-在webp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pythonLearing">
-<meta property="og:url" content="http://yoursite.com/2021/05/17/pythonLearing/index.html">
+<meta property="og:title" content="vue打包error">
+<meta property="og:url" content="http://yoursite.com/2021/06/30/vue%E6%89%93%E5%8C%85error/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="bugspip 装包Traceback (most recent call last):  File “&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;2.7&#x2F;bin&#x2F;pip”, line 9, in     load_entry_point(‘pip&#x3D;&#x3D;21.1.1’, ‘console_scripts’, ‘pip’)() 解决  python -m">
+<meta property="og:description" content="ERROR in static&#x2F;js&#x2F;13.e09a8412a3f2a808b172.js from UglifyJsUnexpected token name «i», expected punc «;» [.&#x2F;~&#x2F;element-ui&#x2F;src&#x2F;utils&#x2F;merge.js:2,0][static&#x2F;js&#x2F;13.e09a8412a3f2a808b172.js:1542,11] 解决：—-在webp">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-17T07:05:47.000Z">
-<meta property="article:modified_time" content="2021-05-17T07:10:40.544Z">
+<meta property="article:published_time" content="2021-06-30T02:37:16.000Z">
+<meta property="article:modified_time" content="2021-06-30T02:43:18.722Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -178,14 +178,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pythonLearing" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue打包error" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      pythonLearing
+      vue打包error
     </h1>
   
 
@@ -196,16 +196,17 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2021/05/17/pythonLearing/" class="archive-article-date">
-  	<time datetime="2021-05-17T07:05:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-17</time>
+<a href="/2021/06/30/vue%E6%89%93%E5%8C%85error/" class="archive-article-date">
+  	<time datetime="2021-06-30T02:37:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
 </a>
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="bugs"><a href="#bugs" class="headerlink" title="bugs"></a>bugs</h5><h6 id="pip-装包"><a href="#pip-装包" class="headerlink" title="pip 装包"></a>pip 装包</h6><p>Traceback (most recent call last):<br>  File “/Library/Frameworks/Python.framework/Versions/2.7/bin/pip”, line 9, in <module><br>    load_entry_point(‘pip==21.1.1’, ‘console_scripts’, ‘pip’)()</module></p>
-<h6 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h6><p>  python -m pip install &lt;包名&gt;</p>
+    <p>ERROR in static/js/13.e09a8412a3f2a808b172.js from UglifyJs<br>Unexpected token name «i», expected punc «;» [./~/element-ui/src/utils/merge.js:2,0][static/js/13.e09a8412a3f2a808b172.js:1542,11]</p>
+<p>解决：<br>—-在webpack.base.config.js文件中加入rules</p>
+<p>```<br>    module:{<br>      rules:[<br>        {<br>        test: /.js$/,<br>        loader: ‘babel-loader?cacheDirectory’,<br>        include: [resolve(‘src’), resolve(‘test’),resolve(‘node_modules/element-ui’)]<br>      },<br>      ]<br>    }<br>    //注意：报错的地方在哪，resolve括号里的位置就在哪。<br>    例：报错在[./~/aaa/bb/cc/dd.js]  则rules里写为<br>    {<br>        test: /.js$/,<br>        loader: ‘babel-loader?cacheDirectory’,<br>        include: [resolve(‘src’), resolve(‘test’),resolve(‘node_modules/aaa’)]<br>      },</p>
 
     
 
@@ -245,7 +246,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
         		</li>
       		
 		</ul>
@@ -300,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/05/17/pythonLearing/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/06/30/vue%E6%89%93%E5%8C%85error/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +315,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2021/06/30/vue%E6%89%93%E5%8C%85error/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue打包error
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/08/angularJS%E7%AE%80%E6%98%93%E6%A8%AA%E5%90%91%E6%97%B6%E9%97%B4%E8%BD%B4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">angularJS简易横向时间轴</div>
+    <a href="/2021/05/17/pythonLearing/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pythonLearing</div>
       <i class="icon-circle-right"></i>
     </a>
   
