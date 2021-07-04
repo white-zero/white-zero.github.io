@@ -6,15 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>qiankun--react主工程嵌vue子工程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="主工程：    新接入vue子工程       新建vue.config.js文件     新建public-path.jswen文件    main.js路由配置    文件夹格式（slave为main工程）    线上nginx配置（路径：usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf）（tips: nginx配置后重启：在pwd为：usr&#x2F;local&#x2F;nginx 的位置，sb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="qiankun--react主工程嵌vue子工程">
+<meta property="og:url" content="http://yoursite.com/2021/07/04/qiankun-react%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%B5%8Cvue%E5%AD%90%E5%B7%A5%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="主工程：    新接入vue子工程       新建vue.config.js文件     新建public-path.jswen文件    main.js路由配置    文件夹格式（slave为main工程）    线上nginx配置（路径：usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf）（tips: nginx配置后重启：在pwd为：usr&#x2F;local&#x2F;nginx 的位置，sb">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/36FDF1C9-F7CA-4AEE-91D4-4ACCA5BA7978.png">
+<meta property="og:image" content="http://yoursite.com/images/D2EE042E-4465-49D0-B29D-7B3741169076.png">
+<meta property="og:image" content="http://yoursite.com/images/EE7CE21E-F63A-4C75-886B-B8DE0902D964.png">
+<meta property="og:image" content="http://yoursite.com/images/sonDE4B928F-8285-4909-B091-9C1E86203703.png">
+<meta property="og:image" content="http://yoursite.com/images/son06056152-2033-4696-AFA5-0189789A1B43.png">
+<meta property="og:image" content="http://yoursite.com/images/son2E52EEAB2-1172-4684-8FE8-0BC355AD08E8.png">
+<meta property="og:image" content="http://yoursite.com/images/son37EE196FD-9901-4ACE-AF02-4EC06B6AE5CF.png">
+<meta property="og:image" content="http://yoursite.com/images/son301B0D520-EC10-4FD3-B0F9-064D0EC90185.png">
+<meta property="og:image" content="http://yoursite.com/images/son3A771D25E-AAA5-4CFF-84F9-698D0C9DBD9D.png">
+<meta property="og:image" content="http://yoursite.com/images/son4B87B66B9-6A9F-49F3-B0E5-D4357649577E.png">
+<meta property="og:image" content="http://yoursite.com/images/son5220F1625-2B0D-432A-9AAA-E9F26A586077.png">
+<meta property="og:image" content="http://yoursite.com/images/son56838475B-F581-4B9C-9EA3-CC33399D3D60.png">
+<meta property="og:image" content="http://yoursite.com/images/gs5E2A1B08-13E4-4DC1-B929-EEE577E364DF.png">
+<meta property="og:image" content="http://yoursite.com/images/ng22090166-28E9-4653-88CA-C45248EFA5D0.png">
+<meta property="og:image" content="http://yoursite.com/images/ng7A4E65CF-14DA-4893-BF6A-493BAAE7DE14.png">
+<meta property="article:published_time" content="2021-07-04T02:13:30.000Z">
+<meta property="article:modified_time" content="2021-07-04T03:28:59.151Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/36FDF1C9-F7CA-4AEE-91D4-4ACCA5BA7978.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -174,372 +194,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-qiankun-react主工程嵌vue子工程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/10/31/umi%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-10-31T06:37:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/31/umi%E5%AD%A6%E4%B9%A0/">umi学习</a>
+    <h1 class="article-title" itemprop="name">
+      qiankun--react主工程嵌vue子工程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-09-27T08:44:38.292Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-27</time>
+  
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+<a href="/2021/07/04/qiankun-react%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%B5%8Cvue%E5%AD%90%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-07-04T02:13:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-04</time>
 </a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/">数组操作</a>
-    </h1>
+  </header>
   
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="主工程："><a href="#主工程：" class="headerlink" title="主工程："></a>主工程：</h4><p><img src="/images/36FDF1C9-F7CA-4AEE-91D4-4ACCA5BA7978.png" alt="主工程的操作1"><br><img src="/images/D2EE042E-4465-49D0-B29D-7B3741169076.png" alt="主工程的操作2"><br><img src="/images/EE7CE21E-F63A-4C75-886B-B8DE0902D964.png" alt="主工程的操作3">   </p>
+<h4 id="新接入vue子工程"><a href="#新接入vue子工程" class="headerlink" title="新接入vue子工程"></a>新接入vue子工程</h4><p><img src="/images/sonDE4B928F-8285-4909-B091-9C1E86203703.png" alt="子工程：package.json"><br><img src="/images/son06056152-2033-4696-AFA5-0189789A1B43.png" alt="子工程：package.json">   </p>
+<hr>
+<h2 id><a href="#" class="headerlink" title="  "></a><img src="/images/son2E52EEAB2-1172-4684-8FE8-0BC355AD08E8.png" alt="子工程：babel.config.js">  </h2><p>新建vue.config.js文件<br><img src="/images/son37EE196FD-9901-4ACE-AF02-4EC06B6AE5CF.png" alt="子工程：vue.config.js(publicPath:不加会导致页面404,无法加载到对应的文件。“./”找到文件夹位置。access...允许跨域访问，vue接入需设置)"><br><img src="/images/son301B0D520-EC10-4FD3-B0F9-064D0EC90185.png" alt="子工程：vue.config.js"><br><img src="/images/son3A771D25E-AAA5-4CFF-84F9-698D0C9DBD9D.png" alt="子工程：vue.config.js">   </p>
+<hr>
+<p>新建public-path.jswen文件<br><img src="/images/son4B87B66B9-6A9F-49F3-B0E5-D4357649577E.png" alt="子工程：public-path.js">  </p>
+<hr>
+<p>main.js<br><img src="/images/son5220F1625-2B0D-432A-9AAA-E9F26A586077.png" alt="子工程：main.js"><br>路由配置<br><img src="/images/son56838475B-F581-4B9C-9EA3-CC33399D3D60.png" alt="子工程：">  </p>
+<hr>
+<p>文件夹格式（slave为main工程）<br><img src="/images/gs5E2A1B08-13E4-4DC1-B929-EEE577E364DF.png" alt="文件夹格式：">  </p>
+<hr>
+<p>线上nginx配置<br>（路径：usr/local/nginx/conf/nginx.conf）<br>（tips: nginx配置后重启：在pwd为：usr/local/nginx 的位置，sbin/nginx -s -reload)  </p>
+<p><img src="/images/ng22090166-28E9-4653-88CA-C45248EFA5D0.png" alt="nginx.conf配置(user root 不加导致页面无权限403)"><br><img src="/images/ng7A4E65CF-14DA-4893-BF6A-493BAAE7DE14.png" alt="nginx.conf配置：">  </p>
 
-        <div class="article-info info-on-right">
-          
-          
+    
 
+    
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
+              </span>
+            </span>
+            <!-- 添加代码  -->
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+            </span>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </a>
+    </div>
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/07/04/qiankun-react%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%B5%8Cvue%E5%AD%90%E5%B7%A5%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/24/ES6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-09-24T02:55:07.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-24</time>
-</a>
+  
+    <a href="/2021/07/02/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAreact-vue%E9%A1%B9%E7%9B%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">快速搭建react/vue项目</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/24/ES6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">ES6-箭头函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/12/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-09-12T14:37:16.177Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/12/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98%E7%AC%94%E8%AE%B0/">项目复盘笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/27/mac-%E9%9F%B3%E9%A2%91%E5%8F%8A%E8%A7%86%E9%A2%91%E5%9D%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F/" class="archive-article-date">
-  	<time datetime="2020-08-27T01:01:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/27/mac-%E9%9F%B3%E9%A2%91%E5%8F%8A%E8%A7%86%E9%A2%91%E5%9D%87%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E6%92%AD%E6%94%BE%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%EF%BC%9F/">mac 音频及视频均无法正常播放，怎么解决？</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/" class="archive-article-date">
-  	<time datetime="2020-08-22T07:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/">canvas笔记-requestAnimationFrame</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-08-20T01:10:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/">canvas笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2020-08-19T02:51:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">hexo-yilia博客搭建-插入图片和视频</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo-blog-config//" class="article-tag-list-link color2">hexo-blog-config</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/react-source-code/" class="archive-article-date">
-  	<time datetime="2020-08-19T02:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/react-source-code/">react_source_code</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/19/http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-  	<time datetime="2020-08-18T22:07:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/19/http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE/">http和https协议</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">上一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/">下一页</a>
-    </nav>
-  
 
 
           </div>
@@ -573,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
