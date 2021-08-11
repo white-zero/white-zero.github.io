@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>umi项目中加入favico图标 | Hexo</title>
+  <title>angularJS自行添加外部包 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题：修改浏览器页签图标解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）   思路二：在config.ts文件中的title设置项下加入   &#96;&#96;&#96; title: &amp;apos;xxxxxx&amp;apos;, links:[{rel:&amp;apos;icon&amp;apos;,href:&quot;&#x2F;xxxx&#x2F;img&#x2F;favico.ico&quot;}">
+  <meta name="description" content="Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)A：(自行下载包，放入项目中)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="umi项目中加入favico图标">
-<meta property="og:url" content="http://yoursite.com/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/index.html">
+<meta property="og:title" content="angularJS自行添加外部包">
+<meta property="og:url" content="http://yoursite.com/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题：修改浏览器页签图标解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）   思路二：在config.ts文件中的title设置项下加入   &#96;&#96;&#96; title: &amp;apos;xxxxxx&amp;apos;, links:[{rel:&amp;apos;icon&amp;apos;,href:&quot;&#x2F;xxxx&#x2F;img&#x2F;favico.ico&quot;}">
+<meta property="og:description" content="Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)A：(自行下载包，放入项目中)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-08-04T01:13:49.000Z">
-<meta property="article:modified_time" content="2021-08-04T01:22:21.043Z">
+<meta property="og:image" content="http://yoursite.com/images/pic1.png">
+<meta property="og:image" content="http://yoursite.com/images/pic2.png">
+<meta property="og:image" content="http://yoursite.com/images/pic3.png">
+<meta property="og:image" content="http://yoursite.com/images/pic4.png">
+<meta property="article:published_time" content="2021-08-11T01:49:42.000Z">
+<meta property="article:modified_time" content="2021-08-11T01:59:47.724Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/pic1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -178,14 +183,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-umi项目中加入favico图标" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-angularJS自行添加外部包" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      umi项目中加入favico图标
+      angularJS自行添加外部包
     </h1>
   
 
@@ -196,23 +201,16 @@
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 	</span>
 
-<a href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2021-08-04T01:13:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-04</time>
+<a href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/" class="archive-article-date">
+  	<time datetime="2021-08-11T01:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-11</time>
 </a>
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>问题：修改浏览器页签图标<br>解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）  </p>
-<pre><code>思路二：在config.ts文件中的title设置项下加入  
-```
-title: &apos;xxxxxx&apos;,
-links:[{rel:&apos;icon&apos;,href:&quot;/xxxx/img/favico.ico&quot;}],  
-//xxxx是项目的文件在服务器上的名字
-```  
-icon的路径为：public/img/favico.ico(public文件夹没有可以自行创建)  
-run build 之后可以看到dist文件里多了一个img的文件夹（成功）</code></pre>
+    <h5 id="Q：-原先采用外部引入的方式，在网络不好时容易加载不到，报错"><a href="#Q：-原先采用外部引入的方式，在网络不好时容易加载不到，报错" class="headerlink" title="Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)"></a>Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)</h5><h5 id="A：-自行下载包，放入项目中"><a href="#A：-自行下载包，放入项目中" class="headerlink" title="A：(自行下载包，放入项目中)"></a>A：(自行下载包，放入项目中)</h5><p><img src="/images/pic1.png" alt="在index.html引入js文件"><br><img src="/images/pic2.png" alt="在index.html引入css文件"><br><img src="/images/pic3.png" alt="文件存放位置"><br><img src="/images/pic4.png" alt="文件存放位置">  </p>
+
     
 
     
@@ -246,17 +244,6 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -306,7 +293,7 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -320,18 +307,9 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
 
 <nav id="article-nav">
   
-    <a href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          angularJS自行添加外部包
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">gitlab无法看分支的commit</div>
+    <a href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">umi项目中加入favico图标</div>
       <i class="icon-circle-right"></i>
     </a>
   

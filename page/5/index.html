@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>umi项目中加入favico图标 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题：修改浏览器页签图标解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）   思路二：在config.ts文件中的title设置项下加入   &#96;&#96;&#96; title: &amp;apos;xxxxxx&amp;apos;, links:[{rel:&amp;apos;icon&amp;apos;,href:&quot;&#x2F;xxxx&#x2F;img&#x2F;favico.ico&quot;}">
-<meta property="og:type" content="article">
-<meta property="og:title" content="umi项目中加入favico图标">
-<meta property="og:url" content="http://yoursite.com/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="问题：修改浏览器页签图标解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）   思路二：在config.ts文件中的title设置项下加入   &#96;&#96;&#96; title: &amp;apos;xxxxxx&amp;apos;, links:[{rel:&amp;apos;icon&amp;apos;,href:&quot;&#x2F;xxxx&#x2F;img&#x2F;favico.ico&quot;}">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-08-04T01:13:49.000Z">
-<meta property="article:modified_time" content="2021-08-04T01:22:21.043Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -178,165 +174,129 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-umi项目中加入favico图标" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   
   
-    <h1 class="article-title" itemprop="name">
-      umi项目中加入favico图标
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">网站demo (jQuery)</a>
     </h1>
   
 
   
   
-	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-	</span>
-
-<a href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2021-08-04T01:13:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-04</time>
+<a href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2020-06-02T02:40:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
 </a>
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>问题：修改浏览器页签图标<br>解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）  </p>
-<pre><code>思路二：在config.ts文件中的title设置项下加入  
-```
-title: &apos;xxxxxx&apos;,
-links:[{rel:&apos;icon&apos;,href:&quot;/xxxx/img/favico.ico&quot;}],  
-//xxxx是项目的文件在服务器上的名字
-```  
-icon的路径为：public/img/favico.ico(public文件夹没有可以自行创建)  
-run build 之后可以看到dist文件里多了一个img的文件夹（成功）</code></pre>
+    <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
+<li>登陆功能<ul>
+<li>为登陆按钮添加点击事件</li>
+<li>获取用户在文本框中输入的用户名和密码</li>
+<li>验证用户是否输入了用户名和密码，没有则阻止程序向下执行</li>
+<li>调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>登陆拦截<ul>
+<li>使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方</li>
+<li>判断isLogin变量， 如果为false，跳转登陆页面</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>退出功能<ul>
+<li>为退出按钮添加点击事件</li>
+<li>利用confirm方法返回值（当用户点击确定–&gt;true,点击取消—-&gt;false）</li>
+<li>当true时调用$.ajax方法(不用传递参数)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>添加用户<ul>
+<li>1.在表单中，为添加的用户的每一项添加name属性，（name属性要和接口文档中要求的参数名称保持一致）</li>
+<li>2.为表单绑定提交事件，（在事件处理函数中要阻止表单默认提交的行为）</li>
+<li>3.在事件处理函数中获取用户在表单中输入的内容（ serialize()方法: 将内容格式化成参数字符串 ）</li>
+<li><code>var formData = $(this).serialize()</code>   (formData传到ajax里的data中)</li>
+<li>4.调用添加用户的接口，将获取到的内容通过接口发送给服务端，操作成功—&gt;刷新页面，失败–&gt;用户提示</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>用户头像上传</p>
+<ul>
+<li><p>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</p>
+</li>
+<li><p>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] )</p>
+ <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
+
+<p>（将用户的文件上传给服务器端）</p>
+</li>
+<li><p>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</p>
+</li>
+<li><p>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</p>
+</li>
+<li><p>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>用户列表展示  (10132967)<ul>
+<li>1.在页面加载时向服务器发送ajax请求，索要用户列表数据</li>
+<li>2.使用模版引擎将数据和html模版拼接</li>
+<li>3.将拼接好的内容展现在页面中</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>用户信息修改<ul>
+<li>一、通过事件委托的形式为编辑按钮添加点击事件（用户信息修改功能，要把用户信息展示在页面上，因为用ajax向服务器请求的数据不知什么时候返回，所以用事件委托的方式，为他的父级添加点击事件）</li>
+<li>在事件处理函数中获取当前点击的用户的ID值 </li>
+<li>根据用户ID获取用户的详细信息（$.ajax),并通过模版引擎将用户信息渲染在表&gt;<br>单中     二、为提交按钮添加点击事件。（也要用事件委托的形式）1.获取用户在表单中&gt;<br>输入的内容，2.调用修改用户信息接口实现用户信息修改功能（$.ajax）,success函数里location.reload(),刷新页面<br>(下面的意思是当点击’edit’类的时候，触发冒泡机制，触发userBox的点击事件的处理函数)<br><code>$(&#39;#userBox&#39;).on(&#39;click&#39;, &#39;.edit&#39;, function () {}</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>删除用户<ul>
+<li>为删除按钮添加点击事件（事件委托的方法）</li>
+<li>确认用户是否要进行删除（confirm方法）</li>
+<li>获取当前被点击的用户的ID</li>
+<li>调用删除用户接口根据ID删除用户，成功—&gt;刷新页面</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2>
     
 
-    
-    <div class="page-reward">
-      <a href="javascript:;" class="page-reward-btn tooltip-top">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  
-                </div>
-              </span>
-            </span>
-            <!-- 添加代码  -->
-            <span id="busuanzi_container_page_pv">
-              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-            </span>
-        </div>
-      </a>
-    </div>
     
   </div>
   <div class="article-info article-info-index">
     
     
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
-
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+    </p>
     
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          angularJS自行添加外部包
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">gitlab无法看分支的commit</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -356,14 +316,12 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
 
 
 
-
-
-
-
-
-
-
-
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
+  
 
 
           </div>
@@ -396,8 +354,8 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

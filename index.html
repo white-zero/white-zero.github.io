@@ -176,6 +176,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-angularJS自行添加外部包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/">angularJS自行添加外部包</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/" class="archive-article-date">
+  	<time datetime="2021-08-11T01:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-11</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h5 id="Q：-原先采用外部引入的方式，在网络不好时容易加载不到，报错"><a href="#Q：-原先采用外部引入的方式，在网络不好时容易加载不到，报错" class="headerlink" title="Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)"></a>Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)</h5><h5 id="A：-自行下载包，放入项目中"><a href="#A：-自行下载包，放入项目中" class="headerlink" title="A：(自行下载包，放入项目中)"></a>A：(自行下载包，放入项目中)</h5><p><img src="/images/pic1.png" alt="在index.html引入js文件"><br><img src="/images/pic2.png" alt="在index.html引入css文件"><br><img src="/images/pic3.png" alt="文件存放位置"><br><img src="/images/pic4.png" alt="文件存放位置">  </p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-umi项目中加入favico图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -875,93 +938,9 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
 
 
   
-    <article id="post-bootstrap-select下拉多选-单选框带模糊搜索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/04/bootstrap-select%E4%B8%8B%E6%8B%89%E5%A4%9A%E9%80%89-%E5%8D%95%E9%80%89%E6%A1%86%E5%B8%A6%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/">bootstrap-select下拉多选/单选框带模糊搜索</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/01/04/bootstrap-select%E4%B8%8B%E6%8B%89%E5%A4%9A%E9%80%89-%E5%8D%95%E9%80%89%E6%A1%86%E5%B8%A6%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/" class="archive-article-date">
-  	<time datetime="2021-01-04T06:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-04</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="在angularJS中使用bootstrap-select实现下拉多选-单选（带模糊搜索）"><a href="#在angularJS中使用bootstrap-select实现下拉多选-单选（带模糊搜索）" class="headerlink" title="在angularJS中使用bootstrap-select实现下拉多选/单选（带模糊搜索）"></a>在angularJS中使用bootstrap-select实现下拉多选/单选（带模糊搜索）</h4><ul>
-<li>安装<ul>
-<li>npm install bootstrap-select (该项目用到bower ：bower install bootstrap-select)</li>
-<li>index.html中引入<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"bower_components/bootstrap-select/dist/js/bootstrap-select.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;link rel="stylesheet" type="text/</span>css<span class="string">" href="</span>bower_components/bootstrap-select/dist/css/bootstrap-select.css<span class="string">"&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>html(多选时)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select  <span class="class"><span class="keyword">class</span></span>=<span class="string">"selectpickerTest"</span> multiple data-live-search=<span class="string">"true"</span>&gt;&lt;<span class="regexp">/select&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>html(单选时)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;select  <span class="class"><span class="keyword">class</span></span>=<span class="string">"selectpickerTest"</span> data-live-search=<span class="string">"true"</span>&gt;&lt;<span class="regexp">/select&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li>js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">vm.testT=[&#123;<span class="attr">val</span>:<span class="string">"1"</span>,<span class="attr">name</span>:<span class="string">'A'</span>&#125;,&#123;<span class="attr">val</span>:<span class="string">"2"</span>,<span class="attr">name</span>:<span class="string">"B"</span>&#125;,&#123;<span class="attr">val</span>:<span class="string">"3"</span>,<span class="attr">name</span>:<span class="string">"C"</span>&#125;,&#123;<span class="attr">val</span>:<span class="string">"4"</span>,<span class="attr">name</span>:<span class="string">"D"</span>&#125;] <span class="comment">//后端拿的数据</span></span><br><span class="line">vm.testTF=[&#123;<span class="attr">val</span>:<span class="string">"1"</span>,<span class="attr">name</span>:<span class="string">'A'</span>&#125;,&#123;<span class="attr">val</span>:<span class="string">"2"</span>,<span class="attr">name</span>:<span class="string">"B"</span>&#125;] <span class="comment">//数据的回填/默认选中值</span></span><br><span class="line">vm.chongheval=[<span class="string">"1"</span>,<span class="string">"2"</span>] <span class="comment">//默认选中的值的val</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; vm.testT.length; i++) &#123;  </span><br><span class="line">    <span class="keyword">if</span>(vm.chongheval.indexOf(vm.testT[i].val)!==<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="comment">//数据的回填、默认值 关键词“selected”</span></span><br><span class="line">        $(<span class="string">'.selectpickerTest'</span>).append(<span class="string">"&lt;option selected value="</span> + vm.testT[i].val + <span class="string">"&gt;"</span> + vm.testT[i].name + <span class="string">"&lt;/option&gt;"</span>);  </span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $(<span class="string">'.selectpickerTest'</span>).append(<span class="string">"&lt;option value="</span> + vm.testT[i].val + <span class="string">"&gt;"</span> + vm.testT[i].name + <span class="string">"&lt;/option&gt;"</span>);  </span><br><span class="line">    &#125;   </span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//下拉框的配置项(多选)</span></span><br><span class="line">$(<span class="string">".selectpickerTest"</span>).attr(<span class="string">'multiple'</span>,<span class="string">''</span>).selectpicker(&#123;</span><br><span class="line">    actionsBox:<span class="literal">true</span>,</span><br><span class="line">    selectAllText:<span class="string">'全选'</span>,</span><br><span class="line">    deselectAllText:<span class="string">'重置'</span>,</span><br><span class="line">    noneSelectedText:<span class="string">'--请选择--'</span>,</span><br><span class="line">    liveSearch:<span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="comment">//下拉框的配置项(单选)</span></span><br><span class="line">$(<span class="string">".selectpickerTest"</span>).attr(<span class="string">'selectpicker'</span>,<span class="string">''</span>).selectpicker(&#123; </span><br><span class="line">    actionsBox:<span class="literal">true</span>,</span><br><span class="line">    selectAllText:<span class="string">'全选'</span>,</span><br><span class="line">    deselectAllText:<span class="string">'重置'</span>,</span><br><span class="line">    noneSelectedText:<span class="string">'--请选择--'</span>,</span><br><span class="line">    liveSearch:<span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// $(".selectpickerTest").selectpicker('deselectAll');    //取消默认选择第一项</span></span><br><span class="line">    <span class="comment">// title设置属性内容或提示，如果没有设置就会默认选中第一个选项。</span></span><br><span class="line">    <span class="comment">//start 必需。刷新</span></span><br><span class="line">    $(<span class="string">'.selectpickerTest'</span>).selectpicker(<span class="string">'refresh'</span>);  </span><br><span class="line">    $(<span class="string">'.selectpickerTest'</span>).selectpicker(<span class="string">'render'</span>);</span><br><span class="line">    <span class="comment">//end</span></span><br><span class="line">    <span class="comment">//选择时多选框的回调</span></span><br><span class="line">    $(<span class="string">'.selectpickerTest'</span>).on(<span class="string">'changed.bs.select'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'.selectpickerTest'</span>).val($(<span class="string">'.selectpickerTest'</span>).val());</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="string">'.selectpickerTest'</span>).val(),<span class="string">"选择的值:::"</span>)</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/01/04/bootstrap-select%E4%B8%8B%E6%8B%89%E5%A4%9A%E9%80%89-%E5%8D%95%E9%80%89%E6%A1%86%E5%B8%A6%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
     </nav>
   
 
