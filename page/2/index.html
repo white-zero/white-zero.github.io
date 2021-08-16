@@ -176,86 +176,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-记angularJS项目jekins报错module" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/21/%E8%AE%B0angularJS%E9%A1%B9%E7%9B%AEjekins%E6%8A%A5%E9%94%99module/">记angularJS项目jekins报错module</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/01/21/%E8%AE%B0angularJS%E9%A1%B9%E7%9B%AEjekins%E6%8A%A5%E9%94%99module/" class="archive-article-date">
-  	<time datetime="2021-01-21T01:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-21</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="背景：本地项目跑没问题，用jekins构建出错。查看console-output-。报错提示-var-lib-jenkins-workspace-pipeline-wuxing-web-test-src-main-webapp-app-main-js-Unexpected-token-10728-25"><a href="#背景：本地项目跑没问题，用jekins构建出错。查看console-output-。报错提示-var-lib-jenkins-workspace-pipeline-wuxing-web-test-src-main-webapp-app-main-js-Unexpected-token-10728-25" class="headerlink" title="背景：本地项目跑没问题，用jekins构建出错。查看console output 。报错提示    /var/lib/jenkins/workspace/pipeline_wuxing_web-test/src/main/webapp/app/main.js: Unexpected token (10728:25)"></a>背景：本地项目跑没问题，用jekins构建出错。查看console output 。报错提示    /var/lib/jenkins/workspace/pipeline_wuxing_web-test/src/main/webapp/app/main.js: Unexpected token (10728:25)</h3><h4 id="1、因为控制台报错1-gt-main-js-404-2-gt-anuglar-module等问题"><a href="#1、因为控制台报错1-gt-main-js-404-2-gt-anuglar-module等问题" class="headerlink" title="1、因为控制台报错1==&gt;/main.js 404    2==&gt;anuglar module等问题"></a>1、因为控制台报错1==&gt;/main.js 404    2==&gt;anuglar module等问题</h4><ul>
-<li>第一步应该先把可以用的分支构建到jenkins，先保证线上安全</li>
-<li>果断本地构建gulp build 以提高检测速度，不该一直在jenkins构建</li>
-<li>因为项目引用了一个外部包，所以一直怀疑是这个module引入出错。检查index.html引用没错，包在当前分支也存在（此时应该果断把这个包uninstall掉，以排除是这个包的问题。不该在这里过多纠结）</li>
-<li>因为本地跑的动，构建出错，怀疑是打包编译问题，找到gulp es6转es5需要配置，此时有两种，1、找到gulp的配置 升级，以全部支持新语法 2、找到新代码里的新语法改回es5。 </li>
-<li>由于gulp的配置没弄成。最后，逐步把文件删掉重新逐一排除，得到是因为扩展运算符的问题（…）编译出现的问题。</li>
-</ul>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/01/21/%E8%AE%B0angularJS%E9%A1%B9%E7%9B%AEjekins%E6%8A%A5%E9%94%99module/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
     <article id="post-bootstrap-select下拉多选-单选框带模糊搜索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1013,6 +933,80 @@ externalObject.animal = <span class="string">'Lizard'</span>;
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/22/canvas%E7%AC%94%E8%AE%B0-requestAnimationFrame/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-canvas笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/">canvas笔记</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-08-20T01:10:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>1.<code>&lt;/canvas&gt;</code> 标签不可省<br>2.<code>&lt;canvas&gt;</code> 元素创造了一个固定大小的画布，它公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容<strong>2D</strong>渲染上下文.又比如， WebGL 使用了基于OpenGL ES的<strong>3D</strong>上下文</p>
+<p>3.检查编程支持性</p>
+<pre><code class="js"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'tutorial'</span>);
+
+<span class="keyword">if</span> (canvas.getContext){
+  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);
+  <span class="comment">// drawing code here</span>
+} <span class="keyword">else</span> {
+  <span class="comment">// canvas-unsupported code here</span>
+}</code></pre>
+    
+    <a class="article-more-a" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/">展开全文 >></a>
     </p>
     
 
