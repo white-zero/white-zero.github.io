@@ -176,6 +176,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-canvas笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/">canvas笔记</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-08-20T01:10:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>1.<code>&lt;/canvas&gt;</code> 标签不可省<br>2.<code>&lt;canvas&gt;</code> 元素创造了一个固定大小的画布，它公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容<strong>2D</strong>渲染上下文.又比如， WebGL 使用了基于OpenGL ES的<strong>3D</strong>上下文</p>
+<p>3.检查编程支持性</p>
+<pre><code class="js"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'tutorial'</span>);
+
+<span class="keyword">if</span> (canvas.getContext){
+  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);
+  <span class="comment">// drawing code here</span>
+} <span class="keyword">else</span> {
+  <span class="comment">// canvas-unsupported code here</span>
+}</code></pre>
+    
+    <a class="article-more-a" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/20/canvas%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-hexo-yilia博客搭建-插入图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1005,103 +1079,6 @@ string ref
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/01/TypeScript%E6%B3%9B%E5%9E%8B%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-React中的Refs笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/React%E4%B8%AD%E7%9A%84Refs%E7%AC%94%E8%AE%B0/">React中的Refs笔记</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/07/28/React%E4%B8%AD%E7%9A%84Refs%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-07-28T15:13:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-28</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <ul>
-<li><p>受控组件</p>
-<ul>
-<li>react中，可变状态通常保存在组件的state属性中，并且只能通过setState（）更新。通过渲染表单的React组件来控制用户输入过程中表单发送的操作。  这个 “被React通过此种方式控制取值的表单<strong>输入元素</strong>”,被称为受控组件</li>
-</ul>
-</li>
-<li><p>不受控组件</p>
-<ul>
-<li>不被react组件控制的组件。其中数据由DOM本身处理。它的值只能由用户设置，通过DOM自身提供的一些特性来获取</li>
-</ul>
-</li>
-<li><p>受控组件和不受控组件的区别</p>
-<ul>
-<li>受控组件自身维护的状态值变化，可以配合自身的change事件，进行修改或者校验用户的输入</li>
-</ul>
-</li>
-<li><p>而在React中，因为有了Refs的出现，使得不受控组件自身状态值的维护变得容易了许多</p>
-</li>
-<li><p>Refs：一个获取DOM节点或React元素实例的工具。</p>
-<ul>
-<li>在 React单项数据流中，props是父子组件交互的唯一方式。要修改一个子组件，需要通过的新的props来重新渲染。<br>但是在某些情况下，需要在数据流之外强制修改子组件。被修改的子组件可能是一个React组件实例，也可能是一个DOM元素。对于这两种情况，React 都通过 Refs的使用提供了具体的解决方案。</li>
-</ul>
-</li>
-</ul>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/07/28/React%E4%B8%AD%E7%9A%84Refs%E7%AC%94%E8%AE%B0/">展开全文 >></a>
     </p>
     
 
