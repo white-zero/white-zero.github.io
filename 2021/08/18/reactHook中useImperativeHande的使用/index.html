@@ -16,7 +16,7 @@
 <meta property="og:description" content="useImperativeHandle(ref, createHandle, [deps])作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法原理：1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起2.所以在父组件中, 调用inputRef.current时, 实际上">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-18T07:17:22.000Z">
-<meta property="article:modified_time" content="2021-08-18T07:33:22.651Z">
+<meta property="article:modified_time" content="2021-08-19T00:58:15.673Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -204,12 +204,27 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="useImperativeHandle-ref-createHandle-deps"><a href="#useImperativeHandle-ref-createHandle-deps" class="headerlink" title="useImperativeHandle(ref, createHandle, [deps])"></a>useImperativeHandle(ref, createHandle, [deps])</h4><h5 id="作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法"><a href="#作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法" class="headerlink" title="作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法"></a>作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法</h5><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><h6 id="1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"><a href="#1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起" class="headerlink" title="1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"></a>1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起</h6><h6 id="2-所以在父组件中-调用inputRef-current时-实际上是返回的对象"><a href="#2-所以在父组件中-调用inputRef-current时-实际上是返回的对象" class="headerlink" title="2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象"></a>2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象</h6><h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;子组件</span><br><span class="line">import React, &#123; useRef, forwardRef, useImperativeHandle &#125; from &#39;react&#39;</span><br><span class="line">const sonComponent &#x3D; forwardRef((props, ref) &#x3D;&gt; &#123;</span><br><span class="line">  const inputRef &#x3D; useRef()</span><br><span class="line">  &#x2F;&#x2F;暴露出给父组件使用的方法、数据</span><br><span class="line">  useImperativeHandle(ref, () &#x3D;&gt; (&#123;</span><br><span class="line">    testFun: () &#x3D;&gt; &#123;</span><br><span class="line">      console.log(&#39;just for test&#39;)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;),[可以写依赖项])</span><br><span class="line">  return &lt;input type&#x3D;&quot;text&quot;&#x2F;&gt;</span><br><span class="line">&#125;)  </span><br><span class="line">&#x2F;&#x2F;父组件  </span><br><span class="line">export default function FatherComponent() &#123;</span><br><span class="line">  const tttttRef &#x3D; useRef()</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;button onClick&#x3D;&#123;() &#x3D;&gt; ttttRef.current.testFun()&#125;&gt;按钮&lt;&#x2F;button&gt;</span><br><span class="line">      &#x2F;&#x2F;results：输出&#39;just for test&#39;</span><br><span class="line">      &lt;sonComponent ref&#x3D;&#123;tttttRef&#125; &#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+    <h4 id="useImperativeHandle-ref-createHandle-deps"><a href="#useImperativeHandle-ref-createHandle-deps" class="headerlink" title="useImperativeHandle(ref, createHandle, [deps])"></a>useImperativeHandle(ref, createHandle, [deps])</h4><h5 id="作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法"><a href="#作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法" class="headerlink" title="作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法"></a>作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法</h5><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><h6 id="1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"><a href="#1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起" class="headerlink" title="1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"></a>1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起</h6><h6 id="2-所以在父组件中-调用inputRef-current时-实际上是返回的对象"><a href="#2-所以在父组件中-调用inputRef-current时-实际上是返回的对象" class="headerlink" title="2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象"></a>2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象</h6><h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5><pre><code>//子组件
+import React, { useRef, forwardRef, useImperativeHandle } from &apos;react&apos;
+const sonComponent = forwardRef((props, ref) =&gt; {
+  const inputRef = useRef()
+  //暴露出给父组件使用的方法、数据
+  useImperativeHandle(ref, () =&gt; ({
+    testFun: () =&gt; {
+      console.log(&apos;just for test&apos;)
+    },
+  }),[可以写依赖项])
+  return &lt;input type=&quot;text&quot;/&gt;
+})  
+//父组件  
+export default function FatherComponent() {
+  const tttttRef = useRef()
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; ttttRef.current.testFun()}&gt;按钮&lt;/button&gt;
+      //results：输出&apos;just for test&apos;
+      &lt;sonComponent ref={tttttRef} /&gt;
+    &lt;/div&gt;</code></pre>
     
 
     
