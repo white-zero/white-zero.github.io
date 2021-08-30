@@ -176,6 +176,293 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-实现form表单中输入框支持移入标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/">实现form表单中输入框支持移入标签</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/" class="archive-article-date">
+  	<time datetime="2021-08-30T05:23:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-30</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><h5 id="1、自定义表单控件-：（有onChange-和value）"><a href="#1、自定义表单控件-：（有onChange-和value）" class="headerlink" title="1、自定义表单控件+++  ：（有onChange 和value）"></a>1、自定义表单控件+++  ：（有onChange 和value）</h5><h5 id="2、braft-editor富文本编辑器（react使用，适配antd）"><a href="#2、braft-editor富文本编辑器（react使用，适配antd）" class="headerlink" title="2、braft-editor富文本编辑器（react使用，适配antd）++++"></a>2、braft-editor富文本编辑器（react使用，适配antd）++++</h5><h5 id="3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）"><a href="#3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）" class="headerlink" title="3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）"></a>3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）</h5><h5 id="4、antd样式更改-：global-类名："><a href="#4、antd样式更改-：global-类名：" class="headerlink" title="4、antd样式更改:   ：global{类名：{}}"></a>4、antd样式更改:   ：global{类名：{}}</h5><pre><code class="js"><span class="keyword">import</span> React, { forwardRef, CSSProperties, useState, useEffect } <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> { SelectProps } <span class="keyword">from</span> <span class="string">'antd/es/select'</span>;
+<span class="keyword">import</span> { Card, Tag, Button } <span class="keyword">from</span> <span class="string">'antd'</span>
+<span class="keyword">import</span> BraftEditor, { ExtendControlType, EditorState } <span class="keyword">from</span> <span class="string">'braft-editor'</span>;
+<span class="keyword">import</span> { ContentUtils } <span class="keyword">from</span> <span class="string">'braft-utils'</span>;
+<span class="keyword">import</span> <span class="string">'./index.less'</span>
+<span class="keyword">import</span> { httpGet } <span class="keyword">from</span> <span class="string">'@/utils/RequestUtil/request'</span>;
+
+
+interface Props {
+  value?: any;
+  onChange?: <span class="built_in">Function</span>;
+  initialValue?: object;
+}
+
+<span class="keyword">const</span> DraggleMsgTemplate: React.FC&lt;Props&gt; = forwardRef&lt;any, Props&gt;<span class="function">(<span class="params">(props, ref</span>) =&gt;</span> {
+  <span class="keyword">const</span> [editorState, setEditorState] = useState(
+    BraftEditor.createEditorState(
+      props.initialValue ? props.initialValue.template : <span class="literal">null</span>
+    )
+  );
+  <span class="keyword">const</span> [tagOpt, setTagOpt] = useState&lt;any&gt;([])
+  <span class="keyword">const</span> [visiable, setVisiable] = useState&lt;any&gt;(<span class="literal">false</span>)
+  <span class="keyword">const</span> eraftEditorChange = <span class="function">(<span class="params">editorState: EditorState</span>) =&gt;</span> {
+    setEditorState(editorState);
+    <span class="built_in">console</span>.log(editorState.toText(), editorState.toHTML(), <span class="string">'qqqq'</span>)
+    <span class="keyword">if</span> (props.onChange) {
+      props.onChange(editorState.toText()); <span class="comment">//自定义表单控件的onChange</span>
+    }
+  };
+  <span class="comment">//可输入的字符类型</span>
+  <span class="keyword">const</span> handleBeforeInput: (
+    chars: string,
+    editorState: EditorState,
+    eventTimeStamp: number
+  ) =&gt; any = <span class="function"><span class="params">chars</span> =&gt;</span> {
+    <span class="comment">// console.log('chars', chars)</span>
+    <span class="keyword">if</span> (
+      chars == <span class="string">'+'</span> ||
+      chars == <span class="string">'-'</span> ||
+      chars == <span class="string">'*'</span> ||
+      chars == <span class="string">'#'</span> ||
+      chars == <span class="string">'/'</span> ||
+      chars == <span class="string">'('</span> ||
+      chars == <span class="string">')'</span> ||
+      chars == <span class="string">'0'</span> ||
+      chars == <span class="string">'1'</span> ||
+      chars == <span class="string">'2'</span> ||
+      chars == <span class="string">'3'</span> ||
+      chars == <span class="string">'4'</span> ||
+      chars == <span class="string">'5'</span> ||
+      chars == <span class="string">'6'</span> ||
+      chars == <span class="string">'7'</span> ||
+      chars == <span class="string">'8'</span> ||
+      chars == <span class="string">'9'</span> ||
+      chars == <span class="string">','</span> ||
+      chars == <span class="string">'&gt;'</span> ||
+      chars == <span class="string">'&lt;'</span> ||
+      chars == <span class="string">'='</span> ||
+      chars == <span class="string">'!'</span> ||
+      chars == <span class="string">'%'</span> ||
+      chars == <span class="string">','</span> ||
+      chars == <span class="string">'A'</span> ||
+      chars == <span class="string">'a'</span> ||
+      chars == <span class="string">'B'</span> ||
+      chars == <span class="string">'b'</span> ||
+      chars == <span class="string">'C'</span> ||
+      chars == <span class="string">'c'</span> ||
+      chars == <span class="string">'D'</span> ||
+      chars == <span class="string">'d'</span> ||
+      chars == <span class="string">'E'</span> ||
+      chars == <span class="string">'e'</span> ||
+      chars == <span class="string">'F'</span> ||
+      chars == <span class="string">'f'</span> ||
+      chars == <span class="string">'G'</span> ||
+      chars == <span class="string">'g'</span> ||
+      chars == <span class="string">'H'</span> ||
+      chars == <span class="string">'h'</span> ||
+      chars == <span class="string">'I'</span> ||
+      chars == <span class="string">'i'</span> ||
+      chars == <span class="string">'J'</span> ||
+      chars == <span class="string">'j'</span> ||
+      chars == <span class="string">'K'</span> ||
+      chars == <span class="string">'k'</span> ||
+      chars == <span class="string">'L'</span> ||
+      chars == <span class="string">'l'</span> ||
+      chars == <span class="string">'M'</span> ||
+      chars == <span class="string">'m'</span> ||
+      chars == <span class="string">'N'</span> ||
+      chars == <span class="string">'n'</span> ||
+      chars == <span class="string">'n'</span> ||
+      chars == <span class="string">'O'</span> ||
+      chars == <span class="string">'o'</span> ||
+      chars == <span class="string">'P'</span> ||
+      chars == <span class="string">'p'</span> ||
+      chars == <span class="string">'Q'</span> ||
+      chars == <span class="string">'q'</span> ||
+      chars == <span class="string">'R'</span> ||
+      chars == <span class="string">'r'</span> ||
+      chars == <span class="string">'S'</span> ||
+      chars == <span class="string">'s'</span> ||
+      chars == <span class="string">'T'</span> ||
+      chars == <span class="string">'t'</span> ||
+      chars == <span class="string">'U'</span> ||
+      chars == <span class="string">'v'</span> ||
+      chars == <span class="string">'V'</span> ||
+      chars == <span class="string">'v'</span> ||
+      chars == <span class="string">'W'</span> ||
+      chars == <span class="string">'w'</span> ||
+      chars == <span class="string">'X'</span> ||
+      chars == <span class="string">'x'</span> ||
+      chars == <span class="string">'Y'</span> ||
+      chars == <span class="string">'y'</span> ||
+      chars == <span class="string">'Z'</span> ||
+      chars == <span class="string">'z'</span> ||
+      chars == <span class="string">'】'</span> ||
+      chars == <span class="string">'【'</span> ||
+      chars == <span class="string">'['</span> ||
+      chars == <span class="string">']'</span> ||
+      chars == <span class="string">'{'</span> ||
+      chars == <span class="string">'}'</span> ||
+      chars == <span class="string">'"'</span>
+    ) {
+      <span class="keyword">return</span> <span class="string">'not-handled'</span>;
+    } <span class="keyword">else</span> {
+      <span class="keyword">return</span> <span class="string">'handled'</span>;
+    }
+  };
+  <span class="keyword">const</span> insertText = <span class="function">(<span class="params">str: any</span>) =&gt;</span> {
+    <span class="keyword">const</span> editorState2 = ContentUtils.insertText(editorState, str);
+    setEditorState(editorState2);
+    <span class="keyword">if</span> (props.onChange) {
+      props.onChange(editorState.toText());
+    }
+  };
+  <span class="comment">//拖拽移动开始</span>
+  <span class="keyword">const</span> dragStartFun = <span class="function">(<span class="params">e, item</span>) =&gt;</span> {
+    e.dataTransfer.setData(<span class="string">'item'</span>, item)<span class="comment">//把内容set到'item'里</span>
+  }
+  <span class="keyword">const</span> delNode = <span class="function">(<span class="params">e</span>) =&gt;</span> {
+
+  }
+  <span class="comment">//拖拽移动后</span>
+  <span class="keyword">const</span> dropFun = <span class="function">(<span class="params">e</span>) =&gt;</span> {
+    e.preventDefault()
+    <span class="comment">//get'item'里内容，然后通过insertText把数据写到富文本编辑器里</span>
+    insertText(e.dataTransfer.getData(<span class="string">"item"</span>))
+  }
+  <span class="comment">//拖拽移动中</span>
+  <span class="keyword">const</span> dragerOverFun = <span class="function">(<span class="params">e</span>) =&gt;</span> {
+    e.preventDefault()
+  }
+  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> {
+    <span class="comment">// setTagOpt([{ name: '姓名' }, { name: '地址' }])</span>
+    <span class="keyword">if</span> (props?.initialValue?.template) {
+      setEditorState(BraftEditor.createEditorState(props?.initialValue?.template.toString()))
+    }
+  }, [props.initialValue])
+  <span class="keyword">const</span> addX = <span class="keyword">async</span> () =&gt; {
+    <span class="keyword">const</span> { data, success } = <span class="keyword">await</span> httpGet(<span class="string">``</span>)
+    <span class="keyword">if</span> (success &amp;&amp; data) {
+      setTagOpt(data)
+    }
+    setVisiable(<span class="literal">true</span>)
+  }
+  <span class="keyword">return</span> (
+    &lt;&gt;
+      &lt;div style=&lt;!--￼<span class="number">0</span>--&gt; className=<span class="string">"cardWithoutPadding"</span>&gt;
+      {<span class="comment">/* 直接使用className=""的形式 */</span>}
+        &lt;Card onDrop={(e) =&gt; dropFun(e)} onDragOver={(e) =&gt; dragerOverFun(e)}&gt;
+          {<span class="comment">/* 富文本编辑器 */</span>}
+          &lt;BraftEditor
+            controls={[]} <span class="comment">//自定义配置功能、[]为简约版</span>
+            stripPastedStyles={<span class="literal">true</span>}
+            value={editorState} <span class="comment">//自定义表单控件的value</span>
+            onChange={eraftEditorChange} <span class="comment">//自定义表单控件的onChange</span>
+            handleBeforeInput={handleBeforeInput}
+          /&gt;
+        &lt;<span class="regexp">/Card&gt;</span>
+<span class="regexp">      &lt;/</span>div&gt;
+      &lt;Button onClick={() =&gt; { addX() }} type=<span class="string">"primary"</span>&gt;添加变量V&lt;<span class="regexp">/Button&gt; &amp;nbsp;&lt;span&gt;变量前后以#表示，如：#name#，除预设的变量外，其余变量均需定制开发&lt;/</span>span&gt;
+      {
+        visiable &amp;&amp;
+        &lt;Card&gt;
+          {
+            tagOpt &amp;&amp; tagOpt.map(<span class="function"><span class="params">item</span> =&gt;</span> (
+              &lt;Tag
+                draggable={<span class="literal">true</span>}
+                onDragStart={(e) =&gt; { <span class="built_in">console</span>.log(e, <span class="string">'111'</span>); dragStartFun(e, <span class="string">`#<span class="subst">${item}</span>#`</span>) }}
+                key={item}
+              &gt;
+                {item}
+              &lt;<span class="regexp">/Tag&gt;</span>
+<span class="regexp">            ))</span>
+<span class="regexp">          }</span>
+<span class="regexp">        &lt;/</span>Card&gt;
+      }
+    &lt;<span class="regexp">/&gt;</span>
+<span class="regexp">  );</span>
+<span class="regexp">});</span>
+<span class="regexp"></span>
+<span class="regexp">export default DraggleMsgTemplate;  </span>
+<span class="regexp"></span>
+<span class="regexp"></span>
+<span class="regexp"></span>
+<span class="regexp">/</span><span class="regexp">/index.less</span>
+<span class="regexp"></span>
+<span class="regexp">:global {</span>
+<span class="regexp">  .cardWithoutPadding {</span>
+<span class="regexp">    .ant-card-body {</span>
+<span class="regexp">      padding       : 0 !important;</span>
+<span class="regexp">      height: 150px !important;</span>
+<span class="regexp">    }</span>
+<span class="regexp">    .bf-content {</span>
+<span class="regexp">      height: 150px !important;</span>
+<span class="regexp">      font-size: 14px !important;</span>
+<span class="regexp">    }</span>
+<span class="regexp">  }</span>
+<span class="regexp">  .specialExplain {</span>
+<span class="regexp">    .ant-form-explain {</span>
+<span class="regexp">      padding:20px !important;</span>
+<span class="regexp">    }</span>
+<span class="regexp">  }</span>
+<span class="regexp">}</span>
+<span class="regexp"></span></code></pre>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-reactHook中useImperativeHande的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -833,81 +1120,6 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/06/30/vue%E6%89%93%E5%8C%85error/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-pythonLearing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/17/pythonLearing/">pythonLearing</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/05/17/pythonLearing/" class="archive-article-date">
-  	<time datetime="2021-05-17T07:05:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-17</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="bugs"><a href="#bugs" class="headerlink" title="bugs"></a>bugs</h5><h6 id="pip-装包"><a href="#pip-装包" class="headerlink" title="pip 装包"></a>pip 装包</h6><p>Traceback (most recent call last):<br>  File “/Library/Frameworks/Python.framework/Versions/2.7/bin/pip”, line 9, in <module><br>    load_entry_point(‘pip==21.1.1’, ‘console_scripts’, ‘pip’)()</module></p>
-<h6 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h6><p>  python -m pip install &lt;包名&gt;</p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/05/17/pythonLearing/">展开全文 >></a>
     </p>
     
 
