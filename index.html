@@ -377,51 +377,51 @@ interface Props {
           /&gt;
         &lt;<span class="regexp">/Card&gt;</span>
 <span class="regexp">      &lt;/</span>div&gt;
-      &lt;Button onClick={() =&gt; { addX() }} type=<span class="string">"primary"</span>&gt;添加变量V&lt;<span class="regexp">/Button&gt; &amp;nbsp;&lt;span&gt;变量前后以#表示，如：#name#，除预设的变量外，其余变量均需定制开发&lt;/</span>span&gt;
-      {
-        visiable &amp;&amp;
-        &lt;Card&gt;
-          {
-            tagOpt &amp;&amp; tagOpt.map(<span class="function"><span class="params">item</span> =&gt;</span> (
-              &lt;Tag
-                draggable={<span class="literal">true</span>}
-                onDragStart={(e) =&gt; { <span class="built_in">console</span>.log(e, <span class="string">'111'</span>); dragStartFun(e, <span class="string">`#<span class="subst">${item}</span>#`</span>) }}
-                key={item}
-              &gt;
-                {item}
-              &lt;<span class="regexp">/Tag&gt;</span>
-<span class="regexp">            ))</span>
-<span class="regexp">          }</span>
-<span class="regexp">        &lt;/</span>Card&gt;
-      }
-    &lt;<span class="regexp">/&gt;</span>
-<span class="regexp">  );</span>
-<span class="regexp">});</span>
-<span class="regexp"></span>
-<span class="regexp">export default DraggleMsgTemplate;  </span>
-<span class="regexp"></span>
-<span class="regexp"></span>
-<span class="regexp"></span>
-<span class="regexp">/</span><span class="regexp">/index.less</span>
-<span class="regexp"></span>
-<span class="regexp">:global {</span>
-<span class="regexp">  .cardWithoutPadding {</span>
-<span class="regexp">    .ant-card-body {</span>
-<span class="regexp">      padding       : 0 !important;</span>
-<span class="regexp">      height: 150px !important;</span>
-<span class="regexp">    }</span>
-<span class="regexp">    .bf-content {</span>
-<span class="regexp">      height: 150px !important;</span>
-<span class="regexp">      font-size: 14px !important;</span>
-<span class="regexp">    }</span>
-<span class="regexp">  }</span>
-<span class="regexp">  .specialExplain {</span>
-<span class="regexp">    .ant-form-explain {</span>
-<span class="regexp">      padding:20px !important;</span>
-<span class="regexp">    }</span>
-<span class="regexp">  }</span>
-<span class="regexp">}</span>
-<span class="regexp"></span></code></pre>
+      &lt;Button onClick={() =&gt; { addX() }} type=<span class="string">"primary"</span>&gt;添加标签&lt;<span class="regexp">/Button&gt;</span>
+<span class="regexp">      {</span>
+<span class="regexp">        visiable &amp;&amp;</span>
+<span class="regexp">        &lt;Card&gt;</span>
+<span class="regexp">          {</span>
+<span class="regexp">            tagOpt &amp;&amp; tagOpt.map(item =&gt; (</span>
+<span class="regexp">              &lt;Tag</span>
+<span class="regexp">                draggable={true}</span>
+<span class="regexp">                onDragStart={(e) =&gt; { console.log(e, '111'); dragStartFun(e, `#${item}#`) }}</span>
+<span class="regexp">                key={item}</span>
+<span class="regexp">              &gt;</span>
+<span class="regexp">                {item}</span>
+<span class="regexp">              &lt;/</span>Tag&gt;
+            ))
+          }
+        &lt;<span class="regexp">/Card&gt;</span>
+<span class="regexp">      }</span>
+<span class="regexp">    &lt;/</span>&gt;
+  );
+});
+
+<span class="keyword">export</span> <span class="keyword">default</span> DraggleMsgTemplate;  
+
+
+
+<span class="comment">//index.less</span>
+
+:global {
+  .cardWithoutPadding {
+    .ant-card-body {
+      padding       : <span class="number">0</span> !important;
+      height: <span class="number">150</span>px !important;
+    }
+    .bf-content {
+      height: <span class="number">150</span>px !important;
+      font-size: <span class="number">14</span>px !important;
+    }
+  }
+  .specialExplain {
+    .ant-form-explain {
+      padding:<span class="number">20</span>px !important;
+    }
+  }
+}
+</code></pre>
 
     
 
