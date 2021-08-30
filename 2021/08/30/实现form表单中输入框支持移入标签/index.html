@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>实现form表单中输入框支持移入标签 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识点：1、自定义表单控件+++  ：（有onChange 和value）2、braft-editor富文本编辑器（react使用，适配antd）++++3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）4、antd样式更改:   ：global{类名：{}}import React, { forwardRef, CSSP">
+  <meta name="description" content="知识点：1、自定义表单控件+++  ：（有onChange 和value）2、braft-editor富文本编辑器（react使用，适配antd）++++3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）4、antd样式更改:   ：global{类名：{}}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实现form表单中输入框支持移入标签">
 <meta property="og:url" content="http://yoursite.com/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="知识点：1、自定义表单控件+++  ：（有onChange 和value）2、braft-editor富文本编辑器（react使用，适配antd）++++3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）4、antd样式更改:   ：global{类名：{}}import React, { forwardRef, CSSP">
+<meta property="og:description" content="知识点：1、自定义表单控件+++  ：（有onChange 和value）2、braft-editor富文本编辑器（react使用，适配antd）++++3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）4、antd样式更改:   ：global{类名：{}}">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-30T05:23:56.000Z">
-<meta property="article:modified_time" content="2021-08-30T07:39:20.595Z">
+<meta property="article:modified_time" content="2021-08-30T08:56:14.927Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -204,7 +204,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><h5 id="1、自定义表单控件-：（有onChange-和value）"><a href="#1、自定义表单控件-：（有onChange-和value）" class="headerlink" title="1、自定义表单控件+++  ：（有onChange 和value）"></a>1、自定义表单控件+++  ：（有onChange 和value）</h5><h5 id="2、braft-editor富文本编辑器（react使用，适配antd）"><a href="#2、braft-editor富文本编辑器（react使用，适配antd）" class="headerlink" title="2、braft-editor富文本编辑器（react使用，适配antd）++++"></a>2、braft-editor富文本编辑器（react使用，适配antd）++++</h5><h5 id="3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）"><a href="#3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）" class="headerlink" title="3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）"></a>3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）</h5><h5 id="4、antd样式更改-：global-类名："><a href="#4、antd样式更改-：global-类名：" class="headerlink" title="4、antd样式更改:   ：global{类名：{}}"></a>4、antd样式更改:   ：global{类名：{}}</h5><pre><code class="js"><span class="keyword">import</span> React, { forwardRef, CSSProperties, useState, useEffect } <span class="keyword">from</span> <span class="string">'react'</span>;
+    <h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><h5 id="1、自定义表单控件-：（有onChange-和value）"><a href="#1、自定义表单控件-：（有onChange-和value）" class="headerlink" title="1、自定义表单控件+++  ：（有onChange 和value）"></a>1、自定义表单控件+++  ：（有onChange 和value）</h5><h5 id="2、braft-editor富文本编辑器（react使用，适配antd）"><a href="#2、braft-editor富文本编辑器（react使用，适配antd）" class="headerlink" title="2、braft-editor富文本编辑器（react使用，适配antd）++++"></a>2、braft-editor富文本编辑器（react使用，适配antd）++++</h5><h5 id="3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）"><a href="#3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）" class="headerlink" title="3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）"></a>3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）</h5><h5 id="4、antd样式更改-：global-类名："><a href="#4、antd样式更改-：global-类名：" class="headerlink" title="4、antd样式更改:   ：global{类名：{}}"></a>4、antd样式更改:   ：global{类名：{}}</h5><a id="more"></a>
+<hr>
+<pre><code class="js"><span class="keyword">import</span> React, { forwardRef, CSSProperties, useState, useEffect } <span class="keyword">from</span> <span class="string">'react'</span>;
 <span class="keyword">import</span> { SelectProps } <span class="keyword">from</span> <span class="string">'antd/es/select'</span>;
 <span class="keyword">import</span> { Card, Tag, Button } <span class="keyword">from</span> <span class="string">'antd'</span>
 <span class="keyword">import</span> BraftEditor, { ExtendControlType, EditorState } <span class="keyword">from</span> <span class="string">'braft-editor'</span>;
