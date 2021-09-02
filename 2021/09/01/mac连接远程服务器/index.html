@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>mac连接远程服务器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="ssh -p 端口号 用于登陆的用户名@ipssh -p 22 用于登陆的用户名@ip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac连接远程服务器">
+<meta property="og:url" content="http://yoursite.com/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ssh -p 端口号 用于登陆的用户名@ipssh -p 22 用于登陆的用户名@ip">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-01T05:45:03.000Z">
+<meta property="article:modified_time" content="2021-09-01T05:47:07.363Z">
 <meta property="article:author" content="White Zero">
 <meta name="twitter:card" content="summary">
   
@@ -174,21 +178,24 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-mac连接远程服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-mac连接远程服务器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
   
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">mac连接远程服务器</a>
+    <h1 class="article-title" itemprop="name">
+      mac连接远程服务器
     </h1>
   
 
   
   
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
 <a href="/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
   	<time datetime="2021-09-01T05:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-01</time>
 </a>
@@ -202,6 +209,31 @@
     
 
     
+    <div class="page-reward">
+      <a href="javascript:;" class="page-reward-btn tooltip-top">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
+              </span>
+            </span>
+            <!-- 添加代码  -->
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+            </span>
+        </div>
+      </a>
+    </div>
+    
   </div>
   <div class="article-info article-info-index">
     
@@ -209,16 +241,75 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-    </p>
-    
 
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/31/%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面试题-输入URL到页面展示发生了什么</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -238,706 +329,14 @@
 
 
 
-  
-    <article id="post-面试题-输入URL到页面展示发生了什么" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/31/%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/">面试题-输入URL到页面展示发生了什么</a>
-    </h1>
-  
 
-  
-  
-<a href="/2021/08/31/%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" class="archive-article-date">
-  	<time datetime="2021-08-31T02:42:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-31</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>1、输入地址<br>2、浏览器查找域名的 IP 地址<br>3、浏览器向 web 服务器发送一个 HTTP 请求<br>4、服务器的永久重定向响应<br>6、服务器处理请求<br>7、服务器返回一个 HTTP 响应<br>8、浏览器显示 HTML<br>9、浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等  </p>
-<p>1、输入地址：智能匹配：会从历史记录，书签等地方，找到已经输入的字符串可能对应的 url，然后给出智能提示，让你可以补全url地址    </p>
-<p>2、浏览器查找域名的 IP 地址  </p>
-<ul>
-<li>发起请求</li>
-<li>解析这个域名：一般来说，浏览器会首先查看<p style="color:lightgreen">本地硬盘的 hosts 文件</p>，看看其中有没有和这个域名<p style="color:lightgreen">对应的规则</p>，如果有的话就直接使用 hosts 文件里面的 ip 地址</li>
-<li>如果在本地的 hosts 文件没有能够找到对应的 ip 地址，浏览器会发出一个 DNS请求到<p style="color:lightgreen">本地DNS服务器</p>。本地DNS服务器一般都是你的网络接入服务器商提供，比如中国电信，中国移动</li>
-<li>查询你输入的网址的DNS请求到达本地DNS服务器之后，本地DNS服务器会首先查询它的缓存记录，如果缓存中有此条记录，就可以直接返回结果，此过程是递归的方式进行查询。如果没有，本地DNS服务器还要向<p style="color:lightgreen">DNS根服务器</p>进行查询</li>
-<li>根DNS服务器没有记录具体的域名和IP地址的对应关系，而是告诉本地DNS服务器，你可以到<p style="color:lightgreen">域服务器</p>上去继续查询，并给出域服务器的地址。这种过程是迭代的过程  </li>
-<li>本地DNS服务器继续向域服务器发出请求，在这个例子中，请求的对象是.com域服务器。.com域服务器收到请求之后，也不会直接返回域名和IP地址的对应关系，而是告诉本地DNS服务器，<p style="color:lightgreen">你的域名的解析服务器的地址</p></li>
-<li>最后，本地DNS服务器向域名的解析服务器发出请求，这时就能收到一个<p style="color:lightgreen">域名和IP地址对应关系</p>，本地DNS服务器不仅要把IP地址返回给用户电脑，还要把这个对应关系保存在缓存中，以备下次别的用户查询时，可以直接返回结果，加快网络访问  </li>
-</ul>
-<p>3、浏览器向 web 服务器发送一个 HTTP 请求 </p>
-<ul>
-<li>建立了TCP/IP的连接<br>拿到域名对应的IP地址之后，浏览器会以一个随机端口（1024&lt;端口&lt;65535）<p style="color:lightgreen">向服务器的WEB程序</p>（常用的有httpd,nginx等）80端口<p style="color:lightgreen">发起TCP的连接请求</p>。这个连接请求<p style="color:lightgreen">到达服务器端</p>后（这中间通过各种路由设备，局域网内除外），进入到<p style="color:lightgreen">网卡</p>，然后是进入到<p style="color:lightgreen">内核的TCP/IP协议栈</p>（用于识别该连接请求，解封包，一层一层的剥开），还有可能要经过<p style="color:lightgreen">Netfilter防火墙</p>（属于内核的模块）的过滤，<p style="color:lightgreen">最终到达WEB程序</p>，<p style="color:lightgreen">最终建立了TCP/IP的连接</p>  </li>
-<li>建立了TCP/IP的连接之后，发起一个http请求<br>请求信息包含三个部分  <p style="color:lightgreen">请求方法URI协议/版本</p>
-<p style="color:lightgreen">请求头(Request Header)</p> 声明浏览器所用的语言，请求正文的长度等。求头和请求正文之间是一个空行，它表示请求头已经结束，接下来的是请求正文。 
-<p style="color:lightgreen">请求正文</p>  
-4、服务器的永久重定向响应  
-  服务器给浏览器响应一个301永久重定向响应，这样浏览器就会访问http://www.google.com/而非http://google.com/
 
 
 
 
-</li>
-</ul>
 
-    
 
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/31/%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-实现form表单中输入框支持移入标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/">实现form表单中输入框支持移入标签</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/" class="archive-article-date">
-  	<time datetime="2021-08-30T05:23:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-30</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><h5 id="1、自定义表单控件-：（有onChange-和value）"><a href="#1、自定义表单控件-：（有onChange-和value）" class="headerlink" title="1、自定义表单控件+++  ：（有onChange 和value）"></a>1、自定义表单控件+++  ：（有onChange 和value）</h5><h5 id="2、braft-editor富文本编辑器（react使用，适配antd）"><a href="#2、braft-editor富文本编辑器（react使用，适配antd）" class="headerlink" title="2、braft-editor富文本编辑器（react使用，适配antd）++++"></a>2、braft-editor富文本编辑器（react使用，适配antd）++++</h5><h5 id="3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）"><a href="#3、拖拽标签到输入框（框中以文本形式展现）-：（通过dragStartFun、dragerOverFun、dropFun实现）" class="headerlink" title="3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）"></a>3、拖拽标签到输入框（框中以文本形式展现） ：（通过dragStartFun、dragerOverFun、dropFun实现）</h5><h5 id="4、antd样式更改-：global-类名："><a href="#4、antd样式更改-：global-类名：" class="headerlink" title="4、antd样式更改:   ：global{类名：{}}"></a>4、antd样式更改:   ：global{类名：{}}</h5>
-    
-    <a class="article-more-a" href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/30/%E5%AE%9E%E7%8E%B0form%E8%A1%A8%E5%8D%95%E4%B8%AD%E8%BE%93%E5%85%A5%E6%A1%86%E6%94%AF%E6%8C%81%E7%A7%BB%E5%85%A5%E6%A0%87%E7%AD%BE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-reactHook中useImperativeHande的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/18/reactHook%E4%B8%ADuseImperativeHande%E7%9A%84%E4%BD%BF%E7%94%A8/">reactHook中useImperativeHande的使用</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/18/reactHook%E4%B8%ADuseImperativeHande%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-08-18T07:17:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-18</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="useImperativeHandle-ref-createHandle-deps"><a href="#useImperativeHandle-ref-createHandle-deps" class="headerlink" title="useImperativeHandle(ref, createHandle, [deps])"></a>useImperativeHandle(ref, createHandle, [deps])</h4><h5 id="作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法"><a href="#作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法" class="headerlink" title="作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法"></a>作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法</h5><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><h6 id="1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"><a href="#1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起" class="headerlink" title="1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"></a>1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起</h6><h6 id="2-所以在父组件中-调用inputRef-current时-实际上是返回的对象"><a href="#2-所以在父组件中-调用inputRef-current时-实际上是返回的对象" class="headerlink" title="2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象"></a>2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象</h6><h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5><pre><code>//子组件
-import React, { useRef, forwardRef, useImperativeHandle } from &apos;react&apos;
-const sonComponent = forwardRef((props, ref) =&gt; {
-  //const inputRef = useRef() 好像没用，待考证
-  //暴露出给父组件使用的方法、数据
-  useImperativeHandle(ref, () =&gt; ({
-    testFun: () =&gt; {
-      console.log(&apos;just for test&apos;)
-    },
-  }),[可以写依赖项])
-  return &lt;input type=&quot;text&quot;/&gt;
-})  
-//父组件  
-export default function FatherComponent() {
-  const tttttRef = useRef()
-  return (
-    &lt;div&gt;
-      &lt;button onClick={() =&gt; ttttRef.current.testFun()}&gt;按钮&lt;/button&gt;
-      //results：输出&apos;just for test&apos;
-      &lt;sonComponent ref={tttttRef} /&gt;
-    &lt;/div&gt;</code></pre>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/18/reactHook%E4%B8%ADuseImperativeHande%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-解决github不能通过验证密码方式push" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/16/%E8%A7%A3%E5%86%B3github%E4%B8%8D%E8%83%BD%E9%80%9A%E8%BF%87%E9%AA%8C%E8%AF%81%E5%AF%86%E7%A0%81%E6%96%B9%E5%BC%8Fpush/">解决github不能通过验证密码方式push</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/16/%E8%A7%A3%E5%86%B3github%E4%B8%8D%E8%83%BD%E9%80%9A%E8%BF%87%E9%AA%8C%E8%AF%81%E5%AF%86%E7%A0%81%E6%96%B9%E5%BC%8Fpush/" class="archive-article-date">
-  	<time datetime="2021-08-16T02:38:45.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-16</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title: 解决github不能通过验证密码方式push<br>date: 2021-08-16 10:38:45<br>categories:<br>    - error<br>tags:</p>
-<hr>
-<p>问题：2021.8.13 在使用账号密码push代码时，提示错误： </p>
-<pre><code>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</code></pre><p>解决方式:1、在github上settings–&gt;Developer settings–&gt;保存token—&gt;push代码时密码使用这个token            </p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/16/%E8%A7%A3%E5%86%B3github%E4%B8%8D%E8%83%BD%E9%80%9A%E8%BF%87%E9%AA%8C%E8%AF%81%E5%AF%86%E7%A0%81%E6%96%B9%E5%BC%8Fpush/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-angularJS自行添加外部包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/">angularJS自行添加外部包</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/" class="archive-article-date">
-  	<time datetime="2021-08-11T01:49:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-11</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="Q：-原先采用外部引入的方式，在网络不好时容易加载不到，报错"><a href="#Q：-原先采用外部引入的方式，在网络不好时容易加载不到，报错" class="headerlink" title="Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)"></a>Q：(原先采用外部引入的方式，在网络不好时容易加载不到，报错)</h5><h5 id="A：-自行下载包，放入项目中"><a href="#A：-自行下载包，放入项目中" class="headerlink" title="A：(自行下载包，放入项目中)"></a>A：(自行下载包，放入项目中)</h5><hr>
-<p>在index.html引入js文件<br><img src="/images/pic1.png" alt="在index.html引入js文件">  </p>
-<hr>
-<p>在index.html引入css文件<br><img src="/images/pic2.png" alt="在index.html引入css文件">    </p>
-<hr>
-<p>文件存放位置<br><img src="/images/pic3.png" alt="文件存放位置">    </p>
-<hr>
-<p>文件存放位置<br><img src="/images/pic4.png" alt="文件存放位置">    </p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-umi项目中加入favico图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/">umi项目中加入favico图标</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2021-08-04T01:13:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-04</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>问题：修改浏览器页签图标<br>解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）  </p>
-<pre><code>思路二：在config.ts文件中的title设置项下加入  
-```
-title: &apos;xxxxxx&apos;,
-links:[{rel:&apos;icon&apos;,href:&quot;/xxxx/img/favico.ico&quot;}],  
-//xxxx是项目的文件在服务器上的名字
-```  
-icon的路径为：public/img/favico.ico(public文件夹没有可以自行创建)  
-run build 之后可以看到dist文件里多了一个img的文件夹（成功）</code></pre>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-gitlab无法看分支的commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/">gitlab无法看分支的commit</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/" class="archive-article-date">
-  	<time datetime="2021-08-01T02:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-01</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>问题：使用gitlab的时候只能看master的commit，看不到分支下面的commit<br>原因：分支名称问题，不能为   XXXX/XXXX/XXX,正确应该为XXXX-XXXX-XXX<br>现在解决方式：直接访问<a href="http://XXXXX.com/项目名/项目名/tree/分支名" target="_blank" rel="noopener">http://XXXXX.com/项目名/项目名/tree/分支名</a></p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-qiankun-react主工程嵌vue子工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/04/qiankun-react%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%B5%8Cvue%E5%AD%90%E5%B7%A5%E7%A8%8B/">qiankun--react主工程嵌vue子工程</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/07/04/qiankun-react%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%B5%8Cvue%E5%AD%90%E5%B7%A5%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-07-04T02:13:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-04</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <a id="more"></a>
-<hr>
-<h4 id="主工程："><a href="#主工程：" class="headerlink" title="主工程："></a>主工程：</h4><p><img src="/images/36FDF1C9-F7CA-4AEE-91D4-4ACCA5BA7978.png" alt="主工程的操作1"><br><img src="/images/D2EE042E-4465-49D0-B29D-7B3741169076.png" alt="主工程的操作2"><br><img src="/images/EE7CE21E-F63A-4C75-886B-B8DE0902D964.png" alt="主工程的操作3"><br><img src="/images/mainC765E172-BF5B-4463-AEE7-4E12631D2A43.png" alt="主工程的操作4">  </p>
-<h4 id="新接入vue子工程"><a href="#新接入vue子工程" class="headerlink" title="新接入vue子工程"></a>新接入vue子工程</h4><p><img src="/images/sonDE4B928F-8285-4909-B091-9C1E86203703.png" alt="子工程：package.json"><br><img src="/images/son06056152-2033-4696-AFA5-0189789A1B43.png" alt="子工程：package.json"><br><img src="/images/B2881EDD-4A1F-43D8-B900-EAAF1ACB242B.png" alt="子工程：package.json">     </p>
-<hr>
-<h2 id><a href="#" class="headerlink" title="  "></a><img src="/images/son2E52EEAB2-1172-4684-8FE8-0BC355AD08E8.png" alt="子工程：babel.config.js">  </h2><p>新建vue.config.js文件<br>(publicPath:不加会导致页面404,无法加载到对应的文件。“./”找到文件夹位置。使用了绝对路径。不然会报错：“We’re sorry but [项目名称] doesn’t work properly without JavaScript enabled. Please enable it to continue。access…允许跨域访问，vue接入需设置)<br><img src="/images/son37EE196FD-9901-4ACE-AF02-4EC06B6AE5CF.png" alt="子工程：vue.config.js(publicPath:不加会导致页面404,无法加载到对应的文件。“./”找到文件夹位置。使用了绝对路径。不然会报错：“We’re sorry but [项目名称] doesn’t work properly without JavaScript enabled. Please enable it to continue。access...允许跨域访问，vue接入需设置)"><br><img src="/images/son301B0D520-EC10-4FD3-B0F9-064D0EC90185.png" alt="子工程：vue.config.js"><br><img src="/images/son3A771D25E-AAA5-4CFF-84F9-698D0C9DBD9D.png" alt="子工程：vue.config.js">   </p>
-<hr>
-<p>新建public-path.jswen文件<br><img src="/images/son4B87B66B9-6A9F-49F3-B0E5-D4357649577E.png" alt="子工程：public-path.js">  </p>
-<hr>
-<p>main.js<br><img src="/images/son5220F1625-2B0D-432A-9AAA-E9F26A586077.png" alt="子工程：main.js"><br>路由配置<br><img src="/images/son56838475B-F581-4B9C-9EA3-CC33399D3D60.png" alt="子工程：">  </p>
-<hr>
-<p>文件夹格式（slave为main工程）<br><img src="/images/gs5E2A1B08-13E4-4DC1-B929-EEE577E364DF.png" alt="文件夹格式：">  </p>
-<hr>
-<p>线上nginx配置<br>（路径：usr/local/nginx/conf/nginx.conf）<br>（tips: nginx配置后重启：在pwd为：usr/local/nginx 的位置，sbin/nginx -s -reload)<br> (user root 不加导致页面无权限403)  </p>
-<p><img src="/images/ng22090166-28E9-4653-88CA-C45248EFA5D0.png" alt="nginx.conf配置(user root 不加导致页面无权限403)"><br><img src="/images/ng7A4E65CF-14DA-4893-BF6A-493BAAE7DE14.png" alt="nginx.conf配置：">  </p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/07/04/qiankun-react%E4%B8%BB%E5%B7%A5%E7%A8%8B%E5%B5%8Cvue%E5%AD%90%E5%B7%A5%E7%A8%8B/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-快速搭建react-vue项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/02/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAreact-vue%E9%A1%B9%E7%9B%AE/">快速搭建react/vue项目</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/07/02/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAreact-vue%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  	<time datetime="2021-07-02T01:44:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-02</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="react"><a href="#react" class="headerlink" title="react"></a>react</h4><p>  1、<code>npm i create-react-app -g</code>全局安装react脚手架  </p>
-<p>  2、<code>create-react-app &lt;documentName&gt;</code>  </p>
-<p>  3、<code>cd &lt;documentName&gt;</code>进入项目，并<code>npm start</code></p>
-<h4 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h4><p>  1、<code>npm install @vue/cli -g</code> 全局安装脚手架  </p>
-<p>  2、<code>vue create &lt;documentName&gt;</code>  </p>
-<p>  3、<code>cd &lt;documentName&gt;</code>进入项目，启动</p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/07/02/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAreact-vue%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
-    </nav>
-  
 
 
           </div>
@@ -970,8 +369,8 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -176,6 +176,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="jenkins构建error-phantomjs-PATH" class="article article-type-jenkins构建error-phantomjs  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/01/PATH/">jenkins构建error-PhantomJS not found on PATH</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/07/01/PATH/" class="archive-article-date">
+  	<time datetime="2021-07-01T01:10:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-01</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>错误：<br>npm install –registry <a href="http://yuanyuanyuanyuan" target="_blank" rel="noopener">http://yuanyuanyuanyuan</a></p>
+<p> phantomjs-prebuilt@2.1.12 install /var/lib/jenkins/workspace/pipeline_web_online_wuxing_wuxingWeb/node_modules/phantomjs-prebuilt<br> node install.js</p>
+<p>PhantomJS not found on PATH<br>Downloading <a href="https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2" target="_blank" rel="noopener">https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2</a><br>Saving to /tmp/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2<br>Receiving…</p>
+<p>Error making request.。。。。</p>
+<p>//出现PhantomJS not found on PATH的error</p>
+<p>原因：网络问题，安装过程中需要去github下载一个包，（被墙导致）</p>
+<p>解决方案一：<br>在jenkin的构建设置里<br>原先为<br>sh npm install –registry <a href="http://yuanyuanyuanyuan&quot;" target="_blank" rel="noopener">http://yuanyuanyuanyuan&quot;</a><br>改为：<br>sh “PHANTOMJS_CDNURL=<a href="https://npm.taobao.org/mirrors/phantomjs" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/phantomjs</a> npm install –registry <a href="http://yuanyuanyuanyuan&quot;" target="_blank" rel="noopener">http://yuanyuanyuanyuan&quot;</a></p>
+<p>即：把PHANTOMJS 的下载源切为taobao镜像</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/07/01/PATH/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-vue打包error" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -931,87 +1012,6 @@ externalObject.animal = <span class="string">'Lizard'</span>;
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-ES6-箭头函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/24/ES6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">ES6-箭头函数</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/09/24/ES6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-09-24T02:55:07.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-24</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title: ES6-箭头函数<br>date: 2020-09-23 10:29:47<br>categories:<br>    - studynotes<br>tags:<br>    - studynotes</p>
-<hr>
-<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>箭头函数表达式的语法比函数表达式更短，并且不绑定自己的this，arguments，super或 new.target。这些函数表达式最适合用于非方法函数(non-method functions)，并且它们不能用作构造函数。—MDN<br>不能用call()、apply()、bind()方法修改里面的this</p>
-<h4 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h4><h5 id="箭头函数有四种使用语法"><a href="#箭头函数有四种使用语法" class="headerlink" title="箭头函数有四种使用语法"></a>箭头函数有四种使用语法</h5><ul>
-<li><p>1、单一参数的单行箭头函数  </p>
-<pre><code>（这是箭头函数最简洁的形式，常用于用作简单的处理函数，如&lt;b&gt;过滤&lt;/b&gt;。）  </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  let array&#x3D;[&#39;a&#39;,&#39;bc&#39;,&#39;def&#39;,&#39;ghij&#39;]  </span><br><span class="line">  array&#x3D;array.filter(item&#x3D;&gt;item.length&gt;&#x3D;2)</span><br><span class="line">  &#x2F;&#x2F;  [&#39;bc&#39;,&#39;def&#39;,&#39;ghij&#39;,]</span><br><span class="line">  &#96;&#96;&#96;  </span><br><span class="line">- 2、多参数的单行箭头函数  </span><br><span class="line">      (在实际开发中，函数的参数不会只有一个，在箭头函数中，多参数的语法跟普通函数一样，用括号包裹参数项。我们经常处理函数，如&lt;b&gt;排序&lt;&#x2F;b&gt;)</span><br></pre></td></tr></table></figure>
-<p>let array=[2,3,4,1]<br>array=array.sort((a,b)=&gt;a-b)<br>//  [1,2,3,4]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 3、多行箭头函数 单一参数</span><br></pre></td></tr></table></figure>
-<p>(foo,bar) =&gt; {<br>  return foo+bar;<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 4、无参数箭头函数  </span><br><span class="line">  - 如果单行箭头返回一个对象，请用圆括号包裹</span><br></pre></td></tr></table></figure>
-<p>const ids=[1,2,3];<br>const users=ids.map(id=&gt;{id:id});<br>//wrong:[ undefined, undefined, undefined ]</p>
-<p>const ids=[1,2,3];<br>const users=ids.map(id=&gt;({id:id}));<br>//Correct:[{id:1},{id:2},{id:3}]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#### 箭头函数和传统函数的区别  </span><br><span class="line">  - 1、箭头函数作为匿名函数,是不能作为构造函数的,不能使用new</span><br></pre></td></tr></table></figure>
-<p>const B =()=&gt;({wechat:”前端达人”});<br>let b = new B(); //TypeError: B is not a constructor</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  - 2、箭头函数不绑定arguments,可以使用剩余参数(rest)解决  </span><br><span class="line">  - 3、箭头函数this指向具备穿透特性，会捕获其所在上下文的this值  </span><br><span class="line">  - 4、箭头函数没有原型属性  </span><br><span class="line">  - 5、箭头函数不能当做Generator函数,不能使用yield关键字  </span><br><span class="line">  - 6、箭头函数对上下文的绑定是强制的，无法通过call或aplly进行改变  </span><br><span class="line">#### 为函数设置默认的参数</span><br></pre></td></tr></table></figure>
-<p>const increment = (number, value = 1) =&gt; number + value<br>increment(5,2) //7<br>increment(5) //6</p>
-<pre><code></code></pre></li>
-</ul>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/24/ES6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">展开全文 >></a>
     </p>
     
 
