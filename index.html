@@ -198,59 +198,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p><img src="/images/jenkins_new_item_step1.png" alt="step 1"><br>选择流水线/直接从现有的项目copy一个配置<br><img src="/images/jenkins_new_item_step2.png" alt="step 2"><br><img src="/images/jenkins_new_item_step3_1.png" alt="step 3—1"><br><img src="/images/jenkins_new_item_step3_2.png" alt="step 3—2"><br><img src="/images/jenkins_new_item_step3_3.png" alt="step 3—3"><br>apply-save<br><img src="/images/jenkins_new_item_step3_4.png" alt="step 3—4">  </p>
-<pre><code class="script">pipeline {
-    agent { label params.runEnv }
-    // triggers {
-    //     pollSCM &apos;H/5 * * * *&apos;
-    // }
-    stages {
-        stage(&apos;Checkout&apos;) {
-            steps {
-                git branch: &apos;$branch&apos;, url: &apos;写git仓库的ssh地址&apos;
-                sh &quot;git rev-parse --short HEAD &gt; .git/commit-id&quot;    
-                script {
-                    commit_id = readFile(&apos;.git/commit-id&apos;)
-                    msg = &quot;测试环境:asset 前端工程:assetManage-ts的${branch}分支的${commit_id}&quot;
-                }
-                dingding accessToken: &apos;&apos;, jenkinsURL: env.jenkinsURL, type: 0, msg: msg
-            }
-        }
-        stage(&apos;Build&apos;) {
-            steps {
-                script {
-                    sh &quot;node -v&quot;
-                    sh &quot;npm --registry 这里写部署的服务器的地址（比如：10.0.25.777:2345） install&quot;
-                    sh &quot;npm run build&quot;
-                }
-            }
-        }
-        stage(&apos;Run&apos;) {
-            steps {
-                script {
-                    if (params.serverAddress == &apos;55.132.255.99&apos;) {
-                        sh &quot;ssh -f root@55.132.255.99  rm -rf  /data/project/web/pro/*&quot;
-                        sh &quot;scp -r ./dist/* root@55.132.255.99:/data/project/web/pro&quot;
-                        //写路径
-                    } else if (params.serverAddress == &apos;120.88.222.199&apos;) {
-                        sh &quot;ssh -f root@120.88.222.199  rm -rf  /data/project/web/pro/*&quot;
-                        sh &quot;scp -r ./dist/* root@120.88.222.199:/data/project/web/pro&quot;
-                    } 
-                }
-            }
-        }
-    }
-    post {
-        success {
-             dingding accessToken: &apos;&apos;, jenkinsURL: env.jenkinsURL, type: 1, msg: msg
-        }
-        failure {
-             dingding accessToken: &apos;&apos;, jenkinsURL: env.jenkinsURL, type: 2, msg: msg
-        }
-    }
-}</code></pre>
-<p>此时，Jenkins构建时报错 ERROR: Error fetching remote repo ‘origin’<br>解决：<br><a href="https://www.pianshen.com/article/74401877738/" target="_blank" rel="noopener">https://www.pianshen.com/article/74401877738/</a><br><img src="/images/jenkins_new_item_step4.png" alt="解决报错">  </p>
-<p>jenkins还要做对应需要部署的服务器的配置<br><img src="/images/jenkins_new_item_step5.png" alt="其他">  </p>
-
+    
+    <a class="article-more-a" href="/2021/10/07/jenkins-new-item%E6%AD%A5%E9%AA%A4/#more">more >></a>
+    
     
 
     
