@@ -176,6 +176,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-umi项目中加入favico图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/">umi项目中加入favico图标</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" class="archive-article-date">
+  	<time datetime="2021-08-04T01:13:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-04</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>问题：修改浏览器页签图标<br>解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）  </p>
+<pre><code>思路二：在config.ts文件中的title设置项下加入  
+```
+title: &apos;xxxxxx&apos;,
+links:[{rel:&apos;icon&apos;,href:&quot;/xxxx/img/favico.ico&quot;}],  
+//xxxx是项目的文件在服务器上的名字
+```  
+icon的路径为：public/img/favico.ico(public文件夹没有可以自行创建)  
+run build 之后可以看到dist文件里多了一个img的文件夹（成功）</code></pre>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-gitlab无法看分支的commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -852,111 +933,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/01/04/bootstrap-select%E4%B8%8B%E6%8B%89%E5%A4%9A%E9%80%89-%E5%8D%95%E9%80%89%E6%A1%86%E5%B8%A6%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-使用lodash的Clone和Clonedeep" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/">使用lodash的Clone和Clonedeep</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/" class="archive-article-date">
-  	<time datetime="2020-11-06T00:55:34.278Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-06</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title: 使用lodash的Clone和Clonedeep<br>date: 2020-11-06 08:55:34<br>categories:<br>    - studynotes<br>tags:</p>
-<hr>
-<p>Lodash 提供两种不同的功能，允许你进行”浅拷贝”和”深拷贝”，它们是 clone 和 clonedeep。 Lodash 的优点在于你可以单独导入它的每个函数，而无需将整个库放入你的项目中。这可以大大的减少依赖项的大小  </p>
-<pre><code class="js"><span class="keyword">const</span> clone = <span class="built_in">require</span>(<span class="string">'lodash/clone'</span>); 
-<span class="keyword">const</span> cloneDeep = <span class="built_in">require</span>(<span class="string">'lodash/clonedeep'</span>);
-<span class="comment">// 你也可以这样做:</span>
-<span class="comment">// const clone = require('lodash.clone');</span>
-<span class="comment">// const cloneDeep = require('lodash.clonedeep');</span>
-<span class="comment">// 取决于你自己的风格 :)  </span></code></pre>
-<pre><code class="js"><span class="keyword">const</span> clone = <span class="built_in">require</span>(<span class="string">'lodash/clone'</span>);  
-<span class="keyword">const</span> cloneDeep = <span class="built_in">require</span>(<span class="string">'lodash/clonedeep'</span>);
-
-<span class="keyword">const</span> externalObject = {
-  animal: <span class="string">'Gator'</span>
-};
-
-<span class="keyword">const</span> originalObject = {
-  a: <span class="number">1</span>,
-  b: <span class="string">'string'</span>,
-  c: <span class="literal">false</span>,
-  d: externalObject
-};
-
-<span class="keyword">const</span> shallowClonedObject = clone(originalObject);  <span class="comment">//clone方法</span>
-
-externalObject.animal = <span class="string">'Crocodile'</span>;
-
-<span class="built_in">console</span>.log(originalObject);
-<span class="built_in">console</span>.log(shallowClonedObject);
-<span class="comment">// originalObject 和 shallowClonedObject 中的`animal`属性是同时被改变的，因为它是一个浅的副本。</span>
-
-<span class="keyword">const</span> deepClonedObject = clonedeep(originalObject);  <span class="comment">//clonedeep方法</span>
-
-externalObject.animal = <span class="string">'Lizard'</span>;
-
-<span class="built_in">console</span>.log(originalObject);
-<span class="built_in">console</span>.log(deepClonedObject);
-<span class="comment">// 原始对象中的'animal'属性发生了变化，但对于deepClonedObject，它复制后'animal'并没有发生改变</span>
-<span class="comment">// 对象是独立的而不是复制引用。</span></code></pre>
-<p>在上面的代码中，我们创建了一个名为 originalObject 的对象,属性 d 引用我们的 externalObject，它具有animal 的属性。  </p>
-<p>当从 Lodash 执行 <strong>clone</strong> 函数时，它会创建一个对象的浅层副本，我们将其分配给 shallowClonedObject。在 externalObject 中为 animal 属性赋值一个新值将改变 originalObject 和 shallowClonedObject，因为浅拷贝只能将引用复制到 externalObject,<strong>它并没有为自己创造一个全新的对象</strong>。</p>
-<p>这就是 <strong>clonedeep</strong> 函数的用武之地。如果你对 deepClonedObject 执行相同的处理，那么 originalObject 的 d 属性是唯一要改变的属性</p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/">展开全文 >></a>
     </p>
     
 
