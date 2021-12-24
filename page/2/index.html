@@ -176,6 +176,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-reactHook中useImperativeHande的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/18/reactHook%E4%B8%ADuseImperativeHande%E7%9A%84%E4%BD%BF%E7%94%A8/">reactHook中useImperativeHande的使用</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/08/18/reactHook%E4%B8%ADuseImperativeHande%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-08-18T07:17:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-18</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="useImperativeHandle-ref-createHandle-deps"><a href="#useImperativeHandle-ref-createHandle-deps" class="headerlink" title="useImperativeHandle(ref, createHandle, [deps])"></a>useImperativeHandle(ref, createHandle, [deps])</h4><h5 id="作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法"><a href="#作用：减少暴露给父组件获取的DOM元素属性-只暴露给父组件需要用到的DOM方法" class="headerlink" title="作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法"></a>作用：减少暴露给父组件获取的DOM元素属性, 只暴露给父组件需要用到的DOM方法</h5><h5 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h5><h6 id="1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"><a href="#1-通过useImperativeHandle的Hook-将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起" class="headerlink" title="1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起"></a>1.通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起</h6><h6 id="2-所以在父组件中-调用inputRef-current时-实际上是返回的对象"><a href="#2-所以在父组件中-调用inputRef-current时-实际上是返回的对象" class="headerlink" title="2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象"></a>2.所以在父组件中, 调用inputRef.current时, 实际上是返回的对象</h6><h5 id="使用："><a href="#使用：" class="headerlink" title="使用："></a>使用：</h5><pre><code>//子组件
+import React, { useRef, forwardRef, useImperativeHandle } from &apos;react&apos;
+const sonComponent = forwardRef((props, ref) =&gt; {
+  //const inputRef = useRef() 好像没用，待考证
+  //暴露出给父组件使用的方法、数据
+  useImperativeHandle(ref, () =&gt; ({
+    testFun: () =&gt; {
+      console.log(&apos;just for test&apos;)
+    },
+  }),[可以写依赖项])
+  return &lt;input type=&quot;text&quot;/&gt;
+})  
+//父组件  
+export default function FatherComponent() {
+  const tttttRef = useRef()
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; ttttRef.current.testFun()}&gt;按钮&lt;/button&gt;
+      //results：输出&apos;just for test&apos;
+      &lt;sonComponent ref={tttttRef} /&gt;
+    &lt;/div&gt;</code></pre>
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/18/reactHook%E4%B8%ADuseImperativeHande%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-解决github不能通过验证密码方式push" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -828,84 +910,6 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/05/17/pythonLearing/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-angularJS简易横向时间轴" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/08/angularJS%E7%AE%80%E6%98%93%E6%A8%AA%E5%90%91%E6%97%B6%E9%97%B4%E8%BD%B4/">angularJS简易横向时间轴</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/02/08/angularJS%E7%AE%80%E6%98%93%E6%A8%AA%E5%90%91%E6%97%B6%E9%97%B4%E8%BD%B4/" class="archive-article-date">
-  	<time datetime="2021-02-08T07:41:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-08</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="/images/58C5D3CD-9F8E-4F3D-BFBC-7FB8EACF7E0B.png" alt="横向简易时间轴"> </p>
-<h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"time-horizontal"</span> <span class="attr">style</span>=<span class="string">"margin-top: 10px;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"event in vm.teamDataList"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            &#123;&#123;event.name&#125;&#125;<span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line">            &#123;&#123;event.time&#125;&#125;<span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br><span class="line">            &#123;&#123;event.address&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">8rem</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: scroll;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="comment">/*横向时间轴*/</span></span><br><span class="line"><span class="selector-class">.time-horizontal</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1000px</span>;</span><br><span class="line">    <span class="attribute">list-style-type</span>: none;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#707070</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-class">.time-horizontal</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">15%</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-class">.time-horizontal</span> <span class="selector-tag">li</span> <span class="selector-tag">b</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">7px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">47%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#4c4c4c</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#4c4c4c</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.teamDataList = [&#123;<span class="attr">name</span>:<span class="number">123</span>,<span class="attr">time</span>:<span class="string">"2020-11-21"</span>,<span class="attr">address</span>:<span class="string">'A省B市C区D街道'</span>&#125;,&#123;<span class="attr">name</span>:<span class="number">344</span>,<span class="attr">time</span>:<span class="string">"2020-11-21"</span>,<span class="attr">address</span>:<span class="string">'A省B市C区D街道'</span>&#125;,&#123;<span class="attr">name</span>:<span class="number">333</span>,<span class="attr">time</span>:<span class="string">"2020-11-21"</span>,<span class="attr">address</span>:<span class="string">'A省B市C区D街道'</span>&#125;,&#123;<span class="attr">name</span>:<span class="number">123</span>,<span class="attr">time</span>:<span class="string">"2020-11-21"</span>,<span class="attr">address</span>:<span class="string">'A省B市C区D街道'</span>&#125;]</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/02/08/angularJS%E7%AE%80%E6%98%93%E6%A8%AA%E5%90%91%E6%97%B6%E9%97%B4%E8%BD%B4/">展开全文 >></a>
     </p>
     
 
