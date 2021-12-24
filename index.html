@@ -462,6 +462,8 @@ interface Props {
 
             <span class="comment">//添加到容器中 step2</span>
             bmap.getPanes().markerPane.appendChild(div);
+            <span class="comment">// bmap.getPanes().floatPane.appendChild(div);</span>
+            <span class="comment">// floatPane层次高于markerPane ==&gt;解决热力图显示在覆盖物上面的问题</span>
 
             <span class="comment">//draw:位置偏移 step3</span>
             <span class="keyword">const</span> drawFun = <span class="function">(<span class="params">lng,lat,nodeName</span>)=&gt;</span>{
