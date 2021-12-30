@@ -176,6 +176,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-后台管理系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">后台管理系统</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  	<time datetime="2020-06-16T03:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li><a href="https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#" target="_blank" rel="noopener">https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html#</a>    (bootstrap免费皮肤)</li>
+</ul>
+<ul>
+<li><p>navtop和sidetop</p>
+<ul>
+<li>在上面网站中，”Dashboard”—&gt;查看源码—&gt;对应的区域edit as html—&gt;ctrl+c ctrl+v到指定组件中—&gt;修改nav标签为div—&gt;把style去掉—&gt;在网页中，把wrapper中element.style{height: 1000px}</li>
+</ul>
+</li>
+<li><p>页面不报错，路由跳转出错（考虑route的exact问题）</p>
+</li>
+<li><p>后台接口</p>
+</li>
+<li><p>react不向前兼容版本，当找到的插件是依赖于react之前的版本时（在node_modules里面看对应插件的源码，package.json看依赖），<br>会出错</p>
+<ul>
+<li>关于react-fileupload的解决方案：1、复制fileupload.js的源码到项目里新建的react-fileupload.jsx中，重新引用</li>
+<li>2、npm下载 prop-types(从react文档里得知react在15.5之后就需要下载prop-types使用）</li>
+<li>3、在react-fileupload.jsx中，修改为class extend…..的格式，（这一步要去掉括号），加一个constructor this.state里的<br>初始属性从getInnitial里拿，拿完把getInnitial删掉， 把类型验证剪切到新的格式中，import PT from ‘prop-types’</li>
+<li>4、去掉错误的逗号</li>
+<li>5、把onClick onChange onSubmit的方法都修改成箭头函数的形式(报beforeChoose的错误，这是因为作用域的问题)</li>
+</ul>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/16/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-webpack3-10-0打包配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
