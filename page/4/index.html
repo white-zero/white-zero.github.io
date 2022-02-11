@@ -176,6 +176,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数组操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/">数组操作</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2020-09-27T08:44:38.292Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-27</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <hr>
+<p>title: 数组操作<br>date: 2020-09-27 16:44:38<br>categories:<br>    - studynotes<br>tags:</p>
+<hr>
+<h5 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h5><p>加在数组的末尾  </p>
+<h5 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h5><p>推出数组末尾的元素  类似shift()  </p>
+<h5 id="shift"><a href="#shift" class="headerlink" title="shift()"></a>shift()</h5>
+    
+    <a class="article-more-a" href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/27/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-ES6-箭头函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1005,81 +1075,6 @@ string ref
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/08/17/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-hexo-yilia博客搭建-新建菜单项及文章归类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/">hexo-yilia博客搭建-新建菜单项及文章归类</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-08-13T23:07:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <pre><code>- 1.hexo new page newMenuName (可以看到source下多了一个“newMenuName”的文件夹，里面有一个index.md的文件，修改title，此title为新菜单的名字，比如叫 新菜单)
-- 2.在blog/themes/yilia/_config.yml 里找到menu.   写下比如 新页面: /categories/newMenuName/的路径
-- 3.在对应的文章编辑页面，写下categories: - newMenuName</code></pre>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo-blog-config//" class="article-tag-list-link color2">hexo-blog-config</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/14/hexo-yilia%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E9%A1%B9%E5%8F%8A%E6%96%87%E7%AB%A0%E5%BD%92%E7%B1%BB/">展开全文 >></a>
     </p>
     
 
