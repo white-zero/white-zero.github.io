@@ -859,6 +859,17 @@ externalObject.animal = <span class="string">'Lizard'</span>;
 <p>title: git的使用<br>date: 2020-06-16 17:15:46<br>categories:<br>    - git<br>tags:</p>
 <hr>
 <ul>
+<li>根据tag回滚  <ul>
+<li>git tag 查看tag版本  </li>
+<li>git show v1.0   (查看tag版本的commit，如：commit为1234)  </li>
+<li>git reset –hard 1234  </li>
+<li>git status (发现本地分支已经比远程少了，本地回滚成功)</li>
+<li>git push -f / git push origin master / git push -f origin master<br>(强制提交，远程同步本地成功，回滚成功)  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
 <li><p>查看所有提交记录  </p>
 <ul>
 <li>git log </li>
