@@ -176,6 +176,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gitlab无法看分支的commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/">gitlab无法看分支的commit</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/" class="archive-article-date">
+  	<time datetime="2021-08-01T02:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-01</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>问题：使用gitlab的时候只能看master的commit，看不到分支下面的commit<br>原因：分支名称问题，不能为   XXXX/XXXX/XXX,正确应该为XXXX-XXXX-XXX<br>现在解决方式：直接访问<a href="http://XXXXX.com/项目名/项目名/tree/分支名" target="_blank" rel="noopener">http://XXXXX.com/项目名/项目名/tree/分支名</a></p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-qiankun-react主工程嵌vue子工程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -883,179 +957,6 @@ externalObject.animal = <span class="string">'Lizard'</span>;
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/11/06/%E4%BD%BF%E7%94%A8lodash%E7%9A%84Clone%E5%92%8CClonedeep/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/04/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/11/04/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-11-04T01:43:36.395Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-04</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <hr>
-<p>title: git的使用<br>date: 2020-06-16 17:15:46<br>categories:<br>    - git<br>tags:</p>
-<hr>
-<ul>
-<li>根据tag回滚  <ul>
-<li>git tag 查看tag版本  </li>
-<li>git show v1.0   (查看tag版本的commit，如：commit为1234)  </li>
-<li>git reset –hard 1234  </li>
-<li>git status (发现本地分支已经比远程少了，本地回滚成功)</li>
-<li>git push -f / git push origin master / git push -f origin master<br>(强制提交，远程同步本地成功，回滚成功)  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p>查看所有提交记录  </p>
-<ul>
-<li>git log </li>
-</ul>
-</li>
-<li><p>查看简写的提交记录  </p>
-<ul>
-<li>git log –oneline</li>
-</ul>
-</li>
-<li><p>tag</p>
-</li>
-<li><p>查看tag //查看本地的所有tag  </p>
-<ul>
-<li>git tag</li>
-</ul>
-</li>
-<li><p>创建tag</p>
-<ul>
-<li>git tag -a v1.0 -m “对tag的描述信息”</li>
-</ul>
-</li>
-<li><p>提交tag</p>
-<ul>
-<li>git push origin –tags    （有两个-）</li>
-</ul>
-</li>
-<li><p>删除tag</p>
-<ul>
-<li>本地：git tag -d v1.0</li>
-<li>远程：git push origin –delete tag v1.0</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>2020.8.5 更新  </p>
-<ul>
-<li><p>查看本地分支  </p>
-<ul>
-<li>git branch  </li>
-</ul>
-</li>
-<li><p>查看远程分支    </p>
-<ul>
-<li>git branch -r  </li>
-</ul>
-</li>
-<li><p>查看所有分支</p>
-<ul>
-<li>git branch -a        </li>
-</ul>
-</li>
-<li><p>本地创建新的分支  </p>
-<ul>
-<li>git branch 「branch name」       </li>
-</ul>
-</li>
-<li><p>切换到新的分支  </p>
-<ul>
-<li>git checkout 「branch name」       </li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li>(0)先切换到master分支  <ul>
-<li>git checkout master        </li>
-</ul>
-</li>
-<li>(1)创建+切换  <ul>
-<li>git checkout -b 「branch name」   </li>
-</ul>
-</li>
-<li>(2)推送到远端  <ul>
-<li>git push </li>
-</ul>
-</li>
-<li>(3)git push –set-upstream origin feature/…   (git push 时提醒的一句)</li>
-<li>(4)git pull </li>
-</ul>
-<hr>
-<ul>
-<li>删除本地分支<ul>
-<li>git branch -d [branch name]</li>
-</ul>
-</li>
-<li>删除远端分支<ul>
-<li>git push origin :[branch name]</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>切换分支<ul>
-<li>git checkout -b xxx  (xxx是分支名)<br>= git checkout -b [branch name]</li></ul></li></ul>
-    
-    <a class="article-more-a" href="/2020/11/04/git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
-    
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/04/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
     </p>
     
 
