@@ -176,6 +176,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-log-中文乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/24/git-log-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">git log 中文乱码问题</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/07/24/git-log-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-07-24T08:56:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li>先看下 LANG 环境变量是否为统一字符编码：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $LANG</span><br></pre></td></tr></table></figure></li>
+<li>如果输出结果为空</li>
+<li>执行 export LANG = “zh_CN.UTF-8”命令，如果问题不解决</li>
+</ul>
+<ul>
+<li>再执行修改 git config  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global il8n.commitencoding utf-8</span><br><span class="line">git config --global il8n.logoutputencoding utf-8</span><br><span class="line">export LESSCHARSET&#x3D;utf-8</span><br></pre></td></tr></table></figure></li>
+<li>解决</li>
+</ul>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/24/git-log-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Typescript笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -977,150 +1059,9 @@
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">网站demo (jQuery)</a>
-    </h1>
-  
-
-  
-  
-<a href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-06-02T02:40:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h2><ul>
-<li>登陆功能<ul>
-<li>为登陆按钮添加点击事件</li>
-<li>获取用户在文本框中输入的用户名和密码</li>
-<li>验证用户是否输入了用户名和密码，没有则阻止程序向下执行</li>
-<li>调用实现登陆功能的接口（ajax），登陆成功，跳转到下一页</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>登陆拦截<ul>
-<li>使用script标签加载服务器端提供的接口地址（不用ajax，因为ajax是异步的不会阻止程序向下执行），且还需在最上方</li>
-<li>判断isLogin变量， 如果为false，跳转登陆页面</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>退出功能<ul>
-<li>为退出按钮添加点击事件</li>
-<li>利用confirm方法返回值（当用户点击确定–&gt;true,点击取消—-&gt;false）</li>
-<li>当true时调用$.ajax方法(不用传递参数)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>添加用户<ul>
-<li>1.在表单中，为添加的用户的每一项添加name属性，（name属性要和接口文档中要求的参数名称保持一致）</li>
-<li>2.为表单绑定提交事件，（在事件处理函数中要阻止表单默认提交的行为）</li>
-<li>3.在事件处理函数中获取用户在表单中输入的内容（ serialize()方法: 将内容格式化成参数字符串 ）</li>
-<li><code>var formData = $(this).serialize()</code>   (formData传到ajax里的data中)</li>
-<li>4.调用添加用户的接口，将获取到的内容通过接口发送给服务端，操作成功—&gt;刷新页面，失败–&gt;用户提示</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>用户头像上传</p>
-<ul>
-<li><p>1.为文件选择控件添加onchange事件，在事件处理函数中获取到用户选择的文件</p>
-</li>
-<li><p>2.创建formData对象用于实现图片文件上传  (用户选择到的文件为 this.files[0] )</p>
- <figure class="highlight plain"><figcaption><span>formData </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formData.append(&#39;avatar&#39;,this.files[0])</span><br></pre></td></tr></table></figure>
-
-<p>（将用户的文件上传给服务器端）</p>
-</li>
-<li><p>3.调用图片文件上传接口($.ajax中设置processData: false //告诉$.ajax不要解析请求参数。因为当前时二进制文件上传，所以不用解析。设置<br>contentType: false //告诉$.ajax方法不要设置请求参数的类型)</p>
-</li>
-<li><p>4.在添加新用户表单中新增一个隐藏域，将图片地址存储在隐藏域中 <code>&lt;input type=&quot;hidden&quot; name=&quot;avatar&quot; id=&quot;hiddenAvatar&quot;&gt;</code> (name值要跟文档匹配)</p>
-</li>
-<li><p>5.（服务器返回的是上传的文件的地址）。 在success函数中两件事：1.头像预览<code>$(&#39;#preview&#39;).attr(&#39;src&#39;, response[0].avatar)</code> 2.将图片地址存在隐藏域中<code>$(&#39;#hiddenAvatar&#39;).val(response[0].avatar)</code> (提交给服务器端用)</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>用户列表展示  (10132967)<ul>
-<li>1.在页面加载时向服务器发送ajax请求，索要用户列表数据</li>
-<li>2.使用模版引擎将数据和html模版拼接</li>
-<li>3.将拼接好的内容展现在页面中</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>用户信息修改<ul>
-<li>一、通过事件委托的形式为编辑按钮添加点击事件（用户信息修改功能，要把用户信息展示在页面上，因为用ajax向服务器请求的数据不知什么时候返回，所以用事件委托的方式，为他的父级添加点击事件）</li>
-<li>在事件处理函数中获取当前点击的用户的ID值 </li>
-<li>根据用户ID获取用户的详细信息（$.ajax),并通过模版引擎将用户信息渲染在表&gt;<br>单中     二、为提交按钮添加点击事件。（也要用事件委托的形式）1.获取用户在表单中&gt;<br>输入的内容，2.调用修改用户信息接口实现用户信息修改功能（$.ajax）,success函数里location.reload(),刷新页面<br>(下面的意思是当点击’edit’类的时候，触发冒泡机制，触发userBox的点击事件的处理函数)<br><code>$(&#39;#userBox&#39;).on(&#39;click&#39;, &#39;.edit&#39;, function () {}</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>删除用户<ul>
-<li>为删除按钮添加点击事件（事件委托的方法）</li>
-<li>确认用户是否要进行删除（confirm方法）</li>
-<li>获取当前被点击的用户的ID</li>
-<li>调用删除用户接口根据ID删除用户，成功—&gt;刷新页面</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/06/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+      <a class="extend prev" rel="prev" href="/page/5/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">下一页</a>
     </nav>
   
 
