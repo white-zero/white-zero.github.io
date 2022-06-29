@@ -176,6 +176,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-uniapp-h5-打包优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/28/uniapp-h5-%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/">uniapp-h5-打包优化</a>
+    </h1>
+  
+
+  
+  
+<a href="/2022/06/28/uniapp-h5-%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2022-06-28T02:00:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-28</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>1、摇树优化（已启用）800k+ ====&gt;700k<br>2、nginx配置gzip压缩（启用、待验证）<br>3、将所有的依赖都打包成单独的js ，将chunk.vendors.js文件拆分成若干个【npm.xxx】的js依赖文件。<br>速度确实会提高，但没有特别明显（大概有20%）。具体要取决于单个依赖包的大小与原始 chunk-vendors.js 这个包的差异</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vue.config.js</span></span><br><span class="line"><span class="keyword">const</span> isProduction = process.env.NODE_ENV === <span class="string">'production'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">configureWebpack: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (isProduction) &#123;</span><br><span class="line">    <span class="comment">// 开启分离js</span></span><br><span class="line">    config.optimization = &#123;</span><br><span class="line">      runtimeChunk: <span class="string">'single'</span>,</span><br><span class="line">      splitChunks: &#123;</span><br><span class="line">        chunks: <span class="string">'all'</span>,</span><br><span class="line">        maxInitialRequests: <span class="literal">Infinity</span>,</span><br><span class="line">        minSize: <span class="number">20000</span>,</span><br><span class="line">        cacheGroups: &#123;</span><br><span class="line">          vendor: &#123;</span><br><span class="line">            test: <span class="regexp">/[\\/]node_modules[\\/]/</span>,</span><br><span class="line">            name (<span class="built_in">module</span>) &#123;</span><br><span class="line">              <span class="comment">// get the name. E.g. node_modules/packageName/not/this/part.js</span></span><br><span class="line">              <span class="comment">// or node_modules/packageName</span></span><br><span class="line">              <span class="keyword">const</span> packageName = <span class="built_in">module</span>.context.match(<span class="regexp">/[\\/]node_modules[\\/](.*?)([\\/]|$)/</span>)[<span class="number">1</span>]</span><br><span class="line">              <span class="comment">// npm package names are URL-safe, but some servers don't like @ symbols</span></span><br><span class="line">              <span class="keyword">return</span> <span class="string">`npm.<span class="subst">$&#123;packageName.replace(<span class="string">'@'</span>, <span class="string">''</span>)&#125;</span>`</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/06/28/uniapp-h5-%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-git每次提交都要求输账号密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -813,70 +878,6 @@ watch(isDialogAddVisible,(val,old)=&gt;{
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/12/27/wrappedComponentRef%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-echarts图表x轴数据过多滚动问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/24/echarts%E5%9B%BE%E8%A1%A8x%E8%BD%B4%E6%95%B0%E6%8D%AE%E8%BF%87%E5%A4%9A%E6%BB%9A%E5%8A%A8%E9%97%AE%E9%A2%98/">echarts图表x轴数据过多滚动问题</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/12/24/echarts%E5%9B%BE%E8%A1%A8x%E8%BD%B4%E6%95%B0%E6%8D%AE%E8%BF%87%E5%A4%9A%E6%BB%9A%E5%8A%A8%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-12-24T06:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-24</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>解决问题1:x轴数据过多滚动<br>解决问题2:滚动时只展示x轴整数、不展示小数  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; FC, forwardRef, useEffect,memo &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactEcharts <span class="keyword">from</span> <span class="string">'echarts-for-react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Button, Col, Form, Row &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> echarts <span class="keyword">from</span> <span class="string">'echarts'</span>;</span><br><span class="line">interface Props &#123;</span><br><span class="line">    form: any;</span><br><span class="line">    dataSourceFunc:any;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//数据格式：</span></span><br><span class="line"><span class="comment">//props.data1:[[31,26,138],[12,50,195],[1,32,158]]</span></span><br><span class="line"><span class="comment">//props.data2:['1','2'...'48']</span></span><br><span class="line"><span class="keyword">const</span> ScatterChart = <span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> areaData = [<span class="number">145110</span>, <span class="number">141235</span>, <span class="number">123151</span>, <span class="number">174748</span>, <span class="number">12580</span>, <span class="number">177597</span>, <span class="number">8848</span>, <span class="number">9527</span>, <span class="number">110119120</span>, <span class="number">911520</span>]</span><br><span class="line">    <span class="keyword">const</span> barOption = &#123;</span><br><span class="line">        dataZoom: [</span><br><span class="line">            &#123;   <span class="comment">//Y轴固定,让内容滚动</span></span><br><span class="line">                type: <span class="string">'slider'</span>,</span><br><span class="line">                show: <span class="literal">false</span>,</span><br><span class="line">                xAxisIndex: [<span class="number">0</span>],</span><br><span class="line">                start: <span class="number">1</span>,</span><br><span class="line">                end: <span class="number">30</span>,<span class="comment">//设置X轴刻度之间的间隔(根据数据量来调整) </span></span><br><span class="line">                zoomLock: <span class="literal">true</span>, <span class="comment">//锁定区域禁止缩放(鼠标滚动会缩放,所以禁止)</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                type: <span class="string">'inside'</span>,</span><br><span class="line">                xAxisIndex: [<span class="number">0</span>],</span><br><span class="line">                start: <span class="number">1</span>,</span><br><span class="line">                end: <span class="number">30</span>,  <span class="comment">//end:30 end:30 ==&gt;x坐标15 </span></span><br><span class="line">                zoomLock: <span class="literal">true</span>, <span class="comment">//锁定区域禁止缩放</span></span><br><span class="line">            &#125;,</span><br><span class="line"></span><br><span class="line">        ],</span><br><span class="line">        xAxis: &#123;</span><br><span class="line">            name: <span class="string">'还款期数'</span>,</span><br><span class="line">            data: props?.data2,<span class="comment">//X轴数据(该数组的第一个数据为'' 可以让原点数据为0)</span></span><br><span class="line">            <span class="comment">// boundaryGap: false, //两边是否留白       axisTick.alignWithLabel:true + boundaryGap: false ==刻度正对刻度名</span></span><br><span class="line">            axisLabel: &#123;</span><br><span class="line">                interval: <span class="number">0</span>, <span class="comment">//隔多少点显示一个X轴刻度,0就是全部显示</span></span><br><span class="line">                formatter: <span class="function"><span class="keyword">function</span> (<span class="params">value, index</span>) </span>&#123;<span class="comment">//自定义X轴的显示</span></span><br><span class="line">                    <span class="keyword">return</span> value</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 刻度正对刻度名</span></span><br><span class="line">            <span class="comment">// axisTick: &#123;</span></span><br><span class="line">            <span class="comment">//     // inside: true,</span></span><br><span class="line">            <span class="comment">//     // lignWithLabel: true, </span></span><br><span class="line">            <span class="comment">// &#125;,</span></span><br><span class="line">            <span class="comment">// 网格线</span></span><br><span class="line">            splitLine: &#123;</span><br><span class="line">                show: <span class="literal">true</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        yAxis: &#123;</span><br><span class="line">            name: <span class="string">`逾期天数`</span>,</span><br><span class="line">            <span class="comment">// splitLine: &#123;</span></span><br><span class="line">            <span class="comment">//     show: false</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        grid: &#123;</span><br><span class="line">            right: <span class="string">'15%'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        tooltip: &#123;</span><br><span class="line">            trigger: <span class="string">'item'</span>,</span><br><span class="line">            showDelay: <span class="number">0</span>,</span><br><span class="line">            transitionDuration: <span class="number">0.2</span>,</span><br><span class="line">            textStyle: &#123;</span><br><span class="line">                color: <span class="string">'#fff'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            formatter: <span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">                    预期人数:<span class="subst">$&#123;value.data[<span class="number">2</span>]&#125;</span>&lt;br/&gt;</span></span><br><span class="line"><span class="string">                    逾期天数:<span class="subst">$&#123;value.data[<span class="number">1</span>]&#125;</span>&lt;br/&gt;</span></span><br><span class="line"><span class="string">                    逾期总金额:<span class="subst">$&#123;areaData[value.dataIndex]&#125;</span>元&lt;br/&gt;</span></span><br><span class="line"><span class="string">                `</span></span><br><span class="line">                <span class="comment">// &lt;a style='float:right'&gt;查看详情&amp;gt;&lt;a/&gt;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        series: [&#123;</span><br><span class="line">            symbolSize: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> val[<span class="number">2</span>] / <span class="number">5</span>;</span><br><span class="line">            &#125;,</span><br><span class="line">            data: props?.data,</span><br><span class="line">            type: <span class="string">'scatter'</span>,</span><br><span class="line">            itemStyle: &#123;</span><br><span class="line">                color: <span class="keyword">new</span> echarts.graphic.RadialGradient(<span class="number">0.4</span>, <span class="number">0.3</span>, <span class="number">1</span>, [&#123;</span><br><span class="line">                    offset: <span class="number">0</span>,</span><br><span class="line">                    color: <span class="string">'rgb(251, 118, 123)'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    offset: <span class="number">1</span>,</span><br><span class="line">                    color: <span class="string">'rgb(204, 46, 72)'</span></span><br><span class="line">                &#125;])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;&gt;</span><br><span class="line">            &lt;ReactEcharts</span><br><span class="line">                option=&#123;barOption&#125;</span><br><span class="line">                style=&#123;&#123; <span class="attr">height</span>: <span class="string">'calc(100% - 40px)'</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp">export default ScatterChart;</span></span><br></pre></td></tr></table></figure>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/12/24/echarts%E5%9B%BE%E8%A1%A8x%E8%BD%B4%E6%95%B0%E6%8D%AE%E8%BF%87%E5%A4%9A%E6%BB%9A%E5%8A%A8%E9%97%AE%E9%A2%98/">展开全文 >></a>
     </p>
     
 
