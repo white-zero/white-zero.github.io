@@ -176,6 +176,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue中nextTick和set和forceUpdate的差异" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/11/vue%E4%B8%ADnextTick%E5%92%8Cset%E5%92%8CforceUpdate%E7%9A%84%E5%B7%AE%E5%BC%82/">vue中nextTick和set和forceUpdate的差异</a>
+    </h1>
+  
+
+  
+  
+<a href="/2022/11/11/vue%E4%B8%ADnextTick%E5%92%8Cset%E5%92%8CforceUpdate%E7%9A%84%E5%B7%AE%E5%BC%82/" class="archive-article-date">
+  	<time datetime="2022-11-11T07:37:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-11</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="nexttick："><a href="#nexttick：" class="headerlink" title="$nexttick："></a>$nexttick：</h4><p>让你的操作在视图更新后才执行</p>
+<h4 id="set"><a href="#set" class="headerlink" title="$set():"></a>$set():</h4><p>当你发现你给对象加了一个属性，data中的数据已经发生了改变，但是却没有更新到视图上时，也许这个时候就需要用到this.$set()这个方法了<br>参数:<br>{Object | Array} target （要改变的数据源）<br>{string | number} propertyName/index （对象的某个属性或数组的索引值）<br>{any} value （对应的值）  </p>
+<p>// 更改hobby第一项<br>this.$set(this.hobby, 0, ‘学习’);  </p>
+<p>// 添加性别<br>this.$set(this.person, ‘sex’, ‘男’);  </p>
+<h4 id="forceupdate"><a href="#forceupdate" class="headerlink" title="$forceupdate:"></a>$forceupdate:</h4><p>强制触发update声明周期，重新渲染下dom<br>性能消耗&gt;$set<br>优先使用$set  </p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/11/11/vue%E4%B8%ADnextTick%E5%92%8Cset%E5%92%8CforceUpdate%E7%9A%84%E5%B7%AE%E5%BC%82/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-node中文返回为乱码问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -818,69 +885,6 @@ watch(isDialogAddVisible,(val,old)=&gt;{
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/02/11/zTree%E6%A0%91-%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2-%E5%A4%8D%E9%80%89%E6%A1%86demo/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-页面响应式布局的解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/29/%E9%A1%B5%E9%9D%A2%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">页面响应式布局的解决方案</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/12/29/%E9%A1%B5%E9%9D%A2%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2021-12-29T03:12:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-29</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>vw+vh+rem：<br><a href="https://blog.csdn.net/qq_35546787/article/details/107635368" target="_blank" rel="noopener">https://blog.csdn.net/qq_35546787/article/details/107635368</a></p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/12/29/%E9%A1%B5%E9%9D%A2%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
     </p>
     
 

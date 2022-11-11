@@ -176,6 +176,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mac连接远程服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">mac连接远程服务器</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2021-09-01T05:45:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-01</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>ssh -p 端口号 用于登陆的用户名@ip<br>ssh -p 22 用于登陆的用户名@ip</p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/09/01/mac%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-面试题-输入URL到页面展示发生了什么" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -824,87 +887,6 @@ run build 之后可以看到dist文件里多了一个img的文件夹（成功）
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/07/02/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAreact-vue%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="jenkins构建error-phantomjs-PATH" class="article article-type-jenkins构建error-phantomjs  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/01/PATH/">jenkins构建error-PhantomJS not found on PATH</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/07/01/PATH/" class="archive-article-date">
-  	<time datetime="2021-07-01T01:10:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-01</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>错误：<br>npm install –registry <a href="http://yuanyuanyuanyuan" target="_blank" rel="noopener">http://yuanyuanyuanyuan</a></p>
-<p> phantomjs-prebuilt@2.1.12 install /var/lib/jenkins/workspace/pipeline_web_online_wuxing_wuxingWeb/node_modules/phantomjs-prebuilt<br> node install.js</p>
-<p>PhantomJS not found on PATH<br>Downloading <a href="https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2" target="_blank" rel="noopener">https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2</a><br>Saving to /tmp/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2<br>Receiving…</p>
-<p>Error making request.。。。。</p>
-<p>//出现PhantomJS not found on PATH的error</p>
-<p>原因：网络问题，安装过程中需要去github下载一个包，（被墙导致）</p>
-<p>解决方案一：<br>在jenkin的构建设置里<br>原先为<br>sh npm install –registry <a href="http://yuanyuanyuanyuan&quot;" target="_blank" rel="noopener">http://yuanyuanyuanyuan&quot;</a><br>改为：<br>sh “PHANTOMJS_CDNURL=<a href="https://npm.taobao.org/mirrors/phantomjs" target="_blank" rel="noopener">https://npm.taobao.org/mirrors/phantomjs</a> npm install –registry <a href="http://yuanyuanyuanyuan&quot;" target="_blank" rel="noopener">http://yuanyuanyuanyuan&quot;</a></p>
-<p>即：把PHANTOMJS 的下载源切为taobao镜像</p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/07/01/PATH/">展开全文 >></a>
     </p>
     
 
