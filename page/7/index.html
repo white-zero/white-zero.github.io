@@ -176,6 +176,166 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Typescript笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/">Typescript笔记</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-07-22T06:10:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-22</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <ul>
+<li><p>静态类型和对象类型</p>
+<ul>
+<li>基础静态类型非常简单，只要在声明变量的后边加一个:号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做count<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const count : number &#x3D; 999;</span><br><span class="line">const Name : string &#x3D; &#39;jack&#39;;</span><br></pre></td></tr></table></figure></li>
+<li>对象类型    <ul>
+<li>对象类型</li>
+<li>数组类型</li>
+<li>类类型</li>
+<li>函数类型</li></ul></li></ul></li></ul>
+    
+    <a class="article-more-a" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/22/Typescript%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-数据结构和算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </h1>
+  
+
+  
+  
+<a href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-07-10T03:19:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p> <strong>什么是数据结构？</strong><br>    - 计算机中，存储和组织数据的方式(合理的方式组织，存储，取的时候也更高效)<br> *<em>常见的数据结构 *</em><br>    - 栈、链表、图、散列表、数组、队列、堆、树<br> *<em>数组 *</em><br>    - 数组、栈、队列，都是线性结构<br>    - JS的数组就是API的调用<br>    - 常见的其他语言中，<br>    - 数组缺点：1、不能存放不同的数据类型2、创建的时候，要申请一段连续的内存空间，容量不会自动改变，需要进行扩容操作3、插入和删除的操作性能比较低<br>    - 数组优点：查找的性能比较高（通过下标）<br> *<em>栈结构（stack） *</em><br>    - 数组是一种线性结构，可以在任意位置插入和删除数据<br>    - 而栈、队列 就是常见的受限的线性结构（“任意性”加以限制）<br>    - LIFO，压栈，出栈<br>    - 封装（基于数组/链表）<br>    - 栈的常见操作<br>        –&gt; push(element): 添加一个新元素到栈顶位置<br>        –&gt; pop(): 移除栈顶的元素，同时返回被移除的元素<br>        –&gt; peek: 返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶元素，仅仅返回它）<br>        –&gt; isEmpty(): 如果栈里没有任何元素就返回ture<br>        –&gt; size(): 返回栈里的元素个数<br>        –&gt; toString(): 将栈结构的内容以字符形式返回</p>
+    
+    <a class="article-more-a" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Flutter搭建for-mac" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

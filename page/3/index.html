@@ -176,6 +176,208 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-web性能权威指南-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/22/web%E6%80%A7%E8%83%BD%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E7%AC%94%E8%AE%B0/">web性能权威指南---笔记</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/11/22/web%E6%80%A7%E8%83%BD%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-11-22T05:40:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-22</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>一）延迟和带宽<br>所有网络通信都有决定性影响的两个方面：延迟和带宽<br>延迟：分组从信息源发送到目的地所需的时间  </p>
+<ul>
+<li>传播延迟  </li>
+<li>传输延迟  </li>
+<li>处理延迟  </li>
+<li>排队延迟<br>带宽：逻辑或物理通信路径最大的吞吐量  </li>
+</ul>
+<p>二）TCP的构成<br>因特网有两个核心协议：IP（因特网协议）和TCP（传输控制协议）<br>所有的TCP连接一开始都要经过三次握手<br>TCP核心原理及影响：  </p>
+<ul>
+<li>TCP三次握手增加了整整一次往返时间</li>
+<li>TCP慢启动将被应用到每个新连接</li>
+<li>TCP流量及拥塞控制会影响所有连接的吞吐量</li>
+<li>TCP的吞吐量由当前拥塞窗口大小控制   </li>
+</ul>
+<p>========&gt;服务器配置调优  </p>
+<ul>
+<li>增大TCP的初始拥塞窗口</li>
+<li>慢启动重启：连接空闲时禁用慢启动可以改善瞬时发送数据的长TCP连接的性能</li>
+<li>窗口缩放：可以增大最大接受窗口大小，可以让高延迟的连接达到更好吞吐量</li>
+<li>TCP快速打开  </li>
+</ul>
+<p>========&gt;性能检查清单  </p>
+<ul>
+<li>把服务器内核升级到最新版本</li>
+<li>确保cwnd大小为10</li>
+<li>禁用空闲后的慢启动</li>
+<li>确保启动窗口缩放</li>
+<li>减少传输冗余数据</li>
+<li>压缩要传输的数据</li>
+<li>把服务器放到离用户近的地方以减少往返时间</li>
+<li>尽最大可能重用已经建立的TCP连接  </li>
+</ul>
+<p>三）UDP的构成<br>UDP（用户数据报协议） 紧随TCP/IP之后，加入核心网络协议套件。（UDP经常被称为<null>协议）<br>数据报：一个完整、独立的数据实体，携带着从源节点到目的地节点的足够信息，对这些节点间的数据交换和传输网络没有任何依赖<br>UDP的应用：DNS（Domain Name System，域名系统–&gt;负责把对人类友好的主机名转换成IP地址）<br>==========&gt;UDP应用程序的设计建议  </null></p>
+<ul>
+<li>应用程序必须容忍各种因特网路径条件  </li>
+<li>应用程序应该控制传输速度</li>
+<li>应用程序应该对所有流量进行拥塞控制</li>
+<li>应用程序应该使用与TCP相近的带宽</li>
+<li>应用程序应该准备基于丢包的重发计数器</li>
+<li>应用程序应该不发送大于路径MTU的数据报</li>
+<li>应用程序应该处理数据报丢失、重复和重排</li>
+<li>应用程序应该足够稳定以支持2分钟以上的交付延迟</li>
+<li>应用程序应该支持IPv4 UDP校验和，必须支持IPv6校验和</li>
+<li>应用程序可以在需要时使用keep-alive（最小间隔15秒）  </li>
+</ul>
+<p>四）传输层安全（TLS）<br>SSL第一个公开版本SSL2.0–&gt;SSL3.0 &gt;&gt;&gt;标准化SSL3.0后&gt;&gt;&gt;改名为TLS<br>TLS1.0，也就是SSL3.0的升级版<br>==========&gt;TLS提供的服务  </p>
+<ul>
+<li>加密 （混淆数据的机制）  </li>
+<li>身份验证 （验证身份标识有效性）  </li>
+<li>完整性 （检测消息是否被篡改或伪造的机制）<br>=============&gt;性能检查清单  </li>
+<li>最大限制提升TCP性能</li>
+<li>把TLS库升级到最新版本，在此基础上构建服务器</li>
+<li>启用并配置会话缓存和无状态恢复  </li>
+<li>监控会话缓存的使用情况并作出相应调整</li>
+<li>在接近用户的地方完成TLS会话，尽量减少往返延迟</li>
+<li>配置TLS记录大小，使其恰好能封装在一个TCP段内</li>
+<li>确保证书链不会超过拥塞窗口的大小</li>
+<li>从信任链中去掉不必要的证书，减少链条层次</li>
+<li>禁用服务器的TLS压缩功能  </li>
+<li>启用服务器对SNI的支持</li>
+<li>启用服务器的OCSP封套功能</li>
+<li>追加HTTP严格传输安全首部  </li>
+</ul>
+<p>第二部分：无线网络性能<br>五）无线网络概览        </p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/studynotes//" class="article-tag-list-link color1">studynotes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/11/22/web%E6%80%A7%E8%83%BD%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-jenkins-new-item步骤" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/07/jenkins-new-item%E6%AD%A5%E9%AA%A4/">jenkins-new item步骤</a>
+    </h1>
+  
+
+  
+  
+<a href="/2021/10/07/jenkins-new-item%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
+  	<time datetime="2021-10-07T07:24:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-07</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><img src="/images/jenkins_new_item_step1.png" alt="step 1"><br>选择流水线/直接从现有的项目copy一个配置<br><img src="/images/jenkins_new_item_step2.png" alt="step 2"><br><img src="/images/jenkins_new_item_step3_1.png" alt="step 3—1"><br><img src="/images/jenkins_new_item_step3_2.png" alt="step 3—2"><br><img src="/images/jenkins_new_item_step3_3.png" alt="step 3—3"><br>apply-save<br><img src="/images/jenkins_new_item_step3_4.png" alt="step 3—4">  </p>
+    
+    <a class="article-more-a" href="/2021/10/07/jenkins-new-item%E6%AD%A5%E9%AA%A4/#more">more >></a>
+    
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/10/07/jenkins-new-item%E6%AD%A5%E9%AA%A4/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-记一次复杂表单的实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -817,161 +1019,6 @@ export default function FatherComponent() {
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2021/08/11/angularJS%E8%87%AA%E8%A1%8C%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%8C%85/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-umi项目中加入favico图标" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/">umi项目中加入favico图标</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/" class="archive-article-date">
-  	<time datetime="2021-08-04T01:13:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-04</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>问题：修改浏览器页签图标<br>解决：思路一：往build之后的dist文件的static里加入名为favico.ico图标。（后缀为ico）  </p>
-<pre><code>思路二：在config.ts文件中的title设置项下加入  
-```
-title: &apos;xxxxxx&apos;,
-links:[{rel:&apos;icon&apos;,href:&quot;/xxxx/img/favico.ico&quot;}],  
-//xxxx是项目的文件在服务器上的名字
-```  
-icon的路径为：public/img/favico.ico(public文件夹没有可以自行创建)  
-run build 之后可以看到dist文件里多了一个img的文件夹（成功）</code></pre>
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/04/umi%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5favico%E5%9B%BE%E6%A0%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-gitlab无法看分支的commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/">gitlab无法看分支的commit</a>
-    </h1>
-  
-
-  
-  
-<a href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/" class="archive-article-date">
-  	<time datetime="2021-08-01T02:55:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-01</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>问题：使用gitlab的时候只能看master的commit，看不到分支下面的commit<br>原因：分支名称问题，不能为   XXXX/XXXX/XXX,正确应该为XXXX-XXXX-XXX<br>现在解决方式：直接访问<a href="http://XXXXX.com/项目名/项目名/tree/分支名" target="_blank" rel="noopener">http://XXXXX.com/项目名/项目名/tree/分支名</a></p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/error//" class="article-tag-list-link color1">error</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/08/01/gitlab%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%86%E6%94%AF%E7%9A%84commit/">展开全文 >></a>
     </p>
     
 

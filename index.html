@@ -176,6 +176,148 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-z-index失效问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/13/z-index%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/">z-index失效问题</a>
+    </h1>
+  
+
+  
+  
+<a href="/2022/12/13/z-index%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-12-13T03:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-13</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>1、</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'f'</span>&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'a'</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;div class='b'&gt;&lt;/</span>div&gt; </span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/父元素f不设置z-index， a设1 b设2，b盖过a。</span></span><br></pre></td></tr></table></figure>
+<p>2、 去掉父元素的 overflow：hidden 改为 overflow：visible；<br>3、 对应元素有定位（非static） </p>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/13/z-index%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-el-tab切换echarts图表不显示" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/12/09/el-tab%E5%88%87%E6%8D%A2echarts%E5%9B%BE%E8%A1%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">el-tab切换echarts图表不显示</a>
+    </h1>
+  
+
+  
+  
+<a href="/2022/12/09/el-tab%E5%88%87%E6%8D%A2echarts%E5%9B%BE%E8%A1%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/" class="archive-article-date">
+  	<time datetime="2022-12-09T09:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-09</time>
+</a>
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <pre><code class="js">在切换tab 的handleClick方法里添加resize( )方法
+html
+&lt;el-tabs @tab-click = “handleClick”&gt;
+&lt;<span class="regexp">/el-tabs&gt;</span>
+<span class="regexp"></span>
+<span class="regexp">js:</span>
+<span class="regexp">handleClick（）{</span>
+<span class="regexp">  this.$nextTick(() =&gt; {</span>
+<span class="regexp">    resize(name) {</span>
+<span class="regexp">       echarts.getInstanceByDom(document.getElementById(`${name}`)).resize()</span>
+<span class="regexp">    }</span>
+<span class="regexp">    /</span><span class="regexp">/name 是id属性；</span>
+<span class="regexp">  })</span>
+<span class="regexp">}</span>
+<span class="regexp"></span></code></pre>
+
+    
+
+    
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/09/el-tab%E5%88%87%E6%8D%A2echarts%E5%9B%BE%E8%A1%A8%E4%B8%8D%E6%98%BE%E7%A4%BA/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-修改默认滚动条样式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -723,164 +865,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2022/06/03/mac-ng%E6%90%AD%E5%BB%BA%EF%BC%88%E9%9D%9Ebrew%EF%BC%89%E7%89%88/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-vue2-vue3父子组件通信" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/11/vue2-vue3%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">vue2/vue3父子组件通信</a>
-    </h1>
-  
-
-  
-  
-<a href="/2022/05/11/vue2-vue3%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" class="archive-article-date">
-  	<time datetime="2022-05-11T07:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-11</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="vue2"><a href="#vue2" class="headerlink" title="vue2"></a>vue2</h3><h5 id="父-gt-子传值：通过props"><a href="#父-gt-子传值：通过props" class="headerlink" title="父==&gt;子传值：通过props"></a>父==&gt;子传值：通过props</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//父组件：  </span></span><br><span class="line">&lt;test :content=<span class="string">"title"</span>&gt;&lt;<span class="regexp">/test&gt;</span></span><br><span class="line"><span class="regexp">data() &#123;</span></span><br><span class="line"><span class="regexp">	return &#123;</span></span><br><span class="line"><span class="regexp">		title: 'Hello'</span></span><br><span class="line"><span class="regexp">	&#125;    </span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/子组件接收props</span></span><br><span class="line"><span class="regexp">props:&#123;  </span></span><br><span class="line"><span class="regexp">  content:&#123;</span></span><br><span class="line"><span class="regexp">		type:String,/</span><span class="regexp">/类型</span></span><br><span class="line"><span class="regexp">		default:'',/</span><span class="regexp">/默认值</span></span><br><span class="line"><span class="regexp">		validator: function(val)&#123;</span></span><br><span class="line"><span class="regexp">			return val /</span><span class="regexp">/预处理props接收过来的数据</span></span><br><span class="line"><span class="regexp">		&#125;,</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/props的类型有  </span></span><br><span class="line"><span class="regexp">props:&#123;</span></span><br><span class="line"><span class="regexp">	refstr:&#123;</span></span><br><span class="line"><span class="regexp">		type:String,</span></span><br><span class="line"><span class="regexp">		default:''</span></span><br><span class="line"><span class="regexp">	&#125;,</span></span><br><span class="line"><span class="regexp">	refnum:&#123;</span></span><br><span class="line"><span class="regexp">		typr:Number,</span></span><br><span class="line"><span class="regexp">		default:0</span></span><br><span class="line"><span class="regexp">	&#125;,</span></span><br><span class="line"><span class="regexp">	refbool:&#123;</span></span><br><span class="line"><span class="regexp">		type: Boolean,</span></span><br><span class="line"><span class="regexp">		default: false</span></span><br><span class="line"><span class="regexp">	&#125;,</span></span><br><span class="line"><span class="regexp">	refarr:&#123;</span></span><br><span class="line"><span class="regexp">		type:Array,</span></span><br><span class="line"><span class="regexp">		default:()=&gt;&#123;</span></span><br><span class="line"><span class="regexp">			return []</span></span><br><span class="line"><span class="regexp">		&#125;</span></span><br><span class="line"><span class="regexp">	&#125;,</span></span><br><span class="line"><span class="regexp">	refobj:&#123;</span></span><br><span class="line"><span class="regexp">		type:Object,</span></span><br><span class="line"><span class="regexp">		default:()=&gt;(&#123;&#125;)</span></span><br><span class="line"><span class="regexp">	&#125;,</span></span><br><span class="line"><span class="regexp">	reffun:&#123;</span></span><br><span class="line"><span class="regexp">		type:Function,</span></span><br><span class="line"><span class="regexp">		default:()=&gt;()=&gt;&#123;&#125;</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<h5 id="子-gt-父传值：-emit"><a href="#子-gt-父传值：-emit" class="headerlink" title="子==&gt;父传值：$emit"></a>子==&gt;父传值：$emit</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子组件</span></span><br><span class="line">&lt;button type=<span class="string">"default"</span> @click=<span class="string">"ok"</span>&gt;子组件点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">ok()&#123;</span></span><br><span class="line"><span class="regexp">	this.$emit('child-event','我要传递的信息')  </span></span><br><span class="line"><span class="regexp">&#125;  </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/父组件</span></span><br><span class="line"><span class="regexp">&lt;test :content="title" @child-event="parent"&gt;&lt;/</span>test&gt;</span><br><span class="line">parent(e)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(e)<span class="comment">//打印出子组件传递的信息</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">##### 父组件调用子组件方法：ref  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js  </span><br><span class="line"><span class="comment">//父组件</span></span><br><span class="line">&lt;view <span class="class"><span class="keyword">class</span></span>=<span class="string">"home"</span>&gt;    </span><br><span class="line">	&lt;button type=<span class="string">"default"</span> @click=<span class="string">"setup"</span>&gt;点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">	&lt;test ref="test"&gt;&lt;/</span>test&gt; <span class="comment">//ref=“test”</span></span><br><span class="line">&lt;<span class="regexp">/view&gt;  </span></span><br><span class="line"><span class="regexp">methods: &#123;</span></span><br><span class="line"><span class="regexp">	setup()&#123;</span></span><br><span class="line"><span class="regexp">		this.$refs.test.ok() /</span><span class="regexp">/调用子组件的方法</span></span><br><span class="line"><span class="regexp">		this.$refs.test.adv = '修改你'</span></span><br><span class="line"><span class="regexp">	&#125;,</span></span><br><span class="line"><span class="regexp">&#125;  </span></span><br><span class="line"><span class="regexp">  </span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/子组件   </span></span><br><span class="line"><span class="regexp">&lt;view class=""&gt;</span></span><br><span class="line"><span class="regexp">	&#123;&#123;adv&#125;&#125;</span></span><br><span class="line"><span class="regexp">	&lt;button type="default" @click="ok"&gt;子组件点击&lt;/</span>button&gt;</span><br><span class="line">&lt;<span class="regexp">/view&gt;</span></span><br><span class="line"><span class="regexp">data()&#123;</span></span><br><span class="line"><span class="regexp">	return &#123;</span></span><br><span class="line"><span class="regexp">		adv:'子组件内容'</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">methods:&#123;</span></span><br><span class="line"><span class="regexp">	ok()&#123;</span></span><br><span class="line"><span class="regexp">		console.log('我是子组件的方法')</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<h5 id="子组件改变父组件的值：-sync语法糖"><a href="#子组件改变父组件的值：-sync语法糖" class="headerlink" title="子组件改变父组件的值：.sync语法糖"></a>子组件改变父组件的值：.sync语法糖</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父组件  </span></span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&#123;&#123;isShow&#125;&#125;</span><br><span class="line">	&lt;test ref=<span class="string">"test"</span> :refbool.sync=<span class="string">'isShow'</span>&gt;&lt;<span class="regexp">/test&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">data() &#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		isShow:<span class="literal">true</span></span><br><span class="line">	&#125;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//子组件    </span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">""</span>&gt;</span><br><span class="line">	&lt;button type=<span class="string">"default"</span> @click=<span class="string">"ok"</span>&gt;子组件点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">props:&#123;</span><br><span class="line">	refbool:&#123;      </span><br><span class="line">		type: <span class="built_in">Boolean</span>,        </span><br><span class="line">		<span class="keyword">default</span>: <span class="literal">false</span></span><br><span class="line">	&#125;,</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">	ok()&#123;</span><br><span class="line">		<span class="keyword">this</span>.$emit(<span class="string">'update:refbool'</span>,<span class="literal">false</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  </span></span><br><span class="line"><span class="string">##### 子组件改变父组件的值：(推)  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="comment">//父组件  </span></span><br><span class="line">&lt;div&gt;	</span><br><span class="line">	&lt;test @changeFun=<span class="string">'changeFun'</span>&gt;&lt;<span class="regexp">/test&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">data() &#123;</span><br><span class="line">	  data1:<span class="literal">false</span> </span><br><span class="line">&#125;</span><br><span class="line">methods:&#123;</span><br><span class="line">	changeFun(data)&#123;</span><br><span class="line">		<span class="keyword">this</span>.data1 = data</span><br><span class="line">	&#125; </span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//子组件  </span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">""</span>&gt;</span><br><span class="line">	&lt;button type=<span class="string">"default"</span> @click=<span class="string">"ok"</span>&gt;子组件点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">props:&#123;	</span><br><span class="line">&#125;,</span><br><span class="line">methods:&#123;</span><br><span class="line">	ok()&#123;</span><br><span class="line">		<span class="keyword">this</span>.$emit(<span class="string">'changeFun'</span>,<span class="literal">true</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="vue3"><a href="#vue3" class="headerlink" title="vue3"></a>vue3</h3><h5 id="子组件接受并修改父组件的值"><a href="#子组件接受并修改父组件的值" class="headerlink" title="子组件接受并修改父组件的值"></a>子组件接受并修改父组件的值</h5><pre><code class="js"><span class="comment">//父组件  </span>
-&lt;test v-model:dialogAddVisible = <span class="string">"dialogAddVisible"</span>/&gt;
-
-<span class="keyword">import</span> {ref,watch} <span class="keyword">from</span> <span class="string">'vue'</span>
-<span class="keyword">const</span> dialogAddVisible = ref(<span class="literal">false</span>)
-watch(dialogAddVisible,(val,old)=&gt;{
-  dialogAddVisible.value = val
-  <span class="built_in">console</span>.log(dialogAddVisible.value)
-})
-
-<span class="comment">//子组件</span>
-&lt;div v-model=<span class="string">"isDialogAddVisible"</span>/&gt;
-
-<span class="keyword">import</span> {reactive,defineEmits,defineProps,watch,ref,toRefs} <span class="keyword">from</span> <span class="string">'vue'</span>
-<span class="keyword">const</span> props = defineProps({
-  dialogAddVisible:{
-    type:<span class="built_in">Boolean</span>
-  }
-})
-<span class="keyword">const</span> refProps = toRefs(props)
-<span class="keyword">const</span> emits = defineEmits([<span class="string">'update:dialogAddVisible'</span>]) <span class="comment">//update要写</span>
-<span class="keyword">const</span> isDialogAddVisible = ref(<span class="literal">false</span>)
-watch(refProps.dialogAddVisible,(val,old)=&gt;{
-  isDialogAddVisible.value = val
-})
-watch(isDialogAddVisible,(val,old)=&gt;{
-  emits(<span class="string">'update:dialogAddVisible'</span>,val) <span class="comment">//update要写</span>
-})</code></pre>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/05/11/vue2-vue3%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-mac外接移动硬盘相关问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/29/mac%E5%A4%96%E6%8E%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">mac外接移动硬盘相关问题</a>
-    </h1>
-  
-
-  
-  
-<a href="/2022/03/29/mac%E5%A4%96%E6%8E%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-03-29T01:22:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-29</time>
-</a>
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>1-关于推出：<br>            电源断电会引起移动硬盘不正常退出，切记切记<br>            在使用完毕后点击推出再拔掉移动硬盘<br>            （只要桌面不显示/磁盘工具里该移动硬盘已置灰，都可以拔掉，无论移动硬盘的呼吸灯是否熄灭）  </p>
-<p>2-关于几种情况：<br>            a、存储数据过程中电脑进入睡眠状态，屏幕亮屏时不影响继续存储<br>            b、在存储数据过程中未点击推出，暴力拔出，再次连接移动硬盘时，桌面不会立即出现图标，打开磁盘工具查看（“ 等待！等待！等待！”等到系统自我进行修复磁盘过程！！！即可使用）<br>            或者使用磁盘工具： 急救（急救失败，是系统在后台急救中，移动硬盘的呼吸灯也会闪，等到呼吸灯灭了再点击急救）（等待、等待、等待，&lt;500G内容的大概花了一个多小时&gt;） ，成功后 点装载<br>                  b-1、急用，则可以使用  diskutil list 查看该移动硬盘是否已经被识别<br>                       ps aux | grep fsck  查看移动硬盘使用的状态 （看到fsck字样的进程：系统自动修复中）<br>                       sudo pkill -f fsck  （杀死对应进程，跳过修复状态，可以读取，但是不能存储，并提示你格式化等）<br>            c、格式化快速指南：<br>                  插入windows系统,格式化、<br>                  提示不能格式化，则保持格式化设置窗口,拔掉电源，再插入，（注意格式选择exFAT），再点击格式化  </p>
-
-    
-
-    
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2022/03/29/mac%E5%A4%96%E6%8E%A5%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">展开全文 >></a>
     </p>
     
 
